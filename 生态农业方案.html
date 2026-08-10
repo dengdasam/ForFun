@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>生态农业方案 · 广西来宾适配版</title>
+<style>
+  :root{
+    --green:#2e7d32; --green-d:#1b5e20; --green-l:#e8f5e9;
+    --teal:#00695c; --teal-l:#e0f2f1;
+    --amber:#f57f17; --amber-l:#fff8e1;
+    --ink:#1f2a24; --muted:#5a6b62; --line:#cfe3d4;
+    --bg:#f4f9f4; --card:#ffffff;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;font-family:"PingFang SC","Microsoft YaHei",-apple-system,system-ui,sans-serif;
+    background:var(--bg);color:var(--ink);line-height:1.75;font-size:16px;}
+  .cover{background:linear-gradient(135deg,var(--green-d),var(--teal));color:#fff;padding:54px 28px 46px;text-align:center;}
+  .cover h1{margin:0 0 10px;font-size:2.2em;letter-spacing:1px;}
+  .cover .sub{font-size:1.05em;opacity:.92;}
+  .cover .meta{margin-top:16px;font-size:.85em;opacity:.8;}
+  .container{max-width:920px;margin:0 auto;padding:0 18px 60px;}
+  .toc{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px 26px;margin:26px 0;box-shadow:0 2px 10px rgba(0,0,0,.04);}
+  .toc h2{margin:0 0 12px;color:var(--green-d);font-size:1.2em;}
+  .toc ol{margin:0;padding-left:22px;}
+  .toc li{margin:6px 0;}
+  .toc a{color:var(--teal);text-decoration:none;}
+  .toc a:hover{text-decoration:underline;}
+  .toc .sub-item{list-style:none;margin-left:-16px;font-size:.92em;color:var(--muted);}
+  section{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:26px 28px;margin:22px 0;box-shadow:0 2px 10px rgba(0,0,0,.04);}
+  section h2{color:var(--green-d);border-left:5px solid var(--green);padding-left:12px;margin-top:0;font-size:1.45em;}
+  section h3{color:var(--teal);margin-top:26px;font-size:1.12em;}
+  section h4{color:var(--green);margin-bottom:6px;}
+  p{margin:10px 0;}
+  ul,ol{margin:10px 0;padding-left:24px;}
+  li{margin:5px 0;}
+  .tip-box{background:var(--amber-l);border-left:4px solid var(--amber);padding:12px 16px;border-radius:8px;margin:14px 0;}
+  .tip-box .label{font-weight:700;color:#b35c00;}
+  .info-box{background:var(--green-l);border-left:4px solid var(--green);padding:12px 16px;border-radius:8px;margin:14px 0;}
+  .info-box .label{font-weight:700;color:var(--green-d);}
+  table{border-collapse:collapse;width:100%;margin:14px 0;font-size:.93em;}
+  th,td{border:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top;}
+  th{background:var(--green-l);color:var(--green-d);font-weight:700;}
+  tr:nth-child(even){background:#fafdfa;}
+  .quick-ref-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:14px 0;}
+  .quick-ref-grid div{background:var(--green-l);border-radius:8px;padding:10px 12px;font-size:.92em;}
+  .quick-ref-grid b{color:var(--green-d);}
+  .timeline{position:relative;margin:16px 0;padding-left:8px;}
+  .timeline-item{display:flex;gap:14px;padding:8px 0;border-bottom:1px dashed var(--line);}
+  .timeline-item:last-child{border-bottom:none;}
+  .timeline-item .time{font-weight:700;color:var(--teal);min-width:120px;flex-shrink:0;}
+  .timeline-item .desc{flex:1;}
+  .zone{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:16px 0;}
+  .zone div{background:var(--teal-l);border-radius:10px;padding:14px 16px;}
+  .zone div b{color:var(--teal);}
+  .svg-wrap{text-align:center;margin:18px 0;}
+  footer{text-align:center;color:var(--muted);font-size:.85em;padding:30px 18px 60px;}
+  @media (max-width:600px){
+    .cover h1{font-size:1.6em;}
+    .zone,.quick-ref-grid{grid-template-columns:1fr;}
+    .timeline-item{flex-direction:column;gap:2px;}
+    .timeline-item .time{min-width:auto;}
+    section{padding:20px;}
+  }
+</style>
+</head>
+<body>
+
+<div class="cover">
+  <h1>生态农业方案</h1>
+  <div class="sub">广西来宾 · 家庭 / 小型生态农场闭环设计</div>
+  <div class="meta">适配气候：中亚热带→南亚热带过渡季风气候 · 北回归线南缘 · 桂中旱片（已通桂中治旱工程）<br>
+  整合：辣椒 · 番茄 · 养地绿肥 · 黑水虻虫肥 · 水循环 · 伴生防治</div>
+</div>
+
+<div class="container">
+
+  <!-- ==================== 目录 ==================== -->
+  <div class="toc">
+    <h2>目录</h2>
+    <ol>
+      <li><a href="#s1">来宾资源本底（气候·土壤·本地成熟模式）</a></li>
+      <li><a href="#s2">方案总体设计（目标·原则·分区·物质循环）</a></li>
+      <li><a href="#s3">核心模块 A — 红壤改良与绿肥养地</a></li>
+      <li><a href="#s4">核心模块 B — 主栽作物管理（椒·茄·留种）</a></li>
+      <li><a href="#s5">核心模块 C — 水管理（旱片背景下的集雨与节水）</a></li>
+      <li><a href="#s6">核心模块 D — 黑水虻虫肥循环</a></li>
+      <li><a href="#s7">核心模块 E — 生物防治与伴生种植</a></li>
+      <li><a href="#s8">核心模块 F — 避雨遮阳设施（三件套）</a></li>
+      <li><a href="#s9">与本地大产业的衔接接口</a></li>
+      <li><a href="#s10">全年茬口日历（来宾版）</a></li>
+      <li><a href="#s11">分阶段实施步骤</a></li>
+      <li><a href="#s12">投入与收益估算（参考）</a></li>
+      <li><a href="#s13">风险与对策</a></li>
+      <li><a href="#s14">速查参考表</a></li>
+    </ol>
+  </div>
+
+  <!-- ==================== 1. 资源本底 ==================== -->
+  <section id="s1">
+    <h2>1. 来宾资源本底</h2>
+
+    <h3>1.1 气候与土壤（种好菜的前提）</h3>
+    <table>
+      <tr><th>指标</th><th>数值（来宾·兴宾区为代表）</th><th>对生态农业的含义</th></tr>
+      <tr><td>年均温</td><td>20.7°C</td><td>喜温作物（椒、茄、绿肥）几乎无冻害之忧</td></tr>
+      <tr><td>1月均温 / 极端低温</td><td>10.9°C / -5.6°C（偶发寒潮）</td><td>冬季可越冬绿肥；仅寒潮短期停长</td></tr>
+      <tr><td>7月均温 / 极端高温</td><td>28.6°C / 38.9°C</td><td>夏季高温是坐果、虫肥养殖的共同威胁，须遮阴</td></tr>
+      <tr><td>无霜期</td><td>约 331 天（初霜≈12/25，终霜≈2/5）</td><td>可安排多茬、长季节生产</td></tr>
+      <tr><td>年降水</td><td>约 1360 mm，70% 集中在 4~8 月</td><td>夏涝冬春旱，需"排蓄结合"</td></tr>
+      <tr><td>土壤</td><td>红壤、水稻土为主，偏酸黏重</td><td>必调酸、必改土、必养地（绿肥+有机肥）</td></tr>
+      <tr><td>日照</td><td>年约 1580~1660 小时</td><td>光热充足，利于光合与晾晒</td></tr>
+    </table>
+
+    <h3>1.2 桂中旱片 · 桂中治旱工程（水的底气）</h3>
+    <div class="info-box">
+      <span class="label">关键背景</span>
+      来宾地处"桂中旱片"，历史上秋冬缺水"靠天吃饭"。2022 年 <b>桂中治旱（乐滩灌区）工程</b>主体完工：
+      594 km 骨干渠系全线通水，连通 <b>12 座水库、12 条河流、900 多个沟塘</b>，年调蓄补水约 6500 万 m³。
+      这意味着——只要地块在灌区辐射范围内，旱季灌溉不再是瓶颈；即便不在灌区，也提示我们必须做好<b>集雨与节水</b>。
+    </div>
+
+    <h3>1.3 本地成熟的生态农业模式（可直接借鉴）</h3>
+    <ul>
+      <li><b>蔗–畜–肥循环</b>：甘蔗榨糖后，滤泥/糖蜜制生物肥返田、蔗梢作饲料养畜，"一根甘蔗吃干榨尽"。这是来宾国家级循环经济样板。</li>
+      <li><b>稻渔综合种养</b>（稻+小龙虾等）：虾粪肥田、减施肥、水质易管，一水多用。</li>
+      <li><b>"稻+稻+绿肥/马铃薯/油菜"轮作</b>：冬种绿肥或马铃薯，一年多收、地力不降。</li>
+      <li><b>桑蚕种养循环</b>：忻城为"桑蚕标准化生产之乡"，蚕沙可堆肥返田。</li>
+      <li>政策导向：绿色防控、统防统治、水肥一体化、"三避三免"、秸秆覆盖、富硒农业。</li>
+    </ul>
+    <div class="tip-box">
+      <span class="label">💡 本案定位</span>
+      以<b>家庭/小型生态农场（园）</b>为内核——菜园（辣椒+番茄）+ 绿肥养地 + 黑水虻虫肥 + 水循环 + 伴生防治；
+      外环留出与本地<b>甘蔗滤泥返田、桑蚕、稻渔</b>的衔接接口，让小农场既闭环、又能借势大产业。
+    </div>
+  </section>
+
+  <!-- ==================== 2. 总体设计 ==================== -->
+  <section id="s2">
+    <h2>2. 方案总体设计</h2>
+
+    <h3>2.1 目标与原则</h3>
+    <ul>
+      <li><b>零废弃闭环</b>：厨余/菜叶→黑水虻→虫沙肥田；绿肥翻压养地；雨水收集回用。</li>
+      <li><b>减化学投入</b>：以绿肥固氮、虫沙补钙、伴生植物控虫，化肥农药只作"底线兜底"。</li>
+      <li><b>生物多样性</b>：绿肥地毯 + 蜜源花（万寿菊）+ 天敌栖息，构建微型生态。</li>
+      <li><b>适地适季</b>：严格按来宾"夏遮阴、涝排水、旱补水、酸先调"四律安排茬口。</li>
+      <li><b>可留种、可复制</b>：优先传家宝种（如紫切诺基）自留种，降低长年买种成本。</li>
+    </ul>
+
+    <h3>2.2 场地分区（以 1~3 亩家庭农场为例）</h3>
+    <div class="zone">
+      <div><b>① 主栽菜园区</b><br>高垄+避雨棚种辣椒、番茄，分春/秋两茬，约占 40%。</div>
+      <div><b>② 绿肥养地区</b><br>轮作田菁（夏）、蓝花苕子/箭筈豌豆（冬）翻压养地，约占 25%。</div>
+      <div><b>③ 黑水虻养殖+堆肥区</b><br>处理厨余菜叶产虫沙、堆肥，半阴通风，约占 10%。</div>
+      <div><b>④ 水系统</b><br>蓄水池/集雨罐+滴灌管网+排水沟，覆盖全园，约占 5%。</div>
+      <div><b>⑤ 伴生/苗圃区</b><br>万寿菊、蜜源、育苗棚、留种株，约占 15%。</div>
+      <div><b>⑥ 衔接接口区（可选）</b><br>桑园/稻渔/甘蔗滤泥堆沤点，按条件外挂，约占 5%。</div>
+    </div>
+
+    <h3>2.3 物质循环图</h3>
+    <div class="svg-wrap">
+      <svg viewBox="0 0 660 360" width="100%" style="max-width:660px" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <marker id="arw" markerWidth="10" markerHeight="10" refX="7" refY="3" orient="auto">
+            <path d="M0,0 L7,3 L0,6 Z" fill="#2e7d32"></path>
+          </marker>
+        </defs>
+        <rect x="250" y="20" width="160" height="54" rx="10" fill="#e8f5e9" stroke="#2e7d32" stroke-width="2"></rect>
+        <text x="330" y="44" text-anchor="middle" font-size="15" fill="#1b5e20" font-weight="bold">绿肥养地</text>
+        <text x="330" y="63" text-anchor="middle" font-size="11" fill="#5a6b62">田菁/蓝花苕子翻压</text>
+
+        <rect x="40" y="150" width="160" height="54" rx="10" fill="#e0f2f1" stroke="#00695c" stroke-width="2"></rect>
+        <text x="120" y="174" text-anchor="middle" font-size="15" fill="#00695c" font-weight="bold">黑水虻虫肥</text>
+        <text x="120" y="193" text-anchor="middle" font-size="11" fill="#5a6b62">厨余→虫沙+虫体</text>
+
+        <rect x="250" y="150" width="160" height="54" rx="10" fill="#fff8e1" stroke="#f57f17" stroke-width="2"></rect>
+        <text x="330" y="174" text-anchor="middle" font-size="15" fill="#b35c00" font-weight="bold">雨水收集</text>
+        <text x="330" y="193" text-anchor="middle" font-size="11" fill="#5a6b62">蓄水池+滴灌</text>
+
+        <rect x="460" y="150" width="160" height="54" rx="10" fill="#e8f5e9" stroke="#2e7d32" stroke-width="2"></rect>
+        <text x="540" y="174" text-anchor="middle" font-size="15" fill="#1b5e20" font-weight="bold">主栽菜园</text>
+        <text x="540" y="193" text-anchor="middle" font-size="11" fill="#5a6b62">辣椒+番茄</text>
+
+        <rect x="250" y="286" width="160" height="50" rx="10" fill="#f4f9f4" stroke="#5a6b62" stroke-width="1.5" stroke-dasharray="5 4"></rect>
+        <text x="330" y="309" text-anchor="middle" font-size="13" fill="#5a6b62" font-weight="bold">红壤（调酸·改土）</text>
+        <text x="330" y="326" text-anchor="middle" font-size="10" fill="#5a6b62">土壤基底</text>
+
+        <line x1="330" y1="74" x2="330" y2="150" stroke="#2e7d32" stroke-width="2" marker-end="url(#arw)"></line>
+        <line x1="100" y1="204" x2="250" y2="177" stroke="#00695c" stroke-width="2" marker-end="url(#arw)"></line>
+        <line x1="410" y1="177" x2="460" y2="177" stroke="#f57f17" stroke-width="2" marker-end="url(#arw)"></line>
+        <line x1="330" y1="204" x2="330" y2="286" stroke="#2e7d32" stroke-width="2" marker-end="url(#arw)"></line>
+        <line x1="540" y1="204" x2="540" y2="270" stroke="#00695c" stroke-width="2" stroke-dasharray="4 3" marker-end="url(#arw)"></line>
+        <line x1="250" y1="311" x2="250" y2="220" stroke="#5a6b62" stroke-width="1.5" stroke-dasharray="4 3" marker-end="url(#arw)"></line>
+      </svg>
+    </div>
+    <p style="text-align:center;color:var(--muted);font-size:.88em">图：以红壤为基底，绿肥养地 + 黑水虻虫肥 + 雨水回用三者共同 feed 主栽菜园，产出废弃物再回到虫肥与绿肥系统，形成闭环。</p>
+  </section>
+
+  <!-- ==================== 3. 模块A 绿肥养地 ==================== -->
+  <section id="s3">
+    <h2>3. 核心模块 A — 红壤改良与绿肥养地</h2>
+
+    <h3>3.1 红壤铁律（每一步都别跳过）</h3>
+    <ul>
+      <li><b>调酸</b>：红壤 pH 偏低，种前撒施生石灰 50~75 kg/亩，翻入调节酸碱度。</li>
+      <li><b>接种</b>：所有豆科绿肥均<b>拌根瘤菌剂</b>播种，红壤缺菌时接种可让固氮翻倍。</li>
+      <li><b>养地</b>：绿肥翻压 + 腐熟农家肥/虫沙，逐步把"酸瘦黏"改成"松肥润"。</li>
+      <li><b>间隔</b>：翻压后灌水覆土，<b>2~3 周腐熟</b>后再定植下茬作物。</li>
+    </ul>
+
+    <h3>3.2 四季绿肥轮作（地不空、好清理）</h3>
+    <table>
+      <tr><th>时段</th><th>种什么</th><th>怎么清</th><th>作用</th></tr>
+      <tr><td>10月~次年3月（凉季）</td><td><b>蓝花苕子</b>（蓝叶苕子）/ 箭筈豌豆 / 毛叶苕子</td><td>3~4月现蕾初花翻压</td><td>固氮、越冬季覆盖</td></tr>
+      <tr><td>5月~8月（夏季空白）</td><td><b>田菁</b>（生长最快的翻压绿肥）</td><td>7~8月旺季直接翻压</td><td>耐酷暑暴雨、巨量鲜草</td></tr>
+      <tr><td>红壤板结重时</td><td>间作<b>肥田萝卜</b></td><td>同期翻压松土</td><td>深根破犁底层、富钾</td></tr>
+      <tr><td>常年（生草覆盖）</td><td><b>白三叶</b>地毯 / 柱花草</td><td>定植前翻一次</td><td>四季常绿、固氮、保土</td></tr>
+    </table>
+    <div class="tip-box">
+      <span class="label">💡 来宾选法</span>
+      冬季翻压绿肥优先 <b>蓝花苕子</b>（华南原生种、速生早发）；嫌麻烦想常年覆盖就种 <b>白三叶</b>生草地毯。
+      翻压速度排名：<b>田菁(夏) &gt; 蓝花苕子(冬) &gt; 箭筈豌豆 &gt; 紫云英</b>。
+    </div>
+  </section>
+
+  <!-- ==================== 4. 模块B 主栽作物 ==================== -->
+  <section id="s4">
+    <h2>4. 核心模块 B — 主栽作物管理</h2>
+
+    <h3>4.1 茬口总表（来宾双茬制）</h3>
+    <table>
+      <tr><th>作物</th><th>春茬播种</th><th>春茬定植</th><th>春茬采收</th><th>秋茬播种</th><th>秋茬定植</th><th>秋茬采收</th></tr>
+      <tr><td>哈巴纳达辣椒</td><td>1月中下旬</td><td>3月上中旬</td><td>5~8月</td><td>6月下旬</td><td>7月中下旬</td><td>9~12月</td></tr>
+      <tr><td>切诺基虎大红矮星番茄</td><td>1月中下旬</td><td>3月上中旬</td><td>5~7月（抢收）</td><td>7月（凉后）</td><td>8月</td><td>10~12月</td></tr>
+      <tr><td>紫切诺基牛排番茄</td><td>1月中下旬</td><td>3月上中旬</td><td>5~7月（抢收）</td><td>7月（凉后）</td><td>8月</td><td>10~次年1月</td></tr>
+    </table>
+    <div class="info-box">
+      <span class="label">番茄的来宾铁律</span>
+      番茄比辣椒<b>更怕高温高湿</b>，坐果临界约 <b>35°C</b>，7~8 月酷暑基本不坐果。
+      核心策略是 <b>"春茬抢在 7 月前收完，秋茬等 8 月后凉下来再种"</b>。
+    </div>
+
+    <h3>4.2 关键操作要点</h3>
+    <ul>
+      <li><b>育苗</b>：泥炭土+珍珠岩(3:1)最稳；或椰砖泡发脱盐后拌底肥。Capsicum chinense 发芽慢，提前 8~10 周播。</li>
+      <li><b>定植</b>：夜温稳 15°C 以上、高垄深栽促根、立即插架（矮星 1~1.5m，牛排 1.8~2.2m 高杆）。</li>
+      <li><b>整枝</b>：番茄单干/双干整枝；牛排无限生长留 8~10 穗打顶，每穗仅留 2~3 大果。</li>
+      <li><b>补钙防脐腐</b>：红壤偏酸易脐腐，定植时施石灰调酸 + 花果期叶面补钙 + 稳水防裂。</li>
+      <li><b>留种</b>：紫切诺基为传家宝可留种，需 20m 隔离或套袋防串粉，种子活力 4~6 年。</li>
+      <li><b>采收</b>：辣椒等完熟转橙再采（风味最佳）；牛排番茄紫黑+绿肩为熟、转色期即采轻放。</li>
+    </ul>
+  </section>
+
+  <!-- ==================== 5. 模块C 水管理 ==================== -->
+  <section id="s5">
+    <h2>5. 核心模块 C — 水管理</h2>
+    <div class="info-box">
+      <span class="label">旱片背景</span>
+      来宾是"桂中旱片"，虽已通桂中治旱工程，但<b>地块未必都在灌区</b>，且 10~3 月为旱季、4~8 月又易涝。
+      水管理的核心是 <b>"集、蓄、节、排"四字</b>。
+    </div>
+    <h3>5.1 集雨与蓄水</h3>
+    <ul>
+      <li>棚面/屋面雨水引入<b>蓄水池或集雨罐</b>（按 20~30 m³/亩 配置）。</li>
+      <li>若在桂中治旱灌区辐射内，优先接渠水，旱季灌溉无忧。</li>
+      <li>沟塘连通思路借鉴本地"互联互通水网"，园区周边挖排水蓄渗沟。</li>
+    </ul>
+    <h3>5.2 节水灌溉</h3>
+    <ul>
+      <li><b>滴灌/微喷</b>为主，配合水肥一体化（施肥灌溉同步），省水 30~50%。</li>
+      <li>夏季高温期<b>清晨或傍晚</b>浇水，避免正午高温伤根。</li>
+      <li>覆盖<b>秸秆/白三叶生草</b>减少蒸发，保墒又养地。</li>
+    </ul>
+    <h3>5.3 防涝排水</h3>
+    <ul>
+      <li><b>高垄栽培</b>（畦高 15~20cm）+ 三沟配套（厢沟、腰沟、围沟），暴雨不积水。</li>
+      <li>4~8 月雨季提前清沟，黑水虻区与堆肥区垫高防淹。</li>
+    </ul>
+  </section>
+
+  <!-- ==================== 6. 模块D 黑水虻 ==================== -->
+  <section id="s6">
+    <h2>6. 核心模块 D — 黑水虻虫肥循环</h2>
+    <h3>6.1 为什么用它</h3>
+    <ul>
+      <li>处理厨余/菜叶 <b>减重率约 61%、除臭率超 90%</b>，虫体粗蛋白约 42%（可喂禽鱼）。</li>
+      <li><b>虫沙</b>（粪砂）偏碱、含钙，符合 NY 525 有机肥标准——正好补红壤缺的钙、部分中和酸。</li>
+      <li>是"虫体肥"里最高效的路线，远胜收集蚊虫尸体（量太小）。</li>
+    </ul>
+    <h3>6.2 来宾养殖参数</h3>
+    <table>
+      <tr><th>参数</th><th>适宜值</th><th>来宾注意</th></tr>
+      <tr><td>最适温度</td><td>28~32°C</td><td>7~8 月超 35°C 受抑→遮阴；1 月低于 15°C 休眠→保温棚</td></tr>
+      <tr><td>基质湿度</td><td>约 70%</td><td>雨季防潮、旱季喷雾保湿</td></tr>
+      <tr><td>投料厚度</td><td>≤5 cm</td><td>少量多次、每天翻堆防臭</td></tr>
+      <tr><td>禁喂</td><td>辛辣/高盐/肉类/猫狗粪</td><td>粘蚊纸等带胶物不可入料</td></tr>
+    </table>
+    <h3>6.3 利用方式</h3>
+    <ul>
+      <li><b>虫沙</b>：作基肥混入定植沟，配合生石灰调酸，是番茄防脐腐的上好钙源。</li>
+      <li><b>虫体</b>：煮熟喂鸡鸭鱼，蛋白回流到农场（若养禽）。</li>
+      <li><b>残渣</b>：未吃完的料继续堆肥，腐熟后回田。</li>
+    </ul>
+  </section>
+
+  <!-- ==================== 7. 模块E 生物防治 ==================== -->
+  <section id="s7">
+    <h2>7. 核心模块 E — 生物防治与伴生种植</h2>
+    <ul>
+      <li><b>万寿菊</b>：根系分泌物抑根结线虫，番茄/辣椒地块周边点种，天然"防线"。</li>
+      <li><b>间作蒜苗/葱</b>：气味驱避蚜虫、红蜘蛛。</li>
+      <li><b>蜜源花带</b>（万寿菊、波斯菊）：招引瓢虫、草蛉、食蚜蝇等天敌。</li>
+      <li><b>白三叶生草</b>：为蜘蛛、步甲提供栖息地，抑制地表害虫。</li>
+      <li><b>黄蓝板 + 性诱剂</b>：虫口密度监测与压低，化学农药仅作底线。</li>
+      <li><b>轮作防病</b>：茄科不与同科连作，绿肥（豆科）后接水稻/玉米更稳。</li>
+    </ul>
+    <div class="tip-box">
+      <span class="label">💡 高湿防病</span>
+      来宾 4~8 月高湿，<b>避雨棚 + 宽行通风 + 不叶面久湿</b>是防病（晚疫病、青枯、脐腐）第一道防线，比打药有效得多。
+    </div>
+  </section>
+
+  <!-- ==================== 8. 模块F 设施 ==================== -->
+  <section id="s8">
+    <h2>8. 核心模块 F — 避雨遮阳设施（三件套）</h2>
+    <p>针对来宾"夏热+雨季高湿"，菜园标配三件套：</p>
+    <div class="quick-ref-grid">
+      <div><b>① 简易避雨棚</b>：竹木/钢管拱棚覆膜，雨季防涝防病的核心。</div>
+      <div><b>② 遮阳网</b>：7~8 月覆盖，降温 3~5°C，保番茄坐果、减日灼。</div>
+      <div><b>③ 高垄排水</b>：畦高 15~20cm + 三沟，暴雨不淹根。</div>
+      <div><b>④ 育苗小拱棚</b>（附）：冬季保温、早春提早定植。</div>
+    </div>
+  </section>
+
+  <!-- ==================== 9. 衔接接口 ==================== -->
+  <section id="s9">
+    <h2>9. 与本地大产业的衔接接口</h2>
+    <p>小农场闭环之外，可借势来宾成熟产业进一步降本增效：</p>
+    <table>
+      <tr><th>接口</th><th>怎么接</th><th>生态收益</th></tr>
+      <tr><td>甘蔗滤泥/糖蜜生物肥</td><td>糖厂购滤泥堆沤后作基肥</td><td>碱性有机质，补红壤钙、改良结构</td></tr>
+      <tr><td>桑蚕（蚕沙）</td><td>蚕沙堆腐后入田</td><td>富氮有机肥，闭合桑园养分</td></tr>
+      <tr><td>稻渔综合种养</td><td>园边低洼处挖稻虾塘</td><td>虾粪肥田、一水多用、增收</td></tr>
+      <tr><td>蔗梢/秸秆</td><td>粉碎覆盖或喂虻/饲畜</td><td>减焚烧、保墒、回养分</td></tr>
+    </table>
+    <div class="info-box">
+      <span class="label">提示</span>
+      这些是"可选外挂"。先跑通内核（菜园+绿肥+黑水虻+水循环）再按需接入，避免一开始摊子过大。
+    </div>
+  </section>
+
+  <!-- ==================== 10. 茬口日历 ==================== -->
+  <section id="s10">
+    <h2>10. 全年茬口日历（来宾版）</h2>
+    <div class="timeline">
+      <div class="timeline-item"><div class="time">10~12月</div><div class="desc">凉季绿肥（蓝花苕子/箭筈豌豆）播种；收集雨水备旱季；整地撒生石灰调酸</div></div>
+      <div class="timeline-item"><div class="time">1月中下旬</div><div class="desc">春茬辣椒、番茄室内催芽播种（chinense 提前 8~10 周）；绿肥越冬季缓慢生长</div></div>
+      <div class="timeline-item"><div class="time">2~3月</div><div class="desc">苗期管理、假植；绿肥返青旺长；<b>3~4月现蕾初花翻压</b>，灌水腐熟 2~3 周</div></div>
+      <div class="timeline-item"><div class="time">3月上中旬</div><div class="desc">春茬定植（夜温稳 15°C+）、插架、覆膜；黑水虻春繁启动</div></div>
+      <div class="timeline-item"><div class="time">4~6月</div><div class="desc">开花坐果→膨大采收（辣椒 5 月起、番茄 5~7 月抢收）；避雨棚防 4~8 月雨</div></div>
+      <div class="timeline-item"><div class="time">5~7月</div><div class="desc">绿肥休闲地种<b>田菁</b>，夏壮翻压；7~8 月拉遮阳网、控温保坐果</div></div>
+      <div class="timeline-item"><div class="time">6月下旬~7月</div><div class="desc">秋茬辣椒、番茄播种；等 8 月后凉下来定植（避 35°C 坐果临界）</div></div>
+      <div class="timeline-item"><div class="time">8~9月</div><div class="desc">秋茬定植；夏季翻压田菁后补虫沙/有机肥；雨季末清沟防涝</div></div>
+      <div class="timeline-item"><div class="time">9~12月</div><div class="desc">秋茬采收（辣椒至 12 月、牛排番茄可至次年 1 月）；留种株套袋隔离</div></div>
+      <div class="timeline-item"><div class="time">12月~次年</div><div class="desc">采收尾期；虫沙/堆肥归田；规划来年绿肥与茬口</div></div>
+    </div>
+  </section>
+
+  <!-- ==================== 11. 实施步骤 ==================== -->
+  <section id="s11">
+    <h2>11. 分阶段实施步骤</h2>
+    <h3>阶段一 · 启动期（第 1~2 月）</h3>
+    <ul>
+      <li>测土（pH、有机质），按结果定生石灰与有机肥用量。</li>
+      <li>划区、修排水沟与蓄水池，搭育苗小拱棚。</li>
+      <li>购种：哈巴纳达、切诺基虎大红矮星、紫切诺基（留种用）、绿肥种、万寿菊、根瘤菌剂。</li>
+    </ul>
+    <h3>阶段二 · 建设期（第 2~4 月）</h3>
+    <ul>
+      <li>绿肥翻压养地、施石灰调酸、整地做高垄。</li>
+      <li>建黑水虻养殖箱（半阴通风）、布滴灌管网。</li>
+      <li>春茬定植、插架、覆膜；周边点万寿菊。</li>
+    </ul>
+    <h3>阶段三 · 运行期（第 4 月起循环）</h3>
+    <ul>
+      <li>按茬口日历滚动生产；厨余菜叶入虻箱、虫沙回田。</li>
+      <li>夏遮阴、防涝；秋茬等凉后定植。</li>
+      <li>年末复盘产量、虫沙产量、用水，优化次年方案。</li>
+    </ul>
+  </section>
+
+  <!-- ==================== 12. 投入收益 ==================== -->
+  <section id="s12">
+    <h2>12. 投入与收益估算（参考）</h2>
+    <table>
+      <tr><th>项目</th><th>一次性投入</th><th>年运维</th><th>收益/节支</th></tr>
+      <tr><td>设施（棚/架/滴灌/水池）</td><td>中（竹木简版更低）</td><td>低</td><td>多年复用、降药肥</td></tr>
+      <tr><td>种子+绿肥种+菌剂</td><td>低</td><td>低（留种后趋零）</td><td>自留种省钱</td></tr>
+      <tr><td>有机肥/虫沙替代化肥</td><td>—</td><td>低（自产）</td><td>减化肥 30~50%</td></tr>
+      <tr><td>黑水虻（处理厨余）</td><td>低</td><td>极低</td><td>省垃圾清运、产肥</td></tr>
+      <tr><td>蔬菜产出</td><td>—</td><td>—</td><td>家庭自给+余量变现</td></tr>
+    </table>
+    <div class="tip-box">
+      <span class="label">💡 经济逻辑</span>
+      本方案收益不只在卖菜，更在<b>把废弃物变肥、把买来的投入变自产</b>：虫沙+绿肥+留种三者叠加，可显著降低长年化肥农药与购种开支。
+    </div>
+  </section>
+
+  <!-- ==================== 13. 风险对策 ==================== -->
+  <section id="s13">
+    <h2>13. 风险与对策</h2>
+    <table>
+      <tr><th>风险</th><th>来宾表现</th><th>对策</th></tr>
+      <tr><td>夏高温落花</td><td>7~8 月 38.9°C，番茄不坐果</td><td>遮阳网降温、春茬抢收、秋茬等凉</td></tr>
+      <tr><td>雨季涝害/病害</td><td>4~8 月集中降水</td><td>避雨棚+高垄+三沟+宽行通风</td></tr>
+      <tr><td>冬春干旱</td><td>10~3 月旱季，桂中旱片</td><td>集雨蓄水+滴灌+生草覆盖保墒</td></tr>
+      <tr><td>红壤偏酸缺素</td><td>脐腐、黄化</td><td>生石灰调酸+虫沙/绿肥补钙镁</td></tr>
+      <tr><td>偶发寒潮</td><td>1 月 -3~1°C 短期</td><td>育苗棚/小拱棚保温，绿肥短期停长正常</td></tr>
+      <tr><td>虫肥臭/逃逸</td><td>高温高湿易臭</td><td>薄层投料、日翻、通风、防逃收蛹设计</td></tr>
+      <tr><td>销路/余量</td><td>自产过剩</td><td>邻里预售、加工（干制/酱）、留种交换</td></tr>
+    </table>
+  </section>
+
+  <!-- ==================== 14. 速查表 ==================== -->
+  <section id="s14">
+    <h2>14. 速查参考表</h2>
+    <div class="quick-ref-grid">
+      <div><b>年均温</b>：20.7°C</div>
+      <div><b>无霜期</b>：约 331 天</div>
+      <div><b>年降水量</b>：1360mm（4~8月占70%）</div>
+      <div><b>土壤</b>：红壤偏酸黏重</div>
+      <div><b>治水工程</b>：桂中治旱（594km渠系）</div>
+      <div><b>红壤铁律</b>：调酸+接菌+养地+隔2~3周</div>
+      <div><b>冬绿肥首选</b>：蓝花苕子（华南原生）</div>
+      <div><b>夏绿肥首选</b>：田菁（最快翻压）</div>
+      <div><b>四季覆盖</b>：白三叶生草</div>
+      <div><b>番茄坐果临界</b>：约 35°C</div>
+      <div><b>黑水虻适温</b>：28~32°C（15°C休眠/35°C受抑）</div>
+      <div><b>虫沙特性</b>：偏碱含钙，补红壤</div>
+      <div><b>菜园三件套</b>：避雨棚+遮阳网+高垄</div>
+      <div><b>春茬定植</b>：3月上中旬（夜温15°C+）</div>
+      <div><b>秋茬定植</b>：8月后（等凉）</div>
+      <div><b>留种隔离</b>：20m 或套袋</div>
+    </div>
+    <div class="info-box">
+      <span class="label">一句话总纲</span>
+      来宾种生态农业，成败在 <b>"夏遮阴、涝排水、旱补水、酸先调"</b>；
+      用 <b>绿肥养地 + 黑水虻虫肥 + 雨水回用</b> 把地力与废弃闭环，
+      辣椒番茄按双茬走、牛排番茄留种自循环——小农场也能旱片变丰片。
+    </div>
+  </section>
+
+  <footer>
+    生态农业方案（广西来宾适配版）· 整合自本仓库五份单品/专题手册<br>
+    仅供规划参考，请结合地块实测与当年气候灵活调整
+  </footer>
+
+</div>
+</body>
+</html>
