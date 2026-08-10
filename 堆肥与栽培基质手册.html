@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>堆肥与栽培基质手册</title>
+<style>
+  :root {
+    --soil-deep: #4e342e;
+    --soil-mid: #795548;
+    --soil-light: #a1887f;
+    --soil-bg: #f1ece7;
+    --leaf-deep: #33691e;
+    --leaf-mid: #558b2f;
+    --leaf-light: #c5e1a5;
+    --compost: #6d4c41;
+    --compost-light: #bcaaa4;
+    --text: #2e2e2e;
+    --text-light: #555;
+    --card-bg: #ffffff;
+    --border: #e0e0e0;
+    --warn-bg: #fffde7;
+    --warn-border: #fdd835;
+    --tip-bg: #e8f5e9;
+    --tip-border: #66bb6a;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: "PingFang SC", "Microsoft YaHei", "Segoe UI", sans-serif;
+    background: #fafafa; color: var(--text); line-height: 1.8; padding: 0;
+  }
+  .cover {
+    background: linear-gradient(135deg, var(--soil-deep) 0%, var(--soil-mid) 55%, var(--compost-light) 100%);
+    color: #fff; padding: 60px 40px 50px; text-align: center; position: relative; overflow: hidden;
+  }
+  .cover::after { content: ""; position: absolute; bottom: -30px; right: -30px; width: 200px; height: 200px; background: rgba(255,255,255,0.10); border-radius: 50%; }
+  .cover::before { content: ""; position: absolute; top: -40px; left: -40px; width: 160px; height: 160px; background: rgba(255,255,255,0.10); border-radius: 50%; }
+  .cover h1 { font-size: 2.4em; margin-bottom: 12px; letter-spacing: 2px; }
+  .cover .subtitle { font-size: 1.1em; opacity: 0.92; margin-bottom: 20px; }
+  .cover .meta { display: inline-block; background: rgba(255,255,255,0.18); padding: 8px 24px; border-radius: 30px; font-size: 0.9em; }
+  .container { max-width: 820px; margin: 0 auto; padding: 30px 20px 60px; }
+
+  .toc { background: var(--card-bg); border-radius: 12px; padding: 24px 30px; margin-bottom: 30px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+  .toc h2 { font-size: 1.2em; color: var(--soil-deep); margin-bottom: 12px; border-left: 4px solid var(--soil-mid); padding-left: 10px; }
+  .toc ol { padding-left: 20px; } .toc li { margin: 6px 0; } .toc a { color: var(--soil-mid); text-decoration: none; } .toc a:hover { text-decoration: underline; }
+
+  .intro-box { background: var(--soil-bg); border-left: 5px solid var(--soil-mid); border-radius: 0 12px 12px 0; padding: 20px 24px; margin-bottom: 30px; }
+  .intro-box h3 { color: var(--soil-mid); margin-bottom: 8px; }
+  .intro-box p { color: var(--text-light); font-size: 0.95em; }
+
+  section { background: var(--card-bg); border-radius: 12px; padding: 30px; margin-bottom: 24px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+  section h2 { font-size: 1.45em; color: var(--soil-deep); margin-bottom: 16px; padding-bottom: 10px; border-bottom: 2px solid var(--soil-bg); display: flex; align-items: center; gap: 10px; }
+  section h2 .num { background: var(--soil-mid); color: #fff; width: 34px; height: 34px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 0.7em; flex-shrink: 0; }
+  section h3 { font-size: 1.1em; color: var(--leaf-mid); margin: 18px 0 10px; }
+  section p { margin-bottom: 12px; }
+  section ul, section ol { padding-left: 22px; margin-bottom: 12px; } section li { margin-bottom: 6px; }
+
+  .tip-box { background: var(--tip-bg); border: 1px solid var(--tip-border); border-radius: 8px; padding: 14px 18px; margin: 14px 0; font-size: 0.93em; }
+  .tip-box .label { font-weight: 700; color: var(--leaf-deep); display: block; margin-bottom: 4px; }
+  .warn-box { background: var(--warn-bg); border: 1px solid var(--warn-border); border-radius: 8px; padding: 14px 18px; margin: 14px 0; font-size: 0.93em; }
+  .warn-box .label { font-weight: 700; color: #f57f17; display: block; margin-bottom: 4px; }
+
+  table { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 0.93em; }
+  th { background: var(--soil-mid); color: #fff; padding: 10px 12px; text-align: left; font-weight: 600; }
+  td { padding: 10px 12px; border-bottom: 1px solid var(--border); }
+  tr:nth-child(even) td { background: var(--soil-bg); }
+
+  .timeline { position: relative; padding-left: 30px; margin: 20px 0; }
+  .timeline::before { content: ""; position: absolute; left: 10px; top: 0; bottom: 0; width: 3px; background: var(--compost-light); border-radius: 2px; }
+  .timeline-item { position: relative; margin-bottom: 18px; }
+  .timeline-item::before { content: ""; position: absolute; left: -27px; top: 6px; width: 13px; height: 13px; border-radius: 50%; background: var(--soil-mid); border: 3px solid #fff; box-shadow: 0 0 0 2px var(--soil-mid); }
+  .timeline-item .time { font-weight: 700; color: var(--soil-deep); font-size: 0.95em; }
+  .timeline-item .desc { color: var(--text-light); font-size: 0.92em; }
+
+  .region-section { background: linear-gradient(135deg, #efe7e1 0%, var(--soil-bg) 100%); border: 2px solid var(--compost-light); }
+  .region-section h2 { color: #4e342e; border-bottom-color: var(--compost-light); }
+  .region-section h2 .num { background: var(--soil-mid); }
+  .region-banner { background: var(--soil-mid); color: #fff; display: inline-block; padding: 4px 14px; border-radius: 20px; font-size: 0.85em; font-weight: 700; margin-bottom: 14px; }
+  .toc .region-link { background: var(--soil-bg); border: 1px solid var(--compost-light); border-radius: 8px; padding: 8px 12px; margin-bottom: 10px; font-weight: 700; }
+  .toc .region-link a { color: #4e342e; }
+
+  .quick-ref { background: var(--soil-bg); border-radius: 12px; padding: 24px 28px; margin-top: 24px; }
+  .quick-ref h2 { color: var(--soil-deep); border-bottom: none; margin-bottom: 14px; }
+  .quick-ref-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px 24px; }
+  .quick-ref-grid div { font-size: 0.92em; } .quick-ref-grid b { color: var(--soil-deep); }
+
+  footer { text-align: center; color: var(--text-light); font-size: 0.85em; padding: 20px; }
+  @media (max-width: 600px) {
+    .cover h1 { font-size: 1.8em; }
+    section { padding: 20px; }
+    .quick-ref-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ==================== 封面 ==================== -->
+<div class="cover">
+  <h1>堆肥与栽培基质手册</h1>
+  <p class="subtitle">黑水虻堆肥 · 商品基质 · 虫体物料 · 广西来宾适配版</p>
+  <span class="meta">主题：堆肥/基质/虫肥 · 适配地区：广西来宾 · 种菜（番茄·辣椒）配套</span>
+</div>
+
+<div class="container">
+
+  <!-- ==================== 简介 ==================== -->
+  <div class="intro-box">
+    <h3>关于"堆肥与基质"</h3>
+    <p>前面三份手册讲"怎么种"，这份讲"土怎么养"。本手册聚焦三类材料：<b>黑水虻生物堆肥</b>（把厨余/粪污变成虫沙有机肥+虫体蛋白）、<b>商品基质</b>（泥炭土 vs 椰砖怎么选）、<b>动物性/虫体物料</b>（蚊虫尸体等能不能堆肥）。核心结论：<b>来宾红壤要肥，靠"绿肥还田 + 黑水虻虫沙 + 腐熟农家肥"三位一体；商品基质只用于育苗/盆栽，不用来改大田。</b></p>
+  </div>
+
+  <!-- ==================== 目录 ==================== -->
+  <div class="toc">
+    <h2>目录</h2>
+    <div class="region-link">📍 <a href="#laibin">广西来宾地区适配说明（气候·红壤·堆肥）</a></div>
+    <ol>
+      <li><a href="#s1">黑水虻堆肥（主章）</a>
+        <ul>
+          <li><a href="#s1a">为什么是黑水虻</a></li>
+          <li><a href="#s1b">生命周期与温度</a></li>
+          <li><a href="#s1c">养殖系统搭建</a></li>
+          <li><a href="#s1d">投喂与日常管理</a></li>
+          <li><a href="#s1e">虫沙与虫体的利用</a></li>
+          <li><a href="#s1f">来宾适配与注意</a></li>
+        </ul>
+      </li>
+      <li><a href="#s2">商品基质选择（泥炭土 vs 椰砖）</a></li>
+      <li><a href="#s3">动物性 / 虫体物料堆肥</a></li>
+      <li><a href="#s4">速查参考表</a></li>
+    </ol>
+  </div>
+
+  <!-- ==================== 来宾适配说明 ==================== -->
+  <section id="laibin" class="region-section">
+    <h2><span class="num">★</span>广西来宾地区适配说明</h2>
+    <div class="region-banner">来宾市 · 桂中 · 北回归线南缘</div>
+    <p>本章根据来宾气候与红壤数据，对堆肥与基质的选用做本地化调整。来宾<b>温暖高湿、无霜期长（约331天）</b>，是堆肥和黑水虻养殖的天然好环境；但<b>红壤偏酸黏重、冬夏温差大、旱雨季分明</b>，是操作的核心约束。</p>
+
+    <h3>一、来宾气候与土壤对堆肥的影响</h3>
+    <table>
+      <tr><th>指标</th><th>来宾数据</th><th>对堆肥/黑水虻的影响</th></tr>
+      <tr><td>年平均气温</td><td>20.7°C</td><td>温暖，堆肥易达高温、黑水虻可长季养殖</td></tr>
+      <tr><td>1月均温</td><td>10.9°C（近年实测约12.3°C）</td><td><b>偏低</b>：低于黑水虻15°C活动下限，冬季需保温或停养</td></tr>
+      <tr><td>7月均温/极端高温</td><td>28.6°C / 38.9°C</td><td><b>偏高</b>：超35°C黑水虻受抑、堆肥易过烧，需遮阴通风</td></tr>
+      <tr><td>年降水</td><td>约1360mm（4~8月占70%）</td><td>雨季堆肥防涝防臭；旱季补水促腐熟</td></tr>
+      <tr><td>主要土壤</td><td>红壤，偏酸、黏重、贫瘠</td><td>虫沙偏碱可部分中和酸；仍需生石灰调酸</td></tr>
+    </table>
+
+    <h3>二、来宾"养地"的两条路</h3>
+    <ul>
+      <li><b>大田改土</b>：绿肥（田菁/苕子，见《养地植物与绿肥手册》）+ 腐熟农家肥 + 黑水虻虫沙，配合生石灰调酸</li>
+      <li><b>育苗/盆栽</b>：泥炭土或椰砖作基质（见第2章），不进大田</li>
+    </ul>
+
+    <div class="warn-box">
+      <span class="label">⚠ 红壤铁律</span>
+      无论虫沙还是农家肥，红壤上<b>必须配合生石灰调酸（pH 调至 6.0~6.8）</b>；虫沙虽偏碱，单独用量大时也只调一部分酸，不能全靠它。番茄、辣椒需钙多，虫沙含钙正好帮防脐腐病。
+    </div>
+  </section>
+
+  <!-- ==================== 1. 黑水虻 ==================== -->
+  <section id="s1">
+    <h2><span class="num">1</span>黑水虻堆肥（主章）</h2>
+    <p>黑水虻（<i>Hermetia illucens</i>，英文 Black Soldier Fly，简称 BSF）是一种腐食性蝇类。它的<b>幼虫</b>能高效吞食厨余、畜禽粪便、果蔬烂料，把"废"变成两部分宝贝：<b>虫沙（虫粪）</b>——优质有机肥；<b>虫体</b>——高蛋白饲料（粗蛋白约42%）。成虫不取食、不叮人、只喝水，比家蝇干净得多，是公认的"有机固废生物转化明星"。</p>
+
+    <h3 id="s1a">1.1 为什么是黑水虻</h3>
+    <table>
+      <tr><th>能力</th><th>数据/表现</th><th>对你的价值</th></tr>
+      <tr><td>减重率</td><td>处理鸡粪减重约61%</td><td>厨余体积大缩，臭味大减</td></tr>
+      <tr><td>养分回收</td><td>减少粪便30%~50%氮、61%~70%磷</td><td>养分锁进虫沙和虫体，不流失</td></tr>
+      <tr><td>除臭灭菌</td><td>除臭率超90%，降低大肠杆菌等病原菌</td><td>来宾高湿易臭，正好解决</td></tr>
+      <tr><td>虫体营养</td><td>粗蛋白约42%、粗脂肪约35%</td><td>喂鸡鸭鱼，省饲料钱</td></tr>
+      <tr><td>虫沙品质</td><td>符合《有机肥料》NY 525 标准，偏碱、富含有机质</td><td>直接肥田，红壤上还能调部分酸</td></tr>
+    </table>
+
+    <h3 id="s1b">1.2 生命周期与温度</h3>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="time">卵 → 孵化</div>
+        <div class="desc">25~30°C、湿度60%~65% 下约 2~4 天孵出幼虫；夏由来宾野外诱引约2天</div>
+      </div>
+      <div class="timeline-item">
+        <div class="time">幼虫暴食期 · 约 7~14 天</div>
+        <div class="desc">3龄后食量最大，日采食可达自身体重数十倍；是"吃废料"的主力阶段</div>
+      </div>
+      <div class="timeline-item">
+        <div class="time">预蛹 · 出现个别预蛹约第 9~11 天</div>
+        <div class="desc">老熟幼虫避光趋干、往外爬；此时分离虫体与虫沙最佳</div>
+      </div>
+      <div class="timeline-item">
+        <div class="time">蛹 → 成虫</div>
+        <div class="desc">化蛹后羽化为成虫；成虫不取食、只喝水，交配产卵后死亡，生命周期约28~30天</div>
+      </div>
+    </div>
+    <ul>
+      <li><b>最适生长温度</b>：28~32°C（效率高峰可到35~40°C，但家庭养殖稳住28~32°C最安全）</li>
+      <li><b>低于15°C</b>：幼虫休眠、代谢慢，分解几乎停；<b>高于35°C</b>：受抑制、甚至热死</li>
+      <li><b>基质湿度</b>：约 70%（手握成团、松手散开）</li>
+    </ul>
+
+    <h3 id="s1c">1.3 养殖系统搭建（家庭/小农版）</h3>
+    <ul>
+      <li><b>容器</b>：带盖塑料箱/桶，盖留透气孔或蒙纱网；养殖料层<b>厚度不超过5cm</b>（太厚积热闷死幼虫）</li>
+      <li><b>虫源</b>：网购合规种虫卵/幼虫（注意活体交易合规性）；或夏秋<b>野外诱引</b>——敞口放厨余、盖不密封，2~3天招来野生黑水虻产卵</li>
+      <li><b>防逃防臭</b>：盆壁四周撒一层木屑粉/麸皮吸湿，阻止幼虫"逃家"乱爬；养殖区通风、每天翻料散味</li>
+      <li><b>收蛹设计</b>：预蛹会爬向干燥处，可在箱壁设斜坡/收虫槽自动收集，或人工筛分</li>
+      <li><b>来宾温控</b>：冬季用泡沫箱+黑膜/加热垫保温至15°C以上；夏季遮阴、置于通风阴凉处，避免38.9°C暴晒</li>
+    </ul>
+
+    <h3 id="s1d">1.4 投喂与日常管理</h3>
+    <ul>
+      <li><b>能喂</b>：剩饭、烂果、菜叶、果皮、畜禽粪便（鸡粪最佳）、豆腐渣、麦麸</li>
+      <li><b>少喂/不喂</b>：骨头、坚硬外壳、高油高盐厨余（消化率低、降效率）；哺乳类/猫狗粪便禁喂（人畜共患病风险）</li>
+      <li><b>投喂节奏</b>：少量多次，吃光再补；料面变松散无黏性即补料</li>
+      <li><b>每天翻堆</b>：散水气、热气、臭气，是除臭关键</li>
+      <li><b>密度</b>：参考研究，100g 鸡粪配约100条3日龄幼虫为较优比例；家庭凭观察调整，宁稀勿挤</li>
+    </ul>
+
+    <h3 id="s1e">1.5 虫沙与虫体的利用</h3>
+    <table>
+      <tr><th>产物</th><th>怎么用</th><th>来宾适配提示</th></tr>
+      <tr><td><b>虫沙（虫粪）</b></td><td>深褐疏松无臭，直接撒施作基肥/追肥；也可再堆沤腐熟后用</td><td>偏碱、含钙镁，红壤上部分调酸、帮番茄防脐腐；仍配生石灰调酸</td></tr>
+      <tr><td><b>鲜虫体</b></td><td>喂鸡、鸭、鱼、龟等；或60~70°C烘干制虫干/虫粉替代部分豆粕鱼粉</td><td>自家有禽鱼最划算；不收集就让其化蛹羽化（注意引鸟）</td></tr>
+      <tr><td><b>残渣/残基</b></td><td>富含有机质，混土作肥或继续堆肥</td><td>别浪费，全回田</td></tr>
+    </table>
+
+    <h3 id="s1f">1.6 来宾适配与注意事项</h3>
+    <div class="tip-box">
+      <span class="label">💡 来宾养黑水虻三句话</span>
+      ① 气候总体极适合（温暖长季），<b>但1月要保温、7~8月要遮阴</b>；② 高湿环境<b>通风+每天翻堆</b>是除臭命门；③ 虫沙是红壤好肥，<b>配生石灰调酸后施番茄辣椒</b>。
+    </div>
+    <div class="warn-box">
+      <span class="label">⚠ 几个红线</span>
+      <ul style="margin:0">
+        <li>不建议纯家庭室内养（一定有味，需每天管理）；放院角、棚下、通风处更现实</li>
+        <li>不喂人畜粪便混高油高盐；不喂猫狗等肉食动物粪便</li>
+        <li>活体买卖注意合规；自家诱引最省事</li>
+        <li>黑水虻不是"万能厨余机"：骨头硬壳油脂处理不了，别硬塞</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ==================== 2. 商品基质 ==================== -->
+  <section id="s2">
+    <h2><span class="num">2</span>商品基质选择（泥炭土 vs 椰砖）</h2>
+    <p>两者都是<b>商品基质</b>，用于育苗、盆栽或基质栽培，<b>不是改良大田红壤的材料</b>。选哪个看用途。</p>
+    <table>
+      <tr><th>维度</th><th>泥炭土</th><th>椰砖（椰糠）</th></tr>
+      <tr><td>来源</td><td>泥炭沼（挖 peat）</td><td>椰子外壳废渣压制</td></tr>
+      <tr><td>环保</td><td>❌ 不可再生、破坏湿地碳汇、贵</td><td>✅ 农林废料、可再生、便宜量大</td></tr>
+      <tr><td>pH</td><td>酸（3.5~4.5）</td><td>近中性微酸（5.5~6.5）</td></tr>
+      <tr><td>保水保肥</td><td>强（阳离子交换量高）</td><td>中等，保肥差、易流失养分</td></tr>
+      <tr><td>透气排水</td><td>一般，须混珍珠岩/蛭石</td><td>好，不易板结</td></tr>
+      <tr><td>隐患</td><td>偏酸需调；粉尘大</td><td>含<b>盐+高钾</b>须脱盐冲洗；未消毒易带菌</td></tr>
+      <tr><td>育苗表现</td><td>发苗稳、经典配方</td><td>需补肥、处理后才稳</td></tr>
+    </table>
+
+    <h3>2.1 对你的具体建议</h3>
+    <ul>
+      <li><b>育苗（番茄/辣椒）</b>：泥炭土 + 珍珠岩（3:1）最稳，发芽整齐苗壮；椰砖也可，但要先<b>泡发冲洗脱盐、拌多菌灵消毒、混有机肥/底肥补肥</b>，否则苗弱</li>
+      <li><b>来宾红壤大田</b>：两者都<b>不该</b>用来改土——红壤偏酸，加泥炭更酸；大面积用椰砖不划算。<b>绿肥+农家肥+虫沙+生石灰</b>才是正道</li>
+      <li><b>盆栽/阳台</b>：<b>椰砖</b>性价比环保双胜，记住三件事——泡发多冲去盐、混1/3园土或有机肥补肥力、每月补点钙镁（高钾拮抗钙镁，番茄怕脐腐）</li>
+      <li><b>买椰砖</b>：选标"脱盐"、发酵好的，便宜货盐分高没消毒</li>
+    </ul>
+    <div class="tip-box">
+      <span class="label">💡 一句话选法</span>
+      育苗求稳用<b>泥炭土+珍珠岩</b>；量大/环保/盆栽用<b>椰砖（务必脱盐消毒补肥）</b>；改大田红壤两者都不用。
+    </div>
+  </section>
+
+  <!-- ==================== 3. 动物性/虫体物料 ==================== -->
+  <section id="s3">
+    <h2><span class="num">3</span>动物性 / 虫体物料堆肥</h2>
+    <p>蚊虫尸体、骨头、血粉、鱼杂等属"动物性物料"，含氮高、分解慢且易惹蝇臭，处理有别于植物绿肥。</p>
+
+    <h3>3.1 蚊虫尸体</h3>
+    <ul>
+      <li>属含氮有机物（蛋白+几丁质），<b>能堆肥</b>，但单只仅2~5毫克，几百只才一两克，<b>贡献极小，不值得专门收集</b></li>
+      <li>卫生：虫体死亡后病原体很快失活；<b>充分腐熟堆肥（55~65°C持续数天）能杀灭</b>绝大多数。家庭堆肥未必达高温，所以少量尸体<b>随手丢堆肥或浅埋</b>即可</li>
+      <li>来源区分：灭蚊灯干尸、电蚊拍落的 ✅ 可堆肥；<b>粘蚊纸（有胶化学物）❌ 当垃圾扔</b></li>
+    </ul>
+
+    <h3>3.2 其他动物性物料</h3>
+    <table>
+      <tr><th>物料</th><th>能不能堆肥</th><th>要点</th></tr>
+      <tr><td>鱼杂/肉渣</td><td>能，但易臭招蝇</td><td>深埋、盖厚土/木屑，或喂黑水虻（少量）</td></tr>
+      <tr><td>血粉/骨粉</td><td>能，优质氮/磷钙源</td><td>买商品粉碎好的，少量拌土，红壤补钙正好</td></tr>
+      <tr><td>蛋壳</td><td>能</td><td>晒干碾碎，补钙，红壤友好</td></tr>
+      <tr><td>猫狗等肉食动物粪便</td><td>❌ 不堆肥</td><td>人畜共患病风险，禁止入菜地堆肥</td></tr>
+    </table>
+
+    <div class="warn-box">
+      <span class="label">⚠ 动物性物料铁律</span>
+      动物性物料<b>必须深埋或充分高温腐熟</b>，浅露必招蝇臭；<b>别和绿肥混一堆</b>敞开堆。真想高效利用虫体肥，<b>养黑水虻</b>比收集蚊虫尸体强万倍。
+    </div>
+
+    <h3>3.3 顺带：堆肥本身也是灭蚊一环</h3>
+    <p>来宾高温高湿，堆肥若<b>不覆盖、不翻堆、堆湿垃圾招蝇</b>，反而成蚊蝇源头。记住：<b>堆肥盖土/黑膜、定期翻堆、容器不积水</b>——这比收集蚊虫尸体做肥有用得多。</p>
+  </section>
+
+  <!-- ==================== 4. 速查表 ==================== -->
+  <section id="s4">
+    <h2><span class="num">4</span>速查参考表</h2>
+    <div class="quick-ref">
+      <h2>关键参数一览</h2>
+      <div class="quick-ref-grid">
+        <div><b>黑水虻最适温</b>：28~32°C</div>
+        <div><b>活动下限</b>：15°C（休眠）</div>
+        <div><b>受抑上限</b>：35°C（来宾7~8月需遮阴）</div>
+        <div><b>基质湿度</b>：约70%</div>
+        <div><b>料层厚度</b>：≤5cm（防积热）</div>
+        <div><b>生命周期</b>：约28~30天</div>
+        <div><b>虫体粗蛋白</b>：约42%</div>
+        <div><b>鸡粪减重率</b>：约61%</div>
+        <div><b>虫沙标准</b>：符合NY 525有机肥</div>
+        <div><b>虫沙性质</b>：偏碱、富钙镁</div>
+        <div><b>泥炭土 pH</b>：3.5~4.5（酸）</div>
+        <div><b>椰砖 pH</b>：5.5~6.5（须脱盐）</div>
+        <div><b>红壤调酸</b>：虫沙+生石灰，pH 6.0~6.8</div>
+        <div><b>来宾禁喂</b>：骨头/硬壳/高油/猫狗粪</div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>堆肥与栽培基质手册（广西来宾适配版）· 黑水虻数据综合农业技术推广资料与公开研究，实际操作请结合当地条件</p>
+    <p>配套手册：哈巴纳达辣椒 · 切诺基虎大红矮星番茄 · 紫切诺基牛排番茄 · 养地植物与绿肥</p>
+  </footer>
+
+</div>
+</body>
+</html>
