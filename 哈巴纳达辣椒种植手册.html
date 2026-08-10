@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>哈巴纳达辣椒种植手册</title>
+<style>
+  :root {
+    --green-deep: #2d5016;
+    --green-mid: #4a7c2e;
+    --green-light: #8bc34a;
+    --green-bg: #f1f8e9;
+    --orange: #ff8c00;
+    --orange-light: #ffb74d;
+    --orange-bg: #fff3e0;
+    --brown: #5d4037;
+    --text: #2e2e2e;
+    --text-light: #555;
+    --card-bg: #ffffff;
+    --border: #e0e0e0;
+    --warn-bg: #fffde7;
+    --warn-border: #fdd835;
+    --tip-bg: #e8f5e9;
+    --tip-border: #66bb6a;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: "PingFang SC", "Microsoft YaHei", "Segoe UI", sans-serif;
+    background: #fafafa;
+    color: var(--text);
+    line-height: 1.8;
+    padding: 0;
+  }
+  .cover {
+    background: linear-gradient(135deg, var(--green-deep) 0%, var(--green-mid) 50%, var(--green-light) 100%);
+    color: #fff;
+    padding: 60px 40px 50px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .cover::after {
+    content: "";
+    position: absolute;
+    bottom: -30px; right: -30px;
+    width: 200px; height: 200px;
+    background: rgba(255,140,0,0.15);
+    border-radius: 50%;
+  }
+  .cover::before {
+    content: "";
+    position: absolute;
+    top: -40px; left: -40px;
+    width: 160px; height: 160px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 50%;
+  }
+  .cover h1 { font-size: 2.4em; margin-bottom: 12px; letter-spacing: 2px; }
+  .cover .subtitle { font-size: 1.1em; opacity: 0.9; margin-bottom: 20px; }
+  .cover .meta {
+    display: inline-block;
+    background: rgba(255,255,255,0.15);
+    padding: 8px 24px;
+    border-radius: 30px;
+    font-size: 0.9em;
+  }
+  .container { max-width: 820px; margin: 0 auto; padding: 30px 20px 60px; }
+
+  .toc {
+    background: var(--card-bg);
+    border-radius: 12px;
+    padding: 24px 30px;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  }
+  .toc h2 { font-size: 1.2em; color: var(--green-deep); margin-bottom: 12px; border-left: 4px solid var(--green-mid); padding-left: 10px; }
+  .toc ol { padding-left: 20px; }
+  .toc li { margin: 6px 0; }
+  .toc a { color: var(--green-mid); text-decoration: none; }
+  .toc a:hover { text-decoration: underline; }
+
+  .intro-box {
+    background: var(--orange-bg);
+    border-left: 5px solid var(--orange);
+    border-radius: 0 12px 12px 0;
+    padding: 20px 24px;
+    margin-bottom: 30px;
+  }
+  .intro-box h3 { color: var(--orange); margin-bottom: 8px; }
+  .intro-box p { color: var(--text-light); font-size: 0.95em; }
+
+  section {
+    background: var(--card-bg);
+    border-radius: 12px;
+    padding: 30px;
+    margin-bottom: 24px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  }
+  section h2 {
+    font-size: 1.45em;
+    color: var(--green-deep);
+    margin-bottom: 16px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--green-bg);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  section h2 .num {
+    background: var(--green-mid);
+    color: #fff;
+    width: 34px; height: 34px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.7em;
+    flex-shrink: 0;
+  }
+  section h3 {
+    font-size: 1.1em;
+    color: var(--green-mid);
+    margin: 18px 0 10px;
+  }
+  section p { margin-bottom: 12px; color: var(--text); }
+  section ul, section ol { padding-left: 22px; margin-bottom: 12px; }
+  section li { margin-bottom: 6px; }
+
+  .tip-box {
+    background: var(--tip-bg);
+    border: 1px solid var(--tip-border);
+    border-radius: 8px;
+    padding: 14px 18px;
+    margin: 14px 0;
+    font-size: 0.93em;
+  }
+  .tip-box .label {
+    font-weight: 700;
+    color: var(--green-deep);
+    display: block;
+    margin-bottom: 4px;
+  }
+  .warn-box {
+    background: var(--warn-bg);
+    border: 1px solid var(--warn-border);
+    border-radius: 8px;
+    padding: 14px 18px;
+    margin: 14px 0;
+    font-size: 0.93em;
+  }
+  .warn-box .label {
+    font-weight: 700;
+    color: #f57f17;
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 14px 0;
+    font-size: 0.93em;
+  }
+  th {
+    background: var(--green-mid);
+    color: #fff;
+    padding: 10px 12px;
+    text-align: left;
+    font-weight: 600;
+  }
+  td {
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--border);
+  }
+  tr:nth-child(even) td { background: var(--green-bg); }
+
+  .timeline {
+    position: relative;
+    padding-left: 30px;
+    margin: 20px 0;
+  }
+  .timeline::before {
+    content: "";
+    position: absolute;
+    left: 10px; top: 0; bottom: 0;
+    width: 3px;
+    background: var(--green-light);
+    border-radius: 2px;
+  }
+  .timeline-item {
+    position: relative;
+    margin-bottom: 18px;
+  }
+  .timeline-item::before {
+    content: "";
+    position: absolute;
+    left: -27px; top: 6px;
+    width: 13px; height: 13px;
+    border-radius: 50%;
+    background: var(--green-mid);
+    border: 3px solid #fff;
+    box-shadow: 0 0 0 2px var(--green-mid);
+  }
+  .timeline-item .time { font-weight: 700; color: var(--green-deep); font-size: 0.95em; }
+  .timeline-item .desc { color: var(--text-light); font-size: 0.92em; }
+
+  .quick-ref {
+    background: var(--green-bg);
+    border-radius: 12px;
+    padding: 24px 28px;
+    margin-top: 24px;
+  }
+  .quick-ref h2 { color: var(--green-deep); border-bottom: none; margin-bottom: 14px; }
+  .quick-ref-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px 24px;
+  }
+  .quick-ref-grid div { font-size: 0.92em; }
+  .quick-ref-grid b { color: var(--green-deep); }
+
+  footer {
+    text-align: center;
+    color: var(--text-light);
+    font-size: 0.85em;
+    padding: 20px;
+  }
+  @media (max-width: 600px) {
+    .cover h1 { font-size: 1.8em; }
+    section { padding: 20px; }
+    .quick-ref-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ==================== 封面 ==================== -->
+<div class="cover">
+  <h1>哈巴纳达辣椒种植手册</h1>
+  <p class="subtitle">从育种到收获的全流程操作指南</p>
+  <span class="meta">品种：Habanada · 辣度：0 SHU（零辣度） · 习性：喜温喜阳</span>
+</div>
+
+<div class="container">
+
+  <!-- ==================== 品种简介 ==================== -->
+  <div class="intro-box">
+    <h3>关于哈巴纳达辣椒</h3>
+    <p>哈巴纳达（Habanada）是哈瓦那辣椒（Habanero）的<b>去辣品种</b>，由美国 Adaptive Seeds 农场选育而成。它继承了哈瓦那辣椒标志性的热带果香——柑橘、花香、杏桃风味，但<b>辣度为零（0 SHU）</b>，适合不嗜辣但追求风味的人群。果实灯笼形，成熟时由绿色转为橙色，果肉薄而多汁，非常适合生食、制酱、烘焙和佐餐。</p>
+  </div>
+
+  <!-- ==================== 目录 ==================== -->
+  <div class="toc">
+    <h2>目录</h2>
+    <ol>
+      <li><a href="#s1">育种与播种</a></li>
+      <li><a href="#s2">苗期管理</a></li>
+      <li><a href="#s3">移栽定植</a></li>
+      <li><a href="#s4">水肥管理</a></li>
+      <li><a href="#s5">修剪整枝</a></li>
+      <li><a href="#s6">病虫害防治</a></li>
+      <li><a href="#s7">花期与授粉</a></li>
+      <li><a href="#s8">收获与储藏</a></li>
+      <li><a href="#s9">全年种植时间线</a></li>
+      <li><a href="#s10">速查参考表</a></li>
+    </ol>
+  </div>
+
+  <!-- ==================== 1. 育种与播种 ==================== -->
+  <section id="s1">
+    <h2><span class="num">1</span>育种与播种</h2>
+
+    <h3>1.1 播种时间</h3>
+    <p>哈巴纳达属于 Capsicum chinense（中华辣椒种），<b>发芽慢、苗期长</b>，建议在终霜日前 <b>8～10 周</b>开始室内播种。</p>
+    <ul>
+      <li>北方（华北/东北）：2月中旬～3月上旬播种</li>
+      <li>南方（华南/华东）：1月下旬～2月中旬播种</li>
+      <li>温室/阳台全年种植：可灵活调整，但冬季需补光保温</li>
+    </ul>
+
+    <div class="warn-box">
+      <span class="label">⚠ 注意</span>
+      中华辣椒种发芽率偏低且发芽速度慢（10～21天），务必提前播种，切勿等到春天再开始。
+    </div>
+
+    <h3>1.2 育苗容器与基质</h3>
+    <ul>
+      <li><b>容器</b>：育苗盘（穴径3～4cm）或小营养钵，底部必须打孔排水</li>
+      <li><b>基质配比</b>：泥炭土 60% + 蛭石 20% + 珍珠岩 20%，或直接购买育苗专用基质</li>
+      <li><b>消毒</b>：基质使用前可用开水浇烫或微波加热3分钟，杀灭病菌和虫卵</li>
+      <li><b>pH值</b>：6.0～6.8（微酸），可用pH试纸粗测</li>
+    </ul>
+
+    <h3>1.3 种子处理与催芽</h3>
+    <ol>
+      <li><b>温水浸泡</b>：55°C温水浸种15分钟（搅拌降温），再在常温水中浸泡8～12小时，软化种皮</li>
+      <li><b>催芽</b>：将种子包在湿润厨房纸巾中，放入密封袋，置于 <b>28～30°C</b> 恒温环境（路由器顶部、催芽垫上均可）</li>
+      <li><b>检查</b>：每天打开透气，3～7天后种子露白（胚根伸出）即可播种</li>
+      <li><b>未露白</b>：中华辣椒种偶尔需要14天以上，耐心等待，纸巾保持湿润不积水</li>
+    </ol>
+
+    <div class="tip-box">
+      <span class="label">💡 提速技巧</span>
+      在催芽的纸巾中加一滴3%双氧水，或使用0.1%赤霉素（GA3）浸泡2小时，可显著提高中华辣椒种的发芽率和速度。
+    </div>
+
+    <h3>1.4 播种操作</h3>
+    <ol>
+      <li>将基质装入育苗盘，轻压平整，浇透水（浇至底部渗水）</li>
+      <li>每穴放1粒已催芽种子，<b>胚根朝下</b></li>
+      <li>覆土厚度 <b>0.5～0.8cm</b>（种子直径的2倍），轻轻压实</li>
+      <li>喷壶喷湿表面，覆盖保鲜膜保湿，置于温暖处</li>
+      <li>出苗前保持温度 <b>25～30°C</b>，每天揭膜透气15分钟</li>
+    </ol>
+
+    <h3>1.5 出苗</h3>
+    <p>通常播种后 <b>5～14天</b>出土。一旦见到幼苗顶土，立即揭去保鲜膜，移至光照充足处，防止徒长。</p>
+  </section>
+
+  <!-- ==================== 2. 苗期管理 ==================== -->
+  <section id="s2">
+    <h2><span class="num">2</span>苗期管理</h2>
+
+    <h3>2.1 光照</h3>
+    <ul>
+      <li><b>出苗后立即给光</b>，延迟光照会导致茎秆细长徒长，难以恢复</li>
+      <li>自然光：放在朝南窗台，每天至少6小时直射光</li>
+      <li>补光灯：LED植物灯距苗顶20～30cm，每天14～16小时，开灯时间模拟日出日落</li>
+      <li>幼苗期光照不足是第一大失败原因，宁多勿少</li>
+    </ul>
+
+    <h3>2.2 温度</h3>
+    <table>
+      <tr><th>阶段</th><th>日温</th><th>夜温</th><th>说明</th></tr>
+      <tr><td>出苗后1～2周</td><td>22～26°C</td><td>18～20°C</td><td>适当降温炼苗，防止徒长</td></tr>
+      <tr><td>2周后</td><td>24～28°C</td><td>18～22°C</td><td>昼夜温差利于壮苗</td></tr>
+      <tr><td>定植前7天</td><td>20～25°C</td><td>15～18°C</td><td>炼苗，逐步适应外界环境</td></tr>
+    </table>
+
+    <h3>2.3 浇水</h3>
+    <ul>
+      <li>原则：<b>见干见湿</b>，表土发白变干再浇，一次浇透</li>
+      <li>用喷壶或浸盆法（底盘吸水），避免大水冲倒幼苗</li>
+      <li>水温与室温接近，冷水浇苗易引发沤根</li>
+      <li>切忌基质长期积水，辣椒根怕涝</li>
+    </ul>
+
+    <h3>2.4 施肥</h3>
+    <ul>
+      <li>子叶期（两片心形叶）：不施肥，依靠种子自身养分</li>
+      <li>真叶长出2片后：每周一次稀释1000倍的平衡水溶肥（N-P-K 20-20-20），浓度减半</li>
+      <li>叶面发黄可喷施少量螯合铁</li>
+    </ul>
+
+    <h3>2.5 假植（分苗）</h3>
+    <p>当幼苗长出 <b>3～4片真叶</b>、根系布满穴盘底部时进行假植，移入8～10cm营养钵。</p>
+    <ol>
+      <li>提前1天浇透水，便于带土移栽</li>
+      <li>轻捏穴盘底部取出苗，<b>尽量不要伤根</b></li>
+      <li>新钵装大半基质，放入苗后填土至子叶下方1cm处</li>
+      <li>浇透定根水，遮阴2天缓苗，之后恢复正常光照</li>
+    </ol>
+
+    <h3>2.6 炼苗</h3>
+    <p>定植前 <b>7～10天</b>开始炼苗，让幼苗逐步适应外界环境：</p>
+    <ul>
+      <li>第1～3天：白天搬到室外通风遮阴处2～3小时</li>
+      <li>第4～6天：增加光照时长，逐渐接受直射光</li>
+      <li>第7～10天：全天室外，夜间不再搬回室内（气温15°C以上时）</li>
+      <li>炼苗期间减少浇水，适当控水促使根系深扎</li>
+    </ul>
+  </section>
+
+  <!-- ==================== 3. 移栽定植 ==================== -->
+  <section id="s3">
+    <h2><span class="num">3</span>移栽定植</h2>
+
+    <h3>3.1 定植时机</h3>
+    <ul>
+      <li>气温条件：<b>夜间最低温稳定在15°C以上</b>，日间20°C以上</li>
+      <li>苗龄：6～8片真叶，株高15～20cm，茎秆粗壮</li>
+      <li>北方露地通常在5月中下旬，南方4月上中旬</li>
+      <li>过早定植遇低温会坐果不良甚至僵苗</li>
+    </ul>
+
+    <div class="warn-box">
+      <span class="label">⚠ 注意</span>
+      中华辣椒种对低温极其敏感。低于13°C会停止生长，低于10°C可能受冷害。宁可晚栽一周，不可抢早。
+    </div>
+
+    <h3>3.2 选地与整地</h3>
+    <ul>
+      <li><b>光照</b>：全日照，每天至少8小时直射阳光</li>
+      <li><b>土壤</b>：疏松透气、排水良好的沙壤土或壤土</li>
+      <li><b>pH</b>：6.0～6.8</li>
+      <li><b>基肥</b>：每平方米施腐熟有机肥3～5kg + 复合肥50g，深翻25～30cm混匀</li>
+      <li><b>做畦</b>：起高畦（畦高15～20cm），畦宽80～100cm，利于排水防涝</li>
+      <li><b>忌连作</b>：前茬为茄科（番茄/茄子/辣椒/土豆）的地块至少间隔2年再种</li>
+    </ul>
+
+    <h3>3.3 定植密度与操作</h3>
+    <table>
+      <tr><th>种植方式</th><th>株距</th><th>行距</th><th>每盆数量</th></tr>
+      <tr><td>地栽</td><td>50～60cm</td><td>60～80cm</td><td>—</td></tr>
+      <tr><td>盆栽（5加仑/约20L）</td><td>—</td><td>—</td><td>1株/盆</td></tr>
+      <tr><td>盆栽（7加仑以上）</td><td>—</td><td>—</td><td>1株/盆</td></tr>
+    </table>
+
+    <h3>3.4 定植步骤</h3>
+    <ol>
+      <li>定植前1天苗钵浇透水</li>
+      <li>挖定植穴，深度比苗钵略深 <b>2～3cm</b>（可深栽促发不定根）</li>
+      <li>脱钵放入穴中，填土压实，确保土面与子叶之间有2～3cm茎秆被埋入土中</li>
+      <li>浇透定根水，可加入生根剂（如吲哚丁酸）促进根系生长</li>
+      <li><b>搭支撑杆</b>：哈巴纳达植株可达60～100cm高，结果后易倒伏，定植时即插入支架</li>
+      <li>覆盖地膜或铺稻草保湿抑草</li>
+    </ol>
+
+    <div class="tip-box">
+      <span class="label">💡 盆栽配土</span>
+      通用配方：园土40% + 椰糠/泥炭30% + 珍珠岩20% + 蚯蚓粪/腐熟堆肥10%。盆底铺3cm陶粒做排水层，花盆务必有排水孔。
+    </div>
+  </section>
+
+  <!-- ==================== 4. 水肥管理 ==================== -->
+  <section id="s4">
+    <h2><span class="num">4</span>水肥管理</h2>
+
+    <h3>4.1 浇水原则</h3>
+    <ul>
+      <li><b>见干见湿</b>：表土2～3cm干透再浇水，一次浇透至盆底渗水</li>
+      <li>夏季高温期可能需要每天浇水，早晚浇水避开正午</li>
+      <li>结果期需水量大增，保持土壤均匀湿润，忽干忽湿会导致落花落果和脐腐病</li>
+      <li>地栽雨季注意排水，辣椒怕涝，积水超过24小时易烂根</li>
+      <li>浇水尽量浇根部，避免长期淋湿叶片（减少病害）</li>
+    </ul>
+
+    <div class="warn-box">
+      <span class="label">⚠ 脐腐病预警</span>
+      果实底部出现黑色凹陷斑点，是缺钙的表现，常由<b>浇水不均匀</b>导致钙元素吸收受阻。保持水分均衡是第一防线，可在结果期喷施0.2%氯化钙溶液补充。
+    </div>
+
+    <h3>4.2 施肥方案</h3>
+    <p>辣椒是喜肥作物，但哈巴纳达对氮肥敏感——<b>氮过多会只长叶不结果</b>。需根据生长阶段调整配比。</p>
+
+    <table>
+      <tr><th>生长阶段</th><th>肥料类型</th><th>N-P-K配比</th><th>频率</th><th>注意事项</th></tr>
+      <tr><td>定植缓苗后（营养生长期）</td><td>平衡型水溶肥</td><td>20-20-20</td><td>每10～14天</td><td>浓度减半，促根壮苗</td></tr>
+      <tr><td>现蕾期</td><td>高磷肥</td><td>10-30-20</td><td>每10天</td><td>促进花芽分化</td></tr>
+      <tr><td>开花坐果期</td><td>高钾肥</td><td>15-10-30</td><td>每7～10天</td><td>促进果实膨大和风味积累</td></tr>
+      <tr><td>盛果期</td><td>高钾肥 + 钙镁补充</td><td>12-8-35</td><td>每7天</td><td>配合叶面喷施钙肥</td></tr>
+      <tr><td>采收末期</td><td>平衡肥</td><td>20-20-20</td><td>每14天</td><td>恢复树势</td></tr>
+    </table>
+
+    <div class="tip-box">
+      <span class="label">💡 有机种植方案</span>
+      基肥用腐熟羊粪/鸡粪 + 骨粉（补磷钙）；追肥用发酵豆饼水（稀释20倍）+ 草木灰浸出液（补钾）；叶面肥用海藻精或腐殖酸液肥。有机肥肥效慢，需提前施用。
+    </div>
+
+    <h3>4.3 叶面追肥</h3>
+    <ul>
+      <li>花期喷施0.2%硼砂 + 0.2%磷酸二氢钾，提高坐果率</li>
+      <li>结果期喷施0.2%氯化钙，预防脐腐病</li>
+      <li>叶面肥在傍晚或阴天喷施，避开高温强光时段</li>
+      <li>喷至叶面叶背均匀湿润即可，不滴水为度</li>
+    </ul>
+  </section>
+
+  <!-- ==================== 5. 修剪整枝 ==================== -->
+  <section id="s5">
+    <h2><span class="num">5</span>修剪整枝</h2>
+
+    <h3>5.1 打顶（摘心）</h3>
+    <ul>
+      <li><b>时机</b>：苗高20～25cm、有8～10片真叶时</li>
+      <li><b>操作</b>：掐掉顶端的生长点（最上方2～3片嫩叶的顶芽）</li>
+      <li><b>目的</b>：打破顶端优势，促使侧枝萌发，增加结果部位，矮化植株</li>
+      <li><b>注意</b>：如果定植时苗已较大可不打顶，改为留2～3个主枝</li>
+    </ul>
+
+    <h3>5.2 整枝方式（双干/三干整枝）</h3>
+    <p>哈巴纳达建议采用<b>双干或三干整枝法</b>，集中养分、改善通风、便于管理。</p>
+    <ol>
+      <li><b>选留主干</b>：打顶后保留2～3条最粗壮的侧枝作为主干，其余侧枝抹除</li>
+      <li><b>抹除门椒以下侧枝</b>：第一朵花（门椒）下方长出的所有侧枝和叶片全部摘除，改善基部通风</li>
+      <li><b>绑蔓</b>：随主干生长逐段绑缚到支架上，避免风吹折断</li>
+      <li><b>持续抹芽</b>：主干上长出的多余侧芽及时抹除（趁嫩用手一抹即掉，伤口小）</li>
+    </ol>
+
+    <div class="tip-box">
+      <span class="label">💡 门椒</span>
+      植株上开的<b>第一朵花</b>结的果叫"门椒"（因位于主干分杈处，像门一样）。建议<b>及早摘除门椒花/果</b>，让养分集中供应植株生长，中后期产量更高。
+    </div>
+
+    <h3>5.3 疏枝与疏果</h3>
+    <ul>
+      <li><b>疏内膛枝</b>：剪去植株内部向上生长、不结果的细弱枝条，保证通风透光</li>
+      <li><b>剪交叉枝、病虫枝</b>：随时剪除，减少养分消耗和病害传播</li>
+      <li><b>疏果</b>：同一节位结多个果时，保留1～2个最健壮的，摘除畸形的</li>
+      <li><b>每株同时挂果</b>建议控制在15～25个，过多则果小味淡</li>
+    </ul>
+
+    <h3>5.4 修剪注意事项</h3>
+    <ul>
+      <li>使用消毒剪刀（75%酒精擦拭），剪口斜切，平滑无毛茬</li>
+      <li>晴天上午修剪，利于伤口快速干燥愈合</li>
+      <li>大雨前不修剪，雨水易从伤口侵入引发病害</li>
+      <li>修剪后可喷一次杀菌剂（如百菌清）预防感染</li>
+      <li>修剪工具每剪一株消毒一次，防止交叉感染</li>
+    </ul>
+
+    <h3>5.5 采后回缩修剪</h3>
+    <p>盛果期结束后（秋季），对植株进行<b>回缩修剪</b>：将主干回缩至30～40cm高度，保留2～3个节位。配合施肥浇水，可促发新枝二次结果，延长采收期。</p>
+  </section>
+
+  <!-- ==================== 6. 病虫害防治 ==================== -->
+  <section id="s6">
+    <h2><span class="num">6</span>病虫害防治</h2>
+
+    <p>以防为主、综合防治。保持通风、合理密植、及时清除病叶病果是根本。</p>
+
+    <table>
+      <tr><th>病虫害</th><th>症状</th><th>防治方法</th></tr>
+      <tr>
+        <td>蚜虫</td>
+        <td>嫩叶卷曲、叶背有绿色/黑色小虫、分泌蜜露引蚂蚁</td>
+        <td>喷施稀释肥皂水或苦参碱；黄色粘虫板诱杀；引入瓢虫等天敌</td>
+      </tr>
+      <tr>
+        <td>白粉虱</td>
+        <td>摇动植株有白色小飞虫飞起，叶背有若虫</td>
+        <td>黄色粘虫板；喷施印楝油；严重时用吡虫啉</td>
+      </tr>
+      <tr>
+        <td>红蜘蛛</td>
+        <td>叶面出现密集黄白小点，叶背有细蛛丝，干旱时高发</td>
+        <td>增加湿度喷雾；喷施阿维菌素或螺螨酯；清除受害叶</td>
+      </tr>
+      <tr>
+        <td>茶黄螨</td>
+        <td>嫩叶变小增厚、卷曲变硬、似病毒病症状</td>
+        <td>喷施螺螨酯或阿维菌素，重点喷嫩尖</td>
+      </tr>
+      <tr>
+        <td>病毒病</td>
+        <td>叶片花叶斑驳、畸形、矮化，由蚜虫/粉虱传播</td>
+        <td>无药可治，重在防虫；及时拔除病株；接触病株后洗手再碰健康株</td>
+      </tr>
+      <tr>
+        <td>疫病</td>
+        <td>茎基部水渍状变黑、快速萎蔫死亡，雨季高发</td>
+        <td>起高畦排水；喷施代森锰锌或甲霜灵；拔除病株</td>
+      </tr>
+      <tr>
+        <td>青枯病</td>
+        <td>晴天中午萎蔫、早晚恢复，后全株枯死，茎切面有白色菌脓</td>
+        <td>无特效药；忌连作；嫁接砧木抗病；拔除烧毁</td>
+      </tr>
+      <tr>
+        <td>脐腐病</td>
+        <td>果实底部黑褐色凹陷</td>
+        <td>均匀浇水；补钙（喷0.2%氯化钙）</td>
+      </tr>
+      <tr>
+        <td>炭疽病</td>
+        <td>果实上出现同心轮纹状凹陷黑斑</td>
+        <td>喷施咪鲜胺或苯醚甲环唑；清除病果</td>
+      </tr>
+    </table>
+
+    <div class="tip-box">
+      <span class="label">💡 日常巡查</span>
+      每天观察叶背和嫩尖，早期发现虫害只需手动清除或局部处理即可，等到大面积爆发就很难控制了。
+    </div>
+  </section>
+
+  <!-- ==================== 7. 花期与授粉 ==================== -->
+  <section id="s7">
+    <h2><span class="num">7</span>花期与授粉</h2>
+
+    <h3>7.1 花期管理</h3>
+    <ul>
+      <li>定植后约 <b>40～55天</b>开始开花</li>
+      <li>最适开花温度：日温24～28°C，夜温16～20°C</li>
+      <li><b>高于35°C或低于15°C</b>会大量落花——高温时遮阴降温，低温时注意保温</li>
+      <li>花期适当控水（不旱不浇），防止营养生长过旺导致落花</li>
+    </ul>
+
+    <div class="warn-box">
+      <span class="label">⚠ 落花原因排查</span>
+      ① 温度过高/过低 → 调节环境；② 氮肥过多徒长 → 减氮增磷钾；③ 光照不足 → 增加光照；④ 缺硼 → 喷硼肥；⑤ 湿度过大 → 通风。逐项排查，对症处理。
+    </div>
+
+    <h3>7.2 授粉</h3>
+    <ul>
+      <li>辣椒是<b>自花授粉</b>作物，露地有风和昆虫辅助，一般无需人工干预</li>
+      <li>封闭阳台/温室种植：<b>需要人工授粉</b>，否则坐果率极低</li>
+      <li>方法一：开花期每天上午轻摇植株或弹花朵，帮助花粉散落</li>
+      <li>方法二：用毛笔/棉签在花蕊间轻扫传递花粉</li>
+      <li>方法三：用电风扇模拟微风（低档，每天15～30分钟）</li>
+      <li>最佳授粉时间：上午9:00～11:00，花粉活力最强</li>
+    </ul>
+  </section>
+
+  <!-- ==================== 8. 收获与储藏 ==================== -->
+  <section id="s8">
+    <h2><span class="num">8</span>收获与储藏</h2>
+
+    <h3>8.1 采收时机</h3>
+    <table>
+      <tr><th>成熟阶段</th><th>颜色</th><th>风味</th><th>用途</th></tr>
+      <tr><td>嫩果期</td><td>绿色</td><td>清淡微甜，香气较弱</td><td>炒食、腌制</td></tr>
+      <tr><td>转色期</td><td>黄绿→浅橙</td><td>风味逐渐积累</td><td>可采可等</td></tr>
+      <tr><td>完熟期（推荐）</td><td>鲜亮橙色</td><td>风味巅峰，热带果香浓郁</td><td>生食、制酱、烘焙</td></tr>
+    </table>
+    <ul>
+      <li>从开花到果实完熟约需 <b>60～80天</b></li>
+      <li>从定植到首次采收约 <b>70～90天</b></li>
+      <li><b>建议等完全转橙后采收</b>——哈巴纳达的核心价值是风味，完熟果风味远超绿果</li>
+      <li>完熟后果实微微变软、果皮有光泽时是最佳采收点</li>
+    </ul>
+
+    <h3>8.2 采收方法</h3>
+    <ol>
+      <li>用剪刀从果柄基部剪下，<b>不要硬拽</b>，否则会扯断枝条</li>
+      <li>保留1～2cm果柄，延长保鲜期</li>
+      <li>采收后避免碰伤，轻拿轻放</li>
+      <li>上午露水干后采收，果实温度低、保鲜效果好</li>
+      <li>采收后及时追肥浇水，促进后续结果</li>
+    </ol>
+
+    <div class="tip-box">
+      <span class="label">💡 多采技巧</span>
+      勤采促多结。果实成熟后及时采收，植株会收到信号继续开花结果。如果任由果实挂在树上不采，植株会减少新花分化。
+    </div>
+
+    <h3>8.3 储藏方法</h3>
+    <table>
+      <tr><th>方式</th><th>保鲜时长</th><th>操作要点</th></tr>
+      <tr><td>冷藏</td><td>1～2周</td><td>用厨房纸包裹放入保鲜袋（不密封），置于冰箱蔬果层4°C左右。忌与苹果香蕉同放（乙烯催熟）</td></tr>
+      <tr><td>冷冻</td><td>6～12个月</td><td>洗净擦干，整颗或切块放入密封袋冷冻。冷冻后果肉变软，适合煮汤炖菜，不适合生食</td></tr>
+      <tr><td>干燥</td><td>1年以上</td><td>切片后用烘干机57°C烘12～24小时，或阳光晒3～5天。干燥后磨粉可做调味粉</td></tr>
+      <tr><td>腌制</td><td>数月</td><td>整果或切片放入醋/盐水中密封冷藏。醋渍能很好保留花果香</td></tr>
+      <tr><td>制酱</td><td>数月</td><td>煮熟打泥加醋和少量盐，装瓶密封冷藏</td></tr>
+    </table>
+
+    <h3>8.4 留种</h3>
+    <ol>
+      <li>选择<b>最先成熟、果实最大最饱满</b>的健康果留种</li>
+      <li>果实完全成熟（橙红色、稍软）后采摘</li>
+      <li>剖开取种，去掉胎座和果肉，清水洗净</li>
+      <li>摊开在纸巾上阴干5～7天（避免阳光直晒），至种子一掰即断</li>
+      <li>装入密封袋或玻璃瓶，放入干燥剂，标注品种和日期</li>
+      <li>阴凉干燥处保存，种子活力可保持 <b>2～3年</b></li>
+    </ol>
+
+    <div class="warn-box">
+      <span class="label">⚠ 留种纯度</span>
+      哈巴纳达与普通辣椒（尤其是其他 Capsicum chinense 品种）<b>花期隔离至少150米</b>，否则容易串粉杂交，后代性状不可控。阳台种植若同空间有多个品种，建议人工套袋授粉。
+    </div>
+  </section>
+
+  <!-- ==================== 9. 全年时间线 ==================== -->
+  <section id="s9">
+    <h2><span class="num">9</span>全年种植时间线</h2>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="time">第0周（2月）</div>
+        <div class="desc">浸种催芽 → 室内播种，覆膜保温28～30°C</div>
+      </div>
+      <div class="timeline-item">
+        <div class="time">第1～2周</div>
+        <div class="desc">出苗揭膜 → 移至光照充足处，降温至22～26°C防徒长</div>
+      </div>
+      <div class="timeline-item">
+        <div class="time">第3～4周</div>
+        <div class="desc">真叶展开 → 开始施稀薄液肥，保持见干见湿</div>
+      </div>
+      <div class="timeline-item">
+        <div class="time">第5周</div>
+        <div class="desc">3～4片真叶 → 假植到8～10cm营养钵</div>
+      </div>
+      <div class="timeline-item">
+        <div class="time">第6～7周</div>
+        <div class="desc">8～10片真叶 → 打顶摘心，促分枝</div>
+      </div>
+      <div class="timeline-item">
+        <div class="time">第8周（4月底～5月）</div>
+        <div class="desc">炼苗7～10天 → 气温稳定15°C以上定植</div>
+      </div>
+      <div class="timeline-item">
+        <div class="time">第9～10周</div>
+        <div class="desc">缓苗期 → 遮阴2～3天，之后正常管理，施平衡肥</div>
+      </div>
+      <div class="timeline-item">
+        <div class="time">第11～12周</div>
+        <div class="desc">营养生长旺盛 → 抹侧芽、绑蔓、施平衡肥</div>
+      </div>
+      <div class="timeline-item">
+        <div class="time">第13～14周</div>
+        <div class="desc">现蕾开花 → 摘门椒、转高磷钾肥、人工授粉（室内）</div>
+      </div>
+      <div class="timeline-item">
+        <div class="time">第15～18周</div>
+        <div class="desc">坐果膨大 → 高钾肥 + 补钙、均匀浇水、疏果</div>
+      </div>
+      <div class="timeline-item">
+        <div class="time">第19～22周（7～8月）</div>
+        <div class="desc">盛果期采收 → 果实转橙后剪采、持续追肥、防虫防病</div>
+      </div>
+      <div class="timeline-item">
+        <div class="time">第23～26周（9月）</div>
+        <div class="desc">采收后期 → 回缩修剪、施恢复肥、促二次结果</div>
+      </div>
+      <div class="timeline-item">
+        <div class="time">第27周以后（10～11月）</div>
+        <div class="desc">秋末采收 → 气温降至10°C前采收完毕，选留种果</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 10. 速查表 ==================== -->
+  <section id="s10">
+    <h2><span class="num">10</span>速查参考表</h2>
+    <div class="quick-ref">
+      <div class="quick-ref-grid">
+        <div><b>品种</b>：Habanada（零辣度哈瓦那）</div>
+        <div><b>辣度</b>：0 SHU</div>
+        <div><b>物种</b>：Capsicum chinense</div>
+        <div><b>果色变化</b>：绿 → 橙</div>
+        <div><b>播种到采收</b>：约120～150天</div>
+        <div><b>定植到采收</b>：约70～90天</div>
+        <div><b>发芽温度</b>：28～30°C</div>
+        <div><b>发芽时间</b>：5～21天</div>
+        <div><b>生长适温</b>：日24～28°C / 夜16～20°C</div>
+        <div><b>最低耐温</b>：13°C（低于则停长）</div>
+        <div><b>光照需求</b>：全日照 ≥ 8h/天</div>
+        <div><b>土壤pH</b>：6.0～6.8</div>
+        <div><b>株距</b>：50～60cm</div>
+        <div><b>植株高度</b>：60～100cm</div>
+        <div><b>单株产量</b>：约30～60个果</div>
+        <div><b>盆栽最小</b>：5加仑（20L）/株</div>
+        <div><b>需支架</b>：是（结果后易倒伏）</div>
+        <div><b>留种活力</b>：2～3年</div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>哈巴纳达辣椒种植手册 · 仅供种植参考，请结合当地气候条件灵活调整</p>
+  </footer>
+
+</div>
+</body>
+</html>
