@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>切诺基虎大红矮星番茄种植手册</title>
+<style>
+  :root {
+    --tomato-deep: #7b1a14;
+    --tomato-mid: #c62828;
+    --tomato-light: #ef5350;
+    --tomato-bg: #fdecea;
+    --leaf-deep: #2d5016;
+    --leaf-mid: #4a7c2e;
+    --leaf-light: #8bc34a;
+    --leaf-bg: #f1f8e9;
+    --text: #2e2e2e;
+    --text-light: #555;
+    --card-bg: #ffffff;
+    --border: #e0e0e0;
+    --warn-bg: #fffde7;
+    --warn-border: #fdd835;
+    --tip-bg: #e8f5e9;
+    --tip-border: #66bb6a;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: "PingFang SC", "Microsoft YaHei", "Segoe UI", sans-serif;
+    background: #fafafa;
+    color: var(--text);
+    line-height: 1.8;
+    padding: 0;
+  }
+  .cover {
+    background: linear-gradient(135deg, var(--tomato-deep) 0%, var(--tomato-mid) 55%, var(--tomato-light) 100%);
+    color: #fff;
+    padding: 60px 40px 50px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .cover::after {
+    content: "";
+    position: absolute;
+    bottom: -30px; right: -30px;
+    width: 200px; height: 200px;
+    background: rgba(139,195,74,0.18);
+    border-radius: 50%;
+  }
+  .cover::before {
+    content: "";
+    position: absolute;
+    top: -40px; left: -40px;
+    width: 160px; height: 160px;
+    background: rgba(255,255,255,0.10);
+    border-radius: 50%;
+  }
+  .cover h1 { font-size: 2.4em; margin-bottom: 12px; letter-spacing: 2px; }
+  .cover .subtitle { font-size: 1.1em; opacity: 0.92; margin-bottom: 20px; }
+  .cover .meta {
+    display: inline-block;
+    background: rgba(255,255,255,0.18);
+    padding: 8px 24px;
+    border-radius: 30px;
+    font-size: 0.9em;
+  }
+  .container { max-width: 820px; margin: 0 auto; padding: 30px 20px 60px; }
+
+  .toc {
+    background: var(--card-bg);
+    border-radius: 12px;
+    padding: 24px 30px;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  }
+  .toc h2 { font-size: 1.2em; color: var(--tomato-deep); margin-bottom: 12px; border-left: 4px solid var(--tomato-mid); padding-left: 10px; }
+  .toc ol { padding-left: 20px; }
+  .toc li { margin: 6px 0; }
+  .toc a { color: var(--tomato-mid); text-decoration: none; }
+  .toc a:hover { text-decoration: underline; }
+
+  .intro-box {
+    background: var(--tomato-bg);
+    border-left: 5px solid var(--tomato-mid);
+    border-radius: 0 12px 12px 0;
+    padding: 20px 24px;
+    margin-bottom: 30px;
+  }
+  .intro-box h3 { color: var(--tomato-mid); margin-bottom: 8px; }
+  .intro-box p { color: var(--text-light); font-size: 0.95em; }
+
+  section {
+    background: var(--card-bg);
+    border-radius: 12px;
+    padding: 30px;
+    margin-bottom: 24px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  }
+  section h2 {
+    font-size: 1.45em;
+    color: var(--tomato-deep);
+    margin-bottom: 16px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--tomato-bg);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  section h2 .num {
+    background: var(--tomato-mid);
+    color: #fff;
+    width: 34px; height: 34px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.7em;
+    flex-shrink: 0;
+  }
+  section h3 { font-size: 1.1em; color: var(--leaf-mid); margin: 18px 0 10px; }
+  section p { margin-bottom: 12px; color: var(--text); }
+  section ul, section ol { padding-left: 22px; margin-bottom: 12px; }
+  section li { margin-bottom: 6px; }
+
+  .tip-box {
+    background: var(--tip-bg);
+    border: 1px solid var(--tip-border);
+    border-radius: 8px;
+    padding: 14px 18px;
+    margin: 14px 0;
+    font-size: 0.93em;
+  }
+  .tip-box .label { font-weight: 700; color: var(--leaf-deep); display: block; margin-bottom: 4px; }
+  .warn-box {
+    background: var(--warn-bg);
+    border: 1px solid var(--warn-border);
+    border-radius: 8px;
+    padding: 14px 18px;
+    margin: 14px 0;
+    font-size: 0.93em;
+  }
+  .warn-box .label { font-weight: 700; color: #f57f17; display: block; margin-bottom: 4px; }
+
+  table { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 0.93em; }
+  th { background: var(--tomato-mid); color: #fff; padding: 10px 12px; text-align: left; font-weight: 600; }
+  td { padding: 10px 12px; border-bottom: 1px solid var(--border); }
+  tr:nth-child(even) td { background: var(--tomato-bg); }
+
+  .timeline { position: relative; padding-left: 30px; margin: 20px 0; }
+  .timeline::before { content: ""; position: absolute; left: 10px; top: 0; bottom: 0; width: 3px; background: var(--tomato-light); border-radius: 2px; }
+  .timeline-item { position: relative; margin-bottom: 18px; }
+  .timeline-item::before { content: ""; position: absolute; left: -27px; top: 6px; width: 13px; height: 13px; border-radius: 50%; background: var(--tomato-mid); border: 3px solid #fff; box-shadow: 0 0 0 2px var(--tomato-mid); }
+  .timeline-item .time { font-weight: 700; color: var(--tomato-deep); font-size: 0.95em; }
+  .timeline-item .desc { color: var(--text-light); font-size: 0.92em; }
+
+  .region-section { background: linear-gradient(135deg, #fff5f3 0%, var(--tomato-bg) 100%); border: 2px solid var(--tomato-light); }
+  .region-section h2 { color: #b71c1c; border-bottom-color: var(--tomato-light); }
+  .region-section h2 .num { background: var(--tomato-mid); }
+  .region-banner { background: var(--tomato-mid); color: #fff; display: inline-block; padding: 4px 14px; border-radius: 20px; font-size: 0.85em; font-weight: 700; margin-bottom: 14px; }
+  .toc .region-link { background: var(--tomato-bg); border: 1px solid var(--tomato-light); border-radius: 8px; padding: 8px 12px; margin-bottom: 10px; font-weight: 700; }
+  .toc .region-link a { color: #b71c1c; }
+
+  .quick-ref { background: var(--tomato-bg); border-radius: 12px; padding: 24px 28px; margin-top: 24px; }
+  .quick-ref h2 { color: var(--tomato-deep); border-bottom: none; margin-bottom: 14px; }
+  .quick-ref-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px 24px; }
+  .quick-ref-grid div { font-size: 0.92em; }
+  .quick-ref-grid b { color: var(--tomato-deep); }
+
+  footer { text-align: center; color: var(--text-light); font-size: 0.85em; padding: 20px; }
+  @media (max-width: 600px) {
+    .cover h1 { font-size: 1.8em; }
+    section { padding: 20px; }
+    .quick-ref-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ==================== 封面 ==================== -->
+<div class="cover">
+  <h1>切诺基虎大红矮星番茄种植手册</h1>
+  <p class="subtitle">从育种到收获的全流程操作指南 · 广西来宾适配版</p>
+  <span class="meta">品种：Cherokee Tiger Big Red Dwarf · 株型：矮生无限生长 · 适配地区：广西来宾</span>
+</div>
+
+<div class="container">
+
+  <!-- ==================== 品种简介 ==================== -->
+  <div class="intro-box">
+    <h3>关于切诺基虎大红矮星番茄</h3>
+    <p>"切诺基虎大红矮星"是<b>切诺基（Cherokee）系列血统</b>的矮生番茄：以著名的切诺基紫（Cherokee Purple）风味基因为底，选育出<b>大红果实</b>且株型<b>矮化紧凑（矮星）</b>的品种。它兼具传家宝番茄浓郁的番茄味、微酸回甘的口感，以及矮生型占地小、适合盆栽与阳台的优势。果实扁圆大红，单果重多在 150~280g；植株节间短、茎秆粗壮，株高通常仅 <b>1~1.5m</b>（普通无限生长番茄常达 2~3m），但仍属<b>无限生长型</b>，需整枝打杈与搭架。生食、凉拌、炒菜、做酱皆宜。</p>
+  </div>
+
+  <!-- ==================== 目录 ==================== -->
+  <div class="toc">
+    <h2>目录</h2>
+    <div class="region-link">📍 <a href="#laibin">广西来宾地区适配说明（气候·茬口·难点）</a></div>
+    <ol>
+      <li><a href="#s1">育种与播种</a></li>
+      <li><a href="#s2">苗期管理</a></li>
+      <li><a href="#s3">移栽定植</a></li>
+      <li><a href="#s4">水肥管理</a></li>
+      <li><a href="#s5">整枝与搭架</a></li>
+      <li><a href="#s6">病虫害防治</a></li>
+      <li><a href="#s7">花期与授粉</a></li>
+      <li><a href="#s8">收获与储藏</a></li>
+      <li><a href="#s9">全年种植时间线</a></li>
+      <li><a href="#s10">速查参考表</a></li>
+    </ol>
+  </div>
+
+  <!-- ==================== 广西来宾地区适配说明 ==================== -->
+  <section id="laibin" class="region-section">
+    <h2><span class="num">★</span>广西来宾地区适配说明</h2>
+    <div class="region-banner">来宾市 · 桂中 · 北回归线南缘</div>
+    <p>本章根据来宾市（以兴宾区/市区为代表）的气候与土壤数据，对番茄通用流程做本地化调整。番茄比辣椒<b>更怕高温高湿</b>——来宾 7~8 月的酷暑和 4~8 月的雨季，是番茄种植的两大"杀手"，必须重点应对；但来宾<b>无霜期长（约331天）、冬季温和</b>，又让番茄拥有比北方长得多的可种植窗口。</p>
+
+    <h3>一、来宾气候与土壤概况</h3>
+    <table>
+      <tr><th>指标</th><th>来宾数据</th><th>对种番茄的影响</th></tr>
+      <tr><td>气候类型</td><td>中亚热带向南亚热带过渡季风气候</td><td>温暖湿润，可多茬栽培</td></tr>
+      <tr><td>年平均气温</td><td>20.7°C</td><td>生长季长，几乎无越冬冻害</td></tr>
+      <tr><td>1月均温</td><td>10.9°C（近年实测 12.3°C）</td><td>冬季温和；1月下旬偶发寒潮可至 -3~1°C，需保温</td></tr>
+      <tr><td>7月均温 / 月均最高</td><td>28.6°C / 33~33.6°C</td><td><b>番茄坐果临界约35°C，7~8月极易落花落果</b></td></tr>
+      <tr><td>极端高温</td><td>38.9°C</td><td>露天无遮阴将严重绝收</td></tr>
+      <tr><td>无霜期</td><td>约 331 天（初霜约 12/25，终霜约 2/5）</td><td>安全期长，但12月下旬~2月上旬留意霜冻</td></tr>
+      <tr><td>年降水</td><td>约 1360mm（兴宾区约 1100mm，属"桂中干旱片"）</td><td>分布极不均：雨季防涝、旱季补水</td></tr>
+      <tr><td>降水集中期</td><td>4~8月（占全年约70%），5月最多、1月最少</td><td>雨季晚疫病/青枯病高发，需避雨+排水</td></tr>
+      <tr><td>年均日照</td><td>1580~1660 小时</td><td>充足，利于光合作用与转色</td></tr>
+      <tr><td>相对湿度</td><td>76~78%</td><td><b>高温+高湿是番茄病害温床</b></td></tr>
+      <tr><td>主要土壤</td><td>红壤、水稻土为主，偏酸、黏重、贫瘠</td><td>需调酸、增施有机肥、重点补钙防脐腐病</td></tr>
+    </table>
+
+    <h3>二、推荐茬口安排（来宾本地化）</h3>
+    <p>番茄对温度敏感：<b>开花坐果适温 20~28°C，高于 30°C（尤其夜温高于 24°C）花粉发芽率骤降，高于 35°C 几乎不能坐果</b>。因此来宾应让番茄的<b>盛花坐果期避开 7~8 月高温</b>，主攻"春提早"和"秋延后"两个凉季窗口。</p>
+    <table>
+      <tr><th>茬口</th><th>播种期</th><th>定植期</th><th>采收期</th><th>特点</th></tr>
+      <tr><td><b>春茬（主栽）</b></td><td>12月~1月（大棚/小拱棚保温）</td><td>2月中下旬~3月上旬</td><td>4月下旬~6月</td><td>赶在7月高温前收完；来宾冬季温和，育苗不难，但1月寒潮需保温</td></tr>
+      <tr><td><b>秋茬</b></td><td>6月下旬~7月上旬</td><td>7月中下旬~8月初</td><td>9~12月</td><td>秋凉后坐果好、病害少、品质佳；苗期高温需遮阴育苗</td></tr>
+      <tr><td><b>越冬茬（设施）</b></td><td>9~10月</td><td>10~11月</td><td>12月~次年3月</td><td>大棚延后栽培；需防1月寒潮与低温弱光落花，露天不建议</td></tr>
+    </table>
+    <div class="tip-box">
+      <span class="label">💡 来宾番茄避热原则</span>
+      一句话：<b>"春茬抢在 7 月前收完，秋茬等 8 月后凉下来再种"</b>。盛夏 7~8 月即使植株活着，也基本不坐果、易染病，不如让番茄避开这段时间，把产量集中在凉季。
+    </div>
+
+    <h3>三、五大本地化难点与对策</h3>
+    <h4>1. 夏季高温（坐果第一杀手）</h4>
+    <ul>
+      <li><b>遮阴降温</b>：高温时段（11:00~15:00）覆盖 30%~50% 遮阳网；配合微喷雾化降温增湿</li>
+      <li><b>避峰坐果</b>：春茬早定植早收、秋茬晚播，使盛花期落在 20~28°C 的凉季</li>
+      <li><b>保花保果</b>：高温期可喷 0.1% 硼砂 + 0.2% 磷酸二氢钾，或激素点花（防落素）辅助坐果</li>
+      <li><b>防日灼</b>：保留果实上方叶片遮荫，避免果实直晒</li>
+    </ul>
+
+    <h4>2. 雨季高湿病害（4~8月）</h4>
+    <p>来宾 70% 降水集中在 4~8 月，番茄最怕<b>晚疫病、早疫病、青枯病</b>。对策：</p>
+    <ul>
+      <li><b>避雨栽培</b>：搭建简易避雨棚（顶部覆膜、四周通风），是来宾种番茄成败关键</li>
+      <li><b>起高垄+深沟</b>：畦高 25~30cm，排水沟深 30cm 以上，暴雨后快速排干</li>
+      <li><b>雨前预防</b>：雨季前开始定期喷保护性杀菌剂（代森锰锌、波尔多液），雨后补喷</li>
+      <li><b>通风降湿</b>：合理密植、及时整枝打杈，降低田间湿度</li>
+    </ul>
+
+    <h4>3. 冬春干旱（桂中干旱片）</h4>
+    <ul>
+      <li><b>节水灌溉</b>：滴灌或膜下沟灌，少量多次，结果期尤其不能干湿骤变（易裂果）</li>
+      <li><b>覆盖保墒</b>：地膜/稻草覆盖</li>
+      <li><b>蓄水池</b>：坡地提前蓄水保障旱季</li>
+    </ul>
+
+    <h4>4. 红壤改良（调酸·补钙·防脐腐）</h4>
+    <p>番茄<b>需钙量极大</b>，红壤偏酸缺钙极易导致脐腐病和生长点坏死。对策：</p>
+    <ul>
+      <li><b>调酸</b>：播前 2~3 周每亩施生石灰 80~120kg（每 m² 约 120~180g），pH 调至 6.0~6.8</li>
+      <li><b>补钙</b>：基肥加钙镁磷肥；定植时每穴施一把骨粉/贝壳粉；结果期每 10~15 天叶面喷 0.2% 氯化钙</li>
+      <li><b>增肥改土</b>：大量腐熟农家肥/堆肥 + 草木灰，改良黏重结构</li>
+      <li><b>高垄</b>：红壤易渍，务必高垄栽培</li>
+    </ul>
+
+    <h4>5. 连作障碍</h4>
+    <ul>
+      <li>番茄与辣椒、茄子、土豆同属茄科，<b>忌连作</b>，至少间隔 2~3 年</li>
+      <li>来宾最佳轮作：水稻 → 番茄 → 玉米/豆类</li>
+      <li>连作地建议嫁接苗（以抗病砧木如"砧木一号"嫁接）或土壤消毒</li>
+    </ul>
+
+    <div class="warn-box">
+      <span class="label">⚠ 来宾种番茄重点提醒</span>
+      番茄在来宾的成败口诀：<b>"避盛夏、防高湿、避雨棚、钙要足"</b>。相比辣椒，番茄对 35°C 高温和雨季高湿更敏感，<b>简易避雨棚 + 遮阳网 + 高垄排水</b>三件套，比事后打药有效得多。把这三样在定植前准备好。
+    </div>
+  </section>
+
+  <!-- ==================== 1. 育种与播种 ==================== -->
+  <section id="s1">
+    <h2><span class="num">1</span>育种与播种</h2>
+
+    <h3>1.1 播种时间</h3>
+    <p>番茄种子发芽适温 <b>25~30°C</b>，发芽快（5~10天），比辣椒容易。建议终霜/低温风险过后，提前 <b>5~7周</b>育苗。</p>
+    <ul>
+      <li>北方露地：2~3月室内播种，4~5月定植</li>
+      <li><b>广西来宾</b>：春茬 12月~1月（保温育苗）、秋茬 6月下旬~7月上旬（详见"来宾地区适配说明"）</li>
+      <li>温室/阳台全年可育，但冬季需补光保温</li>
+    </ul>
+
+    <h3>1.2 育苗容器与基质</h3>
+    <ul>
+      <li><b>容器</b>：育苗盘（穴径4~5cm）或穴盘，底部打孔</li>
+      <li><b>基质</b>：育苗专用基质，或泥炭 50% + 蛭石 30% + 珍珠岩 20%</li>
+      <li><b>消毒</b>：基质开水浇烫或微波加热 3 分钟，防猝倒病</li>
+      <li><b>pH</b>：6.0~6.8（番茄比辣椒略耐碱，6.0~7.0 皆可）</li>
+    </ul>
+
+    <h3>1.3 种子处理与催芽</h3>
+    <ol>
+      <li><b>温汤浸种</b>：55°C 温水浸 15 分钟（搅拌），再常温浸 6~8 小时</li>
+      <li><b>催芽</b>：湿纸巾包裹，28~30°C 环境，2~4 天露白</li>
+      <li><b>消毒（可选）</b>：10% 磷酸三钠浸 20 分钟，清水冲净，预防病毒病</li>
+      <li><b>直播也可</b>：番茄发芽率高，温热的来宾甚至可直接播于穴盘不催芽</li>
+    </ol>
+
+    <div class="tip-box">
+      <span class="label">💡 矮星品种播种注意</span>
+      切诺基虎大红矮星为<b>矮生无限生长型</b>，苗期生长比普通番茄略慢、节间更短。育苗期不要过度控水控温导致"僵苗"，保持 20~25°C 促壮苗即可。
+    </div>
+
+    <h3>1.4 播种操作</h3>
+    <ol>
+      <li>基质装盘浇透水</li>
+      <li>每穴 1~2 粒，胚根朝下</li>
+      <li>覆土 <b>0.5~1cm</b>（种子直径的 2~3 倍）</li>
+      <li>喷湿表面，覆膜保湿，置于 25~28°C</li>
+      <li>出苗即揭膜，移至强光处防徒长</li>
+    </ol>
+
+    <h3>1.5 出苗</h3>
+    <p>通常 5~10 天出土。出苗后<b>立即给足光照</b>，否则下胚轴拔长（高脚苗）后难恢复。</p>
+  </section>
+
+  <!-- ==================== 2. 苗期管理 ==================== -->
+  <section id="s2">
+    <h2><span class="num">2</span>苗期管理</h2>
+
+    <h3>2.1 光照</h3>
+    <ul>
+      <li>出苗后立即全日照，每天 ≥ 6 小时直射光</li>
+      <li>补光灯：LED 距苗顶 20~30cm，每天 14~16 小时</li>
+      <li>光照不足是番茄育苗徒长的头号原因</li>
+    </ul>
+
+    <h3>2.2 温度</h3>
+    <table>
+      <tr><th>阶段</th><th>日温</th><th>夜温</th><th>说明</th></tr>
+      <tr><td>出苗后1周</td><td>20~22°C</td><td>15~16°C</td><td>适当降温防徒长</td></tr>
+      <tr><td>1周后~定植前</td><td>22~25°C</td><td>15~18°C</td><td>壮苗适温</td></tr>
+      <tr><td>定植前7天炼苗</td><td>18~22°C</td><td>12~15°C</td><td>逐步适应外界</td></tr>
+    </table>
+    <div class="warn-box">
+      <span class="label">⚠ 徒长预警</span>
+      番茄苗期最易"高脚"（茎细高、节间长）。一旦发现立即<b>增加光照、降低夜温、控水</b>，并可喷施 50ppm 多效唑（烯效唑）控旺，但浓度宁低勿高。
+    </div>
+
+    <h3>2.3 浇水</h3>
+    <ul>
+      <li>原则：<b>见干见湿</b>，不干不浇、浇则浇透</li>
+      <li>育苗期控水促根，但不可旱到萎蔫</li>
+      <li>水温接近室温，冷水浇苗易沤根</li>
+    </ul>
+
+    <h3>2.4 施肥</h3>
+    <ul>
+      <li>子叶期不施肥</li>
+      <li>2~3 片真叶后：每 7~10 天施一次 1/2 浓度平衡水溶肥（20-20-20）</li>
+      <li>叶色淡可喷 0.2% 尿素或螯合铁</li>
+    </ul>
+
+    <h3>2.5 假植（分苗）</h3>
+    <p>2~3 片真叶时假植到 8~10cm 钵，方法与辣椒相同；番茄根系更旺，假植后恢复快。</p>
+
+    <h3>2.6 炼苗</h3>
+    <p>定植前 7~10 天逐步通风、降温、控水、见光，使苗适应露地环境。来宾 1 月寒潮期炼苗需格外谨慎，避免冻伤。</p>
+  </section>
+
+  <!-- ==================== 3. 移栽定植 ==================== -->
+  <section id="s3">
+    <h2><span class="num">3</span>移栽定植</h2>
+
+    <h3>3.1 定植时机</h3>
+    <ul>
+      <li>气温：<b>夜间最低温稳定 ≥ 12~15°C</b>，地温 ≥ 15°C</li>
+      <li>苗龄：5~7 片真叶，株高 15~20cm，茎粗、节间短、现花蕾前最佳</li>
+      <li>北方露地 4~5 月；<b>来宾春茬 2月中下旬~3月上旬、秋茬 7月中下旬~8月初</b></li>
+    </ul>
+    <div class="warn-box">
+      <span class="label">⚠ 注意</span>
+      番茄遇 5°C 以下低温会冷害、落花；虽来宾少霜冻，但 1 月寒潮可至 -3~1°C，春茬小拱棚育苗须防寒。
+    </div>
+
+    <h3>3.2 选地与整地</h3>
+    <ul>
+      <li><b>光照</b>：全日照 ≥ 8h</li>
+      <li><b>前茬</b>：忌茄科连作，最好水稻/玉米/豆类后茬</li>
+      <li><b>土壤</b>：疏松肥沃、排水好，pH 6.0~6.8</li>
+      <li><b>基肥</b>：每 m² 腐熟有机肥 4~6kg + 钙镁磷肥 50~80g + 草木灰 100g，深翻 25~30cm</li>
+      <li><b>做畦</b>：来宾多雨，<b>高垄（25~30cm）+ 深沟</b>，垄宽 80~100cm</li>
+    </ul>
+    <div class="tip-box">
+      <span class="label">💡 来宾红壤改土</span>
+      红壤偏酸黏重，定植前 2~3 周施生石灰调酸，并大量混腐熟农家肥与草木灰；番茄需钙多，基肥务必加钙镁磷肥或骨粉，<b>高垄栽培</b>防渍防青枯。
+    </div>
+
+    <h3>3.3 定植密度</h3>
+    <table>
+      <tr><th>整枝方式</th><th>株距</th><th>行距</th><th>备注</th></tr>
+      <tr><td>单干整枝</td><td>35~45cm</td><td>60~70cm</td><td>矮星可密植，通风好、病害少</td></tr>
+      <tr><td>双干整枝</td><td>45~55cm</td><td>70~80cm</td><td>单株产量高，但田间较密</td></tr>
+      <tr><td>盆栽（5加仑/20L）</td><td>—</td><td>—</td><td>1株/盆，单干整枝</td></tr>
+    </table>
+
+    <h3>3.4 定植步骤</h3>
+    <ol>
+      <li>定植前 1 天苗钵浇透水</li>
+      <li>挖穴，穴施少量腐熟有机肥/骨粉作"护根肥"</li>
+      <li><b>深栽</b>：番茄茎节能发不定根，可栽至子叶节上方 1~2cm，甚至"卧栽"（茎横卧埋土），促根壮苗</li>
+      <li>浇透定根水（可加生根剂）</li>
+      <li><b>立即搭架/插杆</b>：矮星虽矮，仍会倒伏，定植时即插竹竿或围支架</li>
+      <li>早春可覆盖地膜增温保墒</li>
+    </ol>
+  </section>
+
+  <!-- ==================== 4. 水肥管理 ==================== -->
+  <section id="s4">
+    <h2><span class="num">4</span>水肥管理</h2>
+
+    <h3>4.1 浇水</h3>
+    <ul>
+      <li><b>见干见湿</b>，结果期需水多，保持土壤湿润均衡</li>
+      <li>番茄<b>极怕忽干忽湿</b>：干旱后猛灌水 → 裂果、脐腐；来宾旱季滴灌最稳</li>
+      <li>雨季及时排水，忌积水（青枯病、烂根）</li>
+      <li>浇根不浇叶，减少病害</li>
+    </ul>
+    <div class="warn-box">
+      <span class="label">⚠ 裂果与脐腐</span>
+      二者多因<b>水分剧烈波动 + 缺钙</b>。来宾旱季→暴雨切换频繁，务必滴灌稳水 + 结果期喷钙，可大幅减少损失。
+    </div>
+
+    <h3>4.2 施肥方案</h3>
+    <table>
+      <tr><th>阶段</th><th>肥料</th><th>N-P-K</th><th>频率</th><th>要点</th></tr>
+      <tr><td>缓苗后~开花前</td><td>平衡肥</td><td>20-20-20</td><td>每10~14天</td><td>促根壮秧，不偏氮</td></tr>
+      <tr><td>现蕾~初花</td><td>高磷肥</td><td>10-30-20</td><td>每10天</td><td>促花芽、防落花</td></tr>
+      <tr><td>坐果~膨大</td><td>高钾肥</td><td>15-10-30</td><td>每7~10天</td><td>膨果、增糖、着色</td></tr>
+      <tr><td>盛果期</td><td>高钾 + 钙镁</td><td>12-8-35</td><td>每7天</td><td>叶面补钙防脐腐</td></tr>
+      <tr><td>采收后期</td><td>平衡肥</td><td>20-20-20</td><td>每14天</td><td>恢复树势</td></tr>
+    </table>
+    <div class="tip-box">
+      <span class="label">💡 有机方案</span>
+      基肥腐熟鸡粪/羊粪 + 骨粉（钙磷）；追肥发酵豆饼水（稀释20倍）+ 草木灰浸出液（钾）；叶面喷海藻精。番茄需钾需钙都大，有机肥要配足骨粉/草木灰。
+    </div>
+    <h3>4.3 叶面肥</h3>
+    <ul>
+      <li>花期：0.1% 硼砂 + 0.2% 磷酸二氢钾，提高坐果</li>
+      <li>结果期：0.2% 氯化钙，7~10 天一次，防脐腐</li>
+      <li>傍晚/阴天喷施，避开高温</li>
+    </ul>
+  </section>
+
+  <!-- ==================== 5. 整枝与搭架 ==================== -->
+  <section id="s5">
+    <h2><span class="num">5</span>整枝与搭架</h2>
+
+    <h3>5.1 为什么整枝</h3>
+    <p>矮星虽矮，但属<b>无限生长型</b>，腋芽会不断萌发成侧枝。不整枝会导致枝叶过密、通风差、病害重、养分分散、果小。整枝是番茄高产优质的关键。</p>
+
+    <h3>5.2 单干整枝（推荐矮星）</h3>
+    <ol>
+      <li>只留<b>主茎</b>结果，所有腋芽（侧枝）见嫩即抹除</li>
+      <li>每隔几天检查一次，侧芽长 3~5cm 前抹掉（手掰或剪）</li>
+      <li>优点：通风好、病害少、可密植、果实集中</li>
+    </ol>
+
+    <h3>5.3 双干整枝</h3>
+    <ol>
+      <li>留主茎 + 第一花序下最壮的一条侧枝，其余抹除</li>
+      <li>优点：单株产量高；缺点：田间偏密、易生病</li>
+      <li>矮星空间有限，<b>单干更推荐</b></li>
+    </ol>
+
+    <h3>5.4 打顶（摘心）</h3>
+    <ul>
+      <li>矮星株高约 1~1.5m，当长到 <b>1.2~1.5m</b> 或留足 5~6 穗果后打顶</li>
+      <li>打顶时顶部留 2 片叶"养果"，防止日灼和顶端优势反转</li>
+      <li>秋茬可在霜前 30~40 天打顶，集中养分促熟</li>
+    </ul>
+
+    <h3>5.5 搭架与绑蔓</h3>
+    <ul>
+      <li><b>支架</b>：竹竿（人字架）、番茄笼、或吊蔓（大棚）</li>
+      <li><b>绑蔓</b>：随生长每 2~3 节绑一道，"8 字绑法"松紧适中不勒茎</li>
+      <li>矮星虽矮，结果后仍会头重脚轻倒伏，<b>必须支架</b></li>
+    </ul>
+
+    <h3>5.6 疏花疏果</h3>
+    <ul>
+      <li>第一穗（门果）可留，但建议<b>第一穗只留 2~3 个</b>，促植株壮</li>
+      <li>每穗留果：大果型 3~4 个，过多果小、易畸</li>
+      <li>摘除畸形花、畸形果、病果</li>
+    </ul>
+
+    <div class="warn-box">
+      <span class="label">⚠ 整枝卫生</span>
+      整枝、打杈在晴天上午进行，伤口愈合快；工具每株消毒（酒精）；病株最后处理，避免传播病毒病与青枯病。
+    </div>
+  </section>
+
+  <!-- ==================== 6. 病虫害防治 ==================== -->
+  <section id="s6">
+    <h2><span class="num">6</span>病虫害防治</h2>
+    <p>来宾高温高湿，病害压力大于北方。<b>以防为主</b>：避雨棚 + 高垄 + 轮作 + 清洁田园 + 定期预防喷药。</p>
+    <table>
+      <tr><th>病虫害</th><th>症状</th><th>防治</th></tr>
+      <tr><td>猝倒病/立枯病（苗期）</td><td>幼苗茎基腐烂倒伏</td><td>基质消毒；控水；噁霉灵/多菌灵灌根</td></tr>
+      <tr><td>晚疫病</td><td>叶缘水渍状褐斑、白霉，果面硬褐斑；雨季爆发</td><td>避雨+降湿；烯酰吗啉/甲霜灵锰锌；雨后即喷</td></tr>
+      <tr><td>早疫病</td><td>叶上轮纹状黑斑，渐枯死</td><td>代森锰锌/苯醚甲环唑预防；清除病叶</td></tr>
+      <tr><td>叶霉病</td><td>叶背灰紫色霉层，叶黄枯</td><td>通风降湿；春雷霉素/嘧菌酯</td></tr>
+      <tr><td>灰霉病</td><td>花、果软腐生灰霉，高湿发生</td><td>摘除残花；腐霉利/异菌脲；降湿</td></tr>
+      <tr><td>青枯病</td><td>晴天中午萎蔫、晚恢复，茎切口菌脓，维管褐变</td><td>无药可治；忌连作；嫁接抗病砧木；拔毁</td></tr>
+      <tr><td>病毒病</td><td>花叶、畸形、矮缩，蚜虫/粉虱传播</td><td>防虫；拔病株；洗手再碰健株</td></tr>
+      <tr><td>脐腐病</td><td>果顶黑褐凹陷</td><td>均衡供水 + 补钙（喷0.2%氯化钙）</td></tr>
+      <tr><td>裂果</td><td>果面纵/环裂</td><td>稳水灌溉；补钙；选抗裂品种</td></tr>
+      <tr><td>蚜虫/白粉虱</td><td>嫩梢聚集、蜜露、传播病毒</td><td>黄板；吡虫啉/啶虫脒；天敌</td></tr>
+      <tr><td>棉铃虫/烟青虫</td><td>蛀果，果内虫粪</td><td>性诱剂；苏云金杆菌（BT）；高效氯氟氰菊酯</td></tr>
+      <tr><td>潜叶蝇</td><td>叶内白色蛇形隧道</td><td>黄板；灭蝇胺；摘除虫叶</td></tr>
+    </table>
+    <div class="tip-box">
+      <span class="label">💡 来宾防病核心</span>
+      番茄在来宾最怕"雨+湿"。<b>顶部覆膜的简易避雨棚</b>能把晚疫病、青枯病发生率降一大半；再配合高垄排水 + 雨季前开始每 7~10 天轮换喷保护剂，基本能稳住。
+    </div>
+  </section>
+
+  <!-- ==================== 7. 花期与授粉 ==================== -->
+  <section id="s7">
+    <h2><span class="num">7</span>花期与授粉</h2>
+
+    <h3>7.1 花期管理</h3>
+    <ul>
+      <li>定植后约 30~45 天开始现蕾开花</li>
+      <li><b>坐果适温：日 20~28°C、夜 15~20°C</b></li>
+      <li><b>高于 30°C（夜温&gt;24°C）花粉失活、落花；高于 35°C 几乎不坐果</b> → 遮阴降温</li>
+      <li><b>低于 15°C</b> 也影响授粉 → 保温</li>
+      <li>花期适当控氮，防徒长落花</li>
+    </ul>
+    <div class="warn-box">
+      <span class="label">⚠ 来宾高温落花</span>
+      7~8 月来宾月均最高 33~33.6°C、极端 38.9°C，番茄会大面积落花落果、畸形果、空穗。务必让盛花期避开此时段，或遮阴 + 点花（防落素）保果。
+    </div>
+
+    <h3>7.2 授粉</h3>
+    <ul>
+      <li>番茄自花授粉，露地风/虫辅助一般够用</li>
+      <li><b>设施/封闭阳台需人工辅助</b>：上午轻摇花序或弹花，使花粉散落</li>
+      <li>也可用电动授粉器振动花穗</li>
+      <li>最佳时间：上午 9:00~11:00，花粉活力最强</li>
+      <li>高温期可喷/蘸 防落素（对氯苯氧乙酸）保花保果，严格按浓度，避免药害畸形</li>
+    </ul>
+  </section>
+
+  <!-- ==================== 8. 收获与储藏 ==================== -->
+  <section id="s8">
+    <h2><span class="num">8</span>收获与储藏</h2>
+
+    <h3>8.1 采收时机</h3>
+    <table>
+      <tr><th>成熟度</th><th>状态</th><th>用途</th></tr>
+      <tr><td>绿熟期</td><td>果已长足、全绿、籽白</td><td>可摘下催熟，适合远运、避开雨季</td></tr>
+      <tr><td>转色期（推荐采摘）</td><td>果顶开始泛红/泛橙</td><td>风味与耐运兼顾，摘后室内自熟最佳</td></tr>
+      <tr><td>完熟期</td><td>全面红透、稍软</td><td>风味巅峰，即采即食；不耐运</td></tr>
+    </table>
+    <ul>
+      <li>从开花到成熟约 <b>45~60 天</b>（矮星略快）</li>
+      <li>从定植到首采约 <b>55~75 天</b></li>
+      <li><b>来宾雨季建议转色期即采</b>，室内阴凉处自熟，避免田间烂果、裂果、日灼</li>
+    </ul>
+
+    <h3>8.2 采收方法</h3>
+    <ol>
+      <li>手捏果实基部，<b>果柄与果枝连接处"扭摘"</b>，保留绿色果柄（番茄柄洼带绿更耐贮）</li>
+      <li>轻拿轻放，避免碰伤</li>
+      <li>早晨露干后采收，温度低保鲜好</li>
+      <li>采后及时追肥浇水，促后续果</li>
+    </ol>
+    <div class="tip-box">
+      <span class="label">💡 催熟技巧</span>
+      绿熟果与苹果/香蕉同袋常温放置，乙烯催熟 2~4 天转红。忌冰箱冷藏绿果（会冻伤永不转红）。
+    </div>
+
+    <h3>8.3 储藏</h3>
+    <table>
+      <tr><th>方式</th><th>时长</th><th>要点</th></tr>
+      <tr><td>室温自熟</td><td>转色果 3~7天转红</td><td>阴凉通风、单果平铺，忌堆叠</td></tr>
+      <tr><td>冷藏</td><td>完熟果 5~10天</td><td>10~13°C 最佳（非 4°C，番茄怕冷害）；湿度 85~90%</td></tr>
+      <tr><td>加工</td><td>长期</td><td>制酱、罐头、烘干；风味浓缩</td></tr>
+    </table>
+
+    <h3>8.4 留种</h3>
+    <ol>
+      <li>选最先熟、最典型、健康的完熟果留种（矮星为杂交/稳定种需确认是否保纯）</li>
+      <li>剖果取胶状籽，加少量水发酵 1~2 天（去胶质抑制剂），清水淘净</li>
+      <li>阴干 5~7 天，装瓶标注</li>
+      <li>阴凉干燥保存，活力 3~5 年</li>
+    </ol>
+    <div class="warn-box">
+      <span class="label">⚠ 留种提示</span>
+      若为 F1 杂交种，留种后代性状会分离，不建议自留；若为稳定种/传家宝种可留。不同番茄品种间隔 50m 以上或套袋防串粉。
+    </div>
+  </section>
+
+  <!-- ==================== 9. 全年种植时间线 ==================== -->
+  <section id="s9">
+    <h2><span class="num">9</span>全年种植时间线（来宾版）</h2>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="time">春茬 · 12月~1月</div>
+        <div class="desc">保温育苗（小拱棚/阳台）→ 浸种催芽、穴盘播种（1月寒潮需保温）</div>
+      </div>
+      <div class="timeline-item">
+        <div class="time">春茬 · 2月</div>
+        <div class="desc">出苗揭膜防徒长 → 2~3片真叶假植 → 补光控温壮苗</div>
+      </div>
+      <div class="timeline-item">
+        <div class="time">春茬 · 2月中下旬~3月上旬</div>
+        <div class="desc">炼苗后定植（夜温稳定≥12°C）→ 高垄+支架+调酸红壤基肥</div>
+      </div>
+      <div class="timeline-item">
+        <div class="time">春茬 · 3~4月</div>
+        <div class="desc">缓苗 → 单干整枝打杈、绑蔓、施平衡肥</div>
+      </div>
+      <div class="timeline-item">
+        <div class="time">春茬 · 4~5月</div>
+        <div class="desc">开花坐果（凉季窗口）→ 高磷钾、补钙硼、遮阳网备好</div>
+      </div>
+      <div class="timeline-item">
+        <div class="time">春茬 · 5~6月</div>
+        <div class="desc">膨大采收 → 转色期即采室内自熟；赶在 7月高温前收完</div>
+      </div>
+      <div class="timeline-item">
+        <div class="time">夏 · 7~8月（风险期）</div>
+        <div class="desc">高温+雨季 → 仅秋茬育苗需遮阴；露天番茄基本停果，做好避雨防病</div>
+      </div>
+      <div class="timeline-item">
+        <div class="time">秋茬 · 6月下旬~7月上旬</div>
+        <div class="desc">秋茬播种（遮阴防高温育苗）→ 7月中下旬~8月初定植</div>
+      </div>
+      <div class="timeline-item">
+        <div class="time">秋茬 · 8~9月</div>
+        <div class="desc">开花坐果（气温回落）→ 高磷钾补钙、避雨棚防雨季尾</div>
+      </div>
+      <div class="timeline-item">
+        <div class="time">秋茬 · 9~12月</div>
+        <div class="desc">盛收期，秋凉品质佳、病害少；12月后设施保温延后</div>
+      </div>
+      <div class="timeline-item">
+        <div class="time">全年 · 10~3月（旱季）</div>
+        <div class="desc">滴灌稳水防裂果脐腐；红壤地块收后轮作水稻/玉米</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 10. 速查参考表 ==================== -->
+  <section id="s10">
+    <h2><span class="num">10</span>速查参考表</h2>
+    <div class="quick-ref">
+      <div class="quick-ref-grid">
+        <div><b>品种</b>：切诺基虎大红矮星（矮生无限生长）</div>
+        <div><b>物种</b>：Solanum lycopersicum</div>
+        <div><b>株高</b>：1~1.5m（矮化）</div>
+        <div><b>果实</b>：扁圆大红，150~280g</div>
+        <div><b>生长型</b>：无限生长（需整枝）</div>
+        <div><b>播种到采收</b>：约 100~130 天</div>
+        <div><b>定植到采收</b>：约 55~75 天</div>
+        <div><b>发芽适温</b>：25~30°C</div>
+        <div><b>发芽时间</b>：5~10 天</div>
+        <div><b>坐果适温</b>：日20~28°C / 夜15~20°C</div>
+        <div><b>坐果上限</b>：≥35°C 几乎不坐果</div>
+        <div><b>最低耐温</b>：5°C 冷害，0°C 冻死</div>
+        <div><b>光照需求</b>：全日照 ≥ 8h/天</div>
+        <div><b>土壤pH</b>：6.0~7.0</div>
+        <div><b>整枝方式</b>：单干（推荐）</div>
+        <div><b>单干株距</b>：35~45cm</div>
+        <div><b>需支架</b>：是</div>
+        <div><b>盆栽最小</b>：5加仑（20L）/株</div>
+        <div><b>留种活力</b>：3~5 年</div>
+        <div style="grid-column:1 / -1; border-top:1px dashed var(--tomato-light); margin-top:6px; padding-top:10px;"><b>📍 广西来宾地区参数</b></div>
+        <div><b>当地年均温</b>：20.7°C</div>
+        <div><b>1月/7月均温</b>：10.9°C / 28.6°C（月均最高33~33.6°C）</div>
+        <div><b>极端高温</b>：38.9°C（需遮阴避雨）</div>
+        <div><b>无霜期</b>：约331天</div>
+        <div><b>年降水</b>：约1360mm（4~8月占70%）</div>
+        <div><b>主要土壤</b>：红壤（偏酸·需调酸补钙防脐腐）</div>
+        <div><b>春茬播种/定植</b>：12月~1月 / 2月中下旬~3月上旬</div>
+        <div><b>秋茬播种/定植</b>：6月下旬~7月上旬 / 7月中下旬~8月初</div>
+        <div><b>核心难点</b>：避盛夏 · 防高湿 · 避雨棚 · 钙要足</div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>切诺基虎大红矮星番茄种植手册 · 广西来宾适配版 · 仅供种植参考，请结合当地气候灵活调整</p>
+  </footer>
+
+</div>
+</body>
+</html>
