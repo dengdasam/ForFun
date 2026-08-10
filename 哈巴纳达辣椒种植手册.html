@@ -225,6 +225,21 @@
     font-size: 0.85em;
     padding: 20px;
   }
+  .region-section { background: linear-gradient(135deg, #fff8f0 0%, #fff3e0 100%); border: 2px solid var(--orange-light); }
+  .region-section h2 { color: #e65100; border-bottom-color: var(--orange-light); }
+  .region-section h2 .num { background: var(--orange); }
+  .region-banner {
+    background: var(--orange);
+    color: #fff;
+    display: inline-block;
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 0.85em;
+    font-weight: 700;
+    margin-bottom: 14px;
+  }
+  .toc .region-link { background: var(--orange-bg); border: 1px solid var(--orange-light); border-radius: 8px; padding: 8px 12px; margin-bottom: 10px; font-weight: 700; }
+  .toc .region-link a { color: #e65100; }
   @media (max-width: 600px) {
     .cover h1 { font-size: 1.8em; }
     section { padding: 20px; }
@@ -238,7 +253,7 @@
 <div class="cover">
   <h1>哈巴纳达辣椒种植手册</h1>
   <p class="subtitle">从育种到收获的全流程操作指南</p>
-  <span class="meta">品种：Habanada · 辣度：0 SHU（零辣度） · 习性：喜温喜阳</span>
+  <span class="meta">品种：Habanada · 辣度：0 SHU（零辣度） · 习性：喜温喜阳 · 适配地区：广西来宾</span>
 </div>
 
 <div class="container">
@@ -252,6 +267,7 @@
   <!-- ==================== 目录 ==================== -->
   <div class="toc">
     <h2>目录</h2>
+    <div class="region-link">📍 <a href="#laibin">广西来宾地区适配说明（气候·茬口·难点）</a></div>
     <ol>
       <li><a href="#s1">育种与播种</a></li>
       <li><a href="#s2">苗期管理</a></li>
@@ -266,6 +282,90 @@
     </ol>
   </div>
 
+  <!-- ==================== 广西来宾地区适配说明 ==================== -->
+  <section id="laibin" class="region-section">
+    <h2><span class="num">★</span>广西来宾地区适配说明</h2>
+    <div class="region-banner">来宾市 · 桂中 · 北回归线南缘</div>
+    <p>本章根据来宾市（以兴宾区/市区为代表）的官方气候与土壤数据，对通用种植流程做本地化调整。来宾气候温暖、无霜期长，<b>全年可种</b>，但<b>夏季高温和雨季涝害</b>是辣椒种植的两大挑战，需重点应对。</p>
+
+    <h3>一、来宾气候与土壤概况</h3>
+    <table>
+      <tr><th>指标</th><th>来宾数据</th><th>对种椒的影响</th></tr>
+      <tr><td>气候类型</td><td>中亚热带向南亚热带过渡季风气候</td><td>温暖湿润，生长季极长，可周年栽培</td></tr>
+      <tr><td>年平均气温</td><td>20.7°C</td><td>远高于全国均值，辣椒几乎无越冬冻害风险</td></tr>
+      <tr><td>1月均温</td><td>10.9°C（近年实测 12.3°C）</td><td>冬季温和；但1月下旬偶发寒潮，最低气温可至 -3~1°C</td></tr>
+      <tr><td>7月均温 / 月均最高</td><td>28.6°C / 33~33.6°C</td><td>高温是坐果最大威胁，需遮阴降温</td></tr>
+      <tr><td>极端高温</td><td>38.9°C</td><td>露天无遮阴将大面积落花落果、日灼</td></tr>
+      <tr><td>极端低温</td><td>-5.6°C（历史极值，罕见）</td><td>设施越冬需保温，露天越冬风险大</td></tr>
+      <tr><td>无霜期</td><td>约 331 天（初霜约 12/25，终霜约 2/5）</td><td>安全期长，但12月下旬~2月上旬需留意霜冻</td></tr>
+      <tr><td>年降水</td><td>约 1360mm（兴宾区约 1100mm，属"桂中干旱片"）</td><td>分布极不均：雨季防涝、旱季补水</td></tr>
+      <tr><td>降水集中期</td><td>4~8月（占全年约70%），5月最多、1月最少</td><td>雨季排水、旱季灌溉，错峰管理</td></tr>
+      <tr><td>年均日照</td><td>1580~1660 小时</td><td>充足，利于光合作用和果实着色</td></tr>
+      <tr><td>相对湿度</td><td>76~78%</td><td>高温+高湿易诱发疫病、炭疽病</td></tr>
+      <tr><td>主要土壤</td><td>红壤、水稻土为主，偏酸、黏重、贫瘠</td><td>需调酸、增施有机肥、补钙镁</td></tr>
+    </table>
+
+    <h3>二、推荐茬口安排（来宾本地化）</h3>
+    <table>
+      <tr><th>茬口</th><th>播种期</th><th>定植期</th><th>采收期</th><th>特点</th></tr>
+      <tr><td><b>春茬（主栽）</b></td><td>1月中下旬~2月初</td><td>3月上中旬</td><td>5~8月</td><td>产量最高；1月均温10.9°C，小拱棚/阳台即可育苗，无需北方式加温提前8~10周</td></tr>
+      <tr><td><b>秋茬</b></td><td>6月下旬~7月上旬</td><td>7月中下旬</td><td>9~12月</td><td>秋凉后果实品质好、病害少，但苗期正值高温需遮阴育苗</td></tr>
+      <tr><td><b>冬春茬（设施）</b></td><td>9~10月</td><td>10~11月</td><td>12月~次年2月</td><td>大棚延后栽培；需防1月寒潮和低温落花，露天不建议越冬</td></tr>
+    </table>
+    <div class="tip-box">
+      <span class="label">💡 来宾育苗提示</span>
+      来宾1月均温已达 10°C 以上、无霜期长，<b>春茬完全可在本地直接育苗</b>，不必像北方那样在12月就室内加温催芽。但1月若遇寒潮（近年偶发 -3~1°C），需用薄膜小拱棚或移入室内保温，避免冻伤幼苗。
+    </div>
+
+    <h3>三、五大本地化难点与对策</h3>
+    <h4>1. 夏季高温（核心难点）</h4>
+    <p>7~8月来宾月均最高气温达 33~33.6°C，超过辣椒 35°C 的坐果临界温度，持续高温会导致<b>落花落果、花粉失活、果实日灼</b>。对策：</p>
+    <ul>
+      <li><b>遮阴</b>：搭建 30%~50% 遮光率的遮阳网，重点遮挡 11:00~15:00 强光时段</li>
+      <li><b>降温</b>：高温时段微喷/雾化降温增湿，或地面铺秸秆/防草布降低地表温度</li>
+      <li><b>通风</b>：合理稀植（株距可放大至 60cm），及时整枝改善冠层通风</li>
+      <li><b>避峰</b>：尽量让盛花期避开 7~8 月极端高温，春茬早定植、秋茬晚播可错开</li>
+    </ul>
+
+    <h4>2. 雨季涝害（4~8月）</h4>
+    <p>来宾 70% 降水集中在 4~8 月，辣椒极怕涝，积水超 24 小时易烂根死苗。对策：</p>
+    <ul>
+      <li><b>起高畦+深沟</b>：畦高 20~25cm，畦间排水沟深 30cm 以上，确保暴雨后能快速排干</li>
+      <li><b>选高地</b>：避开低洼积水地块，坡度地块沿等高线作畦</li>
+      <li><b>雨前预防</b>：雨季来临前喷施一次保护性杀菌剂（代森锰锌），防疫病、青枯病</li>
+    </ul>
+
+    <h4>3. 冬春干旱（桂中干旱片）</h4>
+    <p>兴宾区属"桂中干旱片"，10月至次年3月为旱季，降水偏少。开花坐果期缺水会落花、果实小、脐腐病高发。对策：</p>
+    <ul>
+      <li><b>节水灌溉</b>：推广滴灌或膜下沟灌，少量多次，保持土壤湿润均衡</li>
+      <li><b>覆盖保墒</b>：地膜或稻草覆盖减少蒸发</li>
+      <li><b>蓄水池</b>：山区/坡地提前建蓄水池，保障旱季水源</li>
+    </ul>
+
+    <h4>4. 红壤改良（调酸·改土·补钙镁）</h4>
+    <p>来宾土壤以红壤为主，<b>偏酸、黏重、有机质低、易缺钙镁</b>。种植前务必改土：</p>
+    <ul>
+      <li><b>调酸</b>：播前 2~3 周每亩施生石灰 80~120kg（约每 m² 120~180g），将 pH 调至 6.0~6.8</li>
+      <li><b>增肥</b>：大量施腐熟农家肥/堆肥（每亩 3~4 吨），掺入草木灰、菇渣改良黏重结构</li>
+      <li><b>补钙镁</b>：基肥加钙镁磷肥，结果期叶面喷 0.2% 氯化钙 + 0.2% 硫酸镁，防脐腐病和黄叶</li>
+      <li><b>起垄</b>：红壤易渍，务必高垄栽培，忌平畦</li>
+    </ul>
+
+    <h4>5. 高湿病害</h4>
+    <p>76~78% 的相对湿度叠加夏季高温，<b>疫病、炭疽病、青枯病</b>发生风险高。对策：</p>
+    <ul>
+      <li>选用抗病品种、轮作（与水稻/玉米轮作2年以上最佳）</li>
+      <li>雨季前后定期预防喷药，雨后及时排水并喷保护剂</li>
+      <li>及时摘除病叶病果，工具消毒，减少传染</li>
+    </ul>
+
+    <div class="warn-box">
+      <span class="label">⚠ 来宾重点提醒</span>
+      来宾种辣椒成败关键在<b>"夏遮阴、涝排水、旱补水、酸先调"</b>。比起北方，来宾几乎不用愁低温冻害，但要花大力气对付 7~8 月的酷暑和 4~8 月的暴雨。把遮阴网和排水沟在定植前就准备好，比事后补救有效得多。
+    </div>
+  </section>
+
   <!-- ==================== 1. 育种与播种 ==================== -->
   <section id="s1">
     <h2><span class="num">1</span>育种与播种</h2>
@@ -275,6 +375,7 @@
     <ul>
       <li>北方（华北/东北）：2月中旬～3月上旬播种</li>
       <li>南方（华南/华东）：1月下旬～2月中旬播种</li>
+      <li><b>广西来宾</b>：春茬 1月中下旬～2月初、秋茬 6月下旬～7月上旬（详见"广西来宾地区适配说明"章节）</li>
       <li>温室/阳台全年种植：可灵活调整，但冬季需补光保温</li>
     </ul>
 
@@ -380,6 +481,7 @@
       <li>气温条件：<b>夜间最低温稳定在15°C以上</b>，日间20°C以上</li>
       <li>苗龄：6～8片真叶，株高15～20cm，茎秆粗壮</li>
       <li>北方露地通常在5月中下旬，南方4月上中旬</li>
+      <li><b>广西来宾</b>：春茬 3月上中旬（气温已稳定）、秋茬 7月中下旬定植；露地几乎无低温障碍，但避开 1 月寒潮窗口</li>
       <li>过早定植遇低温会坐果不良甚至僵苗</li>
     </ul>
 
@@ -394,9 +496,14 @@
       <li><b>土壤</b>：疏松透气、排水良好的沙壤土或壤土</li>
       <li><b>pH</b>：6.0～6.8</li>
       <li><b>基肥</b>：每平方米施腐熟有机肥3～5kg + 复合肥50g，深翻25～30cm混匀</li>
-      <li><b>做畦</b>：起高畦（畦高15～20cm），畦宽80～100cm，利于排水防涝</li>
-      <li><b>忌连作</b>：前茬为茄科（番茄/茄子/辣椒/土豆）的地块至少间隔2年再种</li>
+      <li><b>做畦</b>：起高畦（畦高15～20cm，<b>来宾雨季多，建议加高至20～25cm</b>），畦宽80～100cm，利于排水防涝</li>
+      <li><b>忌连作</b>：前茬为茄科（番茄/茄子/辣椒/土豆）的地块至少间隔2年再种；来宾最佳是与水稻、玉米轮作</li>
     </ul>
+
+    <div class="tip-box">
+      <span class="label">💡 来宾红壤改土要点</span>
+      来宾土壤以红壤为主，偏酸、黏重、有机质低、易缺钙镁。定植前 2~3 周每亩撒施生石灰 80~120kg（调酸至 pH 6.0~6.8），并大量混入腐熟农家肥/堆肥与草木灰；<b>务必高垄栽培</b>，平畦在来宾雨季极易渍害烂根。
+    </div>
 
     <h3>3.3 定植密度与操作</h3>
     <table>
@@ -584,6 +691,7 @@
       <li>最适开花温度：日温24～28°C，夜温16～20°C</li>
       <li><b>高于35°C或低于15°C</b>会大量落花——高温时遮阴降温，低温时注意保温</li>
       <li>花期适当控水（不旱不浇），防止营养生长过旺导致落花</li>
+      <li><b>广西来宾</b>：7~8月月均最高温 33~33.6°C、极端 38.9°C，盛花期极易落花。务必提前搭好遮阳网（30%~50% 遮光）、高温时段微喷降温，并尽量让春茬盛花期避开 7~8 月（早定植）或秋茬延后开花</li>
     </ul>
 
     <div class="warn-box">
@@ -665,56 +773,56 @@
     <h2><span class="num">9</span>全年种植时间线</h2>
     <div class="timeline">
       <div class="timeline-item">
-        <div class="time">第0周（2月）</div>
-        <div class="desc">浸种催芽 → 室内播种，覆膜保温28～30°C</div>
+        <div class="time">春茬 · 1月中下旬</div>
+        <div class="desc">浸种催芽 → 小拱棚/阳台播种（来宾1月均温10.9°C，无需加温提前8周），覆膜保温28~30°C</div>
       </div>
       <div class="timeline-item">
-        <div class="time">第1～2周</div>
-        <div class="desc">出苗揭膜 → 移至光照充足处，降温至22～26°C防徒长</div>
+        <div class="time">春茬 · 2月（出苗后）</div>
+        <div class="desc">出苗揭膜 → 补光防徒长；真叶展开施稀薄液肥，见干见湿</div>
       </div>
       <div class="timeline-item">
-        <div class="time">第3～4周</div>
-        <div class="desc">真叶展开 → 开始施稀薄液肥，保持见干见湿</div>
+        <div class="time">春茬 · 2月下旬~3月初</div>
+        <div class="desc">3~4片真叶假植 → 8~10片真叶打顶摘心，促分枝</div>
       </div>
       <div class="timeline-item">
-        <div class="time">第5周</div>
-        <div class="desc">3～4片真叶 → 假植到8～10cm营养钵</div>
+        <div class="time">春茬 · 3月上中旬</div>
+        <div class="desc">炼苗后定植（气温稳定15°C以上）→ 高垄栽培 + 支架 + 调酸红壤基肥</div>
       </div>
       <div class="timeline-item">
-        <div class="time">第6～7周</div>
-        <div class="desc">8～10片真叶 → 打顶摘心，促分枝</div>
+        <div class="time">春茬 · 3月下旬~4月</div>
+        <div class="desc">缓苗 → 营养生长期抹侧芽、绑蔓、施平衡肥</div>
       </div>
       <div class="timeline-item">
-        <div class="time">第8周（4月底～5月）</div>
-        <div class="desc">炼苗7～10天 → 气温稳定15°C以上定植</div>
+        <div class="time">春茬 · 4月下旬~5月</div>
+        <div class="desc">现蕾开花（抓住高温前窗口）→ 摘门椒、转高磷钾肥、备好遮阳网</div>
       </div>
       <div class="timeline-item">
-        <div class="time">第9～10周</div>
-        <div class="desc">缓苗期 → 遮阴2～3天，之后正常管理，施平衡肥</div>
+        <div class="time">春茬 · 5~6月</div>
+        <div class="desc">坐果膨大（关键期）→ 高钾肥+补钙、均匀浇水防脐腐、疏果</div>
       </div>
       <div class="timeline-item">
-        <div class="time">第11～12周</div>
-        <div class="desc">营养生长旺盛 → 抹侧芽、绑蔓、施平衡肥</div>
+        <div class="time">春茬 · 7~8月（高温考验）</div>
+        <div class="desc">盛果初期遇酷暑 → 遮阳网30~50%遮阴、微喷降温、雨季排水、防疫病炭疽病</div>
       </div>
       <div class="timeline-item">
-        <div class="time">第13～14周</div>
-        <div class="desc">现蕾开花 → 摘门椒、转高磷钾肥、人工授粉（室内）</div>
+        <div class="time">春茬 · 8~9月</div>
+        <div class="desc">盛果采收 → 果实转橙后剪采、持续追肥防早衰</div>
       </div>
       <div class="timeline-item">
-        <div class="time">第15～18周</div>
-        <div class="desc">坐果膨大 → 高钾肥 + 补钙、均匀浇水、疏果</div>
+        <div class="time">秋茬 · 6月下旬~7月上旬</div>
+        <div class="desc">秋茬播种（遮阴育苗防高温）→ 7月中下旬定植</div>
       </div>
       <div class="timeline-item">
-        <div class="time">第19～22周（7～8月）</div>
-        <div class="desc">盛果期采收 → 果实转橙后剪采、持续追肥、防虫防病</div>
+        <div class="time">秋茬 · 8~9月</div>
+        <div class="desc">开花坐果（避开最热7~8月）→ 高磷钾、补钙镁</div>
       </div>
       <div class="timeline-item">
-        <div class="time">第23～26周（9月）</div>
-        <div class="desc">采收后期 → 回缩修剪、施恢复肥、促二次结果</div>
+        <div class="time">秋茬 · 9~12月</div>
+        <div class="desc">秋凉采收，品质最佳、病害少；12月后设施保温延后</div>
       </div>
       <div class="timeline-item">
-        <div class="time">第27周以后（10～11月）</div>
-        <div class="desc">秋末采收 → 气温降至10°C前采收完毕，选留种果</div>
+        <div class="time">全年 · 10~3月（旱季）</div>
+        <div class="desc">滴灌/沟灌补水保墒；红壤地块采收后休耕或与水稻、玉米轮作</div>
       </div>
     </div>
   </section>
@@ -742,12 +850,22 @@
         <div><b>盆栽最小</b>：5加仑（20L）/株</div>
         <div><b>需支架</b>：是（结果后易倒伏）</div>
         <div><b>留种活力</b>：2～3年</div>
+        <div style="grid-column:1 / -1; border-top:1px dashed var(--orange-light); margin-top:6px; padding-top:10px;"><b>📍 广西来宾地区参数</b></div>
+        <div><b>当地年均温</b>：20.7°C</div>
+        <div><b>1月/7月均温</b>：10.9°C / 28.6°C（月均最高33~33.6°C）</div>
+        <div><b>极端高温</b>：38.9°C（需遮阴）</div>
+        <div><b>无霜期</b>：约331天</div>
+        <div><b>年降水</b>：约1360mm（4~8月占70%）</div>
+        <div><b>主要土壤</b>：红壤（偏酸·需调酸补钙镁）</div>
+        <div><b>春茬播种/定植</b>：1月中下旬 / 3月上中旬</div>
+        <div><b>秋茬播种/定植</b>：6月下旬~7月上旬 / 7月中下旬</div>
+        <div><b>核心难点</b>：夏遮阴 · 涝排水 · 旱补水 · 酸先调</div>
       </div>
     </div>
   </section>
 
   <footer>
-    <p>哈巴纳达辣椒种植手册 · 仅供种植参考，请结合当地气候条件灵活调整</p>
+    <p>哈巴纳达辣椒种植手册 · 广西来宾适配版 · 仅供种植参考，请结合当地气候条件灵活调整</p>
   </footer>
 
 </div>
