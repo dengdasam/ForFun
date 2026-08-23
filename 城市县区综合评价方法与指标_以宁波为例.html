@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>城市县区级综合评价方法与指标——以宁波市为例</title>
+<style>
+  :root{
+    --bg:#ffffff; --fg:#1f2933; --muted:#5b6b7b; --line:#e3e8ee;
+    --brand:#1a5fb4; --brand-soft:#e8f1fb; --accent:#0f7b6c;
+    --table-head:#f4f7fa; --warn:#9a3412; --up:#c0392b; --down:#1e7a46;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; background:var(--bg); color:var(--fg);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+    line-height:1.75; font-size:16px;
+  }
+  .wrap{max-width:940px; margin:0 auto; padding:48px 28px 80px;}
+  h1{font-size:30px; line-height:1.35; margin:0 0 6px; letter-spacing:.5px;}
+  .sub{color:var(--muted); font-size:15px; margin-bottom:8px;}
+  .meta{color:var(--muted); font-size:13px; border-bottom:1px solid var(--line); padding-bottom:18px; margin-bottom:28px;}
+  h2{font-size:22px; margin:42px 0 14px; padding-left:12px; border-left:4px solid var(--brand);}
+  h3{font-size:18px; margin:28px 0 10px; color:var(--brand);}
+  p{margin:12px 0;}
+  ul,ol{margin:12px 0; padding-left:24px;}
+  li{margin:6px 0;}
+  .lead{font-size:17px; color:var(--fg); background:var(--brand-soft); border-radius:10px; padding:18px 22px;}
+  code{background:#f1f4f8; padding:2px 6px; border-radius:4px; font-family:"SFMono-Regular",Consolas,monospace; font-size:14px;}
+  table{border-collapse:collapse; width:100%; margin:18px 0; font-size:14px;}
+  th,td{border:1px solid var(--line); padding:8px 10px; text-align:center;}
+  th{background:var(--table-head); font-weight:600;}
+  td.l{text-align:left;}
+  .note{background:#fff8f1; border:1px solid #f4d8b8; border-radius:10px; padding:14px 18px; color:var(--warn); font-size:14px; margin:18px 0;}
+  .card{border:1px solid var(--line); border-radius:12px; padding:18px 22px; margin:20px 0; background:#fcfdfe;}
+  .tag{display:inline-block; background:var(--brand-soft); color:var(--brand); border-radius:999px; padding:2px 12px; font-size:13px; margin-right:6px; margin-bottom:4px;}
+  .formula{background:#0f172a; color:#e2e8f0; border-radius:8px; padding:12px 16px; font-family:Consolas,monospace; font-size:14px; overflow-x:auto; margin:14px 0;}
+  .grid{display:grid; grid-template-columns:repeat(2,1fr); gap:14px; margin:18px 0;}
+  .box{border:1px solid var(--line); border-radius:10px; padding:14px 16px; background:#fcfdfe;}
+  .box b{color:var(--accent);}
+  footer{margin-top:50px; border-top:1px solid var(--line); padding-top:18px; color:var(--muted); font-size:13px;}
+  .rank1{font-weight:700; color:var(--brand);}
+  .up{color:var(--up); font-weight:700;}
+  .down{color:var(--down); font-weight:700;}
+  /* 条形图 */
+  .chart{margin:18px 0 8px;}
+  .chart-title{font-size:14px; color:var(--muted); margin:0 0 10px; font-weight:600;}
+  .bar-row{display:flex; align-items:center; margin:5px 0; font-size:13px;}
+  .bar-name{width:60px; flex:none; text-align:right; padding-right:10px; color:var(--fg);}
+  .bar-track{flex:1; background:#eef3f8; border-radius:5px; height:18px; overflow:hidden;}
+  .bar-fill{height:100%; background:linear-gradient(90deg,#1a5fb4,#0f7b6c); border-radius:5px;}
+  .bar-val{width:78px; flex:none; margin-left:10px; color:var(--muted); text-align:left;}
+  @media(max-width:620px){.grid{grid-template-columns:1fr;} .bar-name{width:48px;} .bar-val{width:60px;}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <h1>城市县区级综合评价：方法与指标</h1>
+  <div class="sub">——以浙江省宁波市为例的方法落地演示</div>
+  <div class="meta">撰写日期：2026-08-13 ｜ 数据来源：宁波市统计局《2025年各县（市）区主要经济指标》《2025年宁波市人口主要数据公报》；港口/机场数据来自宁波舟山港集团、民航测算（2025年度）</div>
+
+  <div class="lead">
+    对一个城市下辖的县区做"综合评价"，核心不是把一堆数字加起来，而是先解决三个问题：<b>评什么（指标体系）</b>、<b>怎么汇总（评价方法）</b>、<b>权重怎么定（主观还是客观）</b>。本文先系统梳理县区级综合评价的常用方法与指标框架，再用宁波市 10 个区县 2025 年的真实数据，演示"先用 4 项指标打分、再扩维到财政·人口·交通重打分"的完整过程，直观呈现<b>方法如何改变结论</b>。
+  </div>
+
+  <h2>一、县区级综合评价的指标体系</h2>
+  <p>指标是评价的地基。当前国内县域/市辖区高质量发展评价，普遍以"五大发展理念（创新、协调、绿色、开放、共享）+ 综合质效"作为顶层框架，并应单列财政、交通、人口等"支撑维度"。下面是一套可直接落地的维度与指标清单。</p>
+
+  <table>
+    <thead>
+      <tr><th>维度</th><th>代表指标</th><th>单位 / 含义</th><th>方向</th></tr>
+    </thead>
+    <tbody>
+      <tr><td class="l"><b>综合质效</b></td><td class="l">地区生产总值（GDP）、人均GDP、GDP增速、产业结构（三产占比）</td><td class="l">亿元 / 元·人⁻¹ / %</td><td>正向</td></tr>
+      <tr><td class="l"><b>财政实力</b></td><td class="l">一般公共预算收入、人均一般公共预算收入、税收占GDP比重、财政自给率</td><td class="l">亿元 / 元·人⁻¹ / %</td><td>正向</td></tr>
+      <tr><td class="l"><b>创新发展</b></td><td class="l">R&amp;D经费投入强度、万人发明专利拥有量、高新技术企业数、规上工业战略性新兴产业产值占比</td><td class="l">% / 件·万人⁻¹ / 家</td><td>正向</td></tr>
+      <tr><td class="l"><b>协调发展</b></td><td class="l">城乡居民收入比、常住人口城镇化率、全员劳动生产率、民营经济占比</td><td class="l">倍 / %</td><td>趋优</td></tr>
+      <tr><td class="l"><b>基础设施与交通通达</b></td><td class="l">公路/铁路网密度、高速公路出入口覆盖率、港口·机场·枢纽吞吐量、公共交通覆盖率、到核心枢纽平均通行时间</td><td class="l">km·km⁻² / % / 万吨·TEU / 分钟</td><td>正向</td></tr>
+      <tr><td class="l"><b>绿色发展</b></td><td class="l">单位GDP能耗、PM2.5浓度、空气质量优良天数比率、森林覆盖率、污水处理率</td><td class="l">吨标煤·万元⁻¹ / μg·m⁻³</td><td>部分逆向</td></tr>
+      <tr><td class="l"><b>开放发展</b></td><td class="l">进出口总额、一般贸易出口占比、实际利用外资、外贸依存度</td><td class="l">亿元 / 万美元</td><td>正向</td></tr>
+      <tr><td class="l"><b>人口规模与活力</b></td><td class="l">常住人口规模、常住人口密度、人口净流入（机械增长）/常住人口增长率、劳动年龄人口占比、人才流入量</td><td class="l">万人 / 人·km⁻² / 万人</td><td>正向</td></tr>
+      <tr><td class="l"><b>共享发展</b></td><td class="l">居民人均可支配收入、城镇调查失业率、千人床位/医生数、基本养老保险覆盖率、人均受教育年限</td><td class="l">元 / ‰ / 人·千人⁻¹</td><td>趋优</td></tr>
+    </tbody>
+  </table>
+
+  <div class="note">
+    注意"方向"：人均GDP、增速是越大越好（正向）；而单位GDP能耗、PM2.5浓度、失业率则是越小越好（逆向）。评价前必须先对逆向指标做正向化处理，否则会得出"污染越重得分越高"的荒谬结论。
+  </div>
+
+  <h2>二、县区级综合评价的常用方法</h2>
+  <p>有了指标，下一步是"怎么把不同量纲的指标合成一个可比的总分"。按"权重从哪来"，方法可分为主观赋权、客观赋权、综合赋权三大类。</p>
+
+  <h3>1. 综合指数法（加权汇总法）</h3>
+  <p>最直观的方法：先对每项指标标准化到同一量纲，再按权重加权平均得到综合得分。</p>
+  <div class="formula">综合得分 S_i = Σ ( w_j × x̃_ij ) ，其中 Σw_j = 1</div>
+  <p>优点是透明、易解释，缺点是权重往往靠经验拍板，主观性强。它通常作为其他方法的结果汇总层。</p>
+
+  <h3>2. 功效系数法</h3>
+  <p>国家统计局在各类监测评价中大量使用。它把每个指标的实际值映射到 [60, 100] 的区间（"满意值"对应100，"不允许值"对应60），对极端值不敏感，结果稳健。</p>
+  <div class="formula">d_ij = (x_ij − x_min) / (x_max − x_min) × 40 + 60</div>
+  <p>其中 <code>x_max</code>、<code>x_min</code> 可取评价对象中的极值，也可取目标值/警戒值。之后再加权汇总。下文宁波实例即用此法。</p>
+
+  <h3>3. 主成分分析 / 因子分析（PCA）</h3>
+  <p>一种降维方法：从一堆相关指标中提取少数几个互不相关的"主成分"，用方差贡献率自动确定权重。优点是客观、能消除指标间共线性的干扰；缺点是提取出的主成分往往难以直观命名，解释性较差。</p>
+
+  <h3>4. 层次分析法（AHP）</h3>
+  <p>邀请专家对指标两两比较重要性，构造判断矩阵，计算特征向量得到权重。典型的主观赋权法，适合"价值导向明确但数据稀疏"的场景（如战略规划）。缺点是专家主观偏差会被放大，且一致性检验较繁琐。</p>
+
+  <h3>5. 熵值法</h3>
+  <p>客观赋权代表：某个指标在各区县间差异越大（信息熵越小），说明它越能区分对象，权重就越高。完全由数据说话，避免人为干预，常与AHP组合成"主客观结合"赋权。</p>
+  <div class="formula">权重 w_j = (1 − e_j) / Σ(1 − e_j) ，e_j 为第 j 项指标的信息熵</div>
+
+  <h3>6. TOPSIS 理想解法</h3>
+  <p>不输出绝对分数，而是计算每个区县与"正理想解（各项最优）"和"负理想解（各项最差）"的欧氏距离，用贴近度排序。对"谁最接近全能冠军"这类问题特别直观。</p>
+
+  <div class="card">
+    <b>方法选择建议</b>
+    <ul style="margin-bottom:0;">
+      <li><b>官方例行监测</b>：功效系数法 + 综合指数法（稳健、可解释）。</li>
+      <li><b>学术/排名研究</b>：熵值法或 PCA（客观、抗人为干扰）。</li>
+      <li><b>战略规划/政策导向</b>：AHP 或 AHP-熵值组合赋权。</li>
+      <li><b>标杆对比</b>：TOPSIS（看贴近度）。</li>
+    </ul>
+  </div>
+
+  <h2>三、以宁波市为例：一套可操作的综合评分演示</h2>
+
+  <h3>3.1 评价对象与数据</h3>
+  <p>宁波市是副省级城市、计划单列市，下辖 6 个区、代管 2 个县级市、2 个县，共 10 个县级行政区。下表为 2025 年各区县核心经济指标（来源：宁波市统计局）。</p>
+
+  <table>
+    <thead>
+      <tr><th>区县</th><th>GDP<br>(亿元)</th><th>GDP增速<br>(%)</th><th>规上工业<br>增速(%)</th><th>社零总额<br>(亿元)</th></tr>
+    </thead>
+    <tbody>
+      <tr><td class="l">海曙区</td><td>1776.2</td><td>4.0</td><td>3.1</td><td>916.1</td></tr>
+      <tr><td class="l">江北区</td><td>1028.2</td><td>4.2</td><td>6.0</td><td>369.0</td></tr>
+      <tr><td class="l">镇海区</td><td>1601.9</td><td>6.0</td><td>9.0</td><td>255.8</td></tr>
+      <tr><td class="l">北仑区</td><td>3150.6</td><td>5.8</td><td>7.8</td><td>531.8</td></tr>
+      <tr><td class="l">鄞州区</td><td>3201.9</td><td>4.8</td><td>4.5</td><td>1223.0</td></tr>
+      <tr><td class="l">奉化区</td><td>1105.2</td><td>3.6</td><td>3.6</td><td>298.6</td></tr>
+      <tr><td class="l">余姚市</td><td>1733.3</td><td>5.8</td><td>7.8</td><td>461.7</td></tr>
+      <tr><td class="l">慈溪市</td><td>3013.9</td><td>4.0</td><td>2.4</td><td>820.2</td></tr>
+      <tr><td class="l">宁海县</td><td>1100.4</td><td>4.6</td><td>1.0</td><td>456.1</td></tr>
+      <tr><td class="l">象山县</td><td>1004.2</td><td>6.2</td><td>8.8</td><td>370.9</td></tr>
+    </tbody>
+  </table>
+
+  <div class="chart">
+    <p class="chart-title">图1　2025 年宁波各区县 GDP 总量（亿元）</p>
+    <div class="bar-row"><span class="bar-name">海曙</span><div class="bar-track"><div class="bar-fill" style="width:55.5%"></div></div><span class="bar-val">1776.2</span></div>
+    <div class="bar-row"><span class="bar-name">江北</span><div class="bar-track"><div class="bar-fill" style="width:32.1%"></div></div><span class="bar-val">1028.2</span></div>
+    <div class="bar-row"><span class="bar-name">镇海</span><div class="bar-track"><div class="bar-fill" style="width:50.0%"></div></div><span class="bar-val">1601.9</span></div>
+    <div class="bar-row"><span class="bar-name">北仑</span><div class="bar-track"><div class="bar-fill" style="width:98.4%"></div></div><span class="bar-val">3150.6</span></div>
+    <div class="bar-row"><span class="bar-name">鄞州</span><div class="bar-track"><div class="bar-fill" style="width:100%"></div></div><span class="bar-val">3201.9</span></div>
+    <div class="bar-row"><span class="bar-name">奉化</span><div class="bar-track"><div class="bar-fill" style="width:34.5%"></div></div><span class="bar-val">1105.2</span></div>
+    <div class="bar-row"><span class="bar-name">余姚</span><div class="bar-track"><div class="bar-fill" style="width:54.2%"></div></div><span class="bar-val">1733.3</span></div>
+    <div class="bar-row"><span class="bar-name">慈溪</span><div class="bar-track"><div class="bar-fill" style="width:94.1%"></div></div><span class="bar-val">3013.9</span></div>
+    <div class="bar-row"><span class="bar-name">宁海</span><div class="bar-track"><div class="bar-fill" style="width:34.4%"></div></div><span class="bar-val">1100.4</span></div>
+    <div class="bar-row"><span class="bar-name">象山</span><div class="bar-track"><div class="bar-fill" style="width:31.4%"></div></div><span class="bar-val">1004.2</span></div>
+  </div>
+
+  <div class="note">
+    说明：受篇幅与公开数据可得性限制，本示例先用 <b>4 个代表性指标</b>（经济总量、增速、工业动能、消费规模）演示方法，并非完整评价；2025 年公开进度数据未单列三产细分，故以社会消费品零售总额作为服务业/消费动能的代理指标。完整的宁波区县评价还必须纳入<b>财政实力</b>、<b>交通通达度</b>与<b>人口规模与活力</b>三类关键维度，本文 3.5–3.8 节将逐步补入并用真实数据重算。鄞州区、慈溪市口径已按惯例剔除高新区、前湾新区等特殊功能区。
+  </div>
+
+  <h3>3.2 第一步：功效系数法标准化</h3>
+  <p>对 4 个正向指标，用公式 <code>d = (x − x_min)/(x_max − x_min)×40 + 60</code> 映射到 [60,100]。例如北仑 GDP 总量 3150.6 接近全市最高（鄞州 3201.9），得 99.1 分；象山 GDP 最低（1004.2），得 60.0 分。</p>
+
+  <h3>3.3 第二步：确定权重并加权汇总（4 指标版）</h3>
+  <p>本示例采用主观设定的示例权重：GDP总量 0.30、GDP增速 0.20、规上工业增速 0.30、社零总额 0.20。加权后得到综合得分（满分约100）。</p>
+
+  <table>
+    <thead>
+      <tr><th>排名</th><th>区县</th><th>GDP总量<br>得分</th><th>GDP增速<br>得分</th><th>规上工业<br>得分</th><th>社零总额<br>得分</th><th>综合得分</th></tr>
+    </thead>
+    <tbody>
+      <tr><td class="rank1">1</td><td class="l">北仑区</td><td>99.1</td><td>93.9</td><td>94.0</td><td>71.4</td><td class="rank1">91.0</td></tr>
+      <tr><td class="rank1">2</td><td class="l">鄞州区</td><td>100.0</td><td>78.5</td><td>77.5</td><td>100.0</td><td class="rank1">88.9</td></tr>
+      <tr><td>3</td><td class="l">余姚市</td><td>73.3</td><td>93.9</td><td>94.0</td><td>68.5</td><td>82.7</td></tr>
+      <tr><td>4</td><td class="l">镇海区</td><td>70.9</td><td>96.9</td><td>100.0</td><td>60.0</td><td>82.6</td></tr>
+      <tr><td>5</td><td class="l">象山县</td><td>60.0</td><td>100.0</td><td>99.0</td><td>64.8</td><td>80.7</td></tr>
+      <tr><td>6</td><td class="l">慈溪市</td><td>96.6</td><td>66.2</td><td>67.0</td><td>83.3</td><td>79.0</td></tr>
+      <tr><td>7</td><td class="l">海曙区</td><td>74.1</td><td>66.2</td><td>70.5</td><td>87.3</td><td>74.1</td></tr>
+      <tr><td>8</td><td class="l">江北区</td><td>60.4</td><td>69.2</td><td>85.0</td><td>64.7</td><td>70.4</td></tr>
+      <tr><td>9</td><td class="l">宁海县</td><td>61.8</td><td>75.4</td><td>60.0</td><td>68.3</td><td>65.3</td></tr>
+      <tr><td>10</td><td class="l">奉化区</td><td>61.8</td><td>60.0</td><td>73.0</td><td>61.8</td><td>64.8</td></tr>
+    </tbody>
+  </table>
+
+  <h3>3.4 结果解读：方法如何改变结论</h3>
+  <div class="grid">
+    <div class="box"><b>总量视角</b><br>只看GDP总量，顺序是鄞州(3201.9)＞北仑(3150.6)＞慈溪(3013.9)＞海曙(1776.2)＞余姚(1733.3)…。</div>
+    <div class="box"><b>综合视角（4指标）</b><br>加入增速、工业动能、消费后，北仑稳居第一；象山凭"增速全市第一(6.2%)+工业增速8.8%"跃升至第5，江北因工业快但总量与消费偏小仍居第8。</div>
+    <div class="box"><b>动能分化</b><br>2025年宁波实现"全域千亿"（象山首破千亿），但镇海工业增速9.0%领跑、象山6.2%增速第一；海曙、慈溪总量大却增速仅4.0%、工业动能偏弱。</div>
+    <div class="box"><b>逆袭对象</b><br>象山以全市最高增速(6.2%)破千亿，4指标综合评价升至第5，说明"小个子迈快步伐"在高增速+高工业动能下可获得结构性跃升。</div>
+  </div>
+
+  <h3>3.5 补入真实数据①：财政实力</h3>
+  <p>财政是区县"造血能力"的直接体现。下表为 2025 年各区县<b>一般公共预算收入</b>真实数据（来源：宁波市统计局），并换算<b>人均一般公共预算收入</b>（= 一般公共预算收入 ÷ 常住人口），后者比总量更能反映真实可用财力。</p>
+
+  <table>
+    <thead>
+      <tr><th>区县</th><th>一般公共预算收入<br>(亿元,2025)</th><th>同比<br>(±%)</th><th>人均一般公共预算收入<br>(元/人)</th><th>财力特征</th></tr>
+    </thead>
+    <tbody>
+      <tr><td class="l">北仑区</td><td>414.04</td><td>+2.5</td><td class="rank1">45,157</td><td class="l">临港产业+保税，总量与人均双冠</td></tr>
+      <tr><td class="l">鄞州区</td><td>289.49</td><td>−4.3</td><td>16,782</td><td class="l">总量第二，服务业税收厚</td></tr>
+      <tr><td class="l">慈溪市</td><td>231.36</td><td>+1.8</td><td>12,194</td><td class="l">制造大市，总量居前</td></tr>
+      <tr><td class="l">余姚市</td><td>140.05</td><td>+1.7</td><td>11,028</td><td class="l">制造业稳健</td></tr>
+      <tr><td class="l">海曙区</td><td>120.10</td><td>−4.2</td><td>11,172</td><td class="l">中心商贸区，总量尚可</td></tr>
+      <tr><td class="l">江北区</td><td>110.44</td><td>+0.9</td><td>21,086</td><td class="l">总量不大但人均高（人口少）</td></tr>
+      <tr><td class="l">镇海区</td><td>92.76</td><td>+1.8</td><td>17,178</td><td class="l">人均较高，石化产业支撑</td></tr>
+      <tr><td class="l">奉化区</td><td>84.75</td><td>−2.8</td><td>14,268</td><td class="l">中心城区，财力中等</td></tr>
+      <tr><td class="l">象山县</td><td>75.70</td><td>+11.4</td><td>13,074</td><td class="l">增速最快，但总量垫底</td></tr>
+      <tr><td class="l">宁海县</td><td>71.59</td><td>+1.9</td><td class="down">10,027</td><td class="l">总量与人均均最低</td></tr>
+    </tbody>
+  </table>
+
+  <div class="chart">
+    <p class="chart-title">图2　2025 年宁波各区县一般公共预算收入（亿元）</p>
+    <div class="bar-row"><span class="bar-name">海曙</span><div class="bar-track"><div class="bar-fill" style="width:29.0%"></div></div><span class="bar-val">120.10</span></div>
+    <div class="bar-row"><span class="bar-name">江北</span><div class="bar-track"><div class="bar-fill" style="width:26.7%"></div></div><span class="bar-val">110.44</span></div>
+    <div class="bar-row"><span class="bar-name">镇海</span><div class="bar-track"><div class="bar-fill" style="width:22.4%"></div></div><span class="bar-val">92.76</span></div>
+    <div class="bar-row"><span class="bar-name">北仑</span><div class="bar-track"><div class="bar-fill" style="width:100%"></div></div><span class="bar-val">414.04</span></div>
+    <div class="bar-row"><span class="bar-name">鄞州</span><div class="bar-track"><div class="bar-fill" style="width:69.9%"></div></div><span class="bar-val">289.49</span></div>
+    <div class="bar-row"><span class="bar-name">奉化</span><div class="bar-track"><div class="bar-fill" style="width:20.5%"></div></div><span class="bar-val">84.75</span></div>
+    <div class="bar-row"><span class="bar-name">余姚</span><div class="bar-track"><div class="bar-fill" style="width:33.8%"></div></div><span class="bar-val">140.05</span></div>
+    <div class="bar-row"><span class="bar-name">慈溪</span><div class="bar-track"><div class="bar-fill" style="width:55.9%"></div></div><span class="bar-val">231.36</span></div>
+    <div class="bar-row"><span class="bar-name">宁海</span><div class="bar-track"><div class="bar-fill" style="width:17.3%"></div></div><span class="bar-val">71.59</span></div>
+    <div class="bar-row"><span class="bar-name">象山</span><div class="bar-track"><div class="bar-fill" style="width:18.3%"></div></div><span class="bar-val">75.70</span></div>
+  </div>
+
+  <p>对比图1与图2可见：<b>GDP 总量与财政收入并不等同</b>。北仑财政收入 414 亿（约为慈溪的 1.8 倍、宁海的 5.8 倍），人均财力更是断崖式领先——这是临港重化工业与保税政策的红利；而象山虽以最高增速破千亿，财政收入仅 75.7 亿、人均 1.3 万元，说明"增长快"不等于"财力厚"。只看 GDP 会高估体量大的弱财力区县，纳入人均财力才能看清真实承载能力。</p>
+
+  <h3>3.6 补入真实数据②：交通通达度</h3>
+  <p>交通是区位竞争力的硬约束。宁波 2025 年的枢纽能级数据极为亮眼，但红利高度集中于特定区县：</p>
+  <ul>
+    <li><b>港口（北仑核心）</b>：宁波舟山港 2025 年完成货物吞吐量 <b>14.32 亿吨</b>（+3.98%），<b>连续 17 年居全球第一</b>；集装箱吞吐量 <b>4387 万 TEU</b>（+11.63%），稳居全球第三；集装箱航线达 309 条，连接全球 700 多个港口；海铁联运超 200 万 TEU。穿山、梅山、北仑-大榭三大千万箱级泊位群均位于北仑。</li>
+    <li><b>航空（海曙）</b>：栎社国际机场 2025 年旅客吞吐量约 <b>1610 万人次</b>（+9.3%），创历史新高，全国机场排名升至第 30 位；国际及地区旅客 106 万人次。机场坐落于海曙区。</li>
+    <li><b>轨道与铁路（海曙-江北-鄞州核心）</b>：宁波地铁已运营 1/2/3/4/5 等多条线路，枢纽与线网集中分布于三江口核心区与东部新城（海曙、江北、鄞州）。</li>
+  </ul>
+  <p>为在评价中"可计算"，下表给出一个<b>示意性"交通枢纽指数"</b>（0–100，依据上述实事赋值，非官方统计），用于演示方法；它清晰映射了枢纽红利的区际分布：</p>
+  <table>
+    <thead>
+      <tr><th>枢纽能级</th><th>示意指数</th><th>受益区县</th><th>依据</th></tr>
+    </thead>
+    <tbody>
+      <tr><td class="l">港口核心枢纽</td><td>100</td><td class="l">北仑区</td><td class="l">全球第一大港三大千万箱级泊位群所在地</td></tr>
+      <tr><td class="l">航空+轨道核心</td><td>95</td><td class="l">海曙区</td><td class="l">栎社机场+三江口轨道枢纽</td></tr>
+      <tr><td class="l">轨道+铁路枢纽</td><td>90</td><td class="l">鄞州区</td><td class="l">东部新城+铁路/轨道换乘核心</td></tr>
+      <tr><td class="l">三江口核心</td><td>85</td><td class="l">江北区</td><td class="l">三江口+轨道成网</td></tr>
+      <tr><td class="l">港口物流+铁路</td><td>75</td><td class="l">镇海区</td><td class="l">化工港口物流+铁路</td></tr>
+      <tr><td class="l">高铁/新区</td><td>65</td><td class="l">慈溪市、余姚市</td><td class="l">前湾新区+高铁规划</td></tr>
+      <tr><td class="l">城际衔接</td><td>60</td><td class="l">奉化区</td><td class="l">宁奉城际</td></tr>
+      <tr><td class="l">半岛改善中</td><td>58 / 55</td><td class="l">宁海县 / 象山县</td><td class="l">受地形制约，靠象山港大桥、城际规划改善</td></tr>
+    </tbody>
+  </table>
+  <div class="note">该指数为<b>方法演示用的示意赋值</b>，旨在说明"交通维度如何进入评分"；正式评价应以路网密度、到枢纽通行时间、枢纽吞吐量等客观指标替代。</div>
+
+  <h3>3.7 人口基数与净流入：公共产品供给的底座</h3>
+  <p>人口规模是教育、医疗、交通、环卫等公共产品供给的"分母"——人口越大的区县，单位服务成本越低、设施利用率越高，越容易形成供给的规模效应；而人口净流入则反映城市对人才与劳动力的真实吸引力，是"人随产业走"的晴雨表。因此评价绝不能只看经济，还要看"人"。</p>
+
+  <table>
+    <thead>
+      <tr><th>区县</th><th>常住人口<br>(万人,2025)</th><th>城镇化率<br>(%)</th><th>人口增量<br>(万人,2024→2025)</th></tr>
+    </thead>
+    <tbody>
+      <tr><td class="l">海曙区</td><td>107.5</td><td>90.5</td><td>+0.3</td></tr>
+      <tr><td class="l">江北区</td><td>52.3</td><td>87.3</td><td>+0.5</td></tr>
+      <tr><td class="l">镇海区</td><td>54.0</td><td>93.9</td><td>+0.8</td></tr>
+      <tr><td class="l">北仑区</td><td>91.6</td><td>81.1</td><td>+1.2</td></tr>
+      <tr><td class="l">鄞州区</td><td>172.5</td><td>85.3</td><td>+1.4</td></tr>
+      <tr><td class="l">奉化区</td><td>59.4</td><td>65.2</td><td>+0.2</td></tr>
+      <tr><td class="l">余姚市</td><td>127.0</td><td>83.5</td><td>+0.3</td></tr>
+      <tr><td class="l">慈溪市</td><td>189.7</td><td>82.4</td><td>+0.8</td></tr>
+      <tr><td class="l">宁海县</td><td>71.4</td><td>66.8</td><td>+0.1</td></tr>
+      <tr><td class="l">象山县</td><td>57.9</td><td>65.1</td><td>0.0</td></tr>
+    </tbody>
+  </table>
+  <p style="font-size:13px;color:var(--muted);">数据来源：宁波市统计局《2025年宁波市人口主要数据公报》（以 2025-11-01 为时点，1% 人口抽样调查推算）。人口增量为 2024→2025 常住人口差值；全市常住人口 983.3 万、城镇化率 81.5%。</p>
+
+  <ul>
+    <li><b>鄞州</b>：常住人口 172.5 万（全市第二）、增量 +1.4 万（全市第一），"规模 + 吸引力"双高，公共产品供给底座最厚实，综合位次更有支撑。</li>
+    <li><b>慈溪</b>：常住人口 189.7 万（全市第一，已跻身 II 型大城市），规模效应使教育、医疗等公共品单位成本最低；尽管 GDP 略低于鄞州，人口底座却更稳。</li>
+    <li><b>北仑 / 镇海</b>：工业强区人口增量分别达 +1.2 万、+0.8 万，印证"产业聚人"；镇海城镇化率 93.9% 居全市之首。</li>
+    <li><b>象山 / 宁海 / 奉化</b>：人口规模中等（57.9–71.4 万）且增量偏小（象山基本持平、宁海仅 +0.1 万），公共产品供给的"摊薄效应"弱，需更高的人均财政投入才能追上，提示政策应兼顾"补人口"与"补设施"。</li>
+  </ul>
+
+  <h3>3.8 扩充版综合评价：把财政·人口·交通一起纳入</h3>
+  <p>现在把 3.5–3.7 的真实维度加回评分。指标由 4 项扩为 <b>8 项</b>：在原 4 项基础上，新增<b>一般公共预算收入、常住人口、人口净流入、交通枢纽指数</b>。权重重新分配（经济类 0.47、财政·人口·交通类 0.53）：</p>
+  <div class="formula">权重：GDP总量0.15｜GDP增速0.10｜规上工业0.12｜社零0.10｜一般公共预算收入0.15｜常住人口0.12｜人口净流入0.08｜交通枢纽指数0.18</div>
+  <p>仍用功效系数法标准化后加权汇总，得到"扩展版"综合得分，并与 4 指标版对比：</p>
+
+  <table>
+    <thead>
+      <tr><th>排名<br>(扩展版)</th><th>区县</th><th>扩展版<br>综合得分</th><th>较 4 指标版<br>排名变化</th><th>主要驱动</th></tr>
+    </thead>
+    <tbody>
+      <tr><td class="rank1">1</td><td class="l">北仑区</td><td class="rank1">91.8</td><td>—</td><td class="l">财政+港口双冠，全能型</td></tr>
+      <tr><td class="rank1">2</td><td class="l">鄞州区</td><td class="rank1">90.8</td><td>—</td><td class="l">人口+消费+财政均衡</td></tr>
+      <tr><td>3</td><td class="l">慈溪市</td><td>80.3</td><td class="up">↑3</td><td class="l">常住人口全市第一（189.7万）</td></tr>
+      <tr><td>4</td><td class="l">海曙区</td><td>76.6</td><td class="up">↑3</td><td class="l">机场枢纽+中心消费+财力</td></tr>
+      <tr><td>5</td><td class="l">余姚市</td><td>76.4</td><td class="down">↓2</td><td class="l">人口/财政中等，被反超</td></tr>
+      <tr><td>6</td><td class="l">镇海区</td><td>75.6</td><td class="down">↓2</td><td class="l">工业强但人口/消费偏小</td></tr>
+      <tr><td>7</td><td class="l">江北区</td><td>71.1</td><td class="up">↑1</td><td class="l">枢纽+人均财力较高</td></tr>
+      <tr><td>8</td><td class="l">象山县</td><td>69.4</td><td class="down">↓3</td><td class="l">高增速被弱财力/人口稀释</td></tr>
+      <tr><td>9</td><td class="l">宁海县</td><td>64.0</td><td>—</td><td class="l">各维度均偏弱</td></tr>
+      <tr><td>10</td><td class="l">奉化区</td><td>63.7</td><td>—</td><td class="l">体量小、增量低</td></tr>
+    </tbody>
+  </table>
+
+  <div class="grid">
+    <div class="box"><b>慈溪 ↑3</b><br>常住人口 189.7 万（全市第一）+ 财政收入 231 亿，人口密度与规模效应在扩展版中充分兑现，从"总量大但动能弱"跃升为综合第三。</div>
+    <div class="box"><b>海曙 ↑3</b><br>机场枢纽指数 95、社零 916 亿（全市第二）、中心区财力，使其在"经济之外的支撑维度"上大幅补分，从第 7 升至第 4。</div>
+    <div class="box"><b>象山 ↓3</b><br>4 指标版靠"最高增速"冲到第 5 的"逆袭"，在纳入财力（人均仅 1.3 万）、人口（增量 0）、交通（半岛短板）后被打回第 8——<b>单一动能无法支撑综合领先</b>。</div>
+    <div class="box"><b>镇海/余姚 ↓2</b><br>工业单科冠军，但人口规模、消费、枢纽能级相对吃亏，扩维后排名回落，提示其"强制造、弱综合"的结构特征。</div>
+  </div>
+
+  <div class="note">交通维度（交通枢纽指数）为示意赋值，故"扩展版"排名会随该指数设定而微调；但财政（真实）与人口（真实）两项已足以改变 4 指标版的多数结论，说明<b>维度选择本身就塑造评价结果</b>。正式评价应以客观交通指标替代示意指数。</div>
+
+  <h2>四、实操要点与常见陷阱</h2>
+  <ul>
+    <li><b>指标同向化</b>：逆向指标（能耗、PM2.5、失业率）必须正向化，否则方向反了。</li>
+    <li><b>量纲统一</b>：GDP是亿元、增速是%、占比是%，不可直接相加，必须先标准化。</li>
+    <li><b>极值稳健性</b>：用 min/max 标准化对离群值敏感，功效系数法用"满意/不允许值"更稳；也可用熵值法降低人为设定。</li>
+    <li><b>权重透明</b>：官方评价应公开权重与口径，学术评价宜用客观赋权或敏感性分析。</li>
+    <li><b>特殊功能区剔除</b>：高新区、前湾新区等跨行政区功能区需明确并入口径，否则区县间不可比。</li>
+    <li><b>分类评价</b>：工业强区、生态县、主城区定位不同，宜"分赛道"评价而非强求一张表。</li>
+    <li><b>维度即结论</b>：本文 4 指标版与扩展版的排名差异表明，<b>选哪些维度、赋多少权重，本质上是在回答"我们想要什么样的城市"</b>——这是综合评价最该被审慎对待的环节。</li>
+  </ul>
+
+  <h2>五、小结</h2>
+  <p>县区级城市综合评价，本质是一套"指标体系 × 评价方法 × 权重方案"的组合工程。方法上，<b>功效系数法 + 综合指数法</b>适合官方稳态监测，<b>熵值法 / PCA</b>适合客观排名，<b>AHP / TOPSIS</b>适合政策导向与标杆对比；指标上，围绕"创新、协调、绿色、开放、共享 + 综合质效"框架，并单列<b>财政实力、交通通达、人口规模与活力</b>等支撑维度，才能避免"唯 GDP"的片面。以宁波 2025 年数据为例的演示表明：同是 10 个区县，只看 GDP、只看 4 项经济指标、还是纳入财政·人口·交通做多维评价，会得出不同的发展画像——而后者，才是科学施策的起点。评价没有"标准答案"，但<b>把方法讲清楚、把数据摆真实、把权重说明白</b>，是每个负责任的评价应有的底线。</p>
+
+  <footer>
+    本文为方法说明性文章，宁波实例数据为简化演示（含 4 指标版与 8 指标扩展版两套评分、示例权重）；其中交通枢纽指数为方法演示用的示意赋值，财政收入与人口为宁波市统计局 2025 年公开数据，港口/机场数据来自宁波舟山港集团与民航测算。实际综合评价请依据完整指标体系与公开统计年鉴，并审慎处理口径、赋权与敏感性分析。
+  </footer>
+
+</div>
+</body>
+</html>
