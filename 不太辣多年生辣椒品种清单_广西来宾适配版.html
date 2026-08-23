@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>不太辣多年生辣椒品种清单（广西来宾适配版）</title>
+<style>
+  :root {
+    --pepper-green: #2f6b1f;
+    --pepper-green-deep: #1f4d12;
+    --pepper-green-light: #e7f3e0;
+    --warm-orange: #b54708;
+    --warm-orange-light: #fdf0e3;
+    --text: #1f2937;
+    --text-light: #4b5563;
+    --card-bg: #ffffff;
+    --border: #d6d3c8;
+    --bg: #faf8f3;
+    --warn-bg: #fff7e6;
+    --warn-border: #d99000;
+    --tip-bg: #eef7e9;
+    --tip-border: #5a9e43;
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: "PingFang SC", "Microsoft YaHei", "Segoe UI", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.9;
+    margin: 0;
+    font-size: 16px;
+  }
+  .cover {
+    background: #f3ead8;
+    border-bottom: 5px solid var(--pepper-green);
+    color: var(--text);
+    padding: 56px 40px 46px;
+    text-align: center;
+  }
+  .cover h1 {
+    font-size: 2.0em;
+    margin: 0 0 12px;
+    color: var(--pepper-green-deep);
+    letter-spacing: 1px;
+  }
+  .cover .subtitle {
+    font-size: 1.05em;
+    color: var(--text-light);
+    margin-bottom: 20px;
+  }
+  .cover .meta {
+    display: inline-block;
+    background: var(--pepper-green-light);
+    color: var(--pepper-green-deep);
+    padding: 8px 22px;
+    border-radius: 30px;
+    font-size: 0.88em;
+    border: 1px solid var(--pepper-green);
+    font-weight: bold;
+  }
+  .toc {
+    max-width: 900px;
+    margin: 30px auto;
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px 34px;
+  }
+  .toc h2 { margin-top: 0; color: var(--pepper-green-deep); }
+  .toc ol { line-height: 2.1; padding-left: 22px; }
+  .toc a { color: var(--warm-orange); text-decoration: none; }
+  .toc a:hover { text-decoration: underline; }
+  section {
+    max-width: 900px;
+    margin: 28px auto;
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 30px 38px;
+  }
+  section h2 {
+    color: var(--pepper-green-deep);
+    border-left: 6px solid var(--pepper-green);
+    padding-left: 14px;
+    margin-top: 0;
+  }
+  section h3 {
+    color: var(--warm-orange);
+    margin-top: 26px;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 16px 0;
+    font-size: 0.95em;
+  }
+  th, td {
+    border: 1px solid var(--border);
+    padding: 10px 12px;
+    text-align: left;
+    vertical-align: top;
+  }
+  thead th {
+    background: var(--pepper-green-light);
+    color: var(--pepper-green-deep);
+    font-weight: bold;
+  }
+  tbody tr:nth-child(even) { background: #f7f5ee; }
+  .tip-box, .warn-box {
+    border-radius: 10px;
+    padding: 14px 18px;
+    margin: 18px 0;
+    font-size: 0.96em;
+  }
+  .tip-box {
+    background: var(--tip-bg);
+    border-left: 5px solid var(--tip-border);
+    color: #20331a;
+  }
+  .warn-box {
+    background: var(--warn-bg);
+    border-left: 5px solid var(--warn-border);
+    color: #5c4500;
+  }
+  .tip-box b, .warn-box b { color: var(--text); }
+  ul, ol { padding-left: 24px; }
+  li { margin: 5px 0; }
+  .pill {
+    display: inline-block;
+    padding: 2px 10px;
+    border-radius: 20px;
+    font-size: 0.82em;
+    font-weight: bold;
+    margin-right: 4px;
+  }
+  .pill-green { background: var(--pepper-green-light); color: var(--pepper-green-deep); }
+  .pill-orange { background: var(--warm-orange-light); color: var(--warm-orange); }
+  .species-tag { font-weight: bold; color: var(--warm-orange); }
+  footer {
+    text-align: center;
+    color: var(--text-light);
+    font-size: 0.85em;
+    padding: 30px 20px 50px;
+  }
+  @media (max-width: 600px) {
+    .cover h1 { font-size: 1.5em; }
+    section { padding: 20px; }
+    .toc { padding: 18px 22px; }
+  }
+</style>
+</head>
+<body>
+
+  <!-- ==================== 封面 ==================== -->
+  <div class="cover">
+    <h1>不太辣多年生辣椒品种清单</h1>
+    <div class="subtitle">国内能买到 · 零辣到微辣 · 广西来宾长季养老桩</div>
+    <span class="meta">哈巴纳达 / 橘子梦 / 无辣哈瓦那 / 甜型五彩椒 · 广西来宾适配版</span>
+  </div>
+
+  <!-- ==================== 目录 ==================== -->
+  <div class="toc">
+    <h2>目录</h2>
+    <ol>
+      <li><a href="#s1">一、为什么在广西能种"多年生辣椒"</a></li>
+      <li><a href="#s2">二、辣度阶梯：什么算"不太辣"</a></li>
+      <li><a href="#s3">三、国内能买到的清单（核心表）</a></li>
+      <li><a href="#s4">四、各品种详述与来宾种法</a></li>
+      <li><a href="#s5">五、老桩养护实操（广西版）</a></li>
+      <li><a href="#s6">六、留种与自循环（隔离要点）</a></li>
+      <li><a href="#s7">七、最终组合建议</a></li>
+      <li><a href="#s8">八、速查参考表</a></li>
+    </ol>
+  </div>
+
+  <!-- ==================== 一、广西适配 ==================== -->
+  <section id="s1">
+    <h2>一、为什么在广西能种"多年生辣椒"</h2>
+    <p>辣椒能不能活几年、长成"老桩"，本质由<b>物种（种）</b>决定。广西来宾的气候，恰好是多年生辣椒的天然温床：</p>
+    <table>
+      <thead>
+        <tr><th>来宾气候要素</th><th>数值</th><th>对多年生辣椒的意义</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>无霜期</td><td>约 331 天</td><td>几乎不用搬室内越冬，植株原地过冬</td></tr>
+        <tr><td>1 月均温</td><td>10.9°C</td><td>多数多年生种可露地安全越冬，仅偶发寒潮需轻微保护</td></tr>
+        <tr><td>极端低温</td><td>-3 ~ 1°C（偶发）</td><td>寒潮那几天搬封闭阳台/小拱棚即可</td></tr>
+        <tr><td>年均温</td><td>20.7°C</td><td>暖区长季，春茬不死、秋茬续上，累积产量高</td></tr>
+        <tr><td>7~8 月极端高温</td><td>38.9°C</td><td>唯一短板：需遮阳网保花保果</td></tr>
+      </tbody>
+    </table>
+    <div class="tip-box">
+      <b>一句话：</b>在来宾，选对小果型、易木质化的品种，辣椒可以当"多年生灌木"养，单株年产出远超一年生栽培——这正是你生态农业方案"自留种闭环"的天然支点。
+    </div>
+  </section>
+
+  <!-- ==================== 二、辣度阶梯 ==================== -->
+  <section id="s2">
+    <h2>二、辣度阶梯：什么算"不太辣"</h2>
+    <p>本清单只收 <b>SHU 0 ~ 1500</b> 的品种（远低于 jalapeño 的 2500~8000），分三档：</p>
+    <table>
+      <thead>
+        <tr><th>档位</th><th>辣度范围</th><th>体验</th><th>代表</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><span class="pill pill-green">零辣</span></td><td>0 SHU</td><td>完全不辣，纯果香/清甜</td><td>哈巴纳达、橘子梦、无辣哈瓦那</td></tr>
+        <tr><td><span class="pill pill-green">微辣</span></td><td>0 ~ 1000 SHU</td><td>舌尖极轻刺激，不呛</td><td>Aji Dulce 系（国内难买，本清单不列）</td></tr>
+        <tr><td><span class="pill pill-orange">甜辣</span></td><td>1000 ~ 1500 SHU</td><td>温和，仍算"不太辣"</td><td>Aji Panca（国内难买，本清单不列）</td></tr>
+      </tbody>
+    </table>
+    <div class="warn-box">
+      <b>重要更正（上一轮误判）：</b>Aji Amarillo、Aji Limo、Aji Lemon Drop 实测 15K~50K SHU（≈ cayenne 级，是 jalapeño 的 4~20 倍），<b>偏辣，已剔除</b>，不在本清单。Aji Cachucha 虽 0~1000 SHU 但<b>国内无稳定渠道</b>，本清单亦不列。
+    </div>
+  </section>
+
+  <!-- ==================== 三、核心清单 ==================== -->
+  <section id="s3">
+    <h2>三、国内能买到的清单（核心表）</h2>
+    <p>下表四个品种 = <b>不太辣 + 无限生长/长季 + 广西可多年生 + 国内有渠道</b> 的交集。</p>
+    <table>
+      <thead>
+        <tr><th>品种</th><th>物种</th><th>辣度</th><th>多年生</th><th>广西渠道</th><th>定位</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><b>哈巴纳达<br>Habanada</b></td>
+          <td class="species-tag">C. chinense</td>
+          <td>0 SHU</td>
+          <td><span class="pill pill-green">已拥有</span></td>
+          <td>你已在种 / 国内有售</td>
+          <td>零辣主力老桩</td>
+        </tr>
+        <tr>
+          <td><b>橘子梦<br>Tangerine Dream</b></td>
+          <td class="species-tag">C. annuum</td>
+          <td>0 SHU</td>
+          <td><span class="pill pill-green">已拥有</span></td>
+          <td>你已在种 / 国内常见</td>
+          <td>快熟零辣零食椒</td>
+        </tr>
+        <tr>
+          <td><b>无辣哈瓦那<br>/ 橙色奶油哈瓦那</b></td>
+          <td class="species-tag">C. chinense</td>
+          <td>0 SHU</td>
+          <td><span class="pill pill-green">可多年生</span></td>
+          <td><span class="pill pill-orange">淘宝可买</span></td>
+          <td>零辣哈瓦那风味补充</td>
+        </tr>
+        <tr>
+          <td><b>甜型五彩椒<br>/ 观赏甜椒</b></td>
+          <td class="species-tag">C. annuum</td>
+          <td>微辣</td>
+          <td><span class="pill pill-green">易老桩</span></td>
+          <td><span class="pill pill-orange">淘宝满地</span></td>
+          <td>易得、观赏食两用</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="tip-box">
+      <b>筛选逻辑：</b>大果厚肉甜椒（如加州奇迹、橘色奇迹）多为 <b>F1 不可留种</b>，且木质化慢、三年即衰，不满足"多年生自循环"，故不列为主推；想高产又留种，认准包装写 <b>open pollinated / OP</b> 的纯种。
+    </div>
+  </section>
+
+  <!-- ==================== 四、各品种详述 ==================== -->
+  <section id="s4">
+    <h2>四、各品种详述与来宾种法</h2>
+
+    <h3>4.1 哈巴纳达 Habanada <span class="pill pill-green">零辣 · 已有</span></h3>
+    <ul>
+      <li><b>身份：</b>C. chinense，康奈尔 2007 育成，世界首个真正无辣哈瓦那，传家宝 OP 可留种</li>
+      <li><b>株型：</b>无限生长紧凑立丛，株高 60~90cm，需小支架</li>
+      <li><b>风味：</b>热带果香（芒果/甜瓜/柑橘 + 花香），风味天花板高</li>
+      <li><b>产量：</b>来宾双茬估算 <b>2~3 kg/株·季</b></li>
+      <li><b>来宾：</b>无霜期 331 天可长季养老桩；7~8 月遮阳网保花；春茬 1 月中播/3 月定植，秋茬 6 月底播/8 月定植</li>
+    </ul>
+
+    <h3>4.2 橘子梦 Tangerine Dream <span class="pill pill-green">零辣 · 已有</span></h3>
+    <ul>
+      <li><b>身份：</b>C. annuum，USDA 2004 发布、Burpee 独家，第 12 代稳定 OP 系可留种</li>
+      <li><b>株型：</b>有限生长紧凑灌木，株高 40~60cm，盆栽首选、不占地</li>
+      <li><b>风味：</b>清甜脆爽标准甜椒味；单果 50~70g（零食椒型）</li>
+      <li><b>产量：</b>暖区丰产上限 0.6~0.8 kg/株；盆栽约 0.4~0.8 kg</li>
+      <li><b>来宾：</b>盆栽越冬（非真正多年生主力）；阳台南向 6~8h 直射光；单株独立 20L 盆</li>
+    </ul>
+
+    <h3>4.3 无辣哈瓦那 / 橙色奶油哈瓦那 <span class="pill pill-orange">淘宝可买 · 需甄别</span></h3>
+    <ul>
+      <li><b>身份：</b>C. chinense，与哈巴纳达同属，零辣传家宝型哈瓦那</li>
+      <li><b>株型：</b>无限生长灌木，多年生逻辑与哈巴纳达一致</li>
+      <li><b>风味：</b>哈瓦那族典型果香，比哈巴纳达更"浓郁饱满"</li>
+      <li><b>⚠️ 甄別要点：</b>淘宝部分挂名"哈瓦那/奶油哈瓦那"实为<b>辣味</b>品种，下单认准"无辣 / 奶油 / crisp / 0 辣"字样，看买家评价是否真不辣</li>
+      <li><b>来宾：</b>同哈巴纳达老桩养护；可与哈巴纳达相邻种但<b>留种需隔离</b>（见第六章）</li>
+    </ul>
+
+    <h3>4.4 甜型五彩椒 / 观赏甜椒 <span class="pill pill-orange">淘宝满地 · 易得</span></h3>
+    <ul>
+      <li><b>身份：</b>C. annuum，微辣，观赏食两用</li>
+      <li><b>株型：</b>易养成多年生灌木老桩，案例最多（5 年老桩 2 米高、年结 11 斤）</li>
+      <li><b>风味：</b>微辣清甜，彩果颜值高</li>
+      <li><b>来宾：</b>最易上手的"练手老桩"；与哈巴纳达（chinense）不同种，<b>天然不串粉</b>，可相邻留种</li>
+    </ul>
+  </section>
+
+  <!-- ==================== 五、老桩养护 ==================== -->
+  <section id="s5">
+    <h2>五、老桩养护实操（广西版）</h2>
+    <p>从广西本地多年生辣椒案例提炼的 5 条铁律：</p>
+    <table>
+      <thead>
+        <tr><th>要点</th><th>做法</th><th>原因</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><b>① 选小果型</b></td>
+          <td>优先朝天椒、小米辣、指天椒、灌木椒、哈瓦那类</td>
+          <td>小果易木质化成老桩；大果甜椒木质化慢、三年即衰</td>
+        </tr>
+        <tr>
+          <td><b>② 大盆起步</b></td>
+          <td>30L（5 加仑）以上；底垫陶粒/松针 + 羊粪；土用腐叶土 + 珍珠岩 + 椰壳；钾肥给足</td>
+          <td>根系发达才能多年生；来宾红壤偏酸黏重，盆栽用商品基质而非园土</td>
+        </tr>
+        <tr>
+          <td><b>③ 入冬重剪</b></td>
+          <td>细弱枝全剃，留 15~30cm 主干；开春抹掉 1.5m 以下新芽，逼出通风挂果层</td>
+          <td>集中养分、防病虫害、促来年旺果</td>
+        </tr>
+        <tr>
+          <td><b>④ 扦插 &gt; 实生</b></td>
+          <td>筷子粗枝条泡生根水插珍珠岩，约 20 天成活，成活率约 80%</td>
+          <td>实生苗易退化；扦插保性状、快成型</td>
+        </tr>
+        <tr>
+          <td><b>⑤ 广西天然外挂</b></td>
+          <td>无霜期 331 天不用搬室内；朝天椒/小米辣南宁实测连续结果 280 天</td>
+          <td>暖区是多年生最大杠杆，比选品种更关键</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="warn-box">
+      <b>夏日提醒：</b>来宾 7~8 月 38.9°C 极端高温会落花落果，老桩也躲不过。<b>遮阳网不是可选项，是必选项</b>——尤其盆栽放在南向暴晒阳台时，午后务必拉网 + 通风。
+    </div>
+  </section>
+
+  <!-- ==================== 六、留种 ==================== -->
+  <section id="s6">
+    <h2>六、留种与自循环（隔离要点）</h2>
+    <p>本清单四个品种分属两个物种，留种隔离规则不同：</p>
+    <table>
+      <thead>
+        <tr><th>物种</th><th>包含品种</th><th>留种隔离要求</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="species-tag">C. chinense</td>
+          <td>哈巴纳达、无辣哈瓦那</td>
+          <td>同物种不同品种，<b>需隔 20m 或套袋</b>防串粉；选老熟果阴干取籽</td>
+        </tr>
+        <tr>
+          <td class="species-tag">C. annuum</td>
+          <td>橘子梦、甜型五彩椒</td>
+          <td>与 chinense 不同种，<b>天然不串粉</b>，可相邻留种；同为 annuum 的不同品种间仍需适当隔离</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="tip-box">
+      <b>接生态方案：</b>这四种都能自留种，正好填满你生态农业方案的"自留种闭环"——每年选最优老桩留种，地力与种子双循环，免除对外购 F1 的依赖。
+    </div>
+  </section>
+
+  <!-- ==================== 七、组合建议 ==================== -->
+  <section id="s7">
+    <h2>七、最终组合建议</h2>
+    <p>按"零辣为主 + 微辣点缀 + 分物种留种 + 广西长季多年生"四原则，最稳搭配：</p>
+    <div class="tip-box">
+      <b>推荐组合：</b><br>
+      🟢 <b>哈巴纳达</b>（零辣 chinense 主力老桩）<br>
+      🟢 <b>橘子梦</b>（零辣 annuum 快熟盆栽）<br>
+      🟠 <b>无辣哈瓦那</b>（零辣 chinense 风味补充，淘宝试种）<br>
+      🟠 <b>甜型五彩椒</b>（微辣 annuum 易得练手老桩）<br>
+      <br>
+      四者分属两物种，可各自安全留种；无霜期 331 天让它们春茬不死、秋茬续上，<b>单株年产出轻松突破 3~5 kg</b>。
+    </div>
+    <div class="warn-box">
+      <b>不推荐此场景：</b>厚肉 F1 甜椒（加州奇迹/橘色奇迹等）——虽产量高但<b>不可留种</b>，与生态自循环冲突；且木质化慢、三年即衰，不符合"多年生"。
+    </div>
+  </section>
+
+  <!-- ==================== 八、速查表 ==================== -->
+  <section id="s8">
+    <h2>八、速查参考表</h2>
+    <table>
+      <thead>
+        <tr><th>项目</th><th>要点</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>辣度门槛</td><td>0 ~ 1500 SHU（零辣~甜辣）</td></tr>
+        <tr><td>核心品种（4）</td><td>哈巴纳达 / 橘子梦 / 无辣哈瓦那 / 甜型五彩椒</td></tr>
+        <tr><td>已拥有</td><td>哈巴纳达、橘子梦</td></tr>
+        <tr><td>需网购甄别</td><td>无辣哈瓦那（认准"无辣/奶油/0辣"）、甜型五彩椒</td></tr>
+        <tr><td>多年生关键</td><td>小果型 + 大盆 + 入冬重剪 + 扦插 + 广西长季</td></tr>
+        <tr><td>来宾短板</td><td>7~8 月 38.9°C 需遮阳网</td></tr>
+        <tr><td>留种隔离</td><td>chinense 内隔 20m/套袋；annuum 与 chinense 天然不串粉</td></tr>
+        <tr><td>单株年产出</td><td>3~5 kg（长季累积，多年生）</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <footer>
+    不太辣多年生辣椒品种清单（广西来宾适配版） · 仅供种植参考，请结合当地条件灵活调整
+  </footer>
+
+</body>
+</html>
