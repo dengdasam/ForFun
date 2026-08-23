@@ -37,20 +37,21 @@
     padding: 0;
   }
   .cover {
-    background: linear-gradient(135deg, #8a2d0a 0%, #5c2e0e 38%, #1f4d12 100%);
-    color: #fff;
+    background-color: #fff7ed;
+    background-image: linear-gradient(135deg, #fff7ed 0%, #fef9c3 50%, #ecfdf5 100%);
+    color: #7c2d12;
     padding: 60px 40px 50px;
     text-align: center;
     position: relative;
     overflow: hidden;
-    text-shadow: 0 2px 6px rgba(0,0,0,0.55);
+    border-bottom: 4px solid #d9480f;
   }
   .cover::after {
     content: "";
     position: absolute;
     bottom: -40px; right: -40px;
     width: 220px; height: 220px;
-    background: rgba(255,255,255,0.08);
+    background: rgba(217,72,15,0.10);
     border-radius: 50%;
   }
   .cover::before {
@@ -58,18 +59,19 @@
     position: absolute;
     top: -50px; left: -50px;
     width: 180px; height: 180px;
-    background: rgba(255,255,255,0.06);
+    background: rgba(47,107,31,0.10);
     border-radius: 50%;
   }
-  .cover h1 { font-size: 2.2em; margin-bottom: 12px; letter-spacing: 1px; }
-  .cover .subtitle { font-size: 1.05em; opacity: 0.95; margin-bottom: 22px; }
+  .cover h1 { font-size: 2.2em; margin-bottom: 12px; letter-spacing: 1px; color: #9a3412; }
+  .cover .subtitle { font-size: 1.05em; color: #4b5563; margin-bottom: 22px; }
   .cover .meta {
     display: inline-block;
-    background: rgba(0,0,0,0.30);
+    background: #fde68a;
+    color: #7c2d12;
     padding: 8px 22px;
     border-radius: 30px;
     font-size: 0.88em;
-    border: 1px solid rgba(255,255,255,0.25);
+    border: 1px solid #f59e0b;
   }
   .container { max-width: 860px; margin: 0 auto; padding: 30px 20px 60px; }
   .toc {
@@ -122,7 +124,7 @@
     text-align: left;
     vertical-align: top;
   }
-  thead th { background: var(--hb-green-deep); color: #fff; }
+  thead th { background: #eef6e8; color: var(--hb-green-deep); border-bottom: 2px solid var(--hb-green); }
   tbody tr:nth-child(even) { background: #f7f9f5; }
   .col-td { background: var(--td-orange-bg) !important; }
   .col-hb { background: var(--hb-green-bg) !important; }
@@ -162,7 +164,7 @@
     width: 14px; height: 14px;
     border-radius: 50%;
     background: var(--td-orange);
-    border: 3px solid #fff;
+    border: 3px solid #fef3c7;
     box-shadow: 0 0 0 2px var(--td-orange);
   }
   .timeline-item.hb::before { background: var(--hb-green); box-shadow: 0 0 0 2px var(--hb-green); }
