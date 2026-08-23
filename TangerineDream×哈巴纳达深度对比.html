@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tangerine Dream × 哈巴纳达 深度对比</title>
+<style>
+  :root {
+    --td-orange: #ff8c00;
+    --td-orange-light: #ffb74d;
+    --td-orange-bg: #fff3e0;
+    --hb-green: #4a7c2e;
+    --hb-green-deep: #2d5016;
+    --hb-green-light: #8bc34a;
+    --hb-green-bg: #f1f8e9;
+    --text: #2e2e2e;
+    --text-light: #555;
+    --card-bg: #ffffff;
+    --border: #e0e0e0;
+    --warn-bg: #fffde7;
+    --warn-border: #fdd835;
+    --tip-bg: #e8f5e9;
+    --tip-border: #66bb6a;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: "PingFang SC", "Microsoft YaHei", "Segoe UI", sans-serif;
+    background: #fafafa;
+    color: var(--text);
+    line-height: 1.85;
+    padding: 0;
+  }
+  .cover {
+    background: linear-gradient(135deg, var(--td-orange) 0%, #e07b00 38%, var(--hb-green-deep) 100%);
+    color: #fff;
+    padding: 60px 40px 50px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .cover::after {
+    content: "";
+    position: absolute;
+    bottom: -40px; right: -40px;
+    width: 220px; height: 220px;
+    background: rgba(255,255,255,0.10);
+    border-radius: 50%;
+  }
+  .cover::before {
+    content: "";
+    position: absolute;
+    top: -50px; left: -50px;
+    width: 180px; height: 180px;
+    background: rgba(255,255,255,0.07);
+    border-radius: 50%;
+  }
+  .cover h1 { font-size: 2.2em; margin-bottom: 12px; letter-spacing: 1px; }
+  .cover .subtitle { font-size: 1.05em; opacity: 0.92; margin-bottom: 22px; }
+  .cover .meta {
+    display: inline-block;
+    background: rgba(255,255,255,0.16);
+    padding: 8px 22px;
+    border-radius: 30px;
+    font-size: 0.88em;
+  }
+  .container { max-width: 860px; margin: 0 auto; padding: 30px 20px 60px; }
+  .toc {
+    background: var(--card-bg);
+    border-radius: 12px;
+    padding: 24px 30px;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  }
+  .toc h2 { font-size: 1.2em; color: var(--hb-green-deep); margin-bottom: 12px; border-left: 4px solid var(--td-orange); padding-left: 10px; }
+  .toc ol { padding-left: 20px; }
+  .toc li { margin: 6px 0; }
+  .toc a { color: var(--hb-green); text-decoration: none; }
+  .toc a:hover { text-decoration: underline; }
+  section {
+    background: var(--card-bg);
+    border-radius: 12px;
+    padding: 28px 32px;
+    margin-bottom: 24px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  }
+  section h2 {
+    font-size: 1.45em;
+    color: var(--hb-green-deep);
+    margin-bottom: 16px;
+    padding-bottom: 10px;
+    border-bottom: 3px solid var(--td-orange);
+  }
+  section h3 {
+    font-size: 1.12em;
+    color: var(--hb-green);
+    margin: 20px 0 10px;
+    padding-left: 10px;
+    border-left: 4px solid var(--hb-green-light);
+  }
+  p { margin: 10px 0; color: var(--text); }
+  ul, ol { padding-left: 22px; margin: 10px 0; }
+  li { margin: 6px 0; }
+  .badge-td { color: var(--td-orange); font-weight: 700; }
+  .badge-hb { color: var(--hb-green); font-weight: 700; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 16px 0;
+    font-size: 0.92em;
+  }
+  th, td {
+    border: 1px solid var(--border);
+    padding: 10px 12px;
+    text-align: left;
+    vertical-align: top;
+  }
+  thead th { background: var(--hb-green-deep); color: #fff; }
+  tbody tr:nth-child(even) { background: #f7f9f5; }
+  .col-td { background: var(--td-orange-bg) !important; }
+  .col-hb { background: var(--hb-green-bg) !important; }
+  .tip-box, .warn-box {
+    border-radius: 10px;
+    padding: 14px 18px;
+    margin: 16px 0;
+    font-size: 0.94em;
+  }
+  .tip-box { background: var(--tip-bg); border-left: 5px solid var(--tip-border); }
+  .warn-box { background: var(--warn-bg); border-left: 5px solid var(--warn-border); }
+  .tip-box .label, .warn-box .label { font-weight: 700; display: block; margin-bottom: 6px; }
+  .profile-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    margin: 18px 0;
+  }
+  .profile-card {
+    border-radius: 12px;
+    padding: 18px 20px;
+  }
+  .profile-td { background: var(--td-orange-bg); border: 1px solid var(--td-orange-light); }
+  .profile-hb { background: var(--hb-green-bg); border: 1px solid var(--hb-green-light); }
+  .profile-card h4 { font-size: 1.1em; margin-bottom: 10px; }
+  .profile-td h4 { color: var(--td-orange); }
+  .profile-hb h4 { color: var(--hb-green-deep); }
+  .profile-card dl { margin: 0; }
+  .profile-card dt { font-weight: 700; color: var(--text-light); font-size: 0.85em; margin-top: 8px; }
+  .profile-card dd { margin: 2px 0 0; }
+  .timeline { border-left: 3px solid var(--td-orange); padding-left: 22px; margin: 16px 0; }
+  .timeline-item { position: relative; margin-bottom: 18px; }
+  .timeline-item::before {
+    content: "";
+    position: absolute;
+    left: -30px; top: 4px;
+    width: 14px; height: 14px;
+    border-radius: 50%;
+    background: var(--td-orange);
+    border: 3px solid #fff;
+    box-shadow: 0 0 0 2px var(--td-orange);
+  }
+  .timeline-item.hb::before { background: var(--hb-green); box-shadow: 0 0 0 2px var(--hb-green); }
+  .timeline-item .time { font-weight: 700; color: var(--hb-green-deep); }
+  .timeline-item.hb .time { color: var(--td-orange); }
+  .quick-ref-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin: 16px 0;
+  }
+  .quick-ref-grid div {
+    background: #fafafa;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 12px 14px;
+    font-size: 0.9em;
+  }
+  .quick-ref-grid b { color: var(--hb-green-deep); }
+  footer {
+    text-align: center;
+    color: var(--text-light);
+    font-size: 0.82em;
+    padding: 20px;
+  }
+  @media (max-width: 620px) {
+    .profile-grid, .quick-ref-grid { grid-template-columns: 1fr; }
+    .cover h1 { font-size: 1.7em; }
+    section { padding: 20px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="cover">
+  <h1>Tangerine Dream × 哈巴纳达</h1>
+  <div class="subtitle">两种"无辣度辣椒"的深度对比 · 广西来宾适配版</div>
+  <span class="meta">零辣度甜椒 vs 零辣度哈瓦那 · Capsicum annuum vs chinense · 育种来源 · 风味 · 来宾种植 · 留种</span>
+</div>
+
+<div class="container">
+
+  <div class="toc">
+    <h2>目录</h2>
+    <ol>
+      <li><a href="#s1">一、身份定案：两个品种到底是谁</a></li>
+      <li><a href="#s2">二、核心参数对照表</a></li>
+      <li><a href="#s3">三、风味深挖（最大差异）</a></li>
+      <li><a href="#s4">四、生长习性与管理差异（来宾适配）</a></li>
+      <li><a href="#s5">五、来宾种植要点与双茬时间线</a></li>
+      <li><a href="#s6">六、留种与自循环（关键：两者都可留种）</a></li>
+      <li><a href="#s7">七、你该种哪个 / 怎么排</a></li>
+      <li><a href="#s8">八、速查参考表</a></li>
+    </ol>
+  </div>
+
+  <!-- ==================== 一、身份定案 ==================== -->
+  <section id="s1">
+    <h2>一、身份定案：两个品种到底是谁</h2>
+    <p>两者都是<strong>零辣度（0 SHU 级）</strong>的"不辣辣椒"，但<b>来自完全不同的种、不同的育种路线、不同的用途定位</b>——这是理解后面所有差异的总开关。它们不是"同一个东西的两个名字"，而是两条平行线。</p>
+
+    <div class="profile-grid">
+      <div class="profile-card profile-td">
+        <h4 class="badge-td">🍊 Tangerine Dream（橘梦）</h4>
+        <dl>
+          <dt>植物学分类</dt><dd>Capsicum annuum（一年生辣椒种）</dd>
+          <dt>来源 / 发布</dt><dd>美国 USDA 农业研究局（ARS）选育，2004 年发布；种子由 Burpee / Pan American Seed 独家销售</dd>
+          <dt>育种亲本</dt><dd>甜灯笼椒 'Cadice' × 南瓜型甜椒 'Tennessee Cheese'</dd>
+          <dt>血统性质</dt><dd>开放授粉选育系：第 5 代开始定向选，<b>第 12 代稳定</b>后释放 → <b>属于可留种的 OP 品种（非 F1）</b></dd>
+          <dt>定位</dt><dd>"观赏 + 食用"双用途（edible landscape ornamental），花坛植物出身</dd>
+          <dt>是否转基因</dt><dd>否（No GMO）</dd>
+        </dl>
+      </div>
+      <div class="profile-card profile-hb">
+        <h4 class="badge-hb">🌿 哈巴纳达 Habanada</h4>
+        <dl>
+          <dt>植物学分类</dt><dd>Capsicum chinense（中华辣椒种，同哈瓦那椒）</dd>
+          <dt>来源 / 发布</dt><dd>康奈尔大学 Michael Mazourek 教授 2007 年育成，2014 年波特兰 Culinary Breeding Network 发布</dd>
+          <dt>育种起源</dt><dd>新墨西哥大学 Chile Pepper Institute 发现的<b>天然无辣哈瓦那突变体</b>，经 13 代选育稳定</dd>
+          <dt>血统性质</dt><dd>开放授粉传家宝（Heirloom / OP），<b>可留种</b>，且是<b>世界首个真正无辣的哈瓦那</b></dd>
+          <dt>命名梗</dt><dd>Habanero + 西语 <i>nada</i>（"没有"）→ 没有辣度的哈瓦那</dd>
+          <dt>定位</dt><dd>风味型甜椒，主厨与家庭厨房两用</dd>
+        </dl>
+      </div>
+    </div>
+
+    <div class="tip-box">
+      <span class="label">💡 关键认知</span>
+      两者<b>都不是 F1 杂交种</b>，都走的是"长期开放授粉选育 → 性状稳定 → 可留种"的路线。这意味着你买到的种子可以自己留、自己循环，正好接上你生态农业方案里的"自留种闭环"——下面第六章专门讲。
+    </div>
+  </section>
+
+  <!-- ==================== 二、核心参数对照表 ==================== -->
+  <section id="s2">
+    <h2>二、核心参数对照表</h2>
+    <p>下面这张表是全文的"数据底座"，每一个数字都来自 USDA / 康奈尔 / 种子商官方档案，不是凭印象。</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>维度</th>
+          <th class="col-td">🍊 Tangerine Dream</th>
+          <th class="col-hb">🌿 哈巴纳达 Habanada</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>植物学种</td><td class="col-td">C. annuum</td><td class="col-hb">C. chinense</td></tr>
+        <tr><td>辣度</td><td class="col-td">0 ~ 50 SHU（带极淡微辣感）</td><td class="col-hb">0 SHU（绝对无辣）</td></tr>
+        <tr><td>果型</td><td class="col-td">锥形 / 火箭形，直立朝上</td><td class="col-hb">灯笼形，表皮皱缩，下垂挂果</td></tr>
+        <tr><td>果实大小</td><td class="col-td">长约 7.6 cm、肩宽 2.8 cm、2~3 心室</td><td class="col-hb">2~3 英寸（约 5~7.6 cm）、中等肉厚</td></tr>
+        <tr><td>果肉厚度</td><td class="col-td">约 0.4 cm（偏薄）</td><td class="col-hb">中等厚、多汁</td></tr>
+        <tr><td>果色进程</td><td class="col-td">青绿 → 约 70 天转橙红</td><td class="col-hb">青绿 → 奶油白 → 橙（完熟风味最佳）</td></tr>
+        <tr><td>风味</td><td class="col-td">清甜脆爽、一丝果香，标准"甜椒味"</td><td class="col-hb">浓郁热带果香（芒果/甜瓜/柑橘）+ 花香，层次高</td></tr>
+        <tr><td>株高 / 株型</td><td class="col-td">约 30 cm（匍匐开展型），冠幅 30~70 cm</td><td class="col-hb">60~90 cm，灌木紧凑、自然 Y 分叉</td></tr>
+        <tr><td>生长型</td><td class="col-td">有限生长（determinate），高度定格</td><td class="col-hb">无限生长（indeterminate），持续结果</td></tr>
+        <tr><td>搭架需求</td><td class="col-td">几乎不需要（矮、铺地）</td><td class="col-hb">建议支架 / 吊蔓防倒伏</td></tr>
+        <tr><td>发芽</td><td class="col-td">7~10 天（适温 21~27°C）</td><td class="col-hb">8~12 天（适温 25~28°C）</td></tr>
+        <tr><td>播种提前量</td><td class="col-td">终霜前 8~10 周</td><td class="col-hb">终霜前 10~12 周（苗期更长）</td></tr>
+        <tr><td>生育期（定植后）</td><td class="col-td">约 70 天</td><td class="col-hb">约 90~100+ 天</td></tr>
+        <tr><td>全株可食</td><td class="col-td">果肉可食（籽膜一般去）</td><td class="col-hb">果肉、籽、膜全可食</td></tr>
+        <tr><td>留种</td><td class="col-td">可（OP 第 12 代稳定系）</td><td class="col-hb">可（传家宝 OP）</td></tr>
+        <tr><td>种植难度</td><td class="col-td">★ 易（入门级）</td><td class="col-hb">★★ 中等（需经验）</td></tr>
+        <tr><td>单株产量</td><td class="col-td">中（簇生 3~4 果/簇，盆栽够吃）</td><td class="col-hb">高（成串挂果、挂果持久）</td></tr>
+        <tr><td>种子稀缺 / 价格</td><td class="col-td">较易得，Burpee 独家，约 $6.95 / 30 粒</td><td class="col-hb">较易得，多商家有售，约 $3.5 / 10 粒</td></tr>
+      </tbody>
+    </table>
+
+    <div class="warn-box">
+      <span class="label">⚠️ 注意一个常见混淆</span>
+      国内电商把很多橙色甜椒统称"橘子梦 / 橘梦"，其中不少是 <b>F1 杂交种</b>（不可留种）。只有 USDA/Burpee 那支 <i>Tangerine Dream</i> 是 OP 稳定系。买种时认准英文名 <b>"Tangerine Dream"</b> 和"open pollinated / OP"字样，才能留种。
+    </div>
+  </section>
+
+  <!-- ==================== 三、风味深挖 ==================== -->
+  <section id="s3">
+    <h2>三、风味深挖（最大差异）</h2>
+    <p>既然都"不辣"，<b>风味的差异就是两者真正的分水岭</b>，也决定了你厨房里怎么用、值不值得占一块地。</p>
+
+    <h3 class="badge-td">🍊 Tangerine Dream：清甜脆、标准甜椒</h3>
+    <ul>
+      <li>本质是<b>甜椒（bell pepper 血统）</b>，只是果型小、皮薄、颜色亮</li>
+      <li>风味是<b>清甜、脆、带极淡果香</b>；Burpee 描述为"with a hint of heat（一丝微辣）"，部分株系有 0~50 SHU 的似有若无感</li>
+      <li>适合：生食沙拉、腌制（pickle）、披萨点缀、切条入 tacos——<b>当"好看又好吃的装饰型甜椒"用</b></li>
+      <li>皮薄，烤一下甜味更突出；但肉薄，不适合做厚肉酿椒</li>
+    </ul>
+
+    <h3 class="badge-hb">🌿 哈巴纳达：热带果香炸弹</h3>
+    <ul>
+      <li>本质是<b>哈瓦那椒（chinense）</b>的无辣版，完整继承了 chinense 家族的<b>芳香化合物库</b></li>
+      <li>风味是<b>芒果、甜瓜、柑橘、花香</b>的复合热带果香，<b>无灼热感却能释放全部香气</b>——这是 annuum 甜椒给不了的</li>
+      <li>适合：鲜食提香、水果莎莎、果味酱汁、酿椒、甚至甜点 / 饮品提味；因为它无辣，用量可以远超真哈瓦那而不怕烧嘴</li>
+      <li>全株可食，籽和膜都香，做酱时不用去籽</li>
+    </ul>
+
+    <div class="tip-box">
+      <span class="label">💡 一句话区分</span>
+      <b>Tangerine Dream 是"漂亮的小甜椒"</b>，赢在颜值、脆口、好种；<b>哈巴纳达是"会爆香的无辣哈瓦那"</b>，赢在风味的复杂度和天花板。两者口感不冲突，是厨房里的互补关系。
+    </div>
+  </section>
+
+  <!-- ==================== 四、生长习性与管理差异 ==================== -->
+  <section id="s4">
+    <h2>四、生长习性与管理差异（来宾适配）</h2>
+
+    <h3>4.1 苗期：谁更快上手</h3>
+    <ul>
+      <li><span class="badge-td">TD</span> 发芽 7~10 天、播种到定植 8~10 周，<b>苗期短、好带</b>，新手不易失误</li>
+      <li><span class="badge-hb">HB</span> 发芽 8~12 天（已是 chinense 里偏快的）、需提前 10~12 周，<b>苗期长、对温度敏感</b>，需保温育苗</li>
+    </ul>
+
+    <h3>4.2 株型：铺地 vs 立丛</h3>
+    <ul>
+      <li><span class="badge-td">TD</span> 匍匐开展、高仅 30 cm，<b>天然抗倒伏</b>，花盆、花坛、地边都行；台风 / 暴雨季不太怕倒</li>
+      <li><span class="badge-hb">HB</span> 高 60~90 cm、无限生长，结果后重心高，<b>来宾 7~8 月多雨 / 偶有台风时必须支架或吊蔓</b>，否则倒伏减产</li>
+    </ul>
+
+    <h3>4.3 耐热性（来宾生死线）</h3>
+    <ul>
+      <li>两者花期都怕 <b>35°C 以上</b> 高温落花落果，但机制不同：</li>
+      <li><span class="badge-td">TD</span>（annuum 甜椒）<b>极不耐热</b>，35°C 即大量落花，是它来宾种植的最大威胁</li>
+      <li><span class="badge-hb">HB</span>（chinense）<b>相对耐热</b>，比 TD 更能扛来宾夏日，但花期同样需要遮阳网压到 30°C 上下</li>
+      <li>共性对策：春茬抢在 7 月前收完、秋茬等 8 月后凉下来再定植，<b>遮阳网 + 高垄排水</b>两件套必备</li>
+    </ul>
+
+    <h3>4.4 红壤适配</h3>
+    <ul>
+      <li>两者<b>都不是豆科</b>，不需要根瘤菌剂，但都怕来宾红壤的<b>酸 + 缺钙</b></li>
+      <li>共用方案：定植前 <b>生石灰调酸 + 高垄栽培 + 补钙（骨粉/石灰） + 稳水防裂</b>，这套你现有的手册可直接套用</li>
+      <li>TD 皮薄、HB 也皮不算厚 → 都怕脐腐和日灼，补钙一点不能省</li>
+    </ul>
+  </section>
+
+  <!-- ==================== 五、来宾种植要点与双茬时间线 ==================== -->
+  <section id="s5">
+    <h2>五、来宾种植要点与双茬时间线</h2>
+    <p>来宾年均 20.7°C、无霜期 331 天、红壤偏酸。两种都可走<b>春茬 + 秋茬</b>双季，关键差别在生育期长短和耐热窗口。</p>
+
+    <h3 class="badge-td">🍊 Tangerine Dream 来宾双茬</h3>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="time">春茬 · 1 月中下旬播种</div>
+        <div class="desc">室内 21~27°C 育苗，8~10 周苗龄</div>
+      </div>
+      <div class="timeline-item">
+        <div class="time">3 月上中旬定植</div>
+        <div class="desc">株小不需支架；高垄 + 调酸；遇倒春寒覆盖保温</div>
+      </div>
+      <div class="timeline-item">
+        <div class="time">5 月 ~ 6 月采收</div>
+        <div class="desc">定植后约 70 天转橙，春茬抢在 7 月高温前收完</div>
+      </div>
+      <div class="timeline-item">
+        <div class="time">秋茬 · 6 月底 ~ 7 月初播种</div>
+        <div class="desc">此时最热，必须遮阳网育苗降温</div>
+      </div>
+      <div class="timeline-item">
+        <div class="time">8 月定植 · 10 ~ 11 月采收</div>
+        <div class="desc">等 8 月凉下来定植，避开 35°C 落花期</div>
+      </div>
+    </div>
+
+    <h3 class="badge-hb">🌿 哈巴纳达 来宾双茬</h3>
+    <div class="timeline">
+      <div class="timeline-item hb">
+        <div class="time">春茬 · 1 月初 ~ 中旬播种</div>
+        <div class="desc">需提前 10~12 周、25~28°C 保温育苗（比 TD 早约 1 周）</div>
+      </div>
+      <div class="timeline-item hb">
+        <div class="time">3 月上中旬定植</div>
+        <div class="desc">定植即插 60~90 cm 支架；高垄 + 生石灰调酸 + 补钙</div>
+      </div>
+      <div class="timeline-item hb">
+        <div class="time">6 月 ~ 8 月采收</div>
+        <div class="desc">生育期长，6 月起持续采到 8 月；建议遮阳网延后高温落果</div>
+      </div>
+      <div class="timeline-item hb">
+        <div class="time">秋茬 · 6 月中下旬播种</div>
+        <div class="desc">同样需遮阳网度过 7~8 月酷暑</div>
+      </div>
+      <div class="timeline-item hb">
+        <div class="time">8 月定植 · 10 ~ 12 月采收</div>
+        <div class="desc">无限生长，秋凉后产量回升，可采到初霜（来宾约 12 月下旬）</div>
+      </div>
+    </div>
+
+    <div class="warn-box">
+      <span class="label">⚠️ 来宾高温窗口</span>
+      7~8 月极端高温 38.9°C、且湿度大，是两种辣椒<b>坐果的共同死敌</b>。务必：春茬在 7 月前收完、秋茬 8 月后才定植；两种都在 5~8 月挂果期拉上遮阳网（遮 30%~50% 光照即可降温保花）。这是成败关键，比施肥更优先。
+    </div>
+  </section>
+
+  <!-- ==================== 六、留种与自循环 ==================== -->
+  <section id="s6">
+    <h2>六、留种与自循环（关键：两者都可留种）</h2>
+    <p>这是和你生态农业方案最契合的一点——<b>两个品种都不是 F1</b>，都能自留种、自循环，不用年年买种。</p>
+
+    <table>
+      <thead>
+        <tr><th>环节</th><th class="col-td">🍊 Tangerine Dream</th><th class="col-hb">🌿 哈巴纳达</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>留种可行性</td><td class="col-td">✅ 可（OP 第 12 代稳定系）</td><td class="col-hb">✅ 可（传家宝 OP）</td></tr>
+        <tr><td>选种果标准</td><td class="col-td">选完全橙红、果型端正、簇生整齐的果</td><td class="col-hb">选完熟橙果、香气浓、株型紧凑健康</td></tr>
+        <tr><td>取种方法</td><td class="col-td">剖开取籽，清水漂洗去果肉，晾干</td><td class="col-hb">籽膜全可食，但留种需取出籽粒洗净晾干</td></tr>
+        <tr><td>隔离要求</td><td class="col-td">与同种辣椒间隔 ≥ 50~150 m，或套袋自交</td><td class="col-hb">与任何 chinense 间隔 ≥ 150~500 m，或纱网/套袋</td></tr>
+        <tr><td>种子活力</td><td class="col-td">2~3 年</td><td class="col-hb">2~3 年</td></tr>
+        <tr><td>自循环意义</td><td class="col-td">年年选优株留种，稳定不分离</td><td class="col-hb">传家宝可一直纯化，风味越选越正</td></tr>
+      </tbody>
+    </table>
+
+    <div class="tip-box">
+      <span class="label">💡 衔接你的闭环</span>
+      把 TD 和 HB 都纳入"自留种"池：每年从表现最好的几株上选种 → 晾晒储存 → 来年播种。配合你手册里的<b>绿肥养地 + 黑水虻虫肥</b>，这就是一套<b>不依赖外部买种、地力自循环</b>的小农场内核。注意 TD（annuum）和 HB（chinense）是不同种，<b>天然不串粉</b>，混种也不会互相污染。
+    </div>
+  </section>
+
+  <!-- ==================== 七、你该种哪个 ==================== -->
+  <section id="s7">
+    <h2>七、你该种哪个 / 怎么排</h2>
+
+    <h3 class="badge-td">优先选 Tangerine Dream 的情况</h3>
+    <ul>
+      <li>想<b>盆栽 / 阳台 / 花坛</b>装饰 + 顺手吃（它天生是观赏食用双用途）</li>
+      <li>新手、想<b>快速看到成果</b>（70 天就收，苗期短好带）</li>
+      <li>已有哈巴纳达，想<b>补一个"脆甜沙拉型"</b>丰富餐桌</li>
+      <li>地块小、不想搭架、怕倒伏</li>
+    </ul>
+
+    <h3 class="badge-hb">优先选哈巴纳达的情况</h3>
+    <ul>
+      <li>追求<b>风味天花板</b>（热带果香酱、莎莎、酿椒）</li>
+      <li>已有种植经验，能接受 <b>10~12 周育苗 + 支架 + 遮阳</b>的管理</li>
+      <li>要做<b>传家宝自留种</b>、长期纯化风味</li>
+      <li>想要<b>更高单株产量</b>和更长采收期（无限生长、挂果持久）</li>
+    </ul>
+
+    <div class="tip-box">
+      <span class="label">💡 最佳方案：两个都种，各占其位</span>
+      两者<b>互补不冲突</b>——TD 占阳台/花坛当"快速脆甜椒"，HB 占菜地做"风味主力 + 留种源"。两种都走双茬、都自留种，正好填满你生态方案的"主栽作物"模块。地力上它们都不挑，共用红壤调酸 + 高垄 + 遮阳三件套即可。
+    </div>
+  </section>
+
+  <!-- ==================== 八、速查参考表 ==================== -->
+  <section id="s8">
+    <h2>八、速查参考表</h2>
+    <div class="quick-ref-grid">
+      <div><b>TD 种</b>：C. annuum</div>
+      <div><b>HB 种</b>：C. chinense</div>
+      <div><b>TD 辣度</b>：0~50 SHU</div>
+      <div><b>HB 辣度</b>：0 SHU</div>
+      <div><b>TD 株高</b>：约 30 cm（匍匐）</div>
+      <div><b>HB 株高</b>：60~90 cm（需支架）</div>
+      <div><b>TD 生育期</b>：定植后约 70 天</div>
+      <div><b>HB 生育期</b>：约 90~100+ 天</div>
+      <div><b>TD 发芽</b>：7~10 天 / 21~27°C</div>
+      <div><b>HB 发芽</b>：8~12 天 / 25~28°C</div>
+      <div><b>两者都</b>：可留种（OP，非 F1）</div>
+      <div><b>两者都</b>：怕 35°C 落花、需遮阳网</div>
+      <div><b>来宾春茬</b>：1 月播 / 3 月定植</div>
+      <div><b>来宾秋茬</b>：6 月底播 / 8 月定植</div>
+      <div><b>红壤铁律</b>：生石灰调酸 + 高垄</div>
+      <div><b>钙不可省</b>：防脐腐 / 日灼 / 裂果</div>
+    </div>
+  </section>
+
+  <footer>
+    Tangerine Dream × 哈巴纳达 深度对比 · 广西来宾适配版 · 数据源自 USDA ARS、康奈尔大学、Burpee 及主流种子商官方档案<br>
+    仅作种植参考，请结合当地实际灵活调整
+  </footer>
+
+</div>
+</body>
+</html>
