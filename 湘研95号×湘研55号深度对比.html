@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>湘研95号 × 湘研55号 深度对比 · 家庭阳台种植适配版</title>
+<style>
+  :root{
+    --bg:#fbf7f0; --panel:#ffffff; --ink:#3a2a16; --muted:#6b5a44;
+    --c95:#9c2a3a; --c95-soft:#f6e3e5; --c95-line:#e0aab0;
+    --c55:#2f6b1f; --c55-soft:#e8f5e9; --c55-line:#bfe0c2;
+    --gold:#b8791a; --gold-soft:#fbeede; --line:#e6dccb; --chip:#f0e7d6;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;
+    line-height:1.75;font-size:16px;}
+  .cover{background:linear-gradient(135deg,#fbeede 0%,#f3ece0 50%,#f6e3e5 100%);
+    padding:46px 30px 38px;border-bottom:4px solid var(--c95-line);}
+  .cover h1{margin:0 0 8px;font-size:31px;color:#7a1f12;letter-spacing:.5px;}
+  .cover .sub{font-size:17px;color:#6b3a1e;font-weight:600;}
+  .cover .meta{margin-top:14px;font-size:13px;color:#8a6b4a;line-height:1.6;}
+  .tagrow{margin-top:16px;display:flex;flex-wrap:wrap;gap:8px;}
+  .tag{background:var(--chip);color:#6b4a22;padding:4px 11px;border-radius:14px;font-size:12.5px;border:1px solid var(--line);}
+  .wrap{max-width:980px;margin:0 auto;padding:26px 20px 60px;}
+  h2{margin:38px 0 12px;font-size:23px;color:#7a1f12;border-left:6px solid var(--c95);padding-left:12px;}
+  h3{margin:24px 0 8px;font-size:18px;color:var(--gold);}
+  p{margin:10px 0;}
+  .lead{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px 20px;margin:18px 0;color:var(--muted);}
+  .lead b{color:var(--ink);}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin:14px 0;box-shadow:0 2px 8px rgba(120,80,30,.05);}
+  .c95-card{border-top:5px solid var(--c95);}
+  .c55-card{border-top:5px solid var(--c55);}
+  .card h3{margin-top:0;}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  @media(max-width:680px){.grid2{grid-template-columns:1fr;}}
+  table{width:100%;border-collapse:collapse;margin:14px 0;font-size:14.5px;background:var(--panel);}
+  th,td{border:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top;}
+  thead th{background:var(--gold-soft);color:#8a5a14;font-weight:700;}
+  .c95-col{background:var(--c95-soft);}
+  .c55-col{background:var(--c55-soft);}
+  tbody tr:nth-child(even){background:#fcf8f0;}
+  .tl{position:relative;margin:18px 0 18px 8px;padding-left:26px;border-left:3px solid var(--c55-line);}
+  .tl .it{position:relative;margin:0 0 16px;}
+  .tl .it::before{content:"";position:absolute;left:-35px;top:4px;width:14px;height:14px;border-radius:50%;background:var(--c55);border:3px solid #fff;box-shadow:0 0 0 2px var(--c55-line);}
+  .tl .it .t{font-weight:700;color:var(--c95);}
+  .box{background:var(--c95-soft);border:1px solid var(--c95-line);border-radius:12px;padding:14px 18px;margin:16px 0;}
+  .box.g{background:var(--c55-soft);border-color:var(--c55-line);}
+  .box.g b{color:var(--c55);}
+  .box.b{background:#eef3fb;border-color:#b9cdee;}
+  .box.b b{color:#1f4f8a;}
+  .box b{color:var(--c95);}
+  .quick{background:var(--panel);border:1px dashed var(--gold);border-radius:12px;padding:16px 20px;margin:18px 0;}
+  .quick h3{color:var(--gold);}
+  ul,ol{margin:8px 0 8px 4px;padding-left:22px;}
+  li{margin:6px 0;}
+  .pill{display:inline-block;background:var(--chip);border-radius:10px;padding:2px 9px;font-size:13px;color:#6b4a22;margin:2px 3px 2px 0;border:1px solid var(--line);}
+  .foot{margin-top:34px;font-size:12.5px;color:#8a6b4a;border-top:1px solid var(--line);padding-top:14px;line-height:1.7;}
+  .verdict{background:linear-gradient(135deg,#fff6e8,#fbeede);border:1px solid var(--c95-line);border-radius:14px;padding:18px 22px;margin:20px 0;}
+  .verdict h3{color:var(--c95);margin-top:0;}
+  code{background:var(--chip);padding:1px 6px;border-radius:5px;font-size:13px;}
+</style>
+</head>
+<body>
+
+<div class="cover">
+  <h1>湘研95号 × 湘研55号 深度对比</h1>
+  <div class="sub">两个湘研微辣牛角椒 · 家庭阳台种植适配评估</div>
+  <div class="meta">文档版本 v1.0 ｜ 编写日期 2026-09-05 ｜ 评估地：广西来宾（年均温 20.7°C / 无霜期 331 天 / 红壤偏酸）<br>本手册与同系列无辣哈瓦那对比互为补充，但路线不同（见第十四章「本质区别」）</div>
+  <div class="tagrow">
+    <span class="tag">湖南湘研种业</span>
+    <span class="tag">C. annuum 杂交种</span>
+    <span class="tag">微辣牛角椒</span>
+    <span class="tag">一年生</span>
+    <span class="tag">阳台可种</span>
+    <span class="tag">浅底深字 · 无白字</span>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <div class="lead">
+    <b>本文定位：</b>你之前一直在追「不辣 + 多年生 + 来宾能种活」的哈瓦那系（哈巴纳达/橘子梦/特立尼达香水/Roulette）。这一轮问的湘研 95 号、55 号，是<b>另一条路线</b>——湖南湘研种业的<b>中熟微辣牛角椒杂交种</b>，国内菜市场最常见的「菜椒/牛角椒」类型。两者能不能上阳台？谁更稳？下面拆清楚。
+  </div>
+
+  <h2>一、一句话结论（先看这里）</h2>
+  <div class="verdict">
+    <h3>两者都能上阳台，但湘研55 是更稳的选择</h3>
+    <ul>
+      <li><b>都适合家庭阳台</b>：株高仅 70–80 cm、紧凑，一个 5 加仑（约 20 L）盆就能种，单株可收 1–2 kg 鲜椒。</li>
+      <li><b>阳台首选湘研55</b>：它对病毒病、疫病、炭疽病<b>抗性全面强于对照</b>，且<b>耐热耐旱性强</b>——这对来宾 7–8 月 35°C+ 高温是关键加分；更妙的是它<b>已在柳州柳江区穿山镇（紧邻来宾）大规模种植成功</b>，等于在你家门口验证过。</li>
+      <li><b>湘研95 的硬伤</b>：明确记载<b>对 CMV（黄瓜花叶病毒）、TMV（烟草花叶病毒）感病</b>，且<b>耐热耐旱一般</b>。阳台通风差 + 来宾盛夏，病毒和高温是它的两道坎。</li>
+      <li><b>本质提醒</b>：两者都是<b>微辣（非无辣）+ 一年生杂交种</b>。若你要「家人放心吃、零辣度、多年生」，它们替代不了哈巴纳达；若你要「微辣、高产、做菜顺手的中国椒」，它们是阳台好选择。</li>
+    </ul>
+  </div>
+
+  <h2>二、两位主角档案</h2>
+  <div class="grid2">
+    <div class="card c95-card">
+      <h3>🔴 湘研95号</h3>
+      <ul>
+        <li><b>育种：</b>湖南湘研种业，杂交一代（RN18-675 × R1019）</li>
+        <li><b>类型：</b>鲜食、中熟、长牛角椒</li>
+        <li><b>辣度：</b><b>微辣</b>（辣椒素约 0.06%）</li>
+        <li><b>株型：</b>株高 78 cm、株幅 70 cm，半直立</li>
+        <li><b>果型：</b>长牛角形，长 22.8–25 cm、横径 3.1–3.2 cm、肉厚 0.2–0.22 cm</li>
+        <li><b>单果：</b>约 40–41.7 g，青绿→红熟</li>
+        <li><b>抗病：</b>⚠️ <b>对 CMV/TMV 感病</b>；炭疽病、疫病中抗</li>
+        <li><b>抗逆：</b>耐寒、耐涝强；<b>耐热、耐旱一般</b></li>
+        <li><b>产量：</b>亩产 2460 kg 以上</li>
+      </ul>
+    </div>
+    <div class="card c55-card">
+      <h3>🟢 湘研55号</h3>
+      <ul>
+        <li><b>育种：</b>湖南湘研种业，杂交一代（RN16-424 × R1019）</li>
+        <li><b>类型：</b>鲜食/加工兼用、中熟、高品质小牛角椒</li>
+        <li><b>辣度：</b><b>微辣</b>（辣椒素约 0.054 g/kg）</li>
+        <li><b>株型：</b>开展度 65×70 cm，方正，生长势强，分枝多</li>
+        <li><b>果型：</b>牛角形，长 20–22 cm、横径 3.0–3.5 cm、肉厚 0.22 cm</li>
+        <li><b>单果：</b>约 45 g，青亮绿→老熟红</li>
+        <li><b>抗病：</b>✅ <b>抗病毒病、疫病、炭疽病（强于对照）</b></li>
+        <li><b>抗逆：</b><b>耐热、耐旱强</b>；耐寒一般</li>
+        <li><b>产量：</b>亩产约 2400 kg（田块可达 2–3 万斤/亩）</li>
+      </ul>
+    </div>
+  </div>
+
+  <h2>三、核心参数对比表</h2>
+  <table>
+    <thead>
+      <tr><th>维度</th><th class="c95-col">湘研95号</th><th class="c55-col">湘研55号</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>物种 / 类型</td><td class="c95-col"><i>C. annuum</i> 长牛角椒（鲜食）</td><td class="c55-col"><i>C. annuum</i> 小牛角椒（鲜食/加工）</td></tr>
+      <tr><td>育种组合</td><td class="c95-col">RN18-675 × R1019</td><td class="c55-col">RN16-424 × R1019</td></tr>
+      <tr><td>熟性</td><td class="c95-col">中熟（开花到果约 93 天）</td><td class="c55-col">中熟（第一花节位 9–11 节）</td></tr>
+      <tr><td>辣度</td><td class="c95-col">微辣</td><td class="c55-col">微辣</td></tr>
+      <tr><td>株高 / 开展度</td><td class="c95-col">株高 78 cm、株幅 70 cm（半直立）</td><td class="c55-col">开展度 65×70 cm（方正、分枝多）</td></tr>
+      <tr><td>果长</td><td class="c95-col">22.8–25 cm</td><td class="c55-col">20–22 cm</td></tr>
+      <tr><td>横径 / 肉厚</td><td class="c95-col">3.1–3.2 cm / 0.2–0.22 cm</td><td class="c55-col">3.0–3.5 cm / 0.22 cm</td></tr>
+      <tr><td>单果重</td><td class="c95-col">约 40–41.7 g</td><td class="c55-col">约 45 g</td></tr>
+      <tr><td>果色</td><td class="c95-col">青绿 → 红熟</td><td class="c55-col">青亮绿 → 老熟红</td></tr>
+      <tr><td>皮/肉</td><td class="c95-col">皮薄、肉细腻</td><td class="c55-col">皮微皱、肉脆嫩</td></tr>
+      <tr><td>病毒病抗性</td><td class="c95-col">⚠️ <b>对 CMV/TMV 感病</b></td><td class="c55-col">✅ 抗性强于对照</td></tr>
+      <tr><td>疫病/炭疽病</td><td class="c95-col">中抗</td><td class="c55-col">✅ 抗性强于对照</td></tr>
+      <tr><td>耐热性</td><td class="c95-col">⚠️ 一般</td><td class="c55-col">✅ 强</td></tr>
+      <tr><td>耐旱性</td><td class="c95-col">⚠️ 一般</td><td class="c55-col">✅ 强</td></tr>
+      <tr><td>耐寒/耐涝</td><td class="c95-col">✅ 强</td><td class="c55-col">一般</td></tr>
+      <tr><td>亩产（田块）</td><td class="c95-col">2460 kg 以上</td><td class="c55-col">约 2400 kg（高产田 2–3 万斤/亩）</td></tr>
+      <tr><td>广西播种期</td><td class="c95-col">7–9 月（秋冬露地）</td><td class="c55-col">7 中–8 上播种，8 下–9 上定植</td></tr>
+      <tr><td>本地验证</td><td class="c95-col">贵州福泉等地规模种植</td><td class="c55-col">✅ <b>柳州柳江穿山镇（邻来宾）规模种植</b></td></tr>
+    </tbody>
+  </table>
+
+  <h2>四、育种背景：同门师兄弟</h2>
+  <p>两者都出自<b>湖南湘研种业</b>（袁隆平农业高科体系下的辣椒育种龙头），都是<b>杂交一代（F1）</b>牛角椒，父本都用到了 <code>R1019</code> 自交系——算是同门师兄弟，育种目标都是「微辣、皮薄、高产、好管」的鲜食牛角椒。</p>
+  <div class="box b"><b>「杂交一代」意味着什么？</b> F1 种优势强、整齐度高、产量和抗性都好，但<b>不能自己留种</b>——下一代会严重分离。所以每年都要买新种子，这点与你能留种的哈巴纳达（开放授粉）不同。</div>
+
+  <h2>五、辣度：都是「微辣」，不是无辣</h2>
+  <div class="box">
+    <b>两者均为微辣（约 0.05%–0.06% 辣椒素区间）。</b> 这是中国人最常吃、接受度最高的「有点辣但不呛」档位，炒菜、做辣椒炒肉、蘸水都顺手。但<b>它不等于 0 SHU</b>——和哈巴纳达（完全无辣、儿童可食）不是一个概念。若家人完全不能吃辣，这两个都不合适；若只是「要一点点辣味提香」，它们正合适。
+  </div>
+
+  <h2>六、果型与商品性</h2>
+  <ul>
+    <li><b>湘研95：</b>更长（22.8–25 cm）、更顺直，皮薄肉细腻，青红两用，商品果型「高档长牛角」感强。</li>
+    <li><b>湘研55：</b>略短（20–22 cm）、皮微皱、肉脆嫩，果形顺直匀称、翠绿鲜亮，耐储运、商品性佳——这也是它能在穿山镇做「致富椒」外销的原因。</li>
+  </ul>
+
+  <h2>七、抗病性：决定阳台成败的关键差异</h2>
+  <table>
+    <thead><tr><th>病害</th><th class="c95-col">湘研95</th><th class="c55-col">湘研55</th></tr></thead>
+    <tbody>
+      <tr><td>病毒病（CMV/TMV）</td><td class="c95-col">⚠️ <b>感病</b></td><td class="c55-col">✅ 抗性强</td></tr>
+      <tr><td>疫病</td><td class="c95-col">中抗</td><td class="c55-col">✅ 抗性强</td></tr>
+      <tr><td>炭疽病</td><td class="c95-col">中抗</td><td class="c55-col">✅ 抗性强</td></tr>
+    </tbody>
+  </table>
+  <div class="box g"><b>读给你听：</b>阳台环境通风差、邻株密、虫害（蚜虫传毒）易发，<b>病毒病是家庭种椒头号杀手</b>。湘研95 对 CMV/TMV 感病，一旦染上几乎无药可救、全株报废；湘研55 抗性全面，省心得多。<b>这也是阳台首选 55 的最硬理由。</b></div>
+
+  <h2>八、抗逆性：来宾夏天谁扛得住</h2>
+  <ul>
+    <li><b>湘研95：</b>耐寒、耐涝强，但<b>耐热、耐旱一般</b>。来宾 7 月均温 28.6°C、极端 38.9°C，盛夏是它的短板。</li>
+    <li><b>湘研55：</b><b>耐热、耐旱强</b>，正对来宾炎热气候；只是耐寒一般（但来宾冬天也不冷，无霜期 331 天，这点无所谓）。</li>
+  </ul>
+  <div class="box b"><b>本地铁证：</b>湘研55 在<b>柳州柳江区穿山镇</b>（与来宾接壤、同属桂中气候）已成 150 亩规模基地，4 月开摘、采摘期 6 个月、亩产 2–3 万斤——说明它在你这片气候带不仅活得下，还能高产外销。<b>这是 95 号没有的「邻家验证」。</b></div>
+
+  <h2>九、产量</h2>
+  <p>田块亩产两者都约 <b>2400–2460 kg</b>（≈4800–4900 斤/亩）；穿山镇高产田湘研55 可达 2–3 万斤/亩。换算到阳台单盆：一株收 1–2 kg 鲜椒是合理预期，足够家庭日常食用。</p>
+
+  <h2>十、家庭阳台种植适配（核心问题）</h2>
+  <div class="box g">
+    <b>结论：两者都能种阳台，湘研55 体验更稳。</b>
+    <ol>
+      <li><b>盆与空间：</b>株高 70–80 cm、开展度约 70 cm，用 <b>5 加仑（约 20 L）盆 / 株</b>即可；阳台护栏一排能摆 3–5 株。空间紧凑度相近。</li>
+      <li><b>授粉：</b>牛角椒自花授粉为主，但阳台蜜蜂少，盛花时<b>轻摇植株或用毛笔点花辅助授粉</b>，坐果更密。</li>
+      <li><b>病虫害：</b>阳台要防蚜虫（传毒媒介）→ 湘研55 抗病毒优势在此放大；定期黄板/苦参碱即可，尽量少用化学药（你生态方案一致）。</li>
+      <li><b>盛夏管理：</b>来宾 7–8 月拉<b>遮阳网 + 避雨棚</b>（你已有的「三件套」直接复用）；湘研55 耐热，遮阳网半遮即可，95 需更严遮。</li>
+      <li><b>采收：</b>青果即可采（微辣清香），转红风味更浓；勤采促连续坐果。</li>
+    </ol>
+  </div>
+
+  <h2>十一、来宾适配要点</h2>
+  <div class="tl">
+    <div class="it"><div class="t">播种季节：秋播是天然窗口</div>两者广西适播期都在 <b>7–9 月</b>（秋冬露地/秋延后）。对阳台而言，你也可春播（2–3 月育苗）错峰；重点是避开 7–8 月最热育苗期，或育苗期全程遮阳。</div>
+    <div class="it"><div class="t">红壤铁律照旧</div>调酸（生石灰，目标 pH 6.0–7.5，正是两者理想区间）+ 接根瘤菌 + 绿肥养地 + 翻压后隔 2–3 周定植。两者文献均要求「土壤肥沃、排灌方便」。</div>
+    <div class="it"><div class="t">避雨三件套</div>高垄（盆 elevated 即可）+ 避雨棚 + 遮阳网。来宾 4–8 月降水占 70%，阳台盆栽尤忌盆内积水烂根。</div>
+    <div class="it"><div class="t">虫肥加持</div>黑水虻虫沙偏碱含钙，补红壤缺素、防脐腐（文献特别提醒两者「生长后期补钙防脐腐」）——与你生态方案完全咬合。</div>
+  </div>
+
+  <h2>十二、与哈瓦那系的本质区别（务必看清）</h2>
+  <table>
+    <thead><tr><th>维度</th><th class="c95-col">湘研95/55（本手册）</th><th>哈巴纳达/Roulette（前作）</th></tr></thead>
+    <tbody>
+      <tr><td>物种</td><td class="c95-col"><i>C. annuum</i> 牛角椒</td><td><i>C. chinense</i> 哈瓦那</td></tr>
+      <tr><td>辣度</td><td class="c95-col">微辣（有辣味）</td><td>0 SHU 完全无辣</td></tr>
+      <tr><td>寿命</td><td class="c95-col"><b>一年生</b>（每年买 F1 种）</td><td>多年生 3–5 年（可留种）</td></tr>
+      <tr><td>留种</td><td class="c95-col">不可（F1 分离）</td><td>可（开放授粉）</td></tr>
+      <tr><td>定位</td><td class="c95-col">做菜提香的中国鲜食椒</td><td>零辣风味主力/沙拉鲜食</td></tr>
+    </tbody>
+  </table>
+  <div class="box"><b>一句话：</b>湘研这对是「<b>中国胃的做菜椒</b>」，哈瓦那系是「<b>零辣风味椒</b>」。两条路线在你来宾菜园<b>可以并存</b>——湘研管「日常微辣炒菜」，哈巴纳达管「零辣鲜食/沙拉」，互不冲突。</div>
+
+  <h2>十三、选型结论</h2>
+  <table>
+    <thead><tr><th>你的场景</th><th>选谁</th><th>理由</th></tr></thead>
+    <tbody>
+      <tr><td>家庭阳台首选</td><td class="c55-col"><b>湘研55</b></td><td class="c55-col">抗病毒全面 + 耐热强 + 邻家（穿山镇）已验证</td></tr>
+      <tr><td>想种长顺直高档牛角椒</td><td class="c95-col">湘研95</td><td class="c95-col">果更长更直、皮薄，但需防病毒/避暑</td></tr>
+      <tr><td>来宾盛夏露天/阳台</td><td class="c55-col">湘研55</td><td class="c55-col">耐热耐旱强，扛得住 35°C+</td></tr>
+      <tr><td>完全不能吃辣的家庭</td><td>都不合适</td><td>两者微辣；改种哈巴纳达（0 SHU）</td></tr>
+      <tr><td>两棵都种</td><td>都种</td><td>55 主栽稳产、95 点缀长果型，风味一致微辣</td></tr>
+    </tbody>
+  </table>
+
+  <div class="quick">
+    <h3>速查卡</h3>
+    <span class="pill">湘研95 = 长牛角·微辣·对CMV/TMV感病·耐热一般</span>
+    <span class="pill">湘研55 = 小牛角·微辣·抗三病·耐热耐旱强</span>
+    <span class="pill">都 C.annuum 一年生 F1 · 不可留种</span>
+    <span class="pill">阳台首选湘研55（抗病+耐热+邻家验证）</span>
+    <span class="pill">柳州穿山镇（邻来宾）已规模种55</span>
+    <span class="pill">微辣≠无辣，替代不了哈巴纳达</span>
+    <span class="pill">盆≥20L/株 · 盛花辅助授粉 · 盛夏遮阳避雨</span>
+  </div>
+
+  <div class="verdict">
+    <h3>最终建议</h3>
+    <p><b>想上阳台，直接选湘研55。</b> 它抗性全面、耐热耐旱、且在柳州穿山镇（紧邻来宾）已被规模验证，是你这片气候带最稳的微辣牛角椒。湘研95 果型更漂亮，但病毒感病 + 耐热一般，在阳台和来宾盛夏都要多花心思。两者都是<b>微辣一年生杂交种</b>，和你的哈巴纳达（零辣多年生）路线不同、可互补——湘研管「日常炒菜提香」，哈瓦纳达管「零辣鲜食」。</p>
+  </div>
+
+  <div class="foot">
+    <b>数据来源：</b>
+    <ul>
+      <li>一亩田农业技术《辣椒新贵"湘研95号"》（株高78cm、果22.8cm、对CMV/TMV感病、炭疽/疫病中抗、耐寒耐涝强耐热一般、亩产2460kg+）；</li>
+      <li>湘研种业种子商性状页（湘研95：长25cm、微辣、耐湿热、长江流域越夏、广西7–9月播）；</li>
+      <li>快懂百科 / 湖南现代职教《杂交辣椒新品种湘研55号的选育》（RN16-424×R1019、抗病毒病/疫病/炭疽病强于对照、耐热耐旱强、亩产2400kg、广西7中–8上播）；</li>
+      <li>柳州柳江穿山镇湘研55规模种植报道（150亩、采摘期6个月、亩产2–3万斤、邻来宾）；</li>
+      <li>贵州福泉湘研95/软皮2307种植报道；长阳高山湘研55引种推广（综合抗性强、海拔1400m以下）；</li>
+      <li>本系列前作气候常量（来宾年均温20.7°C、无霜期331天、年降水1360mm集中于4–8月、红壤偏酸）。</li>
+    </ul>
+    注：辣度/产量/抗病为文献与区域试验区间值，实际受来宾具体地块、当年气候与管理水平影响；本手册为家庭生态种植参考，非商业种植承诺。F1 杂交种不可留种，需每年购种。
+  </div>
+
+</div>
+</body>
+</html>
