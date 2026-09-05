@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>梅花肉做法笔记</title>
+<style>
+  :root {
+    --primary: #b4452c;
+    --primary-light: #f7ebe6;
+    --accent: #d98e4a;
+    --bg: #faf7f4;
+    --card: #ffffff;
+    --text: #2d2a26;
+    --text-muted: #6f6a64;
+    --border: #e8e0d8;
+    --tag-bg: #fdf3e7;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.75;
+    padding: 24px 16px 60px;
+  }
+  .wrap { max-width: 960px; margin: 0 auto; }
+
+  header.hero {
+    background: linear-gradient(135deg, #b4452c 0%, #d98e4a 100%);
+    color: #fff;
+    border-radius: 16px;
+    padding: 36px 32px;
+    margin-bottom: 24px;
+  }
+  header.hero h1 { font-size: 30px; margin-bottom: 8px; letter-spacing: 2px; }
+  header.hero p { opacity: .92; font-size: 15px; max-width: 640px; }
+  header.hero .badges { margin-top: 14px; display: flex; gap: 8px; flex-wrap: wrap; }
+  header.hero .badge {
+    background: rgba(255,255,255,.18);
+    border: 1px solid rgba(255,255,255,.35);
+    border-radius: 999px;
+    padding: 2px 12px;
+    font-size: 13px;
+  }
+
+  .toc {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 18px 22px;
+    margin-bottom: 28px;
+  }
+  .toc h2 { font-size: 16px; color: var(--primary); margin-bottom: 10px; }
+  .toc ol { padding-left: 22px; }
+  .toc li { margin: 4px 0; }
+  .toc a { color: var(--text); text-decoration: none; border-bottom: 1px dashed var(--accent); }
+  .toc a:hover { color: var(--primary); }
+
+  section.recipe {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 26px 28px;
+    margin-bottom: 26px;
+  }
+  .recipe-head { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; margin-bottom: 4px; }
+  .recipe-head .num {
+    background: var(--primary);
+    color: #fff;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 2px 10px;
+  }
+  .recipe-head h2 { font-size: 22px; color: var(--primary); }
+  .meta { color: var(--text-muted); font-size: 13.5px; margin-bottom: 14px; }
+  .meta span { margin-right: 14px; }
+  .tag {
+    display: inline-block;
+    background: var(--tag-bg);
+    color: var(--accent);
+    border-radius: 4px;
+    padding: 0 8px;
+    font-size: 12.5px;
+    margin-right: 6px;
+    vertical-align: 1px;
+  }
+
+  h3.sub {
+    font-size: 15px;
+    color: var(--primary);
+    margin: 16px 0 8px;
+    padding-left: 10px;
+    border-left: 4px solid var(--accent);
+  }
+  ul.ing { list-style: none; padding: 0; }
+  ul.ing li {
+    padding: 3px 0 3px 20px;
+    position: relative;
+    font-size: 14.5px;
+  }
+  ul.ing li::before {
+    content: "•";
+    color: var(--accent);
+    position: absolute;
+    left: 6px;
+    font-weight: bold;
+  }
+  ol.steps { padding-left: 24px; }
+  ol.steps li { margin: 7px 0; font-size: 14.5px; }
+  .tip {
+    background: var(--primary-light);
+    border-radius: 10px;
+    padding: 12px 16px;
+    font-size: 13.5px;
+    color: #7a3b28;
+    margin-top: 14px;
+  }
+  .tip b { color: var(--primary); }
+
+  table.cmp {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    font-size: 13.5px;
+    background: #fff;
+  }
+  table.cmp th, table.cmp td {
+    border: 1px solid var(--border);
+    padding: 8px 10px;
+    text-align: left;
+  }
+  table.cmp th { background: var(--primary-light); color: var(--primary); }
+  table.cmp tr:nth-child(even) td { background: #fbf9f7; }
+
+  footer {
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 12.5px;
+    margin-top: 34px;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <h1>🥩 梅花肉做法笔记</h1>
+    <p>梅花肉即猪的上肩肉（猪颈后、前腿上方的肩胛肉），因肌纤维间布满细密脂肪、切面形似梅花而得名。肥瘦相间约 2:8，嫩而多汁、久煮不柴，是叉烧、烤肉、炒肉片的首选部位。</p>
+    <div class="badges">
+      <span class="badge">🥇 嫩度之王</span>
+      <span class="badge">🔥 烤 / 炒 / 煎 / 卤 皆宜</span>
+      <span class="badge">⏱ 快手菜友好</span>
+      <span class="badge">🍖 肥瘦 2:8</span>
+    </div>
+  </header>
+
+  <div class="toc">
+    <h2>📑 目录</h2>
+    <ol>
+      <li><a href="#r1">蜜汁叉烧（烤箱版）</a></li>
+      <li><a href="#r2">蒜香煎梅花肉</a></li>
+      <li><a href="#r3">孜然烤梅花肉串</a></li>
+      <li><a href="#r4">滑炒梅花肉片（青椒 / 杏鲍菇）</a></li>
+      <li><a href="#r5">台式卤梅花肉（卤肉饭浇头）</a></li>
+      <li><a href="#r6">糖醋梅花肉</a></li>
+      <li><a href="#r7">白切梅花肉（沙姜蘸料版）</a></li>
+    </ol>
+  </div>
+
+  <!-- 1 蜜汁叉烧 -->
+  <section class="recipe" id="r1">
+    <div class="recipe-head">
+      <span class="num">01</span>
+      <h2>蜜汁叉烧（烤箱版）</h2>
+    </div>
+    <div class="meta">
+      <span>⏱ 腌制 4h+ / 烤 35min</span>
+      <span>🔥 难度：★★☆</span>
+      <span>🍽 2–3 人份</span>
+      <span>🍳 厨具：烤箱、烤网、锡纸、刷子</span>
+      <span>💰 预算：约 35–40 元</span>
+      <span class="tag">粤式经典</span><span class="tag">下饭神器</span>
+    </div>
+    <h3 class="sub">食材</h3>
+    <ul class="ing">
+      <li>梅花肉 600g（约 25–30 元）</li>
+      <li>叉烧酱 3 勺、蚝油 1 勺、生抽 1 勺、料酒 1 勺</li>
+      <li>蜂蜜 2 勺（刷面用）、蒜末 10g、红腐乳半块（提色增香，可选）</li>
+    </ul>
+    <h3 class="sub">🍳 厨具 & 配料说明</h3>
+    <ul class="ing">
+      <li><b>烤箱</b>：30L 以上家用烤箱即可（300–800 元档都行），无烤箱可用空气炸锅 180℃ 替代，中途多翻两次面。</li>
+      <li><b>烤网 + 锡纸</b>：烤网悬空烤才能外焦里嫩，下层锡纸接油免洗盘；锡纸约 5 元/卷。</li>
+      <li><b>叉烧酱</b>：李锦记/海天均可，约 10–13 元/瓶（240g），一瓶能做 3 次；红腐乳用广合牌约 4 元/块，半块即可提色增香，没有可省。</li>
+      <li><b>蜂蜜</b>：随便什么蜂蜜都行，约 15–20 元/瓶，可用很久；没有可用麦芽糖更正宗。</li>
+    </ul>
+    <h3 class="sub">步骤</h3>
+    <ol class="steps">
+      <li>梅花肉洗净吸干，用叉子扎些小孔，方便入味。</li>
+      <li>所有调料（蜂蜜留一半）抓匀，冷藏腌 4 小时以上，隔夜更佳。</li>
+      <li>烤箱预热 200℃，肉放烤网上，下层垫锡纸接油，烤 20 分钟。</li>
+      <li>取出刷腌料汁 + 蜂蜜，翻面再烤 10 分钟。</li>
+      <li>最后 5 分钟调至 220℃ 上色，烤至边缘微焦即可。</li>
+      <li>静置 5 分钟再切片，锁住肉汁。</li>
+    </ol>
+    <div class="tip"><b>💡 要点：</b>高温上色阶段别走开，蜂蜜容易焦；烤网 + 锡纸接油是外焦里嫩的关键，直接放烤盘会"蒸"熟。</div>
+  </section>
+
+  <!-- 2 蒜香煎 -->
+  <section class="recipe" id="r2">
+    <div class="recipe-head">
+      <span class="num">02</span>
+      <h2>蒜香煎梅花肉</h2>
+    </div>
+    <div class="meta">
+      <span>⏱ 腌 15min / 煎 10min</span>
+      <span>🔥 难度：★☆☆</span>
+      <span>🍽 2 人份</span>
+      <span>🍳 厨具：平底锅 / 铸铁锅、夹子</span>
+      <span>💰 预算：约 22–25 元</span>
+      <span class="tag">快手菜</span><span class="tag">零失败</span>
+    </div>
+    <h3 class="sub">食材</h3>
+    <ul class="ing">
+      <li>梅花肉 300g，切 1cm 厚大片（约 13–15 元）</li>
+      <li>蒜末 15g、黑胡椒、盐、生抽 1 勺、糖半勺</li>
+      <li>黄油 10g、迷迭香 1 枝（可选）</li>
+    </ul>
+    <h3 class="sub">🍳 厨具 & 配料说明</h3>
+    <ul class="ing">
+      <li><b>平底锅</b>：不粘锅或铸铁锅均可；铸铁锅（如三禾/ Lodge，100–200 元）蓄热好，煎肉更香，但家用不粘锅完全够用。</li>
+      <li><b>黄油</b>：动物黄油小盒装约 10–15 元/100g，一次用 10g；植物黄油便宜但不推荐。无黄油可用猪油替代，风味更中式。</li>
+      <li><b>黑胡椒</b>：建议买现磨胡椒瓶（约 10 元），比胡椒粉香一个档次。</li>
+      <li><b>迷迭香</b>：可选，超市小盒 5–8 元；没有就省略，或用干的意式混合香草。</li>
+    </ul>
+    <h3 class="sub">步骤</h3>
+    <ol class="steps">
+      <li>肉片用刀背轻拍松，加生抽、糖、一半蒜末、黑胡椒腌 15 分钟。</li>
+      <li>平底锅大火烧热，倒少许油，肉下锅后转中大火。</li>
+      <li>每面煎约 90 秒至金黄，侧边立起来封边。</li>
+      <li>转小火，下黄油、剩余蒜末、迷迭香，用勺子把蒜香黄油不断淋在肉上 1 分钟。</li>
+      <li>出锅静置 3 分钟再切条，撒海盐装盘。</li>
+    </ol>
+    <div class="tip"><b>💡 要点：</b>1cm 厚是黄金厚度——太薄易柴、太厚不熟；淋黄油那一步是风味的灵魂，别省。</div>
+  </section>
+
+  <!-- 3 孜然烤串 -->
+  <section class="recipe" id="r3">
+    <div class="recipe-head">
+      <span class="num">03</span>
+      <h2>孜然烤梅花肉串</h2>
+    </div>
+    <div class="meta">
+      <span>⏱ 腌 30min / 烤 15min</span>
+      <span>🔥 难度：★★☆</span>
+      <span>🍽 3 人份</span>
+      <span>🍳 厨具：烤箱 / 空气炸锅、竹签</span>
+      <span>💰 预算：约 30–35 元</span>
+      <span class="tag">烧烤味</span><span class="tag">空气炸锅可做</span>
+    </div>
+    <h3 class="sub">食材</h3>
+    <ul class="ing">
+      <li>梅花肉 500g，切 2.5cm 见方小块（约 22–25 元）</li>
+      <li>洋葱半个切丝（腌肉用）、生抽 2 勺、蚝油 1 勺、料酒 1 勺</li>
+      <li>烤时撒料：孜然粒、辣椒粉、白芝麻、盐</li>
+    </ul>
+    <h3 class="sub">🍳 厨具 & 配料说明</h3>
+    <ul class="ing">
+      <li><b>空气炸锅</b>：200 元左右入门款即可胜任，比烤箱升温快、清洗方便；竹签 2–3 元/包，用前泡水 10 分钟防烤焦。</li>
+      <li><b>孜然粒</b>：整粒比粉香，约 5–8 元/袋；孜然粉更省事但香气略逊。辣椒粉推荐"二荆条 + 花椒粉"混合，香而不燥。</li>
+      <li><b>洋葱</b>：约 2–3 元/个，腌肉去腥增甜，腌完挤掉水分再串。</li>
+      <li><b>白芝麻</b>：熟芝麻约 8 元/袋，出锅前撒，用很久。</li>
+    </ul>
+    <h3 class="sub">步骤</h3>
+    <ol class="steps">
+      <li>肉块 + 洋葱丝 + 生抽/蚝油/料酒抓匀，腌 30 分钟。</li>
+      <li>竹签提前泡水防焦，肉块肥瘦相间地串起来。</li>
+      <li>烤箱或空气炸锅 210℃，先烤 10 分钟（垫锡纸）。</li>
+      <li>取出撒一半孜然辣椒料，翻面再烤 5 分钟。</li>
+      <li>出炉前撒剩下的料和白芝麻，趁热吃。</li>
+    </ol>
+    <div class="tip"><b>💡 要点：</b>梅花肉自带油花，烤串不用刷油也不柴；洋葱腌完挤掉水分再串，烤时不易糊。</div>
+  </section>
+
+  <!-- 4 滑炒肉片 -->
+  <section class="recipe" id="r4">
+    <div class="recipe-head">
+      <span class="num">04</span>
+      <h2>滑炒梅花肉片（青椒 / 杏鲍菇）</h2>
+    </div>
+    <div class="meta">
+      <span>⏱ 全程 15min</span>
+      <span>🔥 难度：★☆☆</span>
+      <span>🍽 2 人份</span>
+      <span>🍳 厨具：炒锅、锅铲</span>
+      <span>💰 预算：约 15–18 元</span>
+      <span class="tag">家常菜</span><span class="tag">最嫩吃法</span>
+    </div>
+    <h3 class="sub">食材</h3>
+    <ul class="ing">
+      <li>梅花肉 250g，逆纹切 2mm 薄片（约 11–13 元）</li>
+      <li>青椒 2 个（或杏鲍菇 1 根）切片</li>
+      <li>腌肉：生抽 1 勺、料酒半勺、淀粉 1 小勺、蛋清半个、油封层</li>
+      <li>碗汁：生抽 1 勺、蚝油 1 勺、糖半勺、淀粉少许、水 2 勺</li>
+    </ul>
+    <h3 class="sub">🍳 厨具 & 配料说明</h3>
+    <ul class="ing">
+      <li><b>炒锅</b>：铁锅、不粘锅皆可；想要"镬气"需要锅烧得够热，电磁炉火力弱建议用燃气灶或选不粘锅降低难度。</li>
+      <li><b>淀粉</b>：玉米淀粉/土豆淀粉均可，约 5 元/袋；腌肉用土豆淀粉更嫩，挂碗汁用玉米淀粉更透亮。</li>
+      <li><b>青椒</b>约 3–4 元，杏鲍菇约 4–5 元/根；后者口感"类肉片"，素菜党友好。</li>
+      <li><b>蛋清</b>：剩蛋黄可以顺手做个蛋花汤，不浪费。</li>
+    </ul>
+    <h3 class="sub">步骤</h3>
+    <ol class="steps">
+      <li>肉片加腌料抓至发黏，最后封一层油，腌 10 分钟。</li>
+      <li>热锅宽油，油温四成热（筷子插入冒小泡）下肉片，快速滑散至变白盛出。</li>
+      <li>底油爆香蒜片，下青椒/杏鲍菇炒至断生。</li>
+      <li>倒回肉片，烹入碗汁，大火翻炒 20 秒裹匀出锅。</li>
+    </ol>
+    <div class="tip"><b>💡 要点：</b>梅花肉本来就嫩，滑油温度别太高，"滑熟"而不是"炸熟"；逆纹切是嫩的第二保险。</div>
+  </section>
+
+  <!-- 5 台式卤 -->
+  <section class="recipe" id="r5">
+    <div class="recipe-head">
+      <span class="num">05</span>
+      <h2>台式卤梅花肉（卤肉饭浇头）</h2>
+    </div>
+    <div class="meta">
+      <span>⏱ 炖 60–90min</span>
+      <span>🔥 难度：★★☆</span>
+      <span>🍽 4 人份</span>
+      <span>🍳 厨具：炖锅 / 电饭煲 / 砂锅</span>
+      <span>💰 预算：约 45–50 元</span>
+      <span class="tag">一锅出</span><span class="tag">剩汤拌面</span>
+    </div>
+    <h3 class="sub">食材</h3>
+    <ul class="ing">
+      <li>梅花肉 800g，整条或大块（约 35–40 元）</li>
+      <li>红葱头 6 个（或洋葱半个炸酥）、蒜 5 瓣、姜片</li>
+      <li>生抽 3 勺、老抽 1 勺、米酒 2 勺、冰糖 15g、五香粉少许</li>
+      <li>水或高汤没过肉，卤蛋、豆干可同卤</li>
+    </ul>
+    <h3 class="sub">🍳 厨具 & 配料说明</h3>
+    <ul class="ing">
+      <li><b>锅具</b>：砂锅（50–150 元）炖出来最香；电饭煲"煮粥/炖汤"档也能做，适合出租屋；普通汤锅也完全可以。</li>
+      <li><b>红葱头</b>：台式卤肉饭的灵魂，约 8–10 元/斤；买不到用紫洋葱半个切丝小火炸酥替代（油葱酥）。</li>
+      <li><b>米酒</b>：台式做法用米酒（约 8 元/瓶）；没有就用料酒，多加半勺糖补甜。</li>
+      <li><b>冰糖</b>：约 6 元/袋，上色比白糖柔和；老抽选酿造的，约 8 元/瓶。</li>
+      <li><b>豆干 + 鸡蛋</b>：加菜成本约 5 元，同卤超值。</li>
+    </ul>
+    <h3 class="sub">步骤</h3>
+    <ol class="steps">
+      <li>梅花肉整块焯水去沫，捞出洗净。</li>
+      <li>少油煸香姜片蒜瓣与红葱头酥，下肉块煎至表面微焦。</li>
+      <li>加调味料和水，大火烧开转小火，盖盖炖 60 分钟。</li>
+      <li>放卤蛋豆干再炖 20 分钟，关火泡 30 分钟更入味。</li>
+      <li>肉切厚片，浇卤汁配白饭——就是一碗卤肉饭。</li>
+    </ol>
+    <div class="tip"><b>💡 要点：</b>梅花肉带筋膜油花，久炖不柴，比里脊更适合卤；泡制那半小时比多炖一小时还入味。</div>
+  </section>
+
+  <!-- 6 糖醋 -->
+  <section class="recipe" id="r6">
+    <div class="recipe-head">
+      <span class="num">06</span>
+      <h2>糖醋梅花肉</h2>
+    </div>
+    <div class="meta">
+      <span>⏱ 30min</span>
+      <span>🔥 难度：★★☆</span>
+      <span>🍽 2–3 人份</span>
+      <span>🍳 厨具：炒锅 / 油炸锅、厨房温度计（可选）</span>
+      <span>💰 预算：约 25–30 元</span>
+      <span class="tag">酸甜口</span><span class="tag">孩子爱吃</span>
+    </div>
+    <h3 class="sub">食材</h3>
+    <ul class="ing">
+      <li>梅花肉 350g，切 2cm 块（约 15–17 元）</li>
+      <li>挂糊：淀粉 3 勺 + 面粉 1 勺 + 水 + 少许油</li>
+      <li>糖醋汁（1234 口诀）：料酒 1 勺、生抽 2 勺、糖 3 勺、醋 4 勺、清水 5 勺</li>
+      <li>彩椒、菠萝块（可选）</li>
+    </ul>
+    <h3 class="sub">🍳 厨具 & 配料说明</h3>
+    <ul class="ing">
+      <li><b>炸制</b>：怕费油可改"煎炸"——少油半煎炸，用不粘锅更省心；厨房温度计（约 15 元）能精准判断六成热（约 170℃），没有就用筷子插入冒密集小泡判断。</li>
+      <li><b>醋</b>：糖醋口诀里的"4 勺醋"建议用米醋或香醋（约 6–8 元/瓶）；陈醋颜色太深会发黑。</li>
+      <li><b>淀粉</b>：挂糊首选土豆淀粉（约 5 元/袋），炸壳更酥脆不易回软。</li>
+      <li><b>彩椒 + 菠萝</b>：约 6–8 元，增色解腻；预算紧可只用洋葱 + 青椒（约 3 元）。</li>
+    </ul>
+    <h3 class="sub">步骤</h3>
+    <ol class="steps">
+      <li>肉块少许盐、料酒腌 10 分钟，裹上酥糊。</li>
+      <li>油温六成热下锅炸定型捞出，升高油温复炸 30 秒至外壳酥脆。</li>
+      <li>锅留底油，倒入糖醋汁小火熬至起泡黏稠。</li>
+      <li>下肉块和彩椒菠萝，快速翻裹均匀，立即出锅。</li>
+    </ol>
+    <div class="tip"><b>💡 要点：</b>梅花肉块比里脊块更多汁，复炸是酥脆的关键；熬糖醋汁别加淀粉水，靠糖的浓度自然挂汁更亮。</div>
+  </section>
+
+  <!-- 7 白切 -->
+  <section class="recipe" id="r7">
+    <div class="recipe-head">
+      <span class="num">07</span>
+      <h2>白切梅花肉（沙姜蘸料版）</h2>
+    </div>
+    <div class="meta">
+      <span>⏱ 浸煮 40min / 冷藏 1h</span>
+      <span>🔥 难度：★★☆</span>
+      <span>🍽 3–4 人份</span>
+      <span>🍳 厨具：汤锅、冰水盆、锋利薄片刀</span>
+      <span>💰 预算：约 28–32 元</span>
+      <span class="tag">原汁原味</span><span class="tag">宴客冷盘</span><span class="tag">高蛋白低油</span>
+    </div>
+    <h3 class="sub">食材</h3>
+    <ul class="ing">
+      <li>梅花肉 600g，整条不切（约 25–28 元）</li>
+      <li>煮肉：姜片 5 片、葱段 2 根、料酒 2 勺、花椒 10 粒（可选）</li>
+      <li>蘸料 A（广式沙姜款）：沙姜 1 块剁末、蒜末 15g、生抽 3 勺、热花生油 2 勺泼香、小米辣 1 根（可选）</li>
+      <li>蘸料 B（蒜蓉酱油款）：蒜末 20g、生抽 2 勺、香醋半勺、糖少许、香油几滴</li>
+    </ul>
+    <h3 class="sub">🍳 厨具 & 配料说明</h3>
+    <ul class="ing">
+      <li><b>汤锅</b>：能没过整条肉的深锅即可；用电饭煲"煮汤"档浸煮也行，火力更稳。</li>
+      <li><b>好刀是灵魂</b>：白切吃的是"薄片"，刀钝切出来就散了；家里刀不利先磨一下（磨刀器约 20–30 元），切前刀身过一下凉水更利落。</li>
+      <li><b>沙姜（山奈）</b>：广式白切的标配，风味和普通姜完全不同，菜场/电商约 10–15 元/斤，一次用 1 块；买不到就用蘸料 B 的蒜蓉酱油款。</li>
+      <li><b>花生油</b>：泼蘸料用，约 20 元/瓶；热油泼在沙姜蒜末上"滋啦"一声才算到位。</li>
+    </ul>
+    <h3 class="sub">步骤</h3>
+    <ol class="steps">
+      <li>梅花肉整条冷水下锅（水没过肉），加姜片、葱段、料酒，大火烧开撇净浮沫。</li>
+      <li>转最小火，保持水面微微冒虾眼泡（约 85–90℃，不沸腾），加盖浸煮 30–35 分钟。</li>
+      <li>筷子插入最厚处无血水渗出即熟，捞出立刻泡冰水 10 分钟——肉皮收紧、切面紧实不散。</li>
+      <li>吸干水分，冷藏 1 小时更好切薄片（约 2mm）。</li>
+      <li>沙姜末 + 蒜末 + 小米辣放碗中，烧两勺热花生油泼香，加生抽调成蘸料。</li>
+      <li>肉片摆盘，蘸料跟上，撒葱花上桌。</li>
+    </ol>
+    <div class="tip"><b>💡 要点：</b>全程不沸腾是嫩的关键——大火滚煮肉会缩水发柴；煮肉的原汤别倒，撇沫后丢几片白萝卜或娃娃菜就是一锅清汤。梅花肉油花均匀，白切冷藏后呈漂亮的"水晶纹"，比白切土猪肉更清爽。</div>
+  </section>
+
+  <!-- 对比速查 -->
+  <section class="recipe">
+    <div class="recipe-head">
+      <span class="num">📋</span>
+      <h2>七种做法速查对比</h2>
+    </div>
+    <table class="cmp">
+      <tr><th>做法</th><th>耗时</th><th>难度</th><th>预算</th><th>核心厨具</th><th>口感关键词</th><th>适合场景</th></tr>
+      <tr><td>蜜汁叉烧</td><td>4h+ 腌制</td><td>★★☆</td><td>35–40 元</td><td>烤箱 + 烤网</td><td>外焦里嫩 · 甜香</td><td>周末加菜、便当主角</td></tr>
+      <tr><td>蒜香煎</td><td>25min</td><td>★☆☆</td><td>22–25 元</td><td>平底锅</td><td>焦香 · 蒜香黄油</td><td>一人食快手晚餐</td></tr>
+      <tr><td>孜然烤串</td><td>45min</td><td>★★☆</td><td>30–35 元</td><td>空气炸锅/烤箱</td><td>孜然焦边 · 多汁</td><td>追剧、聚餐桌</td></tr>
+      <tr><td>滑炒肉片</td><td>15min</td><td>★☆☆</td><td>15–18 元</td><td>炒锅</td><td>滑嫩 · 镬气</td><td>工作日下饭</td></tr>
+      <tr><td>台式卤肉</td><td>90min</td><td>★★☆</td><td>45–50 元</td><td>砂锅/电饭煲</td><td>酥软入味 · 汤汁拌饭</td><td>一锅出、备餐</td></tr>
+      <tr><td>糖醋</td><td>30min</td><td>★★☆</td><td>25–30 元</td><td>炒锅（炸制）</td><td>外酥里嫩 · 酸甜</td><td>哄小孩、宴客</td></tr>
+      <tr><td>白切</td><td>浸煮40min+冷藏1h</td><td>★★☆</td><td>28–32 元</td><td>汤锅 + 好刀</td><td>原味清甜 · 水晶纹</td><td>宴客冷盘、夏天吃</td></tr>
+    </table>
+    <div class="tip"><b>🛒 选肉提示：</b>挑颜色粉红、脂肪雪白如大理石纹的梅花肉，中间那一条漂亮的"梅花纹"越密越好；一次买多可按 300g 分装冷冻，用前冷藏解冻。</div>
+    <div class="tip"><b>💰 价格说明：</b>预算按 2026 年普通商超 / 生鲜电商价估算，梅花肉约 20–25 元/500g；菜市场价格可再低 15–25%，一线城市精品超市（Ole'、盒马 premium）则上浮 30%+。酱料均为一次性投入、多次使用的摊销价。</div>
+  </section>
+
+  <footer>梅花肉做法笔记 · 2026-08-31 整理 · 7 种做法 + 厨具/配料/预算速查（价格按 2026 年普通商超估算，仅供参考）</footer>
+</div>
+</body>
+</html>
