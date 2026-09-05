@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Roulette × 哈巴纳达 深度对比 · 广西来宾适配版</title>
+<style>
+  :root{
+    --bg:#fbf7f0; --panel:#ffffff; --ink:#3a2a16; --muted:#6b5a44;
+    --roulette:#b3202c; --roulette-soft:#f7e2e3; --roulette-line:#e3a9ad;
+    --haba:#c8701a; --haba-soft:#fbeede; --haba-line:#ecc79a;
+    --green:#2f6b1f; --green-soft:#e8f5e9; --line:#e6dccb; --chip:#f0e7d6;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;
+    line-height:1.75;font-size:16px;}
+  .cover{background:linear-gradient(135deg,#fdeede 0%,#fbe7d6 45%,#f7e2e3 100%);
+    padding:46px 30px 38px;border-bottom:4px solid var(--haba-line);}
+  .cover h1{margin:0 0 8px;font-size:32px;color:#7a1f12;letter-spacing:.5px;}
+  .cover .sub{font-size:17px;color:#7a4a1e;font-weight:600;}
+  .cover .meta{margin-top:14px;font-size:13px;color:#8a6b4a;line-height:1.6;}
+  .tagrow{margin-top:16px;display:flex;flex-wrap:wrap;gap:8px;}
+  .tag{background:var(--chip);color:#6b4a22;padding:4px 11px;border-radius:14px;font-size:12.5px;border:1px solid var(--line);}
+  .wrap{max-width:980px;margin:0 auto;padding:26px 20px 60px;}
+  h2{margin:38px 0 12px;font-size:23px;color:#7a1f12;border-left:6px solid var(--roulette);padding-left:12px;}
+  h3{margin:24px 0 8px;font-size:18px;color:var(--haba);}
+  p{margin:10px 0;}
+  .lead{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px 20px;margin:18px 0;color:var(--muted);}
+  .lead b{color:var(--ink);}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin:14px 0;box-shadow:0 2px 8px rgba(120,80,30,.05);}
+  .r-card{border-top:5px solid var(--roulette);}
+  .h-card{border-top:5px solid var(--haba);}
+  .card h3{margin-top:0;}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  @media(max-width:680px){.grid2{grid-template-columns:1fr;}}
+  table{width:100%;border-collapse:collapse;margin:14px 0;font-size:14.5px;background:var(--panel);}
+  th,td{border:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top;}
+  thead th{background:var(--green-soft);color:var(--green);font-weight:700;}
+  .r-col{background:var(--roulette-soft);}
+  .h-col{background:var(--haba-soft);}
+  tbody tr:nth-child(even){background:#fcf8f0;}
+  .tl{position:relative;margin:18px 0 18px 8px;padding-left:26px;border-left:3px solid var(--haba-line);}
+  .tl .it{position:relative;margin:0 0 16px;}
+  .tl .it::before{content:"";position:absolute;left:-35px;top:4px;width:14px;height:14px;border-radius:50%;background:var(--haba);border:3px solid #fff;box-shadow:0 0 0 2px var(--haba-line);}
+  .tl .it .t{font-weight:700;color:var(--roulette);}
+  .box{background:var(--roulette-soft);border:1px solid var(--roulette-line);border-radius:12px;padding:14px 18px;margin:16px 0;}
+  .box.g{background:var(--green-soft);border-color:#bfe0c2;}
+  .box.g b{color:var(--green);}
+  .box b{color:var(--roulette);}
+  .quick{background:var(--panel);border:1px dashed var(--haba);border-radius:12px;padding:16px 20px;margin:18px 0;}
+  .quick h3{color:var(--haba);}
+  ul,ol{margin:8px 0 8px 4px;padding-left:22px;}
+  li{margin:6px 0;}
+  .pill{display:inline-block;background:var(--chip);border-radius:10px;padding:2px 9px;font-size:13px;color:#6b4a22;margin:2px 3px 2px 0;border:1px solid var(--line);}
+  .foot{margin-top:34px;font-size:12.5px;color:#8a6b4a;border-top:1px solid var(--line);padding-top:14px;line-height:1.7;}
+  .verdict{background:linear-gradient(135deg,#fff6e8,#fdeede);border:1px solid var(--haba-line);border-radius:14px;padding:18px 22px;margin:20px 0;}
+  .verdict h3{color:var(--roulette);margin-top:0;}
+  code{background:var(--chip);padding:1px 6px;border-radius:5px;font-size:13px;}
+</style>
+</head>
+<body>
+
+<div class="cover">
+  <h1>Roulette × 哈巴纳达 深度对比</h1>
+  <div class="sub">两个「无辣哈瓦那」正面对决 · 广西来宾气候适配版</div>
+  <div class="meta">文档版本 v1.0 ｜ 编写日期 2026-09-05 ｜ 适配地：广西来宾（年均温 20.7°C / 无霜期 331 天 / 红壤偏酸）<br>本手册与同系列《特立尼达香水×哈巴纳达深度对比》《不太辣多年生辣椒品种清单》互补</div>
+  <div class="tagrow">
+    <span class="tag">Capsicum chinense</span>
+    <span class="tag">0 SHU 无辣</span>
+    <span class="tag">AAS 2018 获奖</span>
+    <span class="tag">康奈尔学术育种</span>
+    <span class="tag">多年生可越冬</span>
+    <span class="tag">浅底深字 · 无白字</span>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <div class="lead">
+    <b>本文定位：</b>你之前几轮都在追「不辣 + 多年生 + 能在广西来宾种活」的辣椒。哈巴纳达（Habanada）已是你的主力；这一轮上场的 Roulette，是<b>另一个和它同属「无辣哈瓦那（no-heat habanero）」赛道的对手</b>——它 2018 年拿下全美精选（AAS）大奖，官方辣度也是 <b>0 SHU</b>。两者到底差在哪、谁来宾更稳、先种哪棵？下面逐维度拆。
+  </div>
+
+  <h2>一、一句话结论（先看这里）</h2>
+  <div class="verdict">
+    <h3>两棵都值得种，但要按「定位」分工</h3>
+    <ul>
+      <li><b>想要零风险无辣 + 风味主力 → 选哈巴纳达。</b> 它是学术育种固定出的「完全无辣个体」，热带果香（杏/桃/芒果）更浓，株型紧凑好盆栽，你已种熟。</li>
+      <li><b>想要抗病皮实 + 红色果 + 商业级稳定 → 选 Roulette。</b> 它有官方记载的 <code>HR Tm:0</code>（烟草花叶病毒高抗）、强长势、连续坐果，熟果为经典哈瓦那红，适合想「少操心、多收」的你。</li>
+      <li><b>两者辣度都是 0 SHU</b>，不存在「谁更辣」的问题；差异集中在<b>出身、果色、抗病性、株型、获取渠道</b>。</li>
+      <li><b>来宾适配：两者都是 <i>C. chinense</i>，331 天无霜期让它们都能多年生越冬</b>，比北方靠温室省事；但 7–8 月 35°C+ 高温都需遮阳网 + 避雨棚。</li>
+    </ul>
+  </div>
+
+  <h2>二、两位主角档案</h2>
+  <div class="grid2">
+    <div class="card r-card">
+      <h3>🔴 Roulette（鲁列特／轮盘）</h3>
+      <ul>
+        <li><b>物种：</b><i>Capsicum chinense</i> 'Roulette'（哈瓦那属）</li>
+        <li><b>育种者：</b>Terry Berke（Bayer／Seminis 商业育种家）</li>
+        <li><b>发布：</b>2018 年全美精选 AAS 优胜种</li>
+        <li><b>辣度：</b><b>0 SHU</b>（Bayer 官方数据：AVERAGE HEAT UNITS 0）</li>
+        <li><b>熟果色：</b><b>红色</b>（external color: Red）</li>
+        <li><b>单果：</b>12–22 g，约 8 × 3.5 cm（3.2 × 1.4 英寸）</li>
+        <li><b>风味：</b>柑橘香 + 甜，保留哈瓦那香气无灼烧</li>
+        <li><b>抗病：</b>HR <code>Tm:0</code>（番茄花叶病毒高抗）</li>
+        <li><b>长势：</b>Strong（强），连续坐果</li>
+      </ul>
+    </div>
+    <div class="card h-card">
+      <h3>🟠 哈巴纳达 Habanada</h3>
+      <ul>
+        <li><b>物种：</b><i>C. chinense</i>（哈瓦那属）</li>
+        <li><b>育种者：</b>Michael Mazourek（康奈尔大学学术育种）</li>
+        <li><b>发布：</b>2014 年经 Row 7 精品种子发布；2025 年获园艺媒体「年度辣椒」称号</li>
+        <li><b>辣度：</b><b>0 SHU</b>（实测完全无辣，儿童可食）</li>
+        <li><b>熟果色：</b><b>橙／桃色</b>（orange-peach）</li>
+        <li><b>单果：</b>15–25 g，约 2.5–4 cm 紧凑</li>
+        <li><b>风味：</b>热带果香（杏/桃/芒果）+ 微烟甜</li>
+        <li><b>抗病：</b>无官方特定抗性记载（开放授粉种）</li>
+        <li><b>长势：</b>中等，株高 60–90 cm 紧凑</li>
+      </ul>
+    </div>
+  </div>
+
+  <h2>三、核心参数对比表</h2>
+  <table>
+    <thead>
+      <tr><th>维度</th><th class="r-col">Roulette</th><th class="h-col">哈巴纳达 Habanada</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>物种</td><td class="r-col"><i>C. chinense</i> 'Roulette'</td><td class="h-col"><i>C. chinense</i></td></tr>
+      <tr><td>育种出身</td><td class="r-col">Bayer/Seminis 商业育种（Terry Berke）</td><td class="h-col">康奈尔大学学术育种（M. Mazourek）</td></tr>
+      <tr><td>发布/荣誉</td><td class="r-col">2018 AAS 全美精选优胜</td><td class="h-col">2014 发布；2025 园艺媒体「年度辣椒」</td></tr>
+      <tr><td>辣度（SHU）</td><td class="r-col"><b>0</b>（官方 0）</td><td class="h-col"><b>0</b>（实测无辣）</td></tr>
+      <tr><td>熟果颜色</td><td class="r-col"><b>红色</b></td><td class="h-col"><b>橙/桃色</b></td></tr>
+      <tr><td>单果重</td><td class="r-col">12–22 g</td><td class="h-col">15–25 g</td></tr>
+      <tr><td>果型尺寸</td><td class="r-col">约 8 × 3.5 cm（长椭圆形）</td><td class="h-col">约 2.5–4 cm（小巧紧凑）</td></tr>
+      <tr><td>风味</td><td class="r-col">柑橘香 + 甜，哈瓦那香无灼烧</td><td class="h-col">热带果香（杏/桃/芒果）+ 微烟甜</td></tr>
+      <tr><td>抗病性</td><td class="r-col"><b>HR Tm:0</b>（烟草花叶病毒高抗）</td><td class="h-col">无官方特定抗性记载</td></tr>
+      <tr><td>长势/活力</td><td class="r-col">Strong 强，连续坐果</td><td class="h-col">中等，紧凑</td></tr>
+      <tr><td>株高</td><td class="r-col">约 90–120 cm（3–4 英尺）</td><td class="h-col">约 60–90 cm</td></tr>
+      <tr><td>成熟天数</td><td class="r-col">移栽后 70 天绿 / 90 天红熟</td><td class="h-col">约 75–90 天</td></tr>
+      <tr><td>单株季产</td><td class="r-col">高（强长势 + 连续坐果）</td><td class="h-col">约 2–3 kg（文献+农户实测）</td></tr>
+      <tr><td>多年生潜力</td><td class="r-col">可（<i>chinense</i>，暖区越冬）</td><td class="h-col">可（<i>chinense</i>，3–5 年）</td></tr>
+      <tr><td>阳台/盆栽</td><td class="r-col">宜盆（早果、紧凑型商业种）</td><td class="h-col">极宜盆（你已验证）</td></tr>
+      <tr><td>国内获取</td><td class="r-col">需海淘/进口（Bayer 商业种）</td><td class="h-col">需海淘/进口（Row 7 等）</td></tr>
+    </tbody>
+  </table>
+
+  <h2>四、育种背景：商业种 vs 学术种</h2>
+  <p>这是两者最根本的「气质差异」，也决定了后续管理逻辑。</p>
+  <div class="box">
+    <b>Roulette = 商业育种流水线出品。</b> Terry Berke 是 Bayer/Seminis 的传奇辣椒育种家，职业生涯育成 <b>9 个 AAS 获奖种</b>（Mariachi、Holy Molé、Emerald Fire、Roulette、Wildcat…）。他的风格是「双轨」——既保证商业规模的一致性、抗病性、耐运输，又保留家庭园艺要的风味。Roulette 因此<b>自带 HR Tm:0 病毒抗性、强长势、连续坐果</b>这些「工业化可靠性」基因。
+  </div>
+  <div class="box g">
+    <b>哈巴纳达 = 学术「意外固定」。</b> 康奈尔 Michael Mazourek 本意是选育「更温和的哈瓦那」，历时 10 余年传统选育，意外固定出完全无辣个体，2014 年发布，被公认为<b>世界上第一个 heat-less habanero</b>。它是开放授粉（OP）学术种，走 Row 7 精品种子渠道——优势是风味纯粹、可留种，代价是没有商业种那种官方背书的具体抗病编号。
+  </div>
+  <p class="lead"><b>对你怎么读：</b>如果你想要「种下去少生病、稳定出果」，Roulette 的商业化基因更省心；如果你想要「风味极致 + 自己留种延续」，哈巴纳达更合手。两者都不依赖农药，和你生态方案里的绿肥+虫肥逻辑完全兼容。</p>
+
+  <h2>五、辣度：都是 0，无需纠结</h2>
+  <div class="box">
+    <b>两者辣度均为 0 SHU。</b> Roulette 的 Bayer 官方数据明确写 <code>AVERAGE HEAT UNITS (SCOVILLE) 0</code>；哈巴纳达是康奈尔固定的「完全无辣个体」，实测儿童可食。所以「哪个更辣」这个问题不存在——它们都属于「能让孩子和不能吃辣的人放心吃」的档位。
+  </div>
+
+  <h2>六、风味分工：柑橘甜 vs 热带果香</h2>
+  <ul>
+    <li><b>Roulette：</b>以「柑橘香 + 甜」为主调，保留哈瓦那的芳香但去掉灼烧，文献描述为 <i>citrusy flavor without the burn</i>。适合做沙拉、鲜食、轻烹提香。</li>
+    <li><b>哈巴纳达：</b>热带果香更突出（杏、桃、芒果调），带一丝微烟甜，文献称 <i>tropical fruit aroma</i>。果大肉厚，鲜食/烤/沙拉都强，是你之前的「甜味主力」。</li>
+  </ul>
+  <p>👉 两棵一起种，风味正好互补：Roulette 提供清亮柑橘甜，哈巴纳达提供浓郁热带果香。</p>
+
+  <h2>七、果色与果型：红 vs 橙（视觉与采收信号）</h2>
+  <ul>
+    <li><b>Roulette 熟果为红色</b>（Bayer 数据 external color: Red），长椭圆约 8 cm，单果 12–22 g——比哈巴纳达果型更「长、大」。</li>
+    <li><b>哈巴纳达熟果为橙/桃色</b>，果型更圆小紧凑。</li>
+  </ul>
+  <div class="box g"><b>采收提示：</b>两者都「绿果可采、色变即风味巅峰」。Roulette 看转<b>红</b>、哈巴纳达看转<b>橙</b>——颜色就是你的采收信号灯，不必记天数。</div>
+
+  <h2>八、抗病性：Roulette 的硬优势</h2>
+  <p>这是对比里<b>唯一一个 Roulette 有明确数据碾压</b>的维度：</p>
+  <table>
+    <thead><tr><th>品种</th><th>记载的抗病性</th><th>含义</th></tr></thead>
+    <tbody>
+      <tr><td class="r-col"><b>Roulette</b></td><td class="r-col">HR <code>Tm:0</code></td><td class="r-col">对烟草花叶病毒（ToMV）高抗——病毒病是辣椒常见绝产诱因</td></tr>
+      <tr><td class="h-col">哈巴纳达</td><td class="h-col">无官方特定记载</td><td class="h-col">靠健康栽培+避雨三件套预防，无「基因级」病毒抗性背书</td></tr>
+    </tbody>
+  </table>
+  <p class="lead">来宾高温高湿、4–8 月降水占 70%，正是病毒/疫病高发环境。<b>若你菜地曾出现过病毒病（花叶、畸形果），优先 Roulette 更稳。</b>哈巴纳达则靠你生态方案里的避雨棚+遮阳网+轮作来规避。</p>
+
+  <h2>九、产量与株型</h2>
+  <ul>
+    <li><b>Roulette：</b>强长势 + 连续坐果（continuous fruit set），单株生产潜力高于紧凑型哈巴纳达；株高约 90–120 cm，占地略大。</li>
+    <li><b>哈巴纳达：</b>文献与农户实测约 <b>2–3 kg/株·季</b>，无限生长 + 来宾 331 天无霜，多年生年累积可破 3–5 kg；株高 60–90 cm，最省空间。</li>
+  </ul>
+  <div class="box">👉 论「单位空间产出」，哈巴纳达紧凑更划算；论「单株总量与皮实度」，Roulette 强长势略占优。差距不大，不是决策主因。</div>
+
+  <h2>十、多年生与越冬：两者都是 chinense，来宾是天选地</h2>
+  <p>很多园艺数据库把 Roulette 标成「annual（一年生）」——那是<b>温带气候下的种植习惯</b>，不是它的生物学本质。它和哈巴纳达一样是 <i>Capsicum chinense</i>，本质是热带多年生灌木。</p>
+  <div class="tl">
+    <div class="it"><div class="t">来宾 331 天无霜期 = 天然多年生温床</div>年均温 20.7°C、无霜期 331 天，两棵都能露天或避雨棚下越冬续命，无需北方那样搬进温室。</div>
+    <div class="it"><div class="t">越夏是共同命门</div>7 月均温 28.6°C、极端 38.9°C，35°C 以上普遍落花。7–8 月必须拉<b>遮阳网 + 避雨棚</b>（生态方案「三件套」复用）。</div>
+    <div class="it"><div class="t">秋凉第二波</div>两者均无限生长，9 月后气温回落进入第二采收高峰，多年生累积产量远超有限生长的一年生种。</div>
+  </div>
+
+  <h2>十一、阳台/盆栽对比</h2>
+  <ul>
+    <li><b>Roulette：</b>商业种「早果 + 宜容器」是其卖点之一，株高 90–120 cm 用 5 加仑（约 20 L）以上盆即可，阳台友好。</li>
+    <li><b>哈巴纳达：</b>你已验证极宜盆，60–90 cm 紧凑株型，小阳台也能成景。</li>
+  </ul>
+
+  <h2>十二、国内获取渠道（诚实提醒）</h2>
+  <div class="box">
+    <b>两者国内均非常规在售，都需海淘/进口渠道。</b> Roulette 是 Bayer/Seminis 商业种，国际种子商（美、欧）有售；哈巴纳达走 Row 7 及多家精品种子商。淘宝偶见代购但不稳定，且需留意「是否为原系 OP 种、能否留种」。建议：先锁定一家可靠进口种子商，一次引种两棵，互为备份。
+  </div>
+
+  <h2>十三、怎么选：决策指南</h2>
+  <table>
+    <thead><tr><th>你的优先级</th><th>选谁</th><th>理由</th></tr></thead>
+    <tbody>
+      <tr><td>零风险无辣 + 风味主力 + 已种熟</td><td class="h-col"><b>哈巴纳达</b></td><td class="h-col">学术固定无辣个体，热带果香浓，株型紧凑</td></tr>
+      <tr><td>少生病 + 红色果 + 稳定多收</td><td class="r-col"><b>Roulette</b></td><td class="r-col">HR Tm:0 病毒高抗 + 强长势 + 连续坐果</td></tr>
+      <tr><td>菜地曾发生病毒病/花叶</td><td class="r-col"><b>Roulette</b></td><td class="r-col">基因级病毒抗性更稳</td></tr>
+      <tr><td>空间小/纯阳台</td><td class="h-col">哈巴纳达略优</td><td class="h-col">60–90 cm 更省地</td></tr>
+      <tr><td>想风味互补、两棵都种</td><td>都种</td><td>Roulette 柑橘甜 + 哈巴纳达热带果香，红橙双色成景</td></tr>
+    </tbody>
+  </table>
+
+  <h2>十四、来宾适配铁律（两棵通用）</h2>
+  <div class="box g">
+    <b>红壤定植四步铁律（沿用你生态方案）：</b>
+    <ol>
+      <li>调酸——生石灰改良红壤偏酸（目标 pH 6.0–6.8，恰是两者理想区间）；</li>
+      <li>接根瘤菌剂——促健壮、提养分效率；</li>
+      <li>绿肥养地——蓝花苕子/田菁翻压；</li>
+      <li>翻压后隔 <b>2–3 周</b>再定植。</li>
+    </ol>
+    <b>避雨三件套：</b>高垄排水 + 避雨棚 + 遮阳网（4–8 月降水占 70%、盛夏 35°C+ 是共同命门）。<br>
+    <b>虫肥加持：</b>黑水虻虫沙偏碱含钙，补红壤缺素、助坐果防脐腐——两棵通用。
+  </div>
+
+  <div class="quick">
+    <h3>速查卡</h3>
+    <span class="pill">Roulette = 红果·0 SHU·AAS 2018·HR Tm:0·强长势</span>
+    <span class="pill">哈巴纳达 = 橙果·0 SHU·康奈尔·热带果香·紧凑</span>
+    <span class="pill">同属 C. chinense · 来宾均可多年生</span>
+    <span class="pill">7–8 月必拉遮阳网+避雨棚</span>
+    <span class="pill">红壤铁律：调酸+根瘤菌+绿肥+隔2–3周</span>
+    <span class="pill">两者均需海淘引种</span>
+  </div>
+
+  <div class="verdict">
+    <h3>最终建议</h3>
+    <p><b>两棵都引、定位互补。</b> 若只能先种一棵：要<b>稳妥无辣风味主力</b>选哈巴纳达（你已种熟）；要<b>抗病皮实红色果、少操心</b>选 Roulette。两者都是「无辣哈瓦那」赛道的正统选手，来宾 331 天无霜期让它们轻松多年生——配合你已有的绿肥养地 + 黑水虻虫肥 + 避雨三件套，完全能同时种活、持续收果。</p>
+  </div>
+
+  <div class="foot">
+    <b>数据来源：</b>
+    <ul>
+      <li>Bayer / Seminis 官方品种页（Roulette：0 SHU、3.2×1.4 英寸、12–22 g、Red、HR Tm:0、Strong 长势、Continuous 坐果）；</li>
+      <li>All-America Selections（AAS）2018 获奖记录 + Terry Berke 育种家档案（9 个 AAS 获奖种）；</li>
+      <li>Franz Witte / Greg.app 园艺库（Roulette 株高 4 英尺、pH 6.0–6.8、容器友好）；</li>
+      <li>康奈尔大学 Mazourek 育种记录 + Row 7 种子公司（Habanada 2014 发布、零辣度、2025 年度辣椒称号）；</li>
+      <li>本系列前作《特立尼达香水×哈巴纳达深度对比》《不太辣多年生辣椒品种清单》之积本地气候常量（年均温 20.7°C、无霜期 331 天、年降水 1360 mm 集中于 4–8 月、红壤偏酸）。</li>
+    </ul>
+    注：辣度/产量/成熟天数为文献与农户实测区间值，受来宾具体地块、当年气候与管理水平影响，实际以你田间观察为准。本手册为家庭生态种植参考，非商业种植承诺。
+  </div>
+
+</div>
+</body>
+</html>
