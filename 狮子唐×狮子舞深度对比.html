@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>狮子唐(shishito) × 狮子舞(shishimai) 深度对比 · 家庭阳台种植适配版</title>
+<style>
+  :root{
+    --bg:#fbf7f0; --panel:#ffffff; --ink:#3a2a16; --muted:#6b5a44;
+    --cSH:#b5651d; --cSH-soft:#fbeede; --cSH-line:#e7c79a;
+    --cMA:#b5291d; --cMA-soft:#fbe9e6; --cMA-line:#e7b3aa;
+    --gold:#b8791a; --gold-soft:#fbeede; --line:#e6dccb; --chip:#f0e7d6;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;
+    line-height:1.75;font-size:16px;}
+  .cover{background:linear-gradient(135deg,#fbeede 0%,#f3ece0 50%,#fbe9e6 100%);
+    padding:46px 30px 38px;border-bottom:4px solid var(--cSH-line);}
+  .cover h1{margin:0 0 8px;font-size:31px;color:#7a1f12;letter-spacing:.5px;}
+  .cover .sub{font-size:17px;color:#6b3a1e;font-weight:600;}
+  .cover .meta{margin-top:14px;font-size:13px;color:#8a6b4a;line-height:1.6;}
+  .tagrow{margin-top:16px;display:flex;flex-wrap:wrap;gap:8px;}
+  .tag{background:var(--chip);color:#6b4a22;padding:4px 11px;border-radius:14px;font-size:12.5px;border:1px solid var(--line);}
+  .wrap{max-width:980px;margin:0 auto;padding:26px 20px 60px;}
+  h2{margin:38px 0 12px;font-size:23px;color:#7a1f12;border-left:6px solid var(--cSH);padding-left:12px;}
+  h3{margin:24px 0 8px;font-size:18px;color:var(--gold);}
+  p{margin:10px 0;}
+  .lead{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px 20px;margin:18px 0;color:var(--muted);}
+  .lead b{color:var(--ink);}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin:14px 0;box-shadow:0 2px 8px rgba(120,80,30,.05);}
+  .cSH-card{border-top:5px solid var(--cSH);}
+  .cMA-card{border-top:5px solid var(--cMA);}
+  .card h3{margin-top:0;}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  @media(max-width:680px){.grid2{grid-template-columns:1fr;}}
+  table{width:100%;border-collapse:collapse;margin:14px 0;font-size:14.5px;background:var(--panel);}
+  th,td{border:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top;}
+  thead th{background:var(--gold-soft);color:#8a5a14;font-weight:700;}
+  .cSH-col{background:var(--cSH-soft);}
+  .cMA-col{background:var(--cMA-soft);}
+  tbody tr:nth-child(even){background:#fcf8f0;}
+  .tl{position:relative;margin:18px 0 18px 8px;padding-left:26px;border-left:3px solid var(--cMA-line);}
+  .tl .it{position:relative;margin:0 0 16px;}
+  .tl .it::before{content:"";position:absolute;left:-35px;top:4px;width:14px;height:14px;border-radius:50%;background:var(--cMA);border:3px solid #fff;box-shadow:0 0 0 2px var(--cMA-line);}
+  .tl .it .t{font-weight:700;color:var(--cMA);}
+  .box{background:var(--cSH-soft);border:1px solid var(--cSH-line);border-radius:12px;padding:14px 18px;margin:16px 0;}
+  .box.g{background:var(--cMA-soft);border-color:var(--cMA-line);}
+  .box.g b{color:var(--cMA);}
+  .box.b{background:#eef3fb;border-color:#b9cdee;}
+  .box.b b{color:#1f4f8a;}
+  .box b{color:var(--cSH);}
+  .quick{background:var(--panel);border:1px dashed var(--gold);border-radius:12px;padding:16px 20px;margin:18px 0;}
+  .quick h3{color:var(--gold);}
+  ul,ol{margin:8px 0 8px 4px;padding-left:22px;}
+  li{margin:6px 0;}
+  .pill{display:inline-block;background:var(--chip);border-radius:10px;padding:2px 9px;font-size:13px;color:#6b4a22;margin:2px 3px 2px 0;border:1px solid var(--line);}
+  .foot{margin-top:34px;font-size:12.5px;color:#8a6b4a;border-top:1px solid var(--line);padding-top:14px;line-height:1.7;}
+  .verdict{background:linear-gradient(135deg,#fff6e8,#fbe9e6);border:1px solid var(--cSH-line);border-radius:14px;padding:18px 22px;margin:20px 0;}
+  .verdict h3{color:var(--cMA);margin-top:0;}
+  code{background:var(--chip);padding:1px 6px;border-radius:5px;font-size:13px;}
+</style>
+</head>
+<body>
+
+<div class="cover">
+  <h1>狮子唐(shishito) × 狮子舞(shishimai) 深度对比</h1>
+  <div class="sub">近无辣老种 vs 微辣抗病毒升级种 · 家庭阳台种植适配评估</div>
+  <div class="meta">文档版本 v1.0 ｜ 编写日期 2026-09-06 ｜ 评估地：广西来宾（年均温 20.7°C / 无霜期 331 天 / 年降水 1360mm / 红壤偏酸）<br>
+  本手册是《狮子唐×杭椒》的姐妹篇，聚焦「同一日本 shishito 血脉里的两代」：OP 老种 vs 带 L3 抗病毒基因的 F1 升级种。辣椒皆热带多年生，来宾无霜区可续 2–3 年。</div>
+  <div class="tagrow">
+    <span class="tag">日本 shishito 血脉</span>
+    <span class="tag">C. annuum 同物种</span>
+    <span class="tag">近无辣 vs 微辣</span>
+    <span class="tag">OP 可留种 vs F1 不可留种</span>
+    <span class="tag">阳台友好</span>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <h2>一、一句话定位</h2>
+  <div class="verdict">
+    <h3>先给结论</h3>
+    <p><b>狮子唐 shishito</b> 是「<b>近无辣、偶尔给你一颗辣的惊喜</b>」的日式烧烤经典老种——辣度仅 50–200 SHU，约 1/10 偶辣；开放授粉（OP）、<b>可留种</b>；株高 45–60 cm 紧凑，是容器种植标杆。</p>
+    <p><b>狮子舞 shishimai</b> 是「<b>shishito 的现代升级商业化版</b>」——辣度升到<b>微辣（Slightly Hot）</b>，比传统 shishito 更明显有辣味；F1 杂交、<b>不可留种</b>；但它是<b>首个携带 L3 基因的 shishito 系</b>，对烟草花叶病毒属（tobamovirus）高抗，是本质性的抗病升级。</p>
+    <p>简单说：<b>狮子唐是「省心无辣老味道」，狮子舞是「微辣 + 抗病毒、更抗造的新版本」</b>。两者吃法相同（油煎撒盐），但一个求稳一个求强。</p>
+  </div>
+
+  <h2>二、两个品种是什么（起源与命名）</h2>
+  <div class="grid2">
+    <div class="card cSH-card">
+      <h3>狮子唐 shishito</h3>
+      <ul>
+        <li><b>物种</b>：<i>Capsicum annuum</i></li>
+        <li><b>起源</b>：日本。16 世纪由葡萄牙商人带入辣椒后，经数百年选育成的皱皮小椒。</li>
+        <li><b>命名</b>：<code>shishi</code>（狮子）+ <code>tōgarashi</code>（辣椒）。果尖皱缩像<b>狮子头</b>。</li>
+        <li><b>地位</b>：日本居酒屋招牌前菜（油煎撒盐），全球流行数十年。</li>
+        <li><b>类型</b>：<b>开放授粉 OP / Heirloom，可留种</b>。</li>
+      </ul>
+    </div>
+    <div class="card cMA-card">
+      <h3>狮子舞 shishimai</h3>
+      <ul>
+        <li><b>物种</b>：<i>Capsicum annuum</i>（F1 杂交）</li>
+        <li><b>起源</b>：日本育成的 shishito <b>现代变种</b>。「传统无辣 shishito 的新演绎」。</li>
+        <li><b>命名</b>：<code>shishi</code>（狮子）+ <code>mai</code>（舞）。源自日本新年穿狮装跳的<b>狮子舞</b>；果尖两裂像<b>狮子张口</b>。</li>
+        <li><b>地位</b>：种子商（Johnny's、Oishii Nippon）力推的新版日式小椒。</li>
+        <li><b>类型</b>：<b>F1 杂交，不可留种</b>；首个带 <b>L3 抗病毒基因</b>的 shishito 系。</li>
+      </ul>
+    </div>
+  </div>
+
+  <h2>三、核心性状速查表</h2>
+  <table>
+    <thead>
+      <tr><th>性状</th><th class="cSH-col">狮子唐 shishito</th><th class="cMA-col">狮子舞 shishimai</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>物种 / 类型</td><td class="cSH-col">C. annuum · <b>OP 开放授粉（可留种）</b></td><td class="cMA-col">C. annuum · <b>F1 杂交（不可留种）</b></td></tr>
+      <tr><td>辣度</td><td class="cSH-col"><b>50–200 SHU</b>（近无辣，约 1/10 偶辣）</td><td class="cMA-col"><b>微辣 Slightly Hot</b>（比 shishito 明显更辣）</td></tr>
+      <tr><td>果长</td><td class="cSH-col">7–10 cm，皱皮</td><td class="cMA-col">约 9–10 cm（3.5–4″），中绿皱皮</td></tr>
+      <tr><td>成熟期（移栽后）</td><td class="cSH-col">60–70 天收青果</td><td class="cMA-col">50–60 天收青果；80 天转红</td></tr>
+      <tr><td>株型</td><td class="cSH-col">紧凑直立（45–60 cm）</td><td class="cMA-col">较松散（floppy），<b>需支架</b></td></tr>
+      <tr><td>抗病毒性</td><td class="cSH-col">无官方抗病编号；综合抗常见病虫害</td><td class="cMA-col"><b>携 L3 基因，烟草花叶病毒属高抗</b></td></tr>
+      <tr><td>抗性编码</td><td class="cSH-col">—</td><td class="cMA-col">TMV races 0–2（High）；ToMV（High）</td></tr>
+      <tr><td>容器友好度</td><td class="cSH-col">★★★★★（紧凑省心）</td><td class="cMA-col">★★★★（需支架防倒伏）</td></tr>
+      <tr><td>留种</td><td class="cSH-col">✅ 可</td><td class="cMA-col">❌ 不可（F1 分离）</td></tr>
+    </tbody>
+  </table>
+
+  <h2>四、辣度对比（最关键差异之一）</h2>
+  <div class="lead">
+    两者都属「不刺激」档，但<b>辣度档位不同</b>：狮子唐是「几乎无辣、靠运气偶辣」，狮子舞是「明确微辣」。
+  </div>
+  <table>
+    <thead>
+      <tr><th>维度</th><th class="cSH-col">狮子唐</th><th class="cMA-col">狮子舞</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>官方辣度描述</td><td class="cSH-col">50–200 SHU（near-zero heat）</td><td class="cMA-col">Slightly Hot（微辣）</td></tr>
+      <tr><td>辣感特征</td><td class="cSH-col">几乎无辣；约 1/10 偶辣，无预警</td><td class="cMA-col">持续微辣、明显胡椒感，不再「抽奖」</td></tr>
+      <tr><td>过熟转红</td><td class="cSH-col">转红更甜，辣度基本不变</td><td class="cMA-col">转红会<b>变辣（extra hot）</b>，宜早采</td></tr>
+      <tr><td>儿童/不能吃辣者</td><td class="cSH-col">基本可食（偶有惊喜）</td><td class="cMA-col">微辣，敏感者能尝到辣</td></tr>
+    </tbody>
+  </table>
+  <div class="box">
+    <b>注：</b>狮子舞的精确 SHU 文献尚未给出统一值（仅 Johnny's 标为 Slightly Hot），但一致描述其「比传统无辣 shishito 更辣、有明显胡椒辣味」。保守判断它高于狮子唐一个量级，仍远低于线椒/杭椒。
+  </div>
+
+  <h2>五、类型与留种（本质区别）</h2>
+  <div class="grid2">
+    <div class="card cSH-card">
+      <h3>狮子唐 = OP 可留种</h3>
+      <p>开放授粉、性状稳定，<b>每年可从健康植株留种</b>，长期自延续。对「不想年年买种、想建立自家种子库」的你尤其友好——和你的哈巴纳达（也是 OP）逻辑一致。</p>
+    </div>
+    <div class="card cMA-card">
+      <h3>狮子舞 = F1 不可留种</h3>
+      <p>F1 杂交种，留种后代会分离、性状飘移，<b>必须每年购新种</b>。换来的好处是整齐度高、抗病性强、产量稳。属于「买种子换可靠性」的商业思路。</p>
+    </div>
+  </div>
+
+  <h2>六、抗病性（狮子舞的核心卖点）</h2>
+  <div class="box g">
+    <b>L3 基因：本质升级。</b>Oishii Nippon 明确记载：「Shishimai L3 是<b>首个携带 L3 基因的 shishito 品种</b>。L3 基因负责辣椒对 tobamovirus（烟草花叶病毒属）感染的<b>过敏反应（hypersensitive response）</b>，其赋予的抗性是目前描述中最有效的之一。」Johnny's 对应标注为 <b>TMV races 0–2（High）、ToMV（High）</b>。<br><br>
+    而狮子唐<b>没有官方病毒高抗编号</b>——它只是「综合抗常见病虫害较好」，遇到花叶病毒仍可能中招。在阳台通风差、蚜虫传毒的环境下，<b>这是两者最硬核的差别</b>。
+  </div>
+  <table>
+    <thead>
+      <tr><th>病害</th><th class="cSH-col">狮子唐</th><th class="cMA-col">狮子舞</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>烟草花叶病毒 TMV / ToMV</td><td class="cSH-col">无高抗编号，易感</td><td class="cMA-col"><b>L3 基因高抗（races 0–2）</b></td></tr>
+      <tr><td>常见病虫害</td><td class="cSH-col">综合抗性较好</td><td class="cMA-col">综合抗性较好 + 病毒高抗</td></tr>
+      <tr><td>阳台实战意义</td><td class="cSH-col">需防蚜虫传毒、及时摘病叶</td><td class="cMA-col">病毒防线显著更强，省心</td></tr>
+    </tbody>
+  </table>
+
+  <h2>七、株型与栽培管理</h2>
+  <table>
+    <thead>
+      <tr><th>管理项</th><th class="cSH-col">狮子唐</th><th class="cMA-col">狮子舞</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>株型</td><td class="cSH-col">紧凑直立，一般不需支架</td><td class="cMA-col">较松散（floppy），<b>需支架</b>扶正</td></tr>
+      <tr><td>整枝</td><td class="cSH-col">打掉头几朵花促壮苗</td><td class="cMA-col">同样摘除初花 3–5 朵促生长</td></tr>
+      <tr><td>采收频率</td><td class="cSH-col">勤采刺激连续坐果</td><td class="cMA-col">每周 2–3 次，延迟采收会抑花减产</td></tr>
+      <tr><td>过熟风险</td><td class="cSH-col">转红更甜</td><td class="cMA-col">转红变辣，<b>宜早采</b></td></tr>
+    </tbody>
+  </table>
+
+  <h2>八、产量</h2>
+  <p>两个品种株型相近、挂果密集，家庭盆作单株均约 <b>50–100+ 果</b>。狮子舞因 F1 整齐度高、抗病毒减少病衰，<b>商业/大棚产量更稳定</b>；狮子唐靠 OP 的皮实也能高产，但一旦染病毒会明显减产。两者在阳台自吃场景下单株实重差别不大。</p>
+
+  <h2>九、阳台 / 容器种植适配</h2>
+  <div class="grid2">
+    <div class="card cSH-card">
+      <h3>狮子唐容器方案</h3>
+      <ul>
+        <li>盆：≥ 19 L（5 加仑），单株一盆。</li>
+        <li>株距：盆内单株；地栽 45–60 cm。</li>
+        <li>光照：全日照 6–10 小时。</li>
+        <li>管理：基本粗放，紧凑不需支架。</li>
+      </ul>
+    </div>
+    <div class="card cMA-card">
+      <h3>狮子舞容器方案</h3>
+      <ul>
+        <li>盆：≥ 19 L，单株一盆；<b>务必立支架</b>。</li>
+        <li>株距：盆内单株；地栽约 30–45 cm。</li>
+        <li>光照：全日照，夏遮阴。</li>
+        <li>管理：初花摘除、勤采、防倒伏。</li>
+      </ul>
+    </div>
+  </div>
+
+  <h2>十、广西来宾气候适配</h2>
+  <p>来宾：年均温 20.7°C、7 月均温 28.6°C、极端 38.9°C、无霜期 331 天、年降水 1360 mm（4–8 月占 70%）、红壤偏酸。两个品种在此的适配要点：</p>
+  <table>
+    <thead>
+      <tr><th>来宾因子</th><th class="cSH-col">狮子唐</th><th class="cMA-col">狮子舞</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>331 天无霜</td><td class="cSH-col">多年生轻松落地</td><td class="cMA-col">同左（同 C. annuum 管理型多年生）</td></tr>
+      <tr><td>7–8 月 35°C+</td><td class="cSH-col">需拉遮阳网，否则落花</td><td class="cMA-col">同左；喜 22–30°C 开花，高温需遮阴</td></tr>
+      <tr><td>4–8 月集中降水</td><td class="cSH-col">需避雨棚 + 高垄防病</td><td class="cMA-col">同左；L3 抗病毒但<b>不抗涝</b>，仍怕根腐</td></tr>
+      <tr><td>红壤偏酸</td><td class="cSH-col" colspan="2">定植前按手册铁律：调酸（生石灰）+ 接根瘤菌 + 绿肥养地 + 翻压后隔 2–3 周</td></tr>
+      <tr><td>病毒高发环境</td><td class="cSH-col">阳台需主动防蚜虫传毒</td><td class="cMA-col"><b>L3 基因在此价值最大</b>，天然抗病毒防线</td></tr>
+    </tbody>
+  </table>
+  <div class="box">
+    <b>三件套 + 病毒防线：</b>「避雨棚 + 遮阳网 + 高垄」是拿产量前提；此外，来宾高温高湿是病毒/疫病高发地——<b>狮子舞的 L3 基因相当于自带一道病毒保险</b>，对阳台新手尤其友好。
+  </div>
+
+  <h2>十一、来宾栽培时间表（建议）</h2>
+  <div class="tl">
+    <div class="it"><div class="t">春茬（主推）</div>1–2 月室内育苗（8–10 周）；3 月定植避雨棚；4–5 月始收；连收到 7 月高温前。</div>
+    <div class="it"><div class="t">夏管</div>7–8 月拉遮阳网、控水防病；两品种均可能短暂落花，属正常。</div>
+    <div class="it"><div class="t">秋茬</div>7 月中下旬育苗、8 月定植；9–12 月采收，秋凉坐果恢复。</div>
+    <div class="it"><div class="t">越冬续产</div>秋末剪老枝、留 15–20 cm 高茬，控水停肥越冬；开春复剪重发（管理型多年生，狮子舞每年需重新购 F1 种）。</div>
+  </div>
+
+  <h2>十二、采收与食用</h2>
+  <div class="lead">两者吃法几乎一致，都是「油煎撒盐」的日式前菜路线；差异只在<b>辣度与采收时机</b>。</div>
+  <ul>
+    <li><b>狮子唐</b>：青果油煎/烤/天妇罗，整食近无辣；转红更甜。</li>
+    <li><b>狮子舞</b>：同样油煎/烤/串烧（yakitori）/天妇罗；<b>深绿时（3–5″）即采</b>，过熟转红会变辣；油炸时戳孔防爆。</li>
+  </ul>
+
+  <h2>十三、路线地图（你现有手册怎么分类）</h2>
+  <div class="box b">
+    <b>零辣多年生路线（C. chinense）：</b>哈巴纳达、Roulette、特立尼达香水、NuMex Suave —— 风味三/四剑客。<br>
+    <b>近无辣日式小椒（C. annuum OP）：</b><b>狮子唐</b> —— 可留种、省心、烧烤档。<br>
+    <b>微辣日式升级小椒（C. annuum F1 + L3）：</b><b>狮子舞</b> —— 抗病毒、微辣、每年购种。<br>
+    <b>微辣本帮椒（C. annuum F1）：</b>杭椒、湘研95/55 —— 炒菜档。<br>
+    <b>高产甜椒（C. annuum）：</b>太空椒、红英达、中椒115 —— 冲产量。
+  </div>
+
+  <h2>十四、选型结论</h2>
+  <div class="verdict">
+    <h3>怎么选</h3>
+    <p><b>1. 要「近无辣、可留种、最省心」→ 选狮子唐。</b> 50–200 SHU、OP 可年年自留种、株型紧凑不需支架，是容器种植标杆。代价：无病毒高抗编号，阳台需防蚜虫传毒。</p>
+    <p><b>2. 要「微辣有胡椒感、抗病毒更抗造、少操心病害」→ 选狮子舞。</b> L3 基因对烟草花叶病毒高抗，是本质升级；F1 整齐高产。代价：微辣（敏感者能尝到）、F1 不可留种、需支架、过熟变辣宜早采。</p>
+    <p><b>3. 两棵都种、各取所长：</b>狮子唐当「无辣惊喜的省心老味道」，狮子舞当「微辣抗病毒的主力新版本」——你来宾阳台就同时拥有了日式小椒的「稳」与「强」两代。</p>
+    <p class="lead"><b>一句话：</b>狮子唐是「无辣可留种的老种」，狮子舞是「微辣抗病毒的 F1 升级种」。同一日本 shishito 血脉，一个求稳、一个求强。</p>
+  </div>
+
+  <div class="foot">
+    <b>数据来源</b><br>
+    · 狮子唐：Gardenia（Capsicum annuum 'Shishito' 栽培指南）、Plant Reference、BloomingExpert、PlantNative、RASA / Peaceful Valley（种子性状页，含 SHU、抗性、容器友好）；Frontiers in Plant Science 2022（Shql3/Shql7 辣味遗传位点）。<br>
+    · 狮子舞：Johnny's Selected Seeds（Shishimai F1 产品页：Heat Scale Slightly Hot、TMV races 0–2 High / ToMV High、60 绿/80 红、需支架）；Oishii Nippon Project（Shishimai 产品页：C. annuum F1、L3 基因为首个 shishito 抗病毒基因、50–60 天采收、过熟转红变辣）；Ingegnoli（F1 杂交种性状、65–75 天结果、7–8 cm 采收）。<br>
+    · 来宾气候常量：本系列前作一致采用（年均温 20.7°C / 无霜期 331 天 / 年降水 1360mm / 红壤偏酸）。<br>
+    · 辣度描述为区间/官方标度而非绝对值；狮子舞精确 SHU 文献未统一给出，已如实标注。
+  </div>
+
+</div>
+</body>
+</html>
