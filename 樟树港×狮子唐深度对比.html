@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>樟树港辣椒 × 狮子唐(shishito) 深度对比 · 家庭阳台种植适配版</title>
+<style>
+  :root{
+    --bg:#fbf7f0; --panel:#ffffff; --ink:#3a2a16; --muted:#6b5a44;
+    --cZS:#1f7a47; --cZS-soft:#e3f1e8; --cZS-line:#aed8c1;
+    --cSH:#b5651d; --cSH-soft:#fbeede; --cSH-line:#e7c79a;
+    --gold:#b8791a; --gold-soft:#fbeede; --line:#e6dccb; --chip:#f0e7d6;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;
+    line-height:1.75;font-size:16px;}
+  .cover{background:linear-gradient(135deg,#e3f1e8 0%,#f3ece0 50%,#fbeede 100%);
+    padding:46px 30px 38px;border-bottom:4px solid var(--cZS-line);}
+  .cover h1{margin:0 0 8px;font-size:31px;color:#14502f;letter-spacing:.5px;}
+  .cover .sub{font-size:17px;color:#6b3a1e;font-weight:600;}
+  .cover .meta{margin-top:14px;font-size:13px;color:#8a6b4a;line-height:1.6;}
+  .tagrow{margin-top:16px;display:flex;flex-wrap:wrap;gap:8px;}
+  .tag{background:var(--chip);color:#6b4a22;padding:4px 11px;border-radius:14px;font-size:12.5px;border:1px solid var(--line);}
+  .wrap{max-width:980px;margin:0 auto;padding:26px 20px 60px;}
+  h2{margin:38px 0 12px;font-size:23px;color:#14502f;border-left:6px solid var(--cZS);padding-left:12px;}
+  h3{margin:24px 0 8px;font-size:18px;color:var(--gold);}
+  p{margin:10px 0;}
+  .lead{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px 20px;margin:18px 0;color:var(--muted);}
+  .lead b{color:var(--ink);}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin:14px 0;box-shadow:0 2px 8px rgba(120,80,30,.05);}
+  .cZS-card{border-top:5px solid var(--cZS);}
+  .cSH-card{border-top:5px solid var(--cSH);}
+  .card h3{margin-top:0;}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  @media(max-width:680px){.grid2{grid-template-columns:1fr;}}
+  table{width:100%;border-collapse:collapse;margin:14px 0;font-size:14.5px;background:var(--panel);}
+  th,td{border:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top;}
+  thead th{background:var(--gold-soft);color:#8a5a14;font-weight:700;}
+  .cZS-col{background:var(--cZS-soft);}
+  .cSH-col{background:var(--cSH-soft);}
+  tbody tr:nth-child(even){background:#fcf8f0;}
+  .tl{position:relative;margin:18px 0 18px 8px;padding-left:26px;border-left:3px solid var(--cZS-line);}
+  .tl .it{position:relative;margin:0 0 16px;}
+  .tl .it::before{content:"";position:absolute;left:-35px;top:4px;width:14px;height:14px;border-radius:50%;background:var(--cZS);border:3px solid #fff;box-shadow:0 0 0 2px var(--cZS-line);}
+  .tl .it .t{font-weight:700;color:var(--cZS);}
+  .box{background:var(--cZS-soft);border:1px solid var(--cZS-line);border-radius:12px;padding:14px 18px;margin:16px 0;}
+  .box.g{background:var(--cSH-soft);border-color:var(--cSH-line);}
+  .box.g b{color:var(--cSH);}
+  .box.b{background:#eef3fb;border-color:#b9cdee;}
+  .box.b b{color:#1f4f8a;}
+  .box b{color:var(--cZS);}
+  .quick{background:var(--panel);border:1px dashed var(--gold);border-radius:12px;padding:16px 20px;margin:18px 0;}
+  .quick h3{color:var(--gold);}
+  ul,ol{margin:8px 0 8px 4px;padding-left:22px;}
+  li{margin:6px 0;}
+  .pill{display:inline-block;background:var(--chip);border-radius:10px;padding:2px 9px;font-size:13px;color:#6b4a22;margin:2px 3px 2px 0;border:1px solid var(--line);}
+  .foot{margin-top:34px;font-size:12.5px;color:#8a6b4a;border-top:1px solid var(--line);padding-top:14px;line-height:1.7;}
+  .verdict{background:linear-gradient(135deg,#e3f1e8,#fbeede);border:1px solid var(--cZS-line);border-radius:14px;padding:18px 22px;margin:20px 0;}
+  .verdict h3{color:#14502f;margin-top:0;}
+  code{background:var(--chip);padding:1px 6px;border-radius:5px;font-size:13px;}
+</style>
+</head>
+<body>
+
+<div class="cover">
+  <h1>樟树港辣椒 × 狮子唐(shishito) 深度对比</h1>
+  <div class="sub">中国地标"天价温柔椒" vs 日本国民"近无辣小椒" · 家庭阳台种植适配评估</div>
+  <div class="meta">文档版本 v1.0 ｜ 编写日期 2026-09-06 ｜ 评估地：广西来宾（年均温 20.7°C / 无霜期 331 天 / 年降水 1360mm / 红壤偏酸）<br>
+  本手册是《狮子唐×狮子舞》《狮子唐×杭椒》的姐妹篇，把镜头拉回<b>中国顶级微辣地标椒</b>——樟树港，与日本 shishito 正面对决。两者都是"皮薄、微辣、娇贵、宜盆"的温柔椒，但身价与脾气天差地别。</div>
+  <div class="tagrow">
+    <span class="tag">湖南湘阴地标</span>
+    <span class="tag">C. annuum 同物种</span>
+    <span class="tag">微辣 vs 近无辣</span>
+    <span class="tag">都可留种</span>
+    <span class="tag">娇贵 vs 省心</span>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <div class="verdict">
+    <h3>一句话结论</h3>
+    <p><b>樟树港</b>是"辣椒界的爱马仕"——微辣渐进、清香皮糯、头茬卖 300 元/斤，但<b>抗病抗逆差、不耐高温、亩产仅 2000 斤</b>，是娇贵到需要全程呵护的"贵族"；<b>狮子唐</b>是平民近无辣小椒——50–200 SHU、约 1/10 偶辣、抗常见病虫害、容器友好、价格亲民。</p>
+    <p>两者都<b>皮薄、微辣、宜盆、可留种</b>，但樟树港的"微辣"比狮子唐高约 <b>10–30 倍</b>，且对来宾 7–8 月 35°C 高温几乎零容忍（风味尽失），<b>家庭阳台要种出真樟树港味，必须上大棚控温 25–30°C</b>；狮子唐则更扛造、好上手。<b>想挑战地标风味选樟树港（需投资环控），想省心近无辣选狮子唐。</b></p>
+  </div>
+
+  <h2>一、起源故事：200 年湖南老种 vs 日本传统小椒</h2>
+  <div class="grid2">
+    <div class="card cZS-card">
+      <h3>樟树港辣椒（中国 · 湖南湘阴）</h3>
+      <p>产自<b>湖南省岳阳市湘阴县樟树镇</b>，依傍湘江、紧接洞庭湖的低山岗地盆地，200 余年种植史。2012 年获<b>国家农产品地理标志</b>、2013 年获地理标志证明商标，并入选名特优新农产品。</p>
+      <p>种子曾随<b>神舟十四号</b>上太空做诱变育种（"一代天椒"）。是<b>未经人工杂交的地方传统种</b>，靠自留种延续，地标保护下甚至"不能人工选育改良"。</p>
+    </div>
+    <div class="card cSH-card">
+      <h3>狮子唐 shishito（日本）</h3>
+      <p>日本传统<b>开放式授粉（OP）</b>小椒，日语"獅子唐"指果实皱尖似狮头。是日本烧烤店、居酒屋的国民级小椒，早已商品化、种子全球流通。</p>
+      <p>与狮子舞（shishimai）同属 shishito 血脉，但狮子唐是<b>可留种的 OP 老种</b>，农户自家采种即可延续，不依赖每年购 F1。</p>
+    </div>
+  </div>
+
+  <h2>二、辣度硬对比：微辣贵族 vs 近无辣平民</h2>
+  <table>
+    <thead><tr><th>维度</th><th class="cZS-col">樟树港辣椒</th><th class="cSH-col">狮子唐 shishito</th></tr></thead>
+    <tbody>
+      <tr><td><b>辣度档位</b></td><td class="cZS-col">微辣 → 中辣（渐进）</td><td class="cSH-col">近无辣（约 1/10 偶辣）</td></tr>
+      <tr><td><b>辣度数值</b></td><td class="cZS-col">辣椒素 0.06–0.2 g/kg；按含量粗算约 <b>1000–4500 SHU</b>（换算值，非实测）</td><td class="cSH-col"><b>50–200 SHU</b>（文献实测区间）</td></tr>
+      <tr><td><b>辣感变化</b></td><td class="cZS-col">前期微辣香甜 → 中期中辣香脆 → 后期辣而有香</td><td class="cSH-col">基本无辣，偶尔抽到一颗带辣（"抽奖式"惊喜）</td></tr>
+      <tr><td><b>相对倍数</b></td><td class="cZS-col" colspan="2" style="text-align:center;">樟树港辣度约为狮子唐的 <b>10–30 倍</b></td></tr>
+    </tbody>
+  </table>
+  <div class="box b"><b>换算说明：</b>樟树港公开的是"辣椒素类物质总量 0.09–0.29 g/kg"，按 1 mg/kg ≈ 16 SHU 粗算得约 1000–4500 SHU。这是<b>推算值</b>而非直接 Scoville 实测；且樟树港以<b>嫩果期</b>采食为主，实际入口感更接近"微辣清香"而非"中辣灼烧"，别被换算上限吓到。</div>
+
+  <h2>三、风味对比：香糯渐进 vs 清爽近无</h2>
+  <div class="grid2">
+    <div class="card cZS-card">
+      <h3>樟树港：皮薄肉糯、清香独特</h3>
+      <ul>
+        <li>口感关键词：<b>香、脆、微甜、皮薄无渣、肉糯</b></li>
+        <li>椒香浓烈且明显高于普通椒，清炒时<b>皮肉不分离</b></li>
+        <li>味纯不涩，独有清香；"内敛的辣，像左宗棠的脾气"（当地俗语）</li>
+        <li>以<b>嫩果期（5–8 cm）</b>风味著称，过熟转红辣味上升</li>
+      </ul>
+    </div>
+    <div class="card cSH-card">
+      <h3>狮子唐：清爽近无辣、宜烤宜煎</h3>
+      <ul>
+        <li>口感关键词：<b>薄皮、清甜、近乎无辣</b></li>
+        <li>日式料理标配：整椒油煎/炭烤，起皱微焦最香</li>
+        <li>偶辣个体带来"抽奖"趣味，整体平稳不刺激</li>
+        <li>适合直接当零嘴椒、下酒菜</li>
+      </ul>
+    </div>
+  </div>
+
+  <h2>四、植物学与株型：都矮小紧凑</h2>
+  <table>
+    <thead><tr><th>维度</th><th class="cZS-col">樟树港辣椒</th><th class="cSH-col">狮子唐 shishito</th></tr></thead>
+    <tbody>
+      <tr><td><b>株高</b></td><td class="cZS-col">30–50 cm（极矮、分枝密集）</td><td class="cSH-col">45–60 cm（紧凑）</td></tr>
+      <tr><td><b>开展度</b></td><td class="cZS-col">约 35–40 cm</td><td class="cSH-col">紧凑、一般不需支架</td></tr>
+      <tr><td><b>生长型</b></td><td class="cZS-col">有限分枝辣椒类型</td><td class="cSH-col">无限生长（可多年生续产）</td></tr>
+      <tr><td><b>果型</b></td><td class="cZS-col">羊角形，长 5–8 cm，果径 1–1.5 cm，单果 5–8 g；青果浅绿、熟果暗红，果表纵棱皱褶，果顶尖有微凹紫花蒂印</td><td class="cSH-col">小锥形皱皮，单株结 50–100+ 果</td></tr>
+    </tbody>
+  </table>
+  <div class="box"><b>阳台优势：</b>两者株高都不到 60 cm，是<b>容器种植的标杆级好种</b>——一个 20 L 盆/株即可，不占地方、不挡光。</div>
+
+  <h2>五、抗病抗逆：娇贵贵族 vs 皮实平民（关键差异）</h2>
+  <div class="grid2">
+    <div class="card cZS-card">
+      <h3>樟树港：抗病抗逆差</h3>
+      <p>文献与报道一致指出樟树港"<b>抗病抗逆性差、不耐高温、怕水（根系少）</b>"，是限制产量提升的核心因素。需全程精心呵护、禁用催熟剂、轮作休耕 3 年以上。</p>
+      <p>最佳生长温 <b>25–30°C</b>，高于此温度<b>风味即改变</b>，因此原产地仅冬春产、夏季休。</p>
+    </div>
+    <div class="card cSH-card">
+      <h3>狮子唐：抗常见病虫害、比甜椒省心</h3>
+      <p>文献一致记载 shishito <b>抗常见病虫害、容器友好度最高</b>，比甜椒类省心得多。虽也怕盛夏高温落花，但整体 vigor 与抗病性明显强于樟树港。</p>
+      <p>无官方病毒高抗编号（那是狮子舞的 L3 基因卖点），但日常阳台管理轻松。</p>
+    </div>
+  </div>
+  <div class="box g"><b>诚实结论：</b>在"皮实好养"这一项，狮子唐<b>碾压</b>樟树港。樟树港的娇贵不是缺点而是身份——它的独特风味正来自对环境的极端挑剔，也因此它只能在特定微气候（湘江盆地冲积土）才"对味"，离了环境就变味。</div>
+
+  <h2>六、产量与价格：天价 vs 平民</h2>
+  <table>
+    <thead><tr><th>维度</th><th class="cZS-col">樟树港辣椒</th><th class="cSH-col">狮子唐 shishito</th></tr></thead>
+    <tbody>
+      <tr><td><b>核心区亩产</b></td><td class="cZS-col">仅约 <b>1000–2000 斤</b>（远不及一般辣椒万斤）</td><td class="cSH-col">单株 50–100+ 果，家庭产量稳定可观</td></tr>
+      <tr><td><b>价格</b></td><td class="cZS-col">头茬特级可卖 <b>300 元/斤</b>，上市初期达 600 元/kg；"辣椒中的爱马仕"</td><td class="cSH-col">普通种子辣椒价，平民日常菜</td></tr>
+      <tr><td><b>贵/便宜原因</b></td><td class="cZS-col">产量极少 + 地标限种 3000 余亩 + 风味独特 + 需精管</td><td class="cSH-col">易种高产、种子普及</td></tr>
+    </tbody>
+  </table>
+  <div class="box b"><b>外地复刻提醒：</b>有报道称襄阳等地大棚"复刻"樟树港可达亩产 8000 斤——但那是<b>精准复刻环境（吊绳、地布、水帘、遮阳网）</b>的结果，且风味是否等同核心区仍有争议。家庭阳台想冲产量，樟树港不是好选择；想尝风味，少量精养即可。</div>
+
+  <h2>七、多年生与栽培周期：越冬长季 vs 春播续产</h2>
+  <div class="grid2">
+    <div class="card cZS-card">
+      <h3>樟树港：本质是越冬长季栽培</h3>
+      <p>原产地生长期为<b>上年 10 月 – 翌年 5 月</b>：元宵节后栽苗，4 月底头茬上市，入夏采收结束。这其实是<b>避开盛夏的越冬季栽培模式</b>。</p>
+      <p>辣椒皆热带多年生，在来宾 331 天无霜区本可续 2–3 年；但樟树港<b>不耐高温</b>，盛夏必须大棚控温 25–30°C 才能续产，否则风味尽失、植株衰败。</p>
+    </div>
+    <div class="card cSH-card">
+      <h3>狮子唐：春播 + 可多年生</h3>
+      <p>春播育苗，无限生长，盛果期长；在来宾无霜区可借老桩越冬/剪枝换头<b>续 2–3 年</b>（同《多年生甜椒》技术）。</p>
+      <p>夏季同样需遮阳网避暑，但 vigor 比樟树港强，续产更稳。</p>
+    </div>
+  </div>
+
+  <h2>八、留种：两者竟都可留种！</h2>
+  <p>这是与湘研 95/55（F1 不可留种）最大的不同——<b>樟树港与狮子唐都属可自留种的地方/OP 类型</b>：</p>
+  <ul>
+    <li><b>樟树港</b>：未经杂交的<b>地方传统种，靠自留种延续</b>；但地标保护下"不能人工选育改良"，且离了樟树镇环境易变味，自家留种风味可能漂移。</li>
+    <li><b>狮子唐</b>：<b>OP 开放授粉，可留种</b>，与你已有的哈巴纳达逻辑一致，能建自家种子库。</li>
+  </ul>
+  <div class="box"><b>阳台种子党注意：</b>想建"自家种子库"，狮子唐比樟树港更靠谱——樟树港留种后风味易因环境改变而退化，不如直接买核心区种源。</div>
+
+  <h2>九、家庭阳台种植方案</h2>
+  <div class="grid2">
+    <div class="card cZS-card">
+      <h3>樟树港阳台要点</h3>
+      <ul>
+        <li>盆 ≥ 20 L/株，疏松腐殖土、排水透气</li>
+        <li><b>必须大棚/阳台控温 25–30°C</b>，盛夏水帘+遮阳网</li>
+        <li>怕涝：湿而不涝，果实膨大期控水</li>
+        <li>留 7–8 主枝、次果疏除；草木灰防炭疽</li>
+        <li>晴天露干后采，留 1 cm 果柄保鲜</li>
+        <li>轮作休耕意识：同盆土每年换/消毒</li>
+      </ul>
+    </div>
+    <div class="card cSH-card">
+      <h3>狮子唐阳台要点</h3>
+      <ul>
+        <li>盆 ≥ 20 L/株，常规菜园土即可</li>
+        <li>盛夏拉遮阳网避暑，无需控温大棚</li>
+        <li>盛花期轻摇或毛笔辅助授粉</li>
+        <li>抗病性较好，少防病压力</li>
+        <li>适时采收（皮皱起即可），促续果</li>
+        <li>可留种，建自家种子库</li>
+      </ul>
+    </div>
+  </div>
+
+  <h2>十、来宾适配时间表（关键！）</h2>
+  <div class="tl">
+    <div class="it"><div class="t">10 月 – 翌年 2 月（最优栽期）</div>来宾年均 20.7°C、冬暖，樟树港可仿原产地<b>越冬季栽</b>；狮子唐也可秋播越冬，避开盛夏。<br>红壤按铁律：调酸（生石灰）+ 接根瘤菌 + 绿肥养地 + 翻压后隔 2–3 周定植。</div>
+    <div class="it"><div class="t">3 – 5 月（黄金采期）</div>气温 25–30°C 区间，<b>樟树港风味最佳、狮子唐盛果</b>；两者都进入高产优质期。</div>
+    <div class="it"><div class="t">6 月</div>气温攀升，樟树港开始"风味走样"；狮子唐仍可续产但坐果略降。</div>
+    <div class="it"><div class="t">7 – 8 月（命门）</div>来宾 7 月均温 28.6°C、极端 38.9°C。<b>樟树港必须进大棚控温 25–30°C（水帘+遮阳网），否则风味尽失、几乎停采</b>；狮子唐拉遮阳网+避雨棚仍能勉强续。</div>
+    <div class="it"><div class="t">9 – 10 月</div>秋凉回 25–30°C，樟树港（若保住植株）有第二波；狮子唐秋果品质回升。</div>
+  </div>
+
+  <h2>十一、复用你的生态方案"铁律"</h2>
+  <p>两者都靠你已有的生态农业基础设施拿产量与品质：</p>
+  <ul>
+    <li><b>避雨三件套</b>：避雨棚 + 遮阳网 + 高垄排水（来宾 4–8 月降水占 70%，防炭疽/疫病）</li>
+    <li><b>红壤调酸铁律</b>：生石灰调酸 + 根瘤菌剂 + 绿肥养地 + 翻压隔 2–3 周</li>
+    <li><b>黑水虻虫沙</b>：偏碱含钙，补红壤缺素、防脐腐，两者幼果期都受益</li>
+    <li><b>樟树港额外需求</b>：因娇贵怕高温，需在三件套基础上<b>加装水帘/雾化控温</b>，把盛夏棚内压在 30°C 内</li>
+  </ul>
+
+  <h2>十二、与全系列路线地图</h2>
+  <table>
+    <thead><tr><th>品种</th><th>辣度</th><th>多年生性</th><th>阳台定位</th></tr></thead>
+    <tbody>
+      <tr><td class="cZS-col"><b>樟树港</b></td><td class="cZS-col">微辣（1000–4500 SHU 推算）</td><td class="cZS-col">越冬长季栽培，需控温续产</td><td class="cZS-col">地标风味挑战（需投资环控）</td></tr>
+      <tr><td>哈巴纳达 / Roulette</td><td>0 SHU 完全无辣</td><td>天生易多年生 3–5 年</td><td>零辣风味主力</td></tr>
+      <tr><td>狮子唐 shishito</td><td>50–200 SHU 近无辣</td><td>管理型多年生 2–3 年</td><td>近无辣省心小椒</td></tr>
+      <tr><td>杭椒</td><td>4000–7500 SHU 微辣</td><td>管理型多年生</td><td>微辣本帮产量</td></tr>
+      <tr><td>湘研 95/55</td><td>微辣（F1）</td><td>可续但 95 病毒敏感</td><td>微辣日常炒菜</td></tr>
+    </tbody>
+  </table>
+
+  <h2>十三、选型结论</h2>
+  <div class="verdict">
+    <h3>樟树港 or 狮子唐？看你要什么</h3>
+    <p><b>选樟树港，如果：</b>你想挑战"辣椒界爱马仕"的地标风味、愿意为控温大棚/水帘投资、接受低产高价、把它当"园中珍品"精养。来宾冬暖无霜其实比樟树镇更利于越冬季栽，<b>但盛夏 35°C 是死穴，不控温别说风味、连植株都难保</b>。</p>
+    <p><b>选狮子唐，如果：</b>你要近无辣、省心、抗病、可留种、平民价，随手种随手收。它和樟树港一样皮薄宜盆，却皮实得多，是阳台"零压力温柔椒"首选。</p>
+    <p><b>进阶玩法：</b>两棵都种——樟树港占你大棚控温区当"招牌珍品"，狮子唐占普通阳台区当"日常零辣零食椒"，正好凑齐家庭菜园的<b>微辣地标档 + 近无辣省心档</b>。再配上已有的哈巴纳达（零辣），三档辣度全覆盖。</p>
+  </div>
+
+  <h2>十四、数据来源与诚实标注</h2>
+  <div class="foot">
+    <p><b>樟树港数据来源：</b>百度百科（农产品地理标志公告第 2651 号）、中国农业农村信息网/岳阳晚报报道（邹学校团队辣椒科技小院）、三湘都市报、耕种帮种植网、百度爱采购栽培指南、相关学术论文（嫩果期品质研究，赵书恒等 2023 / 邹学校等 2024）。</p>
+    <p><b>狮子唐数据来源：</b>多种子商性状页与园艺文献（shishito 辣度 50–200 SHU、株高 45–60 cm、抗常见病虫害、容器友好、OP 可留种）。</p>
+    <p><b>诚实标注：</b>① 樟树港 SHU 为按辣椒素含量推算值（非直接 Scoville 实测），仅作相对量级参考；② 亩产/价格取核心产区与报道区间，外地复刻数据已单列说明；③ 抗病性、多年生性描述为品种普遍特性，实际表现受种子来源、环境与管理影响；④ 樟树港风味高度依赖原产微气候，异地（含来宾）种植风味可能漂移，本手册已如实提示。</p>
+    <p>本手册为家庭种植评估用途，非商业引种依据。辣度/产量区间仅供参考。</p>
+  </div>
+
+</div>
+</body>
+</html>
