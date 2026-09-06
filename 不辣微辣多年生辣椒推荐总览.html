@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>不辣 / 微辣 多年生辣椒推荐总览 · 广西来宾适配版</title>
+<style>
+  :root{
+    --bg:#fbf7f0; --panel:#ffffff; --ink:#3a2a16; --muted:#6b5a44;
+    --cG:#1f7a47; --cG-soft:#e3f1e8; --cG-line:#aed8c1;
+    --cO:#b5651d; --cO-soft:#fbeede; --cO-line:#e7c79a;
+    --gold:#b8791a; --gold-soft:#fbeede; --line:#e6dccb; --chip:#f0e7d6;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;
+    line-height:1.75;font-size:16px;}
+  .cover{background:linear-gradient(135deg,#e3f1e8 0%,#f3ece0 50%,#fbeede 100%);
+    padding:46px 30px 38px;border-bottom:4px solid var(--cG-line);}
+  .cover h1{margin:0 0 8px;font-size:31px;color:#14502f;letter-spacing:.5px;}
+  .cover .sub{font-size:17px;color:#6b3a1e;font-weight:600;}
+  .cover .meta{margin-top:14px;font-size:13px;color:#8a6b4a;line-height:1.6;}
+  .tagrow{margin-top:16px;display:flex;flex-wrap:wrap;gap:8px;}
+  .tag{background:var(--chip);color:#6b4a22;padding:4px 11px;border-radius:14px;font-size:12.5px;border:1px solid var(--line);}
+  .wrap{max-width:1000px;margin:0 auto;padding:26px 20px 60px;}
+  h2{margin:38px 0 12px;font-size:23px;color:#14502f;border-left:6px solid var(--cG);padding-left:12px;}
+  h3{margin:24px 0 8px;font-size:18px;color:var(--gold);}
+  p{margin:10px 0;}
+  .lead{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px 20px;margin:18px 0;color:var(--muted);}
+  .lead b{color:var(--ink);}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin:14px 0;box-shadow:0 2px 8px rgba(120,80,30,.05);}
+  .t1-card{border-top:5px solid var(--cG);}
+  .t2-card{border-top:5px solid var(--gold);}
+  .t3-card{border-top:5px solid var(--cO);}
+  .card h3{margin-top:0;}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  .grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;}
+  @media(max-width:680px){.grid2,.grid3{grid-template-columns:1fr;}}
+  table{width:100%;border-collapse:collapse;margin:14px 0;font-size:14px;background:var(--panel);}
+  th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top;}
+  thead th{background:var(--gold-soft);color:#8a5a14;font-weight:700;}
+  .cG-col{background:var(--cG-soft);}
+  .cO-col{background:var(--cO-soft);}
+  tbody tr:nth-child(even){background:#fcf8f0;}
+  .box{background:var(--cG-soft);border:1px solid var(--cG-line);border-radius:12px;padding:14px 18px;margin:16px 0;}
+  .box.o{background:var(--cO-soft);border-color:var(--cO-line);}
+  .box.o b{color:var(--cO);}
+  .box.b{background:#eef3fb;border-color:#b9cdee;}
+  .box.b b{color:#1f4f8a;}
+  .box b{color:var(--cG);}
+  .quick{background:var(--panel);border:1px dashed var(--gold);border-radius:12px;padding:16px 20px;margin:18px 0;}
+  .quick h3{color:var(--gold);}
+  ul,ol{margin:8px 0 8px 4px;padding-left:22px;}
+  li{margin:6px 0;}
+  .pill{display:inline-block;background:var(--chip);border-radius:10px;padding:2px 9px;font-size:12.5px;color:#6b4a22;margin:2px 3px 2px 0;border:1px solid var(--line);}
+  .pill.g{background:var(--cG-soft);border-color:var(--cG-line);color:#14502f;}
+  .pill.o{background:var(--cO-soft);border-color:var(--cO-line);color:#8a4a14;}
+  .foot{margin-top:34px;font-size:12.5px;color:#8a6b4a;border-top:1px solid var(--line);padding-top:14px;line-height:1.7;}
+  .verdict{background:linear-gradient(135deg,#e3f1e8,#fbeede);border:1px solid var(--cG-line);border-radius:14px;padding:18px 22px;margin:20px 0;}
+  .verdict h3{color:#14502f;margin-top:0;}
+  code{background:var(--chip);padding:1px 6px;border-radius:5px;font-size:13px;}
+</style>
+</head>
+<body>
+
+<div class="cover">
+  <h1>不辣 / 微辣 多年生辣椒 · 推荐总览</h1>
+  <div class="sub">广西来宾适配版 · 把 11 个单品种对比汇成一份买苗指南</div>
+  <div class="meta">文档版本 v2.0 ｜ 编写日期 2026-09-06 ｜ 评估地：广西来宾（年均温 20.7°C / 无霜期 331 天 / 年降水 1360mm / 红壤偏酸）<br>
+  本手册是《不太辣多年生辣椒品种清单》的<b>完整升级版</b>，整合了哈巴纳达 / Roulette / 特立尼达香水 / NuMex Suave / 橘子梦 / 狮子唐 / 狮子舞 / 樟树港 / 杭椒 / 湘研55·95 / 甜哈瓦那的全部数据，按"买什么、为什么、怎么种"重新分层推荐。</div>
+  <div class="tagrow">
+    <span class="tag">零辣 · 近无辣 · 微辣</span>
+    <span class="tag">多年生 / 长季栽培</span>
+    <span class="tag">广西来宾 331 天无霜</span>
+    <span class="tag">分层推荐 + 新手组合</span>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <div class="verdict">
+    <h3>一句话结论</h3>
+    <p><b>不辣又多年生</b>的真正天花板是 <b>C. chinense 哈瓦那甜型系</b>（哈巴纳达、Roulette、特立尼达香水、NuMex Suave）——它们<b>天生易多年生 3–5 年、零辣度、风味好</b>，是来宾阳台的"风味主力"，你已在种哈巴纳达。</p>
+    <p><b>微辣又想多年生</b>则落到 <b>C. annuum 管理型多年生</b>（狮子唐、狮子舞、樟树港、杭椒、湘研55）——靠老桩越冬/剪枝换头续 2–3 年，但每年大多需购 F1 种或自留种会漂移。</p>
+    <p><b>新手最省心组合</b>：哈巴纳达（零辣）+ 狮子唐（近无辣可留种）+ 湘研55（微辣抗病、柳州邻家验证）——<b>三档辣度全覆盖，且国内都能买到</b>。</p>
+  </div>
+
+  <h2>一、范围定义：什么算"不辣 / 微辣 多年生"</h2>
+  <div class="grid3">
+    <div class="card t1-card"><h3>不辣（零辣）</h3><p><b>0 SHU</b>。完全无灼烧感，儿童可食。代表：哈巴纳达、Roulette。</p></div>
+    <div class="card t2-card"><h3>近无辣</h3><p><b>0–500 SHU</b>。基本尝不出辣，偶有微刺/抽奖式偶辣。代表：橘子梦、特立尼达香水、NuMex Suave、狮子唐。</p></div>
+    <div class="card t3-card"><h3>微辣</h3><p><b>500–8000 SHU</b>。明显辣感但不冲，做菜提香。代表：狮子舞、樟树港、杭椒、湘研55/95。</p></div>
+  </div>
+  <div class="box"><b>"多年生"的两种含义（务必分清）：</b><br>
+  • <b>天生多年生</b>（C. chinense 哈瓦那系）：放着就活，3–5 年 vigor 衰减慢，几乎不用管。<br>
+  • <b>管理型多年生</b>（C. annuum 甜椒/牛角/小椒）：需主动老桩越冬 / 剪枝换头，第 2–3 年 vigor 明显递减，且 F1 杂交种不能留种。<br>
+  来宾 331 天无霜是两类都能落地的天选之地，但盛夏 35°C+ 是共同命门。</div>
+
+  <h2>二、推荐总表（按优先级分层）</h2>
+  <table>
+    <thead><tr><th>层级</th><th>品种</th><th>辣度(SHU)</th><th>物种 / 多年生性</th><th>来宾可行性</th><th>获取渠道</th></tr></thead>
+    <tbody>
+      <tr class="cG-col"><td><b>T1 零辣·天生多年生</b></td><td><b>哈巴纳达 Habanada</b></td><td>0</td><td>C. chinense · 3–5 年</td><td>★★★ 已在种</td><td>国内可买</td></tr>
+      <tr class="cG-col"><td></td><td><b>Roulette</b></td><td>0</td><td>C. chinense · 多年生</td><td>★★★ 抗病 HR Tm:0</td><td>海淘</td></tr>
+      <tr class="cG-col"><td></td><td><b>特立尼达香水 Trinidad Perfume</b></td><td>0–500</td><td>C. chinense · 多年生</td><td>★★★ 更耐温度波动</td><td>海淘/代购</td></tr>
+      <tr class="cG-col"><td></td><td><b>NuMex Suave 橙/红</b></td><td>0–850</td><td>C. chinense · 多年生</td><td>★★★ 早结果</td><td>海淘</td></tr>
+      <tr class="cO-col"><td><b>T2 近无辣·管理型</b></td><td><b>狮子唐 shishito</b></td><td>50–200</td><td>C. annuum · 2–3 年</td><td>★★★ 皮实省心</td><td>国内可买</td></tr>
+      <tr class="cO-col"><td></td><td><b>橘子梦 Tangerine Dream</b></td><td>0–50</td><td>C. annuum 有限生长</td><td>★★☆ 靠无霜越冬</td><td>国内可买(认种)</td></tr>
+      <tr class="cO-col"><td><b>T3 微辣·多年生/长季</b></td><td><b>狮子舞 shishimai</b></td><td>微辣(Slightly Hot)</td><td>C. annuum F1</td><td>★★★ 带 L3 抗病毒</td><td>海淘</td></tr>
+      <tr class="cO-col"><td></td><td><b>樟树港</b></td><td>1000–4500(推算)</td><td>C. annuum 越冬长季</td><td>★★☆ 需控温大棚</td><td>国内可买(防假)</td></tr>
+      <tr class="cO-col"><td></td><td><b>杭椒</b></td><td>4000–7500</td><td>C. annuum · 2–3 年</td><td>★★☆ 病毒易感</td><td>国内极易买</td></tr>
+      <tr class="cO-col"><td></td><td><b>湘研55</b></td><td>微辣</td><td>C. annuum F1</td><td>★★★ 抗病·柳州验证</td><td>国内极易买</td></tr>
+      <tr class="cO-col"><td></td><td><b>湘研95</b></td><td>微辣</td><td>C. annuum F1</td><td>★★☆ 病毒敏感</td><td>国内极易买</td></tr>
+      <tr><td><b>理论档·种不到</b></td><td>甜哈瓦那 Aji Dulce/Cachucha</td><td>0–1000</td><td>C. chinense · 多年生</td><td>✗ 国内无渠道</td><td>无</td></tr>
+    </tbody>
+  </table>
+
+  <h2>三、T1 零辣 · 天生多年生（首选，最省心）</h2>
+  <div class="grid2">
+    <div class="card t1-card"><h3>哈巴纳达 Habanada</h3>
+      <ul><li>0 SHU 完全无辣，热带果香带微烟甜</li><li>C. chinense，无限生长，多年生 3–5 年</li><li>2–3 kg/株·季，累计 3–5 kg</li><li>熟果橙/桃色，株高 60–90 cm</li><li><b>你已在种，是风味主力</b></li></ul></div>
+    <div class="card t1-card"><h3>Roulette</h3>
+      <ul><li>0 SHU，保留哈瓦那柑橘香无灼烧</li><li>C. chinense，2018 AAS 优胜（Bayer/Seminis）</li><li><b>HR Tm:0 烟草花叶病毒高抗</b>——菜地防病利器</li><li>熟果红色，长椭圆 8 cm / 12–22 g</li></ul></div>
+  </div>
+  <div class="grid2">
+    <div class="card t1-card"><h3>特立尼达香水 Trinidad Perfume</h3>
+      <ul><li>0–500 SHU，苹果/柑橘/花香复合</li><li>C. chinense，无限生长多年生</li><li>文献明确"比多数辣味 chinense 更耐温度波动"——来宾盛夏加分</li><li>簇生小果 2.5–4 cm，丰产</li></ul></div>
+    <div class="card t1-card"><h3>NuMex Suave 橙/红</h3>
+      <ul><li>0–850 SHU，新墨西哥州立大学选育</li><li>C. chinense，无限生长多年生</li><li>文献称"prolific，比经典哈瓦那早结果"</li><li>果 ~6 cm，橙/红两色可选</li></ul></div>
+  </div>
+  <div class="box"><b>T1 选型建议：</b>四棵都是 C. chinense，管理逻辑和你哈巴纳达手册完全通用。要<b>零风险无辣+已在种</b>选哈巴纳达；要<b>抗病红色果</b>加 Roulette；要<b>香气层次+耐热</b>加特立尼达香水；要<b>早结果多彩</b>加 NuMex Suave。四棵凑齐即"无辣哈瓦那四剑客"，海淘党进阶首选。</div>
+
+  <h2>四、T2 近无辣 · 管理型多年生（省心小椒）</h2>
+  <div class="grid2">
+    <div class="card t2-card"><h3>狮子唐 shishito</h3>
+      <ul><li>50–200 SHU 近无辣，约 1/10 偶辣（抽奖式）</li><li>C. annuum，管理型多年生 2–3 年</li><li>株高 45–60 cm 紧凑，单株 50–100+ 果</li><li><b>抗常见病虫害、比甜椒省心</b></li><li><b>OP 开放授粉可留种</b>——能建自家种子库</li></ul></div>
+    <div class="card t2-card"><h3>橘子梦 Tangerine Dream</h3>
+      <ul><li>0–50 SHU，脆甜，好种见效快</li><li>C. annuum 有限生长（总量定格）</li><li>原系小果 0.6–0.8 kg/株；市面厚肉型 1.5–2 kg/株</li><li>靠来宾 331 天无霜越冬续命，本质仍一年生</li><li>国内买种认准英文名 + "OP" 字样</li></ul></div>
+  </div>
+  <div class="box o"><b>T2 选型建议：</b>要<b>近无辣+可留种+皮实</b>，狮子唐是阳台"零压力温柔椒"首选（国内易买）；橘子梦胜在好种盆栽友好，但有限生长、不可留种。</div>
+
+  <h2>五、T3 微辣 · 多年生 / 长季栽培（提香炒菜）</h2>
+  <div class="grid2">
+    <div class="card t3-card"><h3>狮子舞 shishimai</h3>
+      <ul><li>微辣（Slightly Hot，高于狮子唐一个量级）</li><li>C. annuum F1 不可留种</li><li><b>首个携带 L3 基因 shishito 系</b>，对 TMV/ToMV 高抗</li><li>株型松散需支架，过熟转红变辣宜早采</li></ul></div>
+    <div class="card t3-card"><h3>樟树港</h3>
+      <ul><li>微辣（推算 1000–4500 SHU），皮薄肉糯清香</li><li>C. annuum 有限分枝，越冬长季栽培</li><li>株高 30–50 cm，头茬特级 300 元/斤（爱马仕椒）</li><li><b>娇贵：抗病抗逆差、不耐高温</b>，需大棚控温 25–30°C</li><li>自留种但离环境易变味</li></ul></div>
+  </div>
+  <div class="grid2">
+    <div class="card t3-card"><h3>杭椒</h3>
+      <ul><li>4000–7500 SHU 微辣，薄皮肥厚脆嫩</li><li>C. annuum，管理型多年生 2–3 年</li><li>亩产 3000–4000 kg，本帮炒菜主力</li><li>多 F1 不可留种，对病毒病/疫病/炭疽易感需防病</li></ul></div>
+    <div class="card t3-card"><h3>湘研55 / 95</h3>
+      <ul><li>均为微辣牛角椒 F1（不可留种）</li><li><b>湘研55</b>：抗病全面强、耐热耐旱，<b>柳州柳江穿山镇 150 亩规模成功</b>（邻家验证）</li><li><b>湘研95</b>：对 CMV/TMV 感病、耐热一般，不建议强行多年生</li><li>株高仅 70–80 cm，20 L 盆/株可阳台种</li></ul></div>
+  </div>
+  <div class="box o"><b>T3 选型建议：</b>要<b>微辣日常炒菜且国内好买</b>→ 湘研55（抗病+邻家验证）或杭椒（本帮风味）；要<b>微辣抗病毒</b>→ 狮子舞（海淘）或湘研55；要<b>挑战地标风味</b>→ 樟树港（需投资控温大棚，否則盛夏风味尽失）。</div>
+
+  <h2>六、新手推荐组合（直接照着买）</h2>
+  <div class="card">
+    <h3>组合 A · 零门槛国内购（推荐新手）</h3>
+    <ul>
+      <li><span class="pill g">零辣主力</span> 哈巴纳达（已在种）→ 多年生、风味好、完全无辣</li>
+      <li><span class="pill g">近无辣零食</span> 狮子唐 → 可留种、皮实、日式烧烤小椒</li>
+      <li><span class="pill o">微辣炒菜</span> 湘研55 → 抗病强、柳州邻家验证、国内易买</li>
+    </ul>
+    <p><b>覆盖：零辣 + 近无辣 + 微辣 三档，且国内全买得到，无需海淘。</b></p>
+  </div>
+  <div class="card">
+    <h3>组合 B · 海淘进阶（无辣哈瓦那四剑客）</h3>
+    <ul>
+      <li><span class="pill g">哈巴纳达</span> + <span class="pill g">Roulette</span>（抗病红果）+ <span class="pill g">特立尼达香水</span>（耐热香气）+ <span class="pill g">NuMex Suave</span>（早结果多彩）</li>
+    </ul>
+    <p><b>覆盖：四种零辣哈瓦那系，风味层次最丰富，多年生最省心；代价是需海淘引种。</b></p>
+  </div>
+  <div class="card">
+    <h3>组合 C · 微辣地标挑战</h3>
+    <ul>
+      <li><span class="pill o">樟树港</span>（大棚控温区当招牌珍品）+ <span class="pill o">杭椒</span>（本帮产量）+ <span class="pill g">狮子唐</span>（近无辣平衡）</li>
+    </ul>
+    <p><b>覆盖：微辣地标 + 微辣本帮 + 近无辣，适合已有控温大棚的玩家。</b></p>
+  </div>
+
+  <h2>七、获取渠道现实（诚实提醒）</h2>
+  <table>
+    <thead><tr><th>渠道</th><th>品种</th><th>备注</th></tr></thead>
+    <tbody>
+      <tr><td><b>国内易买</b></td><td>哈巴纳达、狮子唐、橘子梦、樟树港、杭椒、湘研55/95</td><td>淘宝/种子店有售；樟树港注意山寨多、认地标种源</td></tr>
+      <tr><td><b>需海淘/进口</b></td><td>Roulette、特立尼达香水、NuMex Suave、狮子舞</td><td>国际种子商（英美）有售，比 Aji 系好找；国内偶见代购</td></tr>
+      <tr><td><b>国内无渠道</b></td><td>甜哈瓦那 Aji Dulce / Cachucha</td><td>理论产量最高、不辣多年生，但国内基本买不到种，已排除</td></tr>
+    </tbody>
+  </table>
+
+  <h2>八、来宾适配铁律（所有品种通用）</h2>
+  <ul>
+    <li><b>红壤调酸铁律</b>：生石灰调酸 + 接根瘤菌剂 + 绿肥养地 + 翻压后隔 2–3 周定植。</li>
+    <li><b>避雨三件套</b>：避雨棚 + 遮阳网 + 高垄排水（来宾 4–8 月降水占 70%，防炭疽/疫病）。</li>
+    <li><b>盛夏命门</b>：7–8 月 35°C+，所有辣椒都需拉遮阳网；<b>樟树港必须大棚控温 25–30°C</b>（水帘+遮阳网），否则风味尽失。</li>
+    <li><b>黑水虻虫沙</b>：偏碱含钙，补红壤缺素、防脐腐，幼果期都受益。</li>
+    <li><b>331 天无霜红利</b>：C. chinense 天生多年生轻松落地；C. annuum 可借老桩越冬/剪枝换头续 2–3 年。</li>
+  </ul>
+
+  <h2>九、数据来源与诚实标注</h2>
+  <div class="foot">
+    <p><b>数据整合自本系列已发布手册：</b>《哈巴纳达种植手册》《TangerineDream×哈巴纳达》《Roulette×哈巴纳达》《特立尼达香水×哈巴纳达》《狮子唐×杭椒》《狮子唐×狮子舞》《樟树港×狮子唐》《湘研95号×湘研55号》《不太辣多年生辣椒品种清单》，以及康奈尔/Mazourek、Bayer/Seminis、新墨西哥州立大学、邹学校团队（樟树港）、多种子商性状页与园艺文献。</p>
+    <p><b>诚实标注：</b>① 樟树港 SHU 为按辣椒素含量推算值（非直接 Scoville 实测）；② 各品种辣度/产量多为区间，实际受种子来源、环境与管理影响；③ "多年生"分天生/管理型两类，F1 杂交种不可留种；④ 获取渠道为 2026-09 现状，可能随时间变化；⑤ 甜哈瓦那（Aji 系）国内无渠道，已如实排除。本手册为家庭种植评估用途，非商业引种依据。</p>
+  </div>
+
+</div>
+</body>
+</html>
