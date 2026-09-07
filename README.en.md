@@ -50,6 +50,7 @@
 | [Shishito × Hangjiao](狮子唐×杭椒深度对比.html) | Near-zero Japanese snack pepper vs mild Benbang hangjiao |
 | [Shishito × Shishimai](狮子唐×狮子舞深度对比.html) | Near-zero OP heirloom vs mild F1 virus-resistant (L3 gene) |
 | [Zhangshugang × Shishito](樟树港×狮子唐深度对比.html) | Mild geographic-premium pepper vs near-zero everyday pepper |
+| [Santa Fe Grande Analysis](SantaFeGrande分析_广西来宾适配版.html) | Mild yellow wax pepper (500–700 SHU) · OP saveable · TMV-resistant · high-yield container-friendly · yellow→orange→red gradient |
 
 ---
 

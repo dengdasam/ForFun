@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Santa Fe Grande(圣达菲/黄热辣椒)深度分析 · 广西来宾适配版</title>
+<style>
+  :root{
+    --bg:#fbf7f0; --panel:#ffffff; --ink:#3a2a16; --muted:#6b5a44;
+    --cG:#1f7a47; --cG-soft:#e3f1e8; --cG-line:#aed8c1;
+    --cO:#b5651d; --cO-soft:#fbeede; --cO-line:#e7c79a;
+    --gold:#b8791a; --gold-soft:#fbeede; --line:#e6dccb; --chip:#f0e7d6;
+    --cy:#d39a00; --cy-soft:#fcf3d6; --cy-line:#ecd089;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;
+    line-height:1.75;font-size:16px;}
+  .cover{background:linear-gradient(135deg,#fcf3d6 0%,#f3ece0 50%,#e3f1e8 100%);
+    padding:46px 30px 38px;border-bottom:4px solid var(--cy-line);}
+  .cover h1{margin:0 0 8px;font-size:31px;color:#8a5a14;letter-spacing:.5px;}
+  .cover .sub{font-size:17px;color:#6b3a1e;font-weight:600;}
+  .cover .meta{margin-top:14px;font-size:13px;color:#8a6b4a;line-height:1.6;}
+  .tagrow{margin-top:16px;display:flex;flex-wrap:wrap;gap:8px;}
+  .tag{background:var(--chip);color:#6b4a22;padding:4px 11px;border-radius:14px;font-size:12.5px;border:1px solid var(--line);}
+  .wrap{max-width:1000px;margin:0 auto;padding:26px 20px 60px;}
+  h2{margin:38px 0 12px;font-size:23px;color:#8a5a14;border-left:6px solid var(--cy);padding-left:12px;}
+  h3{margin:24px 0 8px;font-size:18px;color:var(--gold);}
+  p{margin:10px 0;}
+  .lead{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px 20px;margin:18px 0;color:var(--muted);}
+  .lead b{color:var(--ink);}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin:14px 0;box-shadow:0 2px 8px rgba(120,80,30,.05);}
+  .t1-card{border-top:5px solid var(--cy);}
+  .t2-card{border-top:5px solid var(--gold);}
+  .t3-card{border-top:5px solid var(--cG);}
+  .card h3{margin-top:0;}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  .grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;}
+  @media(max-width:680px){.grid2,.grid3{grid-template-columns:1fr;}}
+  table{width:100%;border-collapse:collapse;margin:14px 0;font-size:14px;background:var(--panel);}
+  th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top;}
+  thead th{background:var(--cy-soft);color:#8a5a14;font-weight:700;}
+  .cG-col{background:var(--cG-soft);}
+  .cO-col{background:var(--cO-soft);}
+  tbody tr:nth-child(even){background:#fcf8f0;}
+  .box{background:var(--cy-soft);border:1px solid var(--cy-line);border-radius:12px;padding:14px 18px;margin:16px 0;}
+  .box.o{background:var(--cO-soft);border-color:var(--cO-line);}
+  .box.o b{color:var(--cO);}
+  .box.g{background:var(--cG-soft);border-color:var(--cG-line);}
+  .box.g b{color:var(--cG);}
+  .box b{color:#8a5a14;}
+  .quick{background:var(--panel);border:1px dashed var(--cy);border-radius:12px;padding:16px 20px;margin:18px 0;}
+  .quick h3{color:#8a5a14;}
+  ul,ol{margin:8px 0 8px 4px;padding-left:22px;}
+  li{margin:6px 0;}
+  .pill{display:inline-block;background:var(--chip);border-radius:10px;padding:2px 9px;font-size:12.5px;color:#6b4a22;margin:2px 3px 2px 0;border:1px solid var(--line);}
+  .pill.g{background:var(--cG-soft);border-color:var(--cG-line);color:#14502f;}
+  .pill.o{background:var(--cO-soft);border-color:var(--cO-line);color:#8a4a14;}
+  .pill.y{background:var(--cy-soft);border-color:var(--cy-line);color:#8a5a14;}
+  .foot{margin-top:34px;font-size:12.5px;color:#8a6b4a;border-top:1px solid var(--line);padding-top:14px;line-height:1.7;}
+  .verdict{background:linear-gradient(135deg,#fcf3d6,#e3f1e8);border:1px solid var(--cy-line);border-radius:14px;padding:18px 22px;margin:20px 0;}
+  .verdict h3{color:#8a5a14;margin-top:0;}
+  code{background:var(--chip);padding:1px 6px;border-radius:5px;font-size:13px;}
+</style>
+</head>
+<body>
+
+<div class="cover">
+  <h1>Santa Fe Grande 深度分析</h1>
+  <div class="sub">圣达菲 Grande · 黄热辣椒 (Guero Chili) · 广西来宾适配版</div>
+  <div class="meta">文档版本 v1.0 ｜ 编写日期 2026-09-07 ｜ 评估地：广西来宾（年均温 20.7°C / 无霜期 331 天 / 年降水 1360mm / 红壤偏酸）<br>
+  本手册是《不辣微辣多年生推荐总览》的<b>单品种补充篇</b>，定位为「微辣·容器椒」区的对照分析，数据来自 KnowThePepper 品种库、Red Dragon Seeds、Growing Garden Vegetables、Hot Gardening Supplies、MyGardenLife 等多源。辣度/产量为区间值，非绝对值。</div>
+  <div class="tagrow">
+    <span class="tag">微辣（500–700 SHU）</span>
+    <span class="tag">C. annuum · OP 可留种</span>
+    <span class="tag">抗 TMV 烟草花叶病毒</span>
+    <span class="tag">高产 · 容器友好</span>
+    <span class="tag">黄→橙→红 彩色渐变</span>
+  </div>
+</div>
+
+<div class="wrap">
+
+<h2>一、一句话结论</h2>
+<div class="verdict">
+  <h3>圣达菲 Grande = 「微辣版香蕉椒 + 彩色观赏椒」</h3>
+  <p><b>500–700 SHU 的微辣甜椒型辣椒</b>，比杭椒温和、比狮子唐略冲，介于两者之间；<b>开放授粉、可留种</b>（和湘研 F1 本质不同）；明确<b>抗烟草花叶病毒（TMV）</b>——这是阳台种植的头号杀手，等于自带一道保险；高产、连续坐果、紧凑、容器友好，果色从黄经橙到红渐变，观赏食用两宜。<b>它不属于"不辣"（0 SHU），但属于你系列里最温和、最易买、最省心的"微辣档"候选之一。</b></p>
+</div>
+
+<h2>二、品种身世</h2>
+<div class="card t1-card">
+  <h3>起源与命名</h3>
+  <ul>
+    <li><b>物种</b>：<i>Capsicum annuum</i>（蜡质椒 / wax-type 一类），和狮子唐、杭椒、湘研同属。</li>
+    <li><b>别名</b>：Guero Chile、Yellow Hot Chile（黄热辣椒）、圣达菲椒。</li>
+    <li><b>起源</b>：美国西南部（Southwestern US）选育，<b>1965 年由 Peto Seeds 公司首次推向园艺市场</b>，是经典老种。</li>
+    <li><b>身份</b>：<b>Heirloom（传家宝）+ Open-Pollinated（开放授粉）+ Non-GMO</b>——这意味着<b>可以自己留种</b>，逐年建立你阳台的种子库，和哈巴纳达的留种逻辑一致；不像湘研 95/55、狮子舞那样是 F1 不可留种。</li>
+    <li><b>果色戏法</b>：同一株上会同时挂着黄、橙、红三色果——它成熟慢、挂果期长，所以"彩虹株"是其标志景观。</li>
+  </ul>
+</div>
+
+<h2>三、硬数据表</h2>
+<table>
+  <thead>
+    <tr><th>指标</th><th>Santa Fe Grande 数据</th><th>说明</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><b>辣度（SHU）</b></td><td class="cO-col"><b>500–700</b>（多数源）</td><td>Red Dragon 标 500–5,000（含少数高辣株系），主流温和；远低于墨西哥椒 2,500–8,000</td></tr>
+    <tr><td><b>物种 / 生长型</b></td><td>C. annuum · 有限/半有限</td><td>管理型多年生（同狮子唐、杭椒）</td></tr>
+    <tr><td><b>株高</b></td><td>60–75 cm（24–30"）多数；达 90 cm</td><td>紧凑、丛生，不突兀</td></tr>
+    <tr><td><b>单果</b></td><td>长 8–13 cm、锥状钝头、肉厚</td><td>厚壁、脆、果个比狮子唐大</td></tr>
+    <tr><td><b>单株产量</b></td><td>20–50 果/株（高产、连续坐果）</td><td>整季不断果，比多数微辣种丰产</td></tr>
+    <tr><td><b>成熟期</b></td><td>移栽后 70–80 天</td><td>早中熟，见效快</td></tr>
+    <tr><td><b>抗病性</b></td><td class="cG-col"><b>抗 TMV（烟草花叶病毒）</b></td><td>多篇源一致；MyGardenLife 称"高抗多种病"</td></tr>
+    <tr><td><b>留种</b></td><td><b>可（OP 开放授粉）</b></td><td>自留种、逐年驯化</td></tr>
+    <tr><td><b>容器</b></td><td>≥ 5 加仑（约 19 L）盆/株</td><td>阳台、露台、小菜园皆宜</td></tr>
+  </tbody>
+</table>
+
+<h2>四、辣度定位（和你系列的对照）</h2>
+<div class="box">
+  <p><b>辣度排序（由轻到重）</b>：</p>
+  <p>哈巴纳达 0 SHU（无辣）＜ 狮子唐 50–200 ＜ <b>Santa Fe Grande 500–700</b> ＜ 樟树港 ~1000–4500（推算）＜ 杭椒 4000–7500 ＜ 湘研95/55 微辣 ＜ Aji Habanero 5000–50000</p>
+  <p>它落在<b>「近无辣」与「微辣」之间</b>——比杭椒、樟树港明显温和，比狮子唐稍冲一点点。绝大多数人觉得"只有极淡暖意，更接近甜椒而非辣"。<b>若家人完全不能吃辣，它仍有微弱存在感，慎选；若只是要"微辣提香不烧口"，它是黄金档。</b></p>
+</div>
+
+<h2>五、产量分析</h2>
+<div class="card t2-card">
+  <h3>为什么它是"微辣档高产选手"</h3>
+  <ul>
+    <li><b>连续坐果</b>：文献一致描述"high yielding / continuous supply all season"，盛果期整株挂黄橙红三色。</li>
+    <li><b>单株 20–50 果、果个比狮子唐大</b>：按重量算，单株季产约 <b>1.5–3 kg</b>（粗估；果 8–13 cm、肉厚，单果约 10–25 g，取中值 ×30 果）。</li>
+    <li><b>早中熟</b>：移栽后 70–80 天即采，比多数 chinense 系（90–100+ 天）快一截，一年能多收一两茬。</li>
+    <li><b>多年生累积</b>：C. annuum 管理型多年生，来宾 331 天无霜可借老桩越冬续 2–3 年，但第 2–3 年 vigor 递减（同《多年生甜椒》手册结论），建议"1–2 年重新育苗为主 + 老桩续命为辅"。</li>
+  </ul>
+</div>
+
+<h2>六、抗病性——它的核心卖点</h2>
+<div class="box g">
+  <p><b>抗烟草花叶病毒（TMV）是硬核加分项。</b></p>
+  <p>Red Dragon Seeds、Growing Garden Vegetables、Hot Gardening Supplies 三源均明确写 Santa Fe Grande 抗 TMV；MyGardenLife 进一步称"对病害高抗"。对你而言意义很大：</p>
+  <ul>
+    <li>阳台/盆栽通风差 + 蚜虫易传毒，<b>TMV 是家庭辣椒的头号杀手</b>（湘研 95 正因感 CMV/TMV 被我不建议多年生）。</li>
+    <li>Santa Fe Grande 自带 TMV 抗性，等于<b>少一道防病操心</b>；不过它仅记载抗 TMV，对疫病/炭疽仍靠你"避雨三件套"兜底。</li>
+    <li><b>另：蜡质果皮</b>对雨水损伤和某些真菌压力有"不错的抵抗力"——来宾 4–8 月集中降水，这点也实用。</li>
+  </ul>
+</div>
+
+<h2>七、多年生可行性（来宾视角）</h2>
+<div class="card t3-card">
+  <h3>C. annuum 管理型多年生</h3>
+  <ul>
+    <li><b>物种寿命</b>：C. annuum 一般 1.5–3 年，靠剪枝换头 / 老桩越冬技术续 2–3 年（详见《多年生甜椒》《不辣微辣总览》）。</li>
+    <li><b>来宾天选</b>：331 天无霜 + 1 月均温 10.9°C，冬季不用搬屋，剪老枝、控水停肥、放避冻处即可越冬；难点只在盛夏。</li>
+    <li><b>耐旱耐热底色</b>：KnowThePepper 明确"handles heat well, bred for Southwestern conditions"——它本就为干旱炎热环境选育，比北方种更扛来宾气候；但<b>35°C+ 仍会高温落花</b>，7–8 月必须拉遮阳网。</li>
+    <li><b>vs 哈瓦那系</b>：哈巴纳达/Roulette 是"天生多年生、放着就活"；Santa Fe Grande 是"管理型、需主动续命"——长期省心度不如 chinense 系，但换来的是<b>可留种 + 微辣提香 + 高产</b>。</li>
+  </ul>
+</div>
+
+<h2>八、来宾适配要点</h2>
+<div class="grid2">
+  <div class="box o">
+    <b>必须做</b>
+    <ul>
+      <li>红壤铁律：调酸（生石灰）+ 接根瘤菌 + 绿肥养地 + 翻压后隔 2–3 周定植</li>
+      <li>7–8 月 35°C+：拉<b>遮阳网 + 避雨棚</b>（复用生态方案三件套）</li>
+      <li>黑水虻虫沙补钙，防脐腐（nightshade 科易缺钙）</li>
+      <li>盆 ≥ 19 L/株，盛花期轻摇/毛笔辅助授粉</li>
+    </ul>
+  </div>
+  <div class="box g">
+    <b>它的本地优势</b>
+    <ul>
+      <li>耐旱耐热底色，适合来宾长夏</li>
+      <li>抗 TMV，阳台传毒环境更稳</li>
+      <li>蜡质皮抗雨水损伤，应对 4–8 月集中降水</li>
+      <li>OP 可留种，逐年驯化成本趋零</li>
+    </ul>
+  </div>
+</div>
+
+<h2>九、阳台种植方案（速查）</h2>
+<table>
+  <thead><tr><th>环节</th><th>操作</th></tr></thead>
+  <tbody>
+    <tr><td>育苗</td><td>室内 8–10 周，土温 24–29°C（75–85°F）催芽，出苗快于多数辣种</td></tr>
+    <tr><td>定植</td><td>夜间温稳过 13°C 后移栽；盆 ≥ 19 L；株距 45–60 cm</td></tr>
+    <tr><td>水肥</td><td>坐果期保持湿润防落花；<b>氮肥别多</b>（徒长抑果）；果期补磷钾</td></tr>
+    <tr><td>支撑</td><td>果重需立支架/佛罗里达编织法，防倒伏</td></tr>
+    <tr><td>采收</td><td>黄期采（腌渍/鲜食最酸脆）；橙红期更甜软（烤/酱）。<b>勤采促连果</b></td></tr>
+    <tr><td>留种</td><td>选最优果阴干取种，自行建立种子库</td></tr>
+  </tbody>
+</table>
+
+<h2>十、食用与采收</h2>
+<div class="card t1-card">
+  <h3>"万能微辣椒"</h3>
+  <ul>
+    <li><b>鲜食</b>：黄期脆、酸、微暖，可直接沙拉、三明治、蘸酱碟。</li>
+    <li><b>腌渍</b>：黄期最宜，和香蕉椒常互换做 pickle。</li>
+    <li><b>烹饪</b>：烤、炒、做 salsa / 辣椒酱，厚肉提供脆感。</li>
+    <li><b>保存</b>：整果不焯冻存 6 个月风味不散；干粉/整干存 1–2 年。</li>
+    <li><b>采收信号</b>：黄→橙→红渐变；越早采越促连果，留红则植株减速——按"食用 vs 续产"权衡。</li>
+  </ul>
+</div>
+
+<h2>十一、与你系列品种的横向对比</h2>
+<table>
+  <thead><tr><th>维度</th><th>Santa Fe Grande</th><th>狮子唐</th><th>杭椒</th><th>湘研55</th></tr></thead>
+  <tbody>
+    <tr><td>辣度</td><td class="cO-col">500–700（微辣）</td><td>50–200（近无辣）</td><td>4000–7500（微辣）</td><td>微辣</td></tr>
+    <tr><td>留种</td><td class="cG-col"><b>可（OP）</b></td><td>可（OP）</td><td>多 F1 不可</td><td>F1 不可</td></tr>
+    <tr><td>抗病毒</td><td class="cG-col"><b>抗 TMV</b></td><td>无编号（需防）</td><td>易感（需防）</td><td>抗多种病</td></tr>
+    <tr><td>产量</td><td>高产 20–50 果</td><td>高产 50–100+ 小果</td><td>亩产高</td><td>亩产高</td></tr>
+    <tr><td>多年生</td><td>管理型</td><td>管理型</td><td>管理型</td><td>管理型（55 可试）</td></tr>
+    <tr><td>定位</td><td>微辣万能+观赏</td><td>近无辣省心</td><td>微辣本帮</td><td>微辣抗病</td></tr>
+  </tbody>
+</table>
+<div class="box">
+  <p><b>一句话区分</b>：狮子唐是"近无辣、果小、偶辣惊喜"；杭椒是"微辣本帮炒菜"；<b>Santa Fe Grande 是"微辣、果大肉厚、彩色观赏、可留种抗病"</b>——它是这三者里综合最均衡、最"像甜椒却带微辣"的那个。</p>
+</div>
+
+<h2>十二、获取渠道现实</h2>
+<div class="box g">
+  <p><b>国内易得（主流传家宝）</b>：Santa Fe Grande 是北美经典 heirloom，国际种子商（含亚洲渠道）普遍有售；国内淘宝/种子店常以其英文名或"黄热辣椒/圣达菲椒"上架，<b>比 Roulette、特立尼达香水、NuMex Suave、狮子舞好找得多</b>。买时认准 <code>Open-Pollinated / Heirloom</code> 字样以确保可留种。</p>
+</div>
+
+<h2>十三、选型结论</h2>
+<div class="verdict">
+  <h3>要不要种？</h3>
+  <ul>
+    <li><b>要「微辣提香 + 可留种 + 抗病省心 + 高产 + 好看」→ 强烈推荐</b>：它是你系列里少数同时满足"OP 可留种 + 抗 TMV + 微辣温和 + 容器高产"的选手，且国内易买。</li>
+    <li><b>要「完全无辣」→ 不合格</b>：它仍有 500–700 SHU 微弱暖意，回归哈巴纳达（0 SHU）。</li>
+    <li><b>组合建议</b>：哈巴纳达（零辣主力）+ Santa Fe Grande（微辣万能+观赏）+ 狮子唐（近无辣省心）三棵并种，正好覆盖"零辣 / 近无辣 / 微辣"三档，且三者都 OP 可留种，长期种子成本趋零。</li>
+  </ul>
+</div>
+
+<h2>十四、数据来源</h2>
+<div class="foot">
+  <p>1. KnowThePepper — Santa Fe Grande 品种库（生长、辣度 500–700 SHU vs 墨西哥椒、容器指南、蜡皮抗雨）<br>
+  2. Red Dragon Seeds — 株高 50–90 cm、果 7–8 cm、辣度 500–5,000 SHU、抗 TMV<br>
+  3. Growing Garden Vegetables — Heirloom/OP、500–750 SHU、抗 TMV、1965 Peto Seeds 引种<br>
+  4. Hot Gardening Supplies (HOSS) — 果 3″ 锥状钝头、抗 TMV、需支撑<br>
+  5. MyGardenLife — 600 SHU、高抗多种病、连续坐果、容器/地栽<br>
+  6. BestGardenSeed / GreenPlantPark — 株高 24–36″、20–50 果、500–700 SHU</p>
+  <p>⚠️ 说明：辣度/产量多为区间值，不同株系（尤其 Red Dragon 标的高辣端 5,000 SHU）存在真实分歧，已如实并列；"handles heat well"指耐旱耐热旱情，不抵消 35°C+ 高温落花风险。本手册为《不辣微辣多年生推荐总览》的单品种补充篇，归入〔2〕微辣·容器椒区。</p>
+</div>
+
+</div>
+</body>
+</html>
