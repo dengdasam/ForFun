@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>来宾牧草推荐 · 广西来宾适配版</title>
+<style>
+  :root{
+    --bg:#fbf7f0; --panel:#ffffff; --ink:#3a2a16; --muted:#6b5a44;
+    --cG:#1f7a47; --cG-soft:#e3f1e8; --cG-line:#aed8c1;
+    --cO:#b5651d; --cO-soft:#fbeede; --cO-line:#e7c79a;
+    --gold:#b8791a; --gold-soft:#fbeede; --line:#e6dccb; --chip:#f0e7d6;
+    --cy:#d39a00; --cy-soft:#fcf3d6; --cy-line:#ecd089;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;
+    line-height:1.75;font-size:16px;}
+  .cover{background:linear-gradient(135deg,#e3f1e8 0%,#f3ece0 50%,#fcf3d6 100%);
+    padding:46px 30px 38px;border-bottom:4px solid var(--cG-line);}
+  .cover h1{margin:0 0 8px;font-size:31px;color:#14502f;letter-spacing:.5px;}
+  .cover .sub{font-size:17px;color:#6b3a1e;font-weight:600;}
+  .cover .meta{margin-top:14px;font-size:13px;color:#8a6b4a;line-height:1.6;}
+  .tagrow{margin-top:16px;display:flex;flex-wrap:wrap;gap:8px;}
+  .tag{background:var(--chip);color:#6b4a22;padding:4px 11px;border-radius:14px;font-size:12.5px;border:1px solid var(--line);}
+  .wrap{max-width:1000px;margin:0 auto;padding:26px 20px 60px;}
+  h2{margin:38px 0 12px;font-size:23px;color:#14502f;border-left:6px solid var(--cG);padding-left:12px;}
+  h3{margin:24px 0 8px;font-size:18px;color:var(--gold);}
+  p{margin:10px 0;}
+  .lead{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px 20px;margin:18px 0;color:var(--muted);}
+  .lead b{color:var(--ink);}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin:14px 0;box-shadow:0 2px 8px rgba(120,80,30,.05);}
+  .t1-card{border-top:5px solid var(--cG);}
+  .t2-card{border-top:5px solid var(--gold);}
+  .t3-card{border-top:5px solid var(--cy);}
+  .card h3{margin-top:0;}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  .grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;}
+  @media(max-width:680px){.grid2,.grid3{grid-template-columns:1fr;}}
+  table{width:100%;border-collapse:collapse;margin:14px 0;font-size:14px;background:var(--panel);}
+  th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top;}
+  thead th{background:var(--cG-soft);color:#14502f;font-weight:700;}
+  .cG-col{background:var(--cG-soft);}
+  .cO-col{background:var(--cO-soft);}
+  tbody tr:nth-child(even){background:#fcf8f0;}
+  .box{background:var(--cy-soft);border:1px solid var(--cy-line);border-radius:12px;padding:14px 18px;margin:16px 0;}
+  .box.o{background:var(--cO-soft);border-color:var(--cO-line);}
+  .box.o b{color:var(--cO);}
+  .box.g{background:var(--cG-soft);border-color:var(--cG-line);}
+  .box.g b{color:var(--cG);}
+  .box b{color:#8a5a14;}
+  .quick{background:var(--panel);border:1px dashed var(--cG);border-radius:12px;padding:16px 20px;margin:18px 0;}
+  .quick h3{color:#14502f;}
+  ul,ol{margin:8px 0 8px 4px;padding-left:22px;}
+  li{margin:6px 0;}
+  .pill{display:inline-block;background:var(--chip);border-radius:10px;padding:2px 9px;font-size:12.5px;color:#6b4a22;margin:2px 3px 2px 0;border:1px solid var(--line);}
+  .pill.g{background:var(--cG-soft);border-color:var(--cG-line);color:#14502f;}
+  .pill.o{background:var(--cO-soft);border-color:var(--cO-line);color:#8a4a14;}
+  .pill.y{background:var(--cy-soft);border-color:var(--cy-line);color:#8a5a14;}
+  .foot{margin-top:34px;font-size:12.5px;color:#8a6b4a;border-top:1px solid var(--line);padding-top:14px;line-height:1.7;}
+  .verdict{background:linear-gradient(135deg,#e3f1e8,#fcf3d6);border:1px solid var(--cG-line);border-radius:14px;padding:18px 22px;margin:20px 0;}
+  .verdict h3{color:#14502f;margin-top:0;}
+  code{background:var(--chip);padding:1px 6px;border-radius:5px;font-size:13px;}
+  .stars{color:var(--cG);font-weight:700;letter-spacing:1px;}
+</style>
+</head>
+<body>
+
+<div class="cover">
+  <h1>来宾牧草推荐 · 广西来宾适配版</h1>
+  <div class="sub">家庭小规模生态循环 · 青饲料降本 + 翻压养地 · 广西本土种优先</div>
+  <div class="meta">文档版本 v1.0 ｜ 编写日期 2026-09-14 ｜ 评估地：广西来宾（年均温 20.7°C / 无霜期 331 天 / 年降水 1360mm / 红壤偏酸）<br>
+  本手册是你「菜-虫-鸡-肥」闭环里缺的那一环：牧草既能当鸡的青饲料降本，又能翻压养地、与绿肥/堆肥/黑水虻合成一套有机肥体系。数据来自广西畜牧研究所、华南热作院、中国热带农科院、百度/360 百科及多篇饲草产业文献；产量为区间值，非绝对值。</div>
+  <div class="tagrow">
+    <span class="tag">多年生（来宾 331 天无霜）</span>
+    <span class="tag">广西本土种优先</span>
+    <span class="tag">喂鸡青饲料</span>
+    <span class="tag">豆科固氮养地</span>
+    <span class="tag">浅底深字 · 无白字</span>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <div class="lead">
+    <b>先说结论：</b>来宾牧草的 <b>TOP 推荐是「桂牧一号杂交象草」</b>——广西畜牧研究所本土选育、最适生长温 25–32°C（来宾 7 月均温 28.6°C、极端 38.9°C 仍茂盛）、亩产鲜草 15–25 吨、一次种植可连续利用 5–10 年、抗旱耐湿耐酸，是气候与土壤双重完美匹配。若你主要为<b>养鸡青饲料</b>，配一畦<b>黑麦草（冬季补饲）</b>和<b>白三叶/柱花草（固氮养地）</b>即闭环；若想<b>多功能</b>，加一畦<b>巨菌草</b>（既能喂鸡又能做食用菌基质）。
+  </div>
+
+  <h2>一、来宾气候 × 牧草选择命门</h2>
+  <p>牧草选错，比蔬菜更难回头（多年生、占地大）。先把你的气候约束翻译成选型红线：</p>
+  <table>
+    <thead><tr><th>来宾约束</th><th>对牧草的要求</th><th>命门后果</th></tr></thead>
+    <tbody>
+      <tr><td><b>年均 20.7°C・无霜期 331 天</b></td><td class="cG-col">喜温多年生（狼尾草属/象草类）天然友好，越冬无忧</td><td>温带冷季草（如紫花苜蓿）夏季易衰</td></tr>
+      <tr><td><b>7 月均温 28.6°C・极端 38.9°C</b></td><td class="cG-col">必须耐热，最适 25–35°C 的高秆禾草优先</td><td>不耐热的豆科（苜蓿）高温高湿下生长受限</td></tr>
+      <tr><td><b>年降水 1360mm・4–8 月占 70%</b></td><td class="cO-col">耐湿但<b>忌长期泡水</b>，必须高垄+排水</td><td>积水 4 天以上根系坏死、减产甚至死株</td></tr>
+      <tr><td><b>红壤偏酸、黏重</b></td><td class="cG-col">选耐酸品种 + 豆科固氮改良</td><td>不改良则产量折半</td></tr>
+    </tbody>
+  </table>
+  <div class="box g"><b>一句话：</b>来宾是热带/亚热带高产牧草的「天选之地」，选对种几乎不用操心越冬；真正的坑只有两个——<b>排水</b>（怕泡水）和<b>红壤改良</b>（豆科固氮 + 你手册里的生石灰调酸铁律）。</div>
+
+  <h2>二、最推荐：桂牧一号杂交象草（T1 主力）</h2>
+  <div class="card t1-card">
+    <h3>★ 广西本土种 · 气候完美匹配 · 综合第一</h3>
+    <p><b>身世：</b>广西畜牧研究所 1992 年起用「矮象草（父）× 杂交狼尾草（母）」有性杂交、多年选育，2000 年通过全国牧草品种审定——<b>它生来就是为广西造的</b>。</p>
+    <div class="grid2">
+      <div>
+        <p><b>产量：</b>年刈割 5–8 次，中等水肥亩产鲜草 <b>15–25 吨</b>，高水肥可达 2.7 万公斤；一次种植<b>连续利用 5–10 年</b>。</p>
+        <p><b>营养：</b>干物质粗蛋白 <b>13.09–14.2%</b>、粗脂肪 2.54%，质地柔软、适口性好，牛/羊/鱼/兔/鹅喜食。</p>
+      </div>
+      <div>
+        <p><b>耐性：</b>最适 25–32°C，<b>35°C 以上仍茂盛</b>；抗旱、耐湿、耐酸、抗倒伏、抗病虫强；对氮肥敏感（增施即增产）。</p>
+        <p><b>来宾适配：</b>331 天无霜，地下茎安全越冬；4°C 以下重霜冻茎基仍活，17°C 返青——<b>零越冬风险</b>。</p>
+      </div>
+    </div>
+    <div class="box g"><b>为什么是它第一：</b>① 本土选育，气候/土壤双重验证；② 高产且多年生，种一次管十年；③ 来宾最适温区内生长最猛；④ 抗旱耐湿耐酸，正好扛你的「又热又湿 + 红壤」；⑤ 茎秆无性繁殖（砍节斜插），扩种极便宜。</div>
+  </div>
+
+  <h2>三、高产替代：皇竹草 / 热研4号王草</h2>
+  <div class="card t2-card">
+    <h3>★ 产量天花板更高 · 脆甜多汁鸡更爱啄</h3>
+    <p><b>皇竹草（King Grass）：</b>狼尾草属杂交选育，号称南方「高产草王」，年收割 8–9 次，亩产鲜草 <b>20 吨以上</b>；茎秆脆甜多汁、适口性极好，是鸡/鹅/猪/牛/羊/鱼的理想青料；<b>对酸性红壤适应良好</b>，多年生。</p>
+    <p><b>热研4号王草（中国热带农科院）：</b>我国热区产量最高的刈割型禾本科牧草，亩产鲜草 1–3 万公斤，<b>耐寒性优于华南象草</b>，茎含糖分、脆甜多汁，鸡鹅猪牛羊理想青饲料，也可青贮/调制干草。</p>
+    <div class="box o"><b>与桂牧一号怎么选：</b>皇竹草/王草产量略高、更甜更招鸡；但桂牧一号是<b>广西审定本土种、抗病虫更强、综合更稳</b>。家庭建议<b>以桂牧一号为主、皇竹草为辅</b>，混种降低单一种风险。</div>
+  </div>
+
+  <h2>四、固氮养地组：豆科三剑客（和你绿肥手册逻辑一致）</h2>
+  <div class="grid3">
+    <div class="card t3-card">
+      <h3>柱花草（热研20号）</h3>
+      <p>豆科固氮，<b>改良红壤酸瘦</b>；耐旱耐贫瘠，适合石漠化/贫瘠地；林下间作、与禾本科混播提质。广西石漠化治理主推草种之一。</p>
+      <p class="pill g">固氮 ★★★★★</p>
+    </div>
+    <div class="card t3-card">
+      <h3>白三叶</h3>
+      <p>你《养地植物与绿肥手册》已收录的<b>常年生豆科</b>；固氮、耐刈、鸡喜采食嫩叶；与桂牧一号混播，草层高低搭配、鸡有得吃又有得刨。</p>
+      <p class="pill g">固氮 ★★★★★</p>
+    </div>
+    <div class="card t3-card">
+      <h3>紫花苜蓿</h3>
+      <p>「牧草之王」，粗蛋白高、<b>钙含量是牛奶 1.5 倍，极利蛋鸡蛋壳</b>；但<b>高温高湿受限</b>，来宾夏季需种在通风凉爽处或仅少量。</p>
+      <p class="pill y">固氮 ★★★★★・湿热需谨慎</p>
+    </div>
+  </div>
+  <div class="box g"><b>搭配铁律：</b>禾本科（桂牧一号/皇竹草）高产但不固氮，豆科（柱花草/白三叶）固氮但产量低——<b>混播 = 产量 + 养地双全</b>，正合你生态方案「以草养地」的思路。</div>
+
+  <h2>五、冬季补饲：黑麦草</h2>
+  <div class="card">
+    <p><b>黑麦草（冷季型）：</b>冬春季生长旺盛，正好填补桂牧一号等热带禾草在凉季的低产期；叶多茎少、鸡直接啄食方便，文献称长期饲喂<b>产蛋率提升 12%、蛋壳厚度增加 8%</b>。一年生/多年生均有，南方冬季补饲首选。</p>
+    <p class="pill y">定位：冬季青饲料补位 · 不与主草争夏季</p>
+  </div>
+
+  <h2>六、多功能：巨菌草（饲料 + 食用菌）</h2>
+  <div class="card">
+    <p><b>巨菌草（林占熺团队，福建）：</b>热区高产多年生，株高可达 5–7 米；<b>既是优质青饲料，又是食用菌（香菇/平菇等）培养基料</b>——正好接上你《堆肥与栽培基质手册》里的「食用菌副线」。一草两用：嫩梢喂鸡、老秆种菇、菌渣回堆肥，是闭环里的「多功能枢纽」。</p>
+    <p class="pill g">定位：饲料 + 食用菌基料双轨</p>
+  </div>
+
+  <h2>七、喂鸡实操（关键！否则白种）</h2>
+  <div class="box o"><b>象草类喂鸡三铁律：</b>
+    <ul>
+      <li><b>必须切碎：</b>桂牧一号/皇竹草茎秆粗硬，<b>刈割后切碎至 2–3 cm</b> 才能方便鸡啄食（文献明确建议）。</li>
+      <li><b>控量防拉稀：</b>鲜草含水约 85%，占日粮<strong>不超过 40%</strong>；过量易腹泻。与干料/黑水虻虫体搭配投喂。</li>
+      <li><b>与黑水虻互补：</b>黑水虻虫体提供蛋白（40%+），牧草提供纤维+能量，二者构成鸡日粮「蛋白+纤维」双源。海南实践：热带牧草替代 30% 精料，每只鸡每天省约 0.15 元。</li>
+    </ul>
+  </div>
+  <p><b>嫩叶类（黑麦草/白三叶/苜蓿）</b>叶多茎少，鸡可直接采食，无需切碎，且豆科钙高利于产蛋——建议散放区种一排让鸡自己刨食。</p>
+
+  <h2>八、与你生态闭环的衔接</h2>
+  <p>牧草不是孤立项目，它把你已有的手册串成一条新循环链：</p>
+  <table>
+    <thead><tr><th>你的资产</th><th>牧草怎么接进去</th></tr></thead>
+    <tbody>
+      <tr><td class="cG-col"><b>《堆肥与栽培基质》</b></td><td>鸡粪 + 牧草秸秆 → 堆肥腐熟 1–2 月（杀病菌虫卵）→ 回田/牧草，与虫沙合成有机肥体系</td></tr>
+      <tr><td class="cG-col"><b>《养地植物与绿肥》</b></td><td>豆科牧草（柱花草/白三叶）翻压 → 固氮养地，复用你手册里的绿肥逻辑</td></tr>
+      <tr><td class="cG-col"><b>《家庭循环农业最优方向》</b></td><td>牧草青饲 → 鸡 → 鸡粪堆肥 → 牧草，加一条「草循环」，与黑水虻循环并列</td></tr>
+      <tr><td class="cG-col"><b>食用菌副线</b></td><td>巨菌草老秆 → 菌包 → 菌渣堆肥，闭环再添一环</td></tr>
+    </tbody>
+  </table>
+  <div class="verdict">
+    <h3>闭环一句话</h3>
+    <p>先转起黑水虻（你已在做）→ 接鸡（虫体喂鸡）→ 鸡粪堆肥 + 牧草青饲回填。牧草让「鸡有青料、地有绿肥、肥有去处」三件事一次解决，是闭环里性价比最高的补环。</p>
+  </div>
+
+  <h2>九、来宾种植要点</h2>
+  <ul>
+    <li><b>排水第一：</b>高垄种植、开好排水沟；积水 4 天以上直接伤根减产。和你菜园「三件套」的避雨高垄同逻辑。</li>
+    <li><b>种植期：</b>气温 5°C 以上均可活，来宾全年可种；<b>3–9 月成苗率最高、长得最快</b>。</li>
+    <li><b>基肥与追肥：</b>瘦地亩施腐熟有机肥 1500 kg 以上；每次刈割后追施有机肥 + 苗高 30–40 cm 时追尿素 7.5 kg/亩（桂牧一号对氮肥敏感，增施即增产）。</li>
+    <li><b>刈割期：</b>株高 <b>1.2–1.5 m</b> 时刈，留茬约 <b>3 cm</b> 促分蘖；首刈在苗高 50 cm 左右以促分蘖。</li>
+    <li><b>红壤改良：</b>禾本科耐酸可直接种；豆科混播固氮改良；重酸地块按你铁律施生石灰调酸。</li>
+  </ul>
+
+  <h2>十、分层推荐总表</h2>
+  <table>
+    <thead><tr><th>品种</th><th>产量</th><th>多年生</th><th>来宾适配</th><th>养地(固氮)</th><th>喂鸡便利</th><th>定位</th></tr></thead>
+    <tbody>
+      <tr><td><b>桂牧一号</b></td><td class="cG-col">★★★★★<br>15–25吨/亩</td><td class="cG-col">★★★★★<br>5–10年</td><td class="cG-col">★★★★★</td><td>★★★</td><td>★★★★<br>(需切碎)</td><td><b>综合 TOP</b></td></tr>
+      <tr><td><b>皇竹草/王草</b></td><td class="cG-col">★★★★★<br>20吨+</td><td>★★★★</td><td>★★★★</td><td>★★</td><td>★★★★<br>(甜脆招鸡)</td><td>高产替代</td></tr>
+      <tr><td><b>柱花草</b></td><td>★★★</td><td>★★★★</td><td>★★★★</td><td class="cG-col">★★★★★</td><td>★★★</td><td>固氮养地</td></tr>
+      <tr><td><b>白三叶</b></td><td>★★</td><td>★★★★</td><td>★★★★</td><td class="cG-col">★★★★★</td><td>★★★★<br>(嫩叶直吃)</td><td>常年固氮</td></tr>
+      <tr><td><b>黑麦草</b></td><td>★★★</td><td>★★<br>(冷季)</td><td>★★★<br>(冬补)</td><td>★★★</td><td class="cG-col">★★★★★</td><td>冬季补饲</td></tr>
+      <tr><td><b>巨菌草</b></td><td class="cG-col">★★★★★</td><td>★★★★</td><td>★★★★</td><td>★★</td><td>★★★★</td><td>饲料+食用菌</td></tr>
+      <tr><td><b>紫花苜蓿</b></td><td>★★★</td><td>★★★★</td><td>★★<br>(怕湿热)</td><td class="cG-col">★★★★★</td><td>★★★★<br>(钙高)</td><td>蛋鸡补钙</td></tr>
+    </tbody>
+  </table>
+
+  <h2>十一、新手组合建议</h2>
+  <div class="quick">
+    <h3>闭眼起步的三种配法</h3>
+    <p><b>组合 A · 来宾最优（全本土闭环）：</b><br>桂牧一号（主青料）+ 白三叶/柱花草（固氮混播）→ 青饲料 + 养地双全，一次种管多年。</p>
+    <p><b>组合 B · 鸡饲料专精：</b><br>桂牧一号 + 黑麦草（冬补）+ 少量紫花苜蓿（蛋鸡钙）→ 全年青料不断档、蛋壳更硬。</p>
+    <p><b>组合 C · 多功能：</b><br>巨菌草（饲料+食用菌）+ 桂牧一号（主青料）→ 草、菇、肥、鸡一条龙。</p>
+    <div class="box g" style="margin-bottom:0"><b>引种提示：</b>桂牧一号、皇竹草、黑麦草、白三叶、紫花苜蓿国内极易买到种茎/种子；巨菌草、柱花草认准农科院/保种场渠道。禾本科均用茎节无性繁殖，买一点就能扩种一大片。</div>
+  </div>
+
+  <div class="foot">
+    <b>数据来源：</b>广西畜牧研究所《桂牧1号杂交象草》审定资料；中国热带农业科学院《热研4号王草》《华南地区饲草主推品种》；中国新闻网 2025-07-02 热带牧草产业报道；百度/360 百科桂牧一号、皇竹草词条；多篇饲草产业与养鸡喂草实操文献（产量/粗蛋白为区间值，实际随水肥与管理浮动）。本手册为《家庭循环农业最优方向》的「草料闭环」落地分册，与《养地植物与绿肥手册》《堆肥与栽培基质手册》《生态农业方案》配套使用。
+  </div>
+
+</div>
+</body>
+</html>
