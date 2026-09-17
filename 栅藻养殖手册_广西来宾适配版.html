@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>栅藻养殖手册 · 广西来宾适配版</title>
+<style>
+  :root{
+    --bg:#fbf7f0; --panel:#ffffff; --ink:#3a2a16; --muted:#6b5a44;
+    --cG:#1f7a47; --cG-soft:#e3f1e8; --cG-line:#aed8c1;
+    --cO:#b5651d; --cO-soft:#fbeede; --cO-line:#e7c79a;
+    --gold:#b8791a; --gold-soft:#fbeede; --line:#e6dccb; --chip:#f0e7d6;
+    --cy:#d39a00; --cy-soft:#fcf3d6; --cy-line:#ecd089;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;
+    line-height:1.75;font-size:16px;}
+  .cover{background:linear-gradient(135deg,#e3f1e8 0%,#f3ece0 50%,#fcf3d6 100%);
+    padding:46px 30px 38px;border-bottom:4px solid var(--cG-line);}
+  .cover h1{margin:0 0 8px;font-size:31px;color:#14502f;letter-spacing:.5px;}
+  .cover .sub{font-size:17px;color:#6b3a1e;font-weight:600;}
+  .cover .meta{margin-top:14px;font-size:13px;color:#8a6b4a;line-height:1.6;}
+  .tagrow{margin-top:16px;display:flex;flex-wrap:wrap;gap:8px;}
+  .tag{background:var(--chip);color:#6b4a22;padding:4px 11px;border-radius:14px;font-size:12.5px;border:1px solid var(--line);}
+  .wrap{max-width:1000px;margin:0 auto;padding:26px 20px 60px;}
+  h2{margin:38px 0 12px;font-size:23px;color:#14502f;border-left:6px solid var(--cG);padding-left:12px;}
+  h3{margin:24px 0 8px;font-size:18px;color:var(--gold);}
+  p{margin:10px 0;}
+  .lead{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px 20px;margin:18px 0;color:var(--muted);}
+  .lead b{color:var(--ink);}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin:14px 0;box-shadow:0 2px 8px rgba(120,80,30,.05);}
+  .t1-card{border-top:5px solid var(--cG);}
+  .t2-card{border-top:5px solid var(--gold);}
+  .t3-card{border-top:5px solid var(--cy);}
+  .card h3{margin-top:0;}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  .grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;}
+  @media(max-width:680px){.grid2,.grid3{grid-template-columns:1fr;}}
+  table{width:100%;border-collapse:collapse;margin:14px 0;font-size:14px;background:var(--panel);}
+  th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top;}
+  thead th{background:var(--cG-soft);color:#14502f;font-weight:700;}
+  .cG-col{background:var(--cG-soft);}
+  .cO-col{background:var(--cO-soft);}
+  tbody tr:nth-child(even){background:#fcf8f0;}
+  .box{background:var(--cy-soft);border:1px solid var(--cy-line);border-radius:12px;padding:14px 18px;margin:16px 0;}
+  .box.o{background:var(--cO-soft);border-color:var(--cO-line);}
+  .box.o b{color:var(--cO);}
+  .box.g{background:var(--cG-soft);border-color:var(--cG-line);}
+  .box.g b{color:var(--cG);}
+  .box b{color:#8a5a14;}
+  .quick{background:var(--panel);border:1px dashed var(--cG);border-radius:12px;padding:16px 20px;margin:18px 0;}
+  .quick h3{color:#14502f;}
+  ul,ol{margin:8px 0 8px 4px;padding-left:22px;}
+  li{margin:6px 0;}
+  .pill{display:inline-block;background:var(--chip);border-radius:10px;padding:2px 9px;font-size:12.5px;color:#6b4a22;margin:2px 3px 2px 0;border:1px solid var(--line);}
+  .pill.g{background:var(--cG-soft);border-color:var(--cG-line);color:#14502f;}
+  .pill.o{background:var(--cO-soft);border-color:var(--cO-line);color:#8a4a14;}
+  .pill.y{background:var(--cy-soft);border-color:var(--cy-line);color:#8a5a14;}
+  .foot{margin-top:34px;font-size:12.5px;color:#8a6b4a;border-top:1px solid var(--line);padding-top:14px;line-height:1.7;}
+  .verdict{background:linear-gradient(135deg,#e3f1e8,#fcf3d6);border:1px solid var(--cG-line);border-radius:14px;padding:18px 22px;margin:20px 0;}
+  .verdict h3{color:#14502f;margin-top:0;}
+  code{background:var(--chip);padding:1px 6px;border-radius:5px;font-size:13px;}
+  .step{background:var(--panel);border:1px solid var(--line);border-left:5px solid var(--cG);border-radius:10px;padding:12px 16px;margin:10px 0;}
+  .step b{color:#14502f;}
+  .stars{color:var(--cG);font-weight:700;letter-spacing:1px;}
+  .flow{background:var(--cG-soft);border:1px solid var(--cG-line);border-radius:14px;padding:18px 20px;margin:16px 0;line-height:2.1;}
+  .flow b{color:#14502f;}
+</style>
+</head>
+<body>
+
+<div class="cover">
+  <h1>栅藻养殖手册 · 广西来宾适配版</h1>
+  <div class="sub">买菌种 → 扩培 → 日常 → 采收 → 利用 · 家庭低成本蛋白+净水+肥源闭环</div>
+  <div class="meta">文档版本 v1.0 ｜ 编写日期 2026-09-18 ｜ 评估地：广西来宾（年均温 20.7°C / 无霜期 331 天 / 年降水 1360mm / 红壤偏酸）<br>
+  本手册是你「菜-虫-鸡-肥」闭环里缺的<b>微藻蛋白线</b>：栅藻（<i>Scenedesmus</i>）是绿藻门单细胞藻，耐污、能用沼液/鸡粪水养、干重蛋白 45–55%，比螺旋藻省事、比纯小球藻更扛脏。数据来自藻类培养学文献、中科院水生所淡水藻种库资料及家庭微藻养殖实践经验；产量为区间值/经验值，非绝对值。</div>
+  <div class="tagrow">
+    <span class="tag">淡水绿藻 · 耐污</span>
+    <span class="tag">废水即可养</span>
+    <span class="tag">蛋白 45–55%</span>
+    <span class="tag">喂鸡喂鱼+净水+肥</span>
+    <span class="tag">浅底深字 · 无白字</span>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <div class="lead">
+    <b>先说结论：</b>栅藻是家庭微藻里<b>最务实</b>的一种——拿你现成的沼液、鸡粪水、鱼塘废水直接养，几乎零外购饲料就能产出高蛋白藻浆，喂鸡喂鱼、浇菜净水全包。本手册按 <b>「买菌种 → 逐级扩培 → 日常管理 → 采收 → 产物利用」</b> 五步走，照着做 2–4 周就能开始收藻。来宾 331 天无霜、年均 20.7°C，<b>室外几乎全年可养</b>。
+  </div>
+
+  <h2>一、为什么是栅藻（vs 小球藻 / 螺旋藻）</h2>
+  <table>
+    <thead><tr><th>维度</th><th>栅藻（本手册）</th><th>小球藻</th><th>螺旋藻</th></tr></thead>
+    <tbody>
+      <tr><td><b>分类</b></td><td class="cG-col">绿藻门，单细胞栅状</td><td>绿藻门，单细胞球</td><td>蓝菌门（原核）</td></tr>
+      <tr><td><b>适生水</b></td><td class="cG-col">淡水，pH 6–9</td><td>淡水，pH 6–8</td><td>高碱高盐 pH 8.5–11</td></tr>
+      <tr><td><b>耐污性</b></td><td class="cG-col"><b>强，能吃废水</b></td><td>中，偏干净</td><td>弱，怕杂</td></tr>
+      <tr><td><b>蛋白（干重）</b></td><td class="cG-col">45–55%</td><td>50–60%</td><td>60–70%</td></tr>
+      <tr><td><b>家庭难度</b></td><td class="cG-col"><b>易，废水直养</b></td><td>易</td><td>难，碱水门槛</td></tr>
+    </tbody>
+  </table>
+  <div class="box g"><b>一句话：</b>要「人吃」选小球藻；要「用废养、好活、产蛋白」选<b>栅藻</b>；螺旋藻家庭不建议碰。栅藻是连接你沼液/粪水与鸡鱼饲料的那座桥。</div>
+
+  <h2>二、第一步：买菌种（及避坑）</h2>
+  <div class="card t1-card">
+    <h3>★ 去哪买 · 买什么 · 怎么辨活</h3>
+    <div class="grid2">
+      <div>
+        <p><b>购买渠道：</b></p>
+        <ul>
+          <li><b>电商：</b>淘宝/拼多多搜「栅藻藻种」「Scenedesmus 藻种」「微藻藻种」，选销量高、带活体承诺的店，价格约 <code>10–50 元 / 10–50ml 浓缩种</code>。</li>
+          <li><b>专业保藏：</b>中科院水生所淡水藻种库（FACHB）、各大高校藻类实验室，纯度高但流程慢、面向科研。</li>
+          <li><b>自然引种（零成本）：</b>从干净池塘/沟渠舀「鲜绿水」（绿藻优势水体），但<b>需鉴别不是蓝藻水华</b>（蓝藻偏蓝绿、易成片浮膜、可能产毒），新手不建议。</li>
+        </ul>
+      </div>
+      <div>
+        <p><b>起步量：</b>家庭买 <code>10–50ml</code> 浓缩活藻足够，走「逐级扩培」放大，<b>不要</b>直接把一滴种倒进大池（会被杂菌压制）。</p>
+        <p><b>活藻鉴别（收货时看）：</b></p>
+        <ul>
+          <li>✅ 鲜绿、悬浮均匀、无异味、瓶壁有绿膜属正常。</li>
+          <li>❌ 发黑、发臭、长白/彩膜、浑浊沉淀——已污染或死亡，拒收。</li>
+          <li>❌ 蓝绿色且瓶口有滑腻膜——可能是螺旋藻/微囊藻，非你要的栅藻。</li>
+        </ul>
+      </div>
+    </div>
+    <div class="box o"><b>避坑：</b>买前问清「是不是淡水绿藻 Scenedesmus」「能否用沼液/粪水扩培」。部分商家卖的是无菌实验种（贵且娇气），要选「粗养型/废水适配」的株系。</div>
+  </div>
+
+  <h2>三、第二步：逐级扩培（关键！）</h2>
+  <p>栅藻和小球藻一样，<b>不能直接大池起步</b>。要像发面一样一级级放大，每级用同款培养基、接种量 10–20%，养到浓绿再转下一级。</p>
+  <div class="step"><b>第 1 级（瓶）：</b>500ml 透明瓶 + 300ml 培养基（见第四节方案 B/C）+ 10–20ml 藻种 → 向阳窗台/阳台，每日轻摇，约 5–7 天变浓绿。</div>
+  <div class="step"><b>第 2 级（桶）：</b>5–10L 桶 + 同样培养基 + 第 1 级浓藻 10–20% → 室外半日照，搅动充气，约 7–10 天浓绿。</div>
+  <div class="step"><b>第 3 级（盆/池）：</b>泡沫箱/塑料盆（见下节容器）+ 废水或化肥水 + 第 2 级浓藻 10–20% → 进入日常养殖，持续采收。</div>
+  <div class="box g"><b>为什么必须扩培：</b>藻种在大量杂菌的开放环境里是少数派，先在小体积把栅藻养成优势种群，再转入大池才能压住杂藻和原生动物。跳级直接大池，90% 会失败变臭。</div>
+
+  <h2>四、第三步：容器与培养基</h2>
+  <h3>4.1 容器选择（浅宽优先）</h3>
+  <table>
+    <thead><tr><th>容器</th><th>规格建议</th><th>要点</th></tr></thead>
+    <tbody>
+      <tr><td><b>泡沫箱</b></td><td class="cG-col">40×30×15cm，水深 8–12cm</td><td>最便宜、保温好、浅水受光足；底加托防漏</td></tr>
+      <tr><td><b>塑料盆/槽</b></td><td class="cG-col">宽口浅盆，水深 ≤15cm</td><td>PP/PE 材质，避用有毒回收料</td></tr>
+      <tr><td><b>PVC 水槽</b></td><td class="cG-col">自制长槽，宽 20–30cm</td><td>阳台可排布，批量养殖首选</td></tr>
+      <tr><td><b>忌用</b></td><td class="cO-col">深色不透光桶、金属槽</td><td>缺光不长藻 / 金属离子抑藻</td></tr>
+    </tbody>
+  </table>
+  <div class="box"><b>浅水原理：</b>藻要光，水深超过 15cm 底层缺光不长。浅而宽 = 受光面积大 = 产量高。一个 0.5–1㎡ 浅池足够家庭喂鸡鱼+浇菜。</div>
+
+  <h3>4.2 培养基三方案（选一个）</h3>
+  <div class="grid3">
+    <div class="card t2-card">
+      <h3>方案 A：废水直养（首选·闭环）</h3>
+      <p>用你闭环里的 <b>沼液 / 鱼塘废水 / 鸡粪浸出液</b>，<b>稀释 3–5 倍</b>即用。栅藻耐污，直接吃里面的氮磷。</p>
+      <p>⚠️ 浓度过高会「烧藻」，首次稀释到淡茶色再接种；观察 2 天藻变绿即成功。</p>
+    </div>
+    <div class="card t1-card">
+      <h3>方案 B：化肥水（最稳）</h3>
+      <p>每 <b>100L 清水</b>加：</p>
+      <ul>
+        <li>尿素 <code>5–10g</code>（氮源）</li>
+        <li>过磷酸钙 <code>3–5g</code>（磷源）</li>
+        <li>或三元复合肥 <code>10–15g</code></li>
+      </ul>
+      <p>搅匀静置 1 天，接种。</p>
+    </div>
+    <div class="card t3-card">
+      <h3>方案 C：BG11 标准（科研级）</h3>
+      <p>标准配方含硝酸钠、磷酸盐、微量元素、EDTA 等，配比严谨但需采购多种试剂，<b>家庭一般不必</b>，想提纯扩种时可用。</p>
+    </div>
+  </div>
+
+  <h2>五、第四步：日常管理（日程表）</h2>
+  <table>
+    <thead><tr><th>事项</th><th>频率</th><th>操作</th><th>判断标准</th></tr></thead>
+    <tbody>
+      <tr><td><b>光照</b></td><td class="cG-col">全天</td><td>放全日照~半日照；夏季正午强光稍遮阴防光抑制</td><td>水呈鲜绿不发黄</td></tr>
+      <tr><td><b>搅动/曝气</b></td><td class="cG-col">每日 1–2 次</td><td>木棒搅动或气泵打泡 10 分钟</td><td>水体均匀绿、无分层</td></tr>
+      <tr><td><b>补营养</b></td><td class="cG-col">采收后/每周</td><td>方案A补稀释废水；方案B补少量化肥水</td><td>藻色不褪、持续浓绿</td></tr>
+      <tr><td><b>补水</b></td><td class="cG-col">蒸发后</td><td>加清水至原水位（别加满溢）</td><td>水位稳定</td></tr>
+      <tr><td><b>pH 监测</b></td><td class="cO-col">每周</td><td>试纸测，维持 <code>6.5–8.5</code></td><td>过酸加石灰水；过碱换部分水</td></tr>
+      <tr><td><b>采收</b></td><td class="cG-col">见第六节</td><td>浓绿即收，保持对数期</td><td>水不透明浓绿</td></tr>
+    </tbody>
+  </table>
+  <div class="box o"><b>密度判断（不用仪器）：</b>① 目测水呈「不透明浓绿、伸手入水 5cm 看不见指尖」即达采收密度；② 取一滴镜检（可选）细胞密集成团。达不到就继续养，别急收。</div>
+
+  <h2>六、第五步：采收（从藻到手）</h2>
+  <div class="card t1-card">
+    <h3>★ 采收时机 · 方法 · 后处理</h3>
+    <div class="grid2">
+      <div>
+        <p><b>时机：</b>扩培成功约 <b>2–4 周</b>开始采收；之后<b>持续采收</b>（每次收 1/3~1/2，留种继续长），保持对数生长期产量最高。</p>
+        <p><b>方法：</b></p>
+        <ul>
+          <li><b>纱布过滤：</b>100–200 目纱布兜滤，挤出的绿浆即鲜藻。</li>
+          <li><b>静置虹吸：</b>停搅后藻上浮成层，虹吸浓藻层。</li>
+          <li><b>家庭量小：</b>细网捞+纱布拧，足够喂鸡鱼。</li>
+        </ul>
+      </div>
+      <div>
+        <p><b>后处理（按用途选）：</b></p>
+        <ul>
+          <li><b>鲜用：</b>滤出即拌鸡/鱼料，最省事（含水 95%）。</li>
+          <li><b>晒干磨粉：</b>摊薄晒 1–2 天，干后粉碎，长期存、方便配比。</li>
+          <li><b>加糖蜜青贮：</b>鲜藻+糖蜜密封，作发酵饲料。</li>
+          <li><b>冷冻：</b>小量鲜藻冻存保活（留种用）。</li>
+        </ul>
+      </div>
+    </div>
+    <div class="box g"><b>产量预期（经验参考，非绝对值）：</b>一个 0.5–1㎡ 浅池（水深 10cm），适宜条件下月产<b>鲜藻数公斤、干藻数十至百余克</b>；逐级扩培+持续采收，半年后可稳定供应家庭鸡鱼青料。实际受光照、温度、营养波动。</div>
+  </div>
+
+  <h2>七、产物利用（接你闭环）</h2>
+  <div class="grid2">
+    <div class="card t2-card">
+      <h3>① 喂鸡</h3>
+      <p>鲜藻占日粮 <b>湿重 5–10%</b>，或干粉 <b>1–3%</b> 拌料。细胞壁和单细胞藻一样，鸡消化率中等，但拌湿料无碍，省下部分商品蛋白料。</p>
+    </div>
+    <div class="card t2-card">
+      <h3>② 喂鱼（罗非鱼/鲫）</h3>
+      <p>直接泼洒水面或拌料。罗非鱼滤食+摄食兼得，和你阳台鱼菜共生、土塘养殖无缝对接。</p>
+    </div>
+    <div class="card t1-card">
+      <h3>③ 做肥（液肥/堆肥）</h3>
+      <p>滤液<b>稀释 20–50 倍</b>浇菜（速效氮磷钾）；滤出藻泥混稻壳/落叶堆肥，或丢进波卡西/蚯蚓箱当高氮料。</p>
+    </div>
+    <div class="card t1-card">
+      <h3>④ 净水</h3>
+      <p>直接把栅藻养在<b>鱼塘水/养殖废水</b>里，吸氮磷、光合放氧，水清了藻也长了——一条线同时产饲料+净环境。</p>
+    </div>
+  </div>
+
+  <h2>八、污染防控（开放池必看）</h2>
+  <table>
+    <thead><tr><th>问题</th><th>成因</th><th>对策</th></tr></thead>
+    <tbody>
+      <tr><td><b>杂藻（衣藻/蓝藻）</b></td><td class="cO-col">栅藻优势不足、光太强</td><td>保持高密度、适当遮阳、勤换水补种</td></tr>
+      <tr><td><b>原生动物（轮虫/纤毛虫吃藻）</b></td><td class="cO-col">有机物过多</td><td>减少粪水浓度、及时采收、池里养几条小鱼</td></tr>
+      <tr><td><b>蚊虫孑孑</b></td><td class="cO-col">静止水面</td><td>养食蚊鱼/罗非鱼苗、盖纱网、或浮萍盖面（注意遮光）</td></tr>
+      <tr><td><b>倒藻（突然变清发臭）</b></td><td class="cO-col">缺氧/缺营养/温度骤变</td><td>补营养、增氧搅动、换 1/3 水、重新接少量浓藻</td></tr>
+    </tbody>
+  </table>
+  <div class="box"><b>核心心法：</b>让栅藻始终是「多数派」——高密度 + 持续采收 + 稳定营养，杂菌杂虫就翻不了天。</div>
+
+  <h2>九、三地气候适配</h2>
+  <table>
+    <thead><tr><th>驻地</th><th>养殖节奏</th><th>特别注意事项</th></tr></thead>
+    <tbody>
+      <tr><td><b>广西来宾</b></td><td class="cG-col">室外全年可养，夏季最旺</td><td>4–8 月暴雨多，池上架遮雨棚防稀释降温；红壤偏酸，藻液 pH 自然偏酸，定期测 pH</td></tr>
+      <tr><td><b>广州</b></td><td class="cG-col">类似来宾，全年</td><td>台风暴雨更频，注意遮雨+防溢；高温期中午遮阴</td></tr>
+      <tr><td><b>宁波</b></td><td class="cO-col">4–11 月室外，12–3 月移室内</td><td>冬季低温藻停长，移阳台光照桶或季节性停、次年春重启扩培</td></tr>
+    </tbody>
+  </table>
+
+  <h2>十、常见问题 FAQ</h2>
+  <div class="quick">
+    <h3>问答速查</h3>
+    <ul>
+      <li><b>能人吃吗？</b>栅藻理论可食用，但家庭开放培养卫生难控，<b>建议作饲料/肥料，不主张人吃</b>。</li>
+      <li><b>要强力曝气吗？</b>不必。开放池每日轻搅动或微泡 10 分钟即可，过度曝气反而打断藻群。</li>
+      <li><b>多久能第一次收获？</b>从买种到首收约 <b>2–4 周</b>（含扩培），之后持续采收。</li>
+      <li><b>和小球藻怎么选？</b>想人吃/提纯选小球藻；想废水养、好活、接鸡鱼闭环选<b>栅藻</b>。</li>
+      <li><b>水变臭了怎么办？</b>已厌氧腐败，倒掉重来；下次降低粪水浓度、增加搅动、控制密度。</li>
+      <li><b>能和浮萍一起养吗？</b>不建议同池（浮萍遮光抑藻）；分池养，浮萍喂鸡鱼、栅藻产蛋白肥，各管各的。</li>
+    </ul>
+  </div>
+
+  <h2>十一、在你循环农业里的位置</h2>
+  <div class="flow">
+    <b>闭环总图：</b><br>
+    沼液/鸡粪水/鱼塘废水 ──▶ <b>栅藻池</b>（吸氮磷产蛋白）──▶ 鲜藻喂鸡+喂鱼 / 藻肥浇菜<br>
+    ↘ 浮萍池（水面蛋白）──▶ 喂鸡+喂鱼 / 堆肥<br>
+    厨余 ──▶ 黑水虻（虫体蛋白+虫沙肥）＆ 波卡西/蚯蚓（精肥）<br>
+    绿肥（白三叶/柱花草）──▶ 翻压改红壤<br>
+    <b>菜 → 厨余/废 → 虫/藻/肥 → 回菜</b>，几乎没有外购投入。
+  </div>
+  <div class="verdict">
+    <h3>落地建议</h3>
+    <p>先买一瓶 <code>10–50ml</code> 栅藻浓缩种，用化肥水（方案 B）走完三级扩培练手；稳定后可切换方案 A 用你沼液/鸡粪水，成本降到近乎零。配一个泡沫箱浅池起步，2–4 周即收第一茬，逐步扩到阳台 PVC 长槽。它和你已有的黑水虻、浮萍、蚯蚓、绿肥拼成完整「蛋白+肥源」闭环，是来宾红壤家庭生态农业里最省钱的微藻拼图。</p>
+  </div>
+
+  <div class="foot">
+    本手册为家庭生态农业实践参考，数据含文献值与经验值，实际产量/适配以本地试养为准。配合《堆肥与栽培基质手册》《家庭循环农业最优方向》《养地植物与绿肥手册》使用效果最佳。浅底深字版，无白字。<br>
+    文档版本 v1.0 ｜ 广西来宾适配 ｜ 2026-09-18
+  </div>
+
+</div>
+</body>
+</html>
