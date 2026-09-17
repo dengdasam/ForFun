@@ -3,12 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>家庭循环农业最优方向 · 广西来宾适配版</title>
+<title>家庭循环农业最优方向 · 广西来宾适配版（升级整合版）</title>
 <style>
   :root{
     --bg:#fafaf3; --card:#ffffff; --ink:#2c2c24; --ink2:#4a4a3a;
     --green:#2f6b1f; --green-l:#e8f5e9; --orange:#d2691e; --orange-l:#fdecdc;
     --gold:#b8860b; --gold-l:#fbf3d5; --line:#d8d8c4; --red:#9c2b2b; --red-l:#f7e6e6;
+    --blue:#1f6b8c; --blue-l:#e3f1f6;
   }
   *{box-sizing:border-box;margin:0;padding:0}
   body{font-family:-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;
@@ -20,6 +21,8 @@
   .cover .sub{margin-top:12px;font-size:17px;color:#5c4326;font-weight:600}
   .cover .meta{margin-top:18px;font-size:13px;color:#6b6b53;
     background:#fff8e8;border:1px solid var(--gold);border-radius:8px;padding:10px 14px;display:inline-block}
+  .cover .badge{margin-top:14px;font-size:12.5px;color:#1f6b8c;background:var(--blue-l);
+    border:1px solid var(--blue);border-radius:20px;padding:4px 14px;display:inline-block;font-weight:600}
   .toc{max-width:920px;margin:26px auto;padding:0 22px}
   .toc h2{font-size:18px;color:var(--green);border-left:5px solid var(--green);padding-left:10px;margin-bottom:12px}
   .toc ol{columns:2;column-gap:30px;font-size:14px;color:var(--ink2)}
@@ -31,6 +34,7 @@
     padding:26px 28px;margin:22px 0;box-shadow:0 1px 4px rgba(0,0,0,.04)}
   h2{font-size:23px;color:var(--green);border-bottom:2px dashed var(--green-l);padding-bottom:8px;margin-bottom:16px}
   h3{font-size:18px;color:var(--orange);margin:18px 0 8px}
+  h4{font-size:15.5px;color:var(--blue);margin:14px 0 6px}
   p{margin:10px 0}
   ul,ol{padding-left:22px;margin:10px 0}
   li{margin:6px 0}
@@ -41,10 +45,12 @@
   .pill{display:inline-block;background:var(--gold-l);color:#7a5a08;border:1px solid var(--gold);
     border-radius:20px;padding:2px 12px;font-size:13px;margin:2px 4px 2px 0;font-weight:600}
   .tag{display:inline-block;background:var(--orange-l);color:#a8521a;border-radius:6px;padding:2px 9px;font-size:12.5px;font-weight:600}
+  .tagb{display:inline-block;background:var(--blue-l);color:#155a73;border-radius:6px;padding:2px 9px;font-size:12.5px;font-weight:600}
   .note{background:#fff8e8;border-left:5px solid var(--gold);padding:12px 16px;border-radius:0 8px 8px 0;margin:14px 0;font-size:14.5px}
   .warn{background:var(--red-l);border-left:5px solid var(--red);padding:12px 16px;border-radius:0 8px 8px 0;margin:14px 0;font-size:14.5px}
   .good{background:var(--green-l);border-left:5px solid var(--green);padding:12px 16px;border-radius:0 8px 8px 0;margin:14px 0;font-size:14.5px}
   .flow{background:#f4f8ee;border:1px solid var(--green-l);border-radius:12px;padding:18px;text-align:center;margin:16px 0}
+  .flowb{background:var(--blue-l);border:1px solid #cfe6f0;border-radius:12px;padding:18px;text-align:center;margin:16px 0}
   .qr{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin:10px 0}
   .qr .box{flex:1 1 200px;background:#fff;border:1px solid var(--line);border-radius:10px;padding:14px;text-align:center}
   .qr .box b{color:var(--green)}
@@ -55,6 +61,12 @@
   .kpi .c{flex:1 1 160px;background:var(--green-l);border:1px solid #bfe0bf;border-radius:10px;padding:14px;text-align:center}
   .kpi .c b{display:block;font-size:24px;color:#234d18}
   .kpi .c span{font-size:13px;color:#4a4a3a}
+  .kpi .cb{flex:1 1 160px;background:var(--blue-l);border:1px solid #bfdbe8;border-radius:10px;padding:14px;text-align:center}
+  .kpi .cb b{display:block;font-size:24px;color:#155a73}
+  .kpi .cb span{font-size:13px;color:#4a4a3a}
+  .grid2{display:flex;flex-wrap:wrap;gap:14px;margin:14px 0}
+  .grid2 .g{flex:1 1 260px;background:#fbfbf4;border:1px solid var(--line);border-radius:10px;padding:14px}
+  .grid2 .g b{color:var(--green)}
 </style>
 </head>
 <body>
@@ -62,8 +74,9 @@
 <div class="cover">
   <div class="wrap">
     <h1>家庭循环农业 · 最优方向</h1>
-    <div class="sub">以「黑水虻 + 鸡 + 菜」四位一体闭环为核心 —— 广西来宾气候适配版</div>
+    <div class="sub">以「黑水虻 + 鸡 + 菜」核心闭环为中枢，向「水生带 + 阳台微闭环」两翼扩展 —— 广西来宾气候适配版</div>
     <div class="meta">📍 来宾年均 20.7°C · 无霜期 331 天 · 黑水虻最适温区 28–32°C 几乎全年高效 · 红壤偏酸需调酸养地</div>
+    <div class="badge">⬆ 升级版：新增水生线（浮萍·罗非鱼·栅藻）、阳台微闭环（鱼菜共生·波卡西·蚯蚓）、两大低成本矩阵、高光效 C4 生产引擎</div>
   </div>
 </div>
 
@@ -71,19 +84,23 @@
   <h2>目录</h2>
   <ol>
     <li><a href="#c1">家庭循环农业的本质目标</a></li>
-    <li><a href="#c2">候选方向对比矩阵</a></li>
+    <li><a href="#c2">候选方向对比矩阵（升级）</a></li>
     <li><a href="#c3">为什么是「菜-虫-鸡-肥」</a></li>
     <li><a href="#c4">来宾的气候红利</a></li>
-    <li><a href="#c5">最优架构与物质流图</a></li>
-    <li><a href="#c6">你已有的资产如何拼装</a></li>
-    <li><a href="#c7">分阶段落地路线</a></li>
-    <li><a href="#c8">关键数字与经济账</a></li>
-    <li><a href="#c9">命门与风险</a></li>
-    <li><a href="#c10">与其他方向的取舍</a></li>
-    <li><a href="#c11">30 天起步行动清单</a></li>
-    <li><a href="#c12">一句话结论</a></li>
-    <li><a href="#c13">与本仓库手册库的关系</a></li>
-    <li><a href="#c14">数据来源</a></li>
+    <li><a href="#c5">最优架构与物质流图（核心+扩展）</a></li>
+    <li><a href="#c6">两大低成本矩阵：蛋白源 + 肥源（新增）</a></li>
+    <li><a href="#c7">水生生产带：浮萍 + 罗非鱼/泥鳅 + 栅藻（新增）</a></li>
+    <li><a href="#c8">阳台微闭环：鱼菜共生 + 波卡西 + 蚯蚓（新增）</a></li>
+    <li><a href="#c9">高光效 C4 植物：速生出产引擎（新增）</a></li>
+    <li><a href="#c10">你已有的资产如何拼装（升级）</a></li>
+    <li><a href="#c11">分阶段落地路线（升级）</a></li>
+    <li><a href="#c12">关键数字与经济账（升级）</a></li>
+    <li><a href="#c13">命门与风险（升级）</a></li>
+    <li><a href="#c14">与其他方向的取舍（升级）</a></li>
+    <li><a href="#c15">30 天起步行动清单（升级）</a></li>
+    <li><a href="#c16">一句话结论</a></li>
+    <li><a href="#c17">与本仓库手册库的关系</a></li>
+    <li><a href="#c18">数据来源</a></li>
   </ol>
 </div>
 
@@ -96,7 +113,7 @@
     <thead><tr><th>原则</th><th>含义</th><th>对家庭的意义</th></tr></thead>
     <tbody>
       <tr><td><b>① 低外购</b></td><td>肥料、饲料尽量系统内自产，少买化肥/商品饲料</td><td>长期成本趋零，不受市场涨价/断供影响</td></tr>
-      <tr><td><b>② 高自给</b></td><td>蛋、肉、菜、调味椒尽量自产</td><td>食品安全 + 日常开销下降</td></tr>
+      <tr><td><b>② 高自给</b></td><td>蛋、肉、菜、蛋白、调味椒尽量自产</td><td>食品安全 + 日常开销下降</td></tr>
       <tr><td><b>③ 物质闭环</b></td><td>废弃物→资源→产物→废弃物，循环不排污</td><td>不臭不脏、邻里无矛盾、合规</td></tr>
       <tr><td><b>④ 时间省力</b></td><td>系统能「自运转」，不靠每天高强度劳作</td><td>能长期坚持，而非三分钟热度</td></tr>
     </tbody>
@@ -105,20 +122,22 @@
 </section>
 
 <section id="c2">
-  <h2>二、候选方向对比矩阵</h2>
-  <p>把常见的家庭循环农业模式摆在一起，按上面四条原则打分（★ 越多越优）：</p>
+  <h2>二、候选方向对比矩阵（升级）</h2>
+  <p>把常见的家庭循环农业模式摆在一起，按四条原则打分（★ 越多越优）。<b>本版新增「水生带」与「阳台微闭环」两项，并上调了鱼菜共生的评分</b>——因为我们已经有了可落地的阳台鱼菜共生与浮萍/罗非鱼方案，它不再是「高门槛不可碰」，而是核心闭环的优质补充。</p>
   <table>
     <thead><tr><th>模式</th><th>低外购</th><th>高自给</th><th>物质闭环</th><th>省力</th><th>来宾适配</th><th>技术门槛</th></tr></thead>
     <tbody>
       <tr><td>纯种植闭环（菜+绿肥+堆肥）</td><td>★★★★</td><td>★★☆</td><td>★★★</td><td>★★★★</td><td>★★★★</td><td>低</td></tr>
-      <tr><td><b>菜-虫-鸡-肥（本手册推荐）</b></td><td><b>★★★★★</b></td><td><b>★★★★★</b></td><td><b>★★★★★</b></td><td><b>★★★☆</b></td><td><b>★★★★★</b></td><td>中</td></tr>
-      <tr><td>鱼菜共生</td><td>★★★</td><td>★★★</td><td>★★★★</td><td>★★☆</td><td>★★☆</td><td>高</td></tr>
+      <tr><td><b>菜-虫-鸡-肥（核心闭环）</b></td><td><b>★★★★★</b></td><td><b>★★★★★</b></td><td><b>★★★★★</b></td><td><b>★★★☆</b></td><td><b>★★★★★</b></td><td>中</td></tr>
+      <tr><td><b>＋ 水生带（浮萍/罗非鱼/栅藻）</b></td><td><b>★★★★★</b></td><td><b>★★★★☆</b></td><td><b>★★★★★</b></td><td><b>★★★</b></td><td><b>★★★★★</b></td><td>中</td></tr>
+      <tr><td><b>＋ 阳台微闭环（鱼菜共生/波卡西/蚯蚓）</b></td><td><b>★★★★☆</b></td><td><b>★★★★</b></td><td><b>★★★★☆</b></td><td><b>★★★★</b></td><td><b>★★★★</b></td><td>低-中</td></tr>
+      <tr><td>鱼菜共生（独立大系统）</td><td>★★★</td><td>★★★</td><td>★★★★</td><td>★★☆</td><td>★★★</td><td>高</td></tr>
       <tr><td>沼气（户用）</td><td>★★★</td><td>★★☆</td><td>★★★★</td><td>★★☆</td><td>★★☆</td><td>高</td></tr>
       <tr><td>食用菌（菇+渣回田）</td><td>★★★★</td><td>★★☆</td><td>★★★</td><td>★★★</td><td>★★★</td><td>中</td></tr>
       <tr><td>单一养鸡（无种植配合）</td><td>★☆</td><td>★★★★</td><td>★☆</td><td>★★☆</td><td>★★★</td><td>低</td></tr>
     </tbody>
   </table>
-  <div class="good">✅ <b>结论</b>：「菜-虫-鸡-肥」四位一体在四项原则上综合最优，且恰好把你已有的全部手册（绿肥、黑水虻、堆肥、菜园三件套、养鸡规划、生态方案）串成一条链。它就是你要找的「最优方向」。</div>
+  <div class="good">✅ <b>结论</b>：最优架构 = <strong>核心闭环（菜-虫-鸡-肥）打底 + 水生带（浮萍/罗非鱼/栅藻）补蛋白与净水 + 阳台微闭环（鱼菜共生/波卡西/蚯蚓）收边角料</strong>。三者共享同一套「废弃物→资源」逻辑，把你的全部手册串成一张可操作的闭环地图。</div>
 </section>
 
 <section id="c3">
@@ -132,7 +151,7 @@
   </ul>
   <h3>② 鸡 = 循环枢纽（连接种植与养殖）</h3>
   <ul>
-    <li>吃黑水虻虫体 → 蛋肉自产、肉质紧实（外部检测：虫草鸡蛋氨基酸高 32%、VE 高 8–10 倍）</li>
+    <li>吃黑水虻虫体 + 浮萍 + 籽粒苋等 C4 鸡料 → 蛋肉自产（外部检测：虫草鸡蛋氨基酸高 32%、VE 高 8–10 倍）</li>
     <li>粪 → 堆肥/回田，或回喂黑水虻（鸡粪是黑水虻优质底物）</li>
     <li>活体 = 菜园/果园的除草机 + 除虫机 + 松土机（分区轮牧）</li>
   </ul>
@@ -144,48 +163,41 @@
   <div class="kpi">
     <div class="c"><b>331 天</b><span>无霜期 → 多年生/越冬天然优势</span></div>
     <div class="c"><b>28–32°C</b><span>黑水虻最适温区 → 几乎全年高效转化</span></div>
-    <div class="c"><b>1360mm</b><span>年降水 → 雨水回用基础</span></div>
+    <div class="c"><b>1360mm</b><span>年降水 → 雨水回用 + 鱼塘补水基础</span></div>
     <div class="c"><b>偏酸红壤</b><span>虫沙偏碱含钙 → 天然中和酸度</span></div>
   </div>
   <ul>
     <li><b>黑水虻在来宾是「开挂」</b>：文献最适温 27–35°C，来宾年均 20.7°C、盛夏更在其舒适区，只需冬季轻微保温即可全年运转——这是北方家庭做不到的。</li>
-    <li><b>无霜期长</b>：辣椒（哈巴纳达等 chinense）可露天多年生，鸡舍冬季无需重保温，绿肥可越冬覆盖。</li>
+    <li><b>无霜期长</b>：辣椒（哈巴纳达等 chinense）可露天多年生，鸡舍冬季无需重保温，绿肥可越冬覆盖，<b>浮萍/栅藻池也能基本全年运转</b>。</li>
     <li><b>红壤 + 虫沙是绝配</b>：你手册里的「调酸铁律」仍需生石灰打底，但黑水虻虫沙偏碱含钙，长期施用能逐步中和酸度、补番茄脐腐最缺的钙。</li>
-    <li><b>降水集中（4–8 月占 70%）</b>：既是雨水回用（你生态方案已有）的利好，也是必须「避雨三件套」的原因——鸡舍同样要遮雨干燥。</li>
+    <li><b>降水集中（4–8 月占 70%）</b>：既是雨水回用（你生态方案已有）的利好，也是必须「避雨三件套」的原因——鸡舍同样要遮雨干燥，鱼塘则借降水补水位。</li>
   </ul>
 </section>
 
 <section id="c5">
   <h2>五、最优架构与物质流图</h2>
+  <p><b>图 A · 核心闭环</b>（菜-虫-鸡-肥）。实线为主循环，虚线为辅助回流；整套只有「初始种苗 + 偶尔补矿质（生石灰）」一个外购入口。</p>
   <div class="flow">
     <svg viewBox="0 0 680 420" xmlns="http://www.w3.org/2000/svg" style="max-width:680px;width:100%">
       <defs>
-        <marker id="arw" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
-          <path d="M0,0 L8,3 L0,6 Z" fill="#2f6b1f"/>
-        </marker>
+        <marker id="arw" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#2f6b1f"/></marker>
+        <marker id="arwb" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#1f6b8c"/></marker>
       </defs>
-      <!-- 中心黑水虻 -->
       <circle cx="340" cy="210" r="62" fill="#eef6e6" stroke="#2f6b1f" stroke-width="3"/>
       <text x="340" y="202" text-anchor="middle" font-size="17" font-weight="700" fill="#234d18">黑水虻</text>
       <text x="340" y="222" text-anchor="middle" font-size="12" fill="#5c4326">转化中枢</text>
-      <!-- 四个节点 -->
       <rect x="40" y="70" width="150" height="64" rx="10" fill="#fdecdc" stroke="#d2691e" stroke-width="2"/>
       <text x="115" y="98" text-anchor="middle" font-size="15" font-weight="700" fill="#a8521a">菜园 / 绿肥</text>
       <text x="115" y="118" text-anchor="middle" font-size="11" fill="#5c4326">主食 + 残叶</text>
-
       <rect x="490" y="70" width="150" height="64" rx="10" fill="#fbf3d5" stroke="#b8860b" stroke-width="2"/>
       <text x="565" y="98" text-anchor="middle" font-size="15" font-weight="700" fill="#7a5a08">家庭厨余</text>
       <text x="565" y="118" text-anchor="middle" font-size="11" fill="#5c4326">湿垃圾</text>
-
       <rect x="40" y="300" width="150" height="64" rx="10" fill="#e8f5e9" stroke="#2f6b1f" stroke-width="2"/>
       <text x="115" y="328" text-anchor="middle" font-size="15" font-weight="700" fill="#234d18">堆肥 / 虫沙</text>
       <text x="115" y="348" text-anchor="middle" font-size="11" fill="#5c4326">回田改土</text>
-
       <rect x="490" y="300" width="150" height="64" rx="10" fill="#f7e6e6" stroke="#9c2b2b" stroke-width="2"/>
       <text x="565" y="328" text-anchor="middle" font-size="15" font-weight="700" fill="#9c2b2b">鸡（枢纽）</text>
       <text x="565" y="348" text-anchor="middle" font-size="11" fill="#5c4326">蛋肉 + 粪</text>
-
-      <!-- 箭头 -->
       <path d="M190,110 C260,140 280,170 285,195" fill="none" stroke="#2f6b1f" stroke-width="2.5" marker-end="url(#arw)"/>
       <path d="M490,110 C420,140 400,170 395,195" fill="none" stroke="#2f6b1f" stroke-width="2.5" marker-end="url(#arw)"/>
       <path d="M285,225 C280,250 260,280 190,310" fill="none" stroke="#2f6b1f" stroke-width="2.5" marker-end="url(#arw)"/>
@@ -200,55 +212,249 @@
       <text x="430" y="270" font-size="10" fill="#9c2b2b">菜区轮牧</text>
     </svg>
   </div>
-  <p><b>箭头解说</b>：① 菜园残叶/绿肥 + ② 家庭厨余 → 黑水虻；③ 黑水虻虫沙 → 堆肥回田；④ 虫体 → 喂鸡；⑤ 鸡粪 → 回喂黑水虻或堆肥；⑥ 鸡进菜园分区轮牧（除草除虫松土）。实线为主循环，虚线为辅助回流。整套只有一个「外购入口」：初始鸡苗/种苗与偶尔补的矿质（如生石灰），其余全闭环。</p>
+
+  <p><b>图 B · 水生带 + 阳台微闭环（对核心闭环的两翼扩展）</b>。蓝色箭头为水生线，绿虚线为阳台边角料回流。</p>
+  <div class="flowb">
+    <svg viewBox="0 0 680 360" xmlns="http://www.w3.org/2000/svg" style="max-width:680px;width:100%">
+      <defs>
+        <marker id="arwb2" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#1f6b8c"/></marker>
+      </defs>
+      <rect x="30" y="20" width="620" height="120" rx="12" fill="#e3f1f6" stroke="#1f6b8c" stroke-width="2"/>
+      <text x="48" y="40" font-size="13" font-weight="700" fill="#155a73">水生生产带（来宾暖区全年可转）</text>
+      <rect x="60" y="55" width="150" height="64" rx="10" fill="#ffffff" stroke="#1f6b8c" stroke-width="2"/>
+      <text x="135" y="83" text-anchor="middle" font-size="14" font-weight="700" fill="#155a73">浮萍 / 紫萍</text>
+      <text x="135" y="103" text-anchor="middle" font-size="10" fill="#4a4a3a">高蛋白绿肥·喂鸡鱼</text>
+      <rect x="265" y="55" width="150" height="64" rx="10" fill="#ffffff" stroke="#1f6b8c" stroke-width="2"/>
+      <text x="340" y="83" text-anchor="middle" font-size="14" font-weight="700" fill="#155a73">栅藻池</text>
+      <text x="340" y="103" text-anchor="middle" font-size="10" fill="#4a4a3a">废水养·蛋白+净水</text>
+      <rect x="470" y="55" width="160" height="64" rx="10" fill="#ffffff" stroke="#1f6b8c" stroke-width="2"/>
+      <text x="550" y="83" text-anchor="middle" font-size="14" font-weight="700" fill="#155a73">鱼塘·罗非鱼/泥鳅</text>
+      <text x="550" y="103" text-anchor="middle" font-size="10" fill="#4a4a3a">吃浮萍虫·高产</text>
+
+      <rect x="60" y="240" width="160" height="64" rx="10" fill="#e8f5e9" stroke="#2f6b1f" stroke-width="2"/>
+      <text x="140" y="268" text-anchor="middle" font-size="14" font-weight="700" fill="#234d18">菜园</text>
+      <text x="140" y="288" text-anchor="middle" font-size="10" fill="#5c4326">吸肥·产出</text>
+      <rect x="300" y="240" width="160" height="64" rx="10" fill="#fdecdc" stroke="#d2691e" stroke-width="2"/>
+      <text x="380" y="268" text-anchor="middle" font-size="14" font-weight="700" fill="#a8521a">鸡（枢纽）</text>
+      <text x="380" y="288" text-anchor="middle" font-size="10" fill="#5c4326">蛋肉·粪</text>
+      <rect x="520" y="240" width="130" height="64" rx="10" fill="#fbf3d5" stroke="#b8860b" stroke-width="2"/>
+      <text x="585" y="268" text-anchor="middle" font-size="13" font-weight="700" fill="#7a5a08">堆肥/塘泥</text>
+      <text x="585" y="288" text-anchor="middle" font-size="10" fill="#5c4326">回田改土</text>
+
+      <path d="M135,119 C135,160 140,200 140,238" fill="none" stroke="#1f6b8c" stroke-width="2.5" marker-end="url(#arwb2)"/>
+      <path d="M340,119 C340,160 380,200 380,238" fill="none" stroke="#1f6b8c" stroke-width="2.5" marker-end="url(#arwb2)"/>
+      <path d="M550,119 C550,160 585,180 585,238" fill="none" stroke="#1f6b8c" stroke-width="2.5" marker-end="url(#arwb2)"/>
+      <path d="M140,240 C200,210 260,200 300,238" fill="none" stroke="#1f6b8c" stroke-width="2" stroke-dasharray="5,4" marker-end="url(#arwb2)"/>
+      <text x="150" y="180" font-size="10" fill="#155a73">浮萍→鸡/鱼</text>
+      <text x="346" y="180" font-size="10" fill="#155a73">栅藻→鸡</text>
+      <text x="556" y="180" font-size="10" fill="#155a73">鱼粪水/塘泥→田</text>
+      <text x="200" y="224" font-size="10" fill="#155a73">浮萍/虫喂鱼</text>
+
+      <rect x="30" y="320" width="620" height="34" rx="8" fill="#fff8e8" stroke="#b8860b" stroke-width="1.5"/>
+      <text x="40" y="342" font-size="11" fill="#7a5a08">阳台微闭环（回流绿虚线）：鱼菜共生→鱼粪水肥菜 ｜ 波卡西/蚯蚓→精肥液肥 ｜ 浮萍回收→堆肥/喂鸡 ｜ 全部接回核心闭环</text>
+    </svg>
+  </div>
+  <p><b>箭头解说（图 B）</b>：① 浮萍/紫萍 → 喂鸡、喂鱼、或回收堆肥；② 栅藻池（用沼液/鸡粪水养殖）→ 蛋白喂鸡、净化塘水；③ 鱼塘（罗非鱼吃浮萍与黑水虻虫）→ 鱼粪水/塘泥肥菜；④ 鸡粪与菜园残料 → 回核心闭环（黑水虻/堆肥）。阳台微闭环在最下方作为「边角料回收站」，把鱼菜共生的水、波卡西与蚯蚓的产物全部接回菜地，互不孤立。</p>
 </section>
 
 <section id="c6">
-  <h2>六、你已有的资产如何拼装</h2>
+  <h2>六、两大低成本矩阵：蛋白源 + 肥源（新增核心）</h2>
+  <p>这两张矩阵是你闭环的「弹药库」——把能<b>吃废弃物、自己扩繁</b>的蛋白与肥料排个序。次序越靠前，越该优先做厚。微藻（栅藻）的坑在于：蛋白虽高，但家庭规模要建光照池、配营养盐，算下来并不便宜；真正「低成本」的往往是能吃废料的昆虫、水生植物和微生物。</p>
+
+  <h3>① 低成本蛋白源矩阵（接「鸡/鱼日粮」）</h3>
+  <table>
+    <thead><tr><th>蛋白源</th><th>干重蛋白</th><th>吃什么长大</th><th>成本</th><th>在你闭环里的接法</th></tr></thead>
+    <tbody>
+      <tr><td><b>浮萍 / 紫萍</b></td><td>30–45%</td><td>清水/沼液/养殖废水（自扩繁）</td><td>≈0 元</td><td>捞起直接喂鸡喂鱼，或堆肥/液肥</td></tr>
+      <tr><td><b>黑水虻虫体</b></td><td>40–45%</td><td>厨余/残果/鸡粪</td><td>≈0 元</td><td>鲜虫拌鸡日粮，替代 10–30% 豆粕</td></tr>
+      <tr><td><b>蚯蚓（体+粪）</b></td><td>60%+（干）</td><td>厨余/牛粪/菜渣</td><td>≈0 元</td><td>喂鸡 + 蚓粪作精肥</td></tr>
+      <tr><td><b>酵母（面包/产朊假丝）</b></td><td>50%+</td><td>糖蜜/烂水果/淀粉废水</td><td>极低</td><td>发酵后拌料，有糖厂废料渠道更香</td></tr>
+      <tr><td><b>柱花草 / 白三叶 / 苜蓿</b></td><td>20–25%</td><td>阳光+根瘤菌固氮</td><td>≈0 元（种地顺便）</td><td>刈割喂鸡 + 翻压养地双收</td></tr>
+      <tr><td><b>栅藻</b></td><td>45–55%</td><td>稀释沼液/鸡粪水（废水）</td><td>极低</td><td>鲜藻浆拌料/晒干粉；详见《栅藻养殖手册》</td></tr>
+      <tr><td>螺旋藻</td><td>60–70%</td><td>高碱高盐专用水</td><td>最贵</td><td>家庭不推荐（门槛高风险大）</td></tr>
+    </tbody>
+  </table>
+  <p class="pill">成本排序：浮萍 ≈ 黑水虻 ≈ 蚯蚓（吃废料，近乎零成本）＞ 酵母 ＞ 柱花草/白三叶 ＞ 栅藻 ＞ 螺旋藻</p>
+
+  <h3>② 低成本肥源矩阵（接「菜地底肥/追肥」）</h3>
+  <table>
+    <thead><tr><th>肥源</th><th>养分偏重</th><th>成本</th><th>红壤用法要点</th></tr></thead>
+    <tbody>
+      <tr><td><b>黑水虻虫沙</b></td><td>全量有机 + 钙（偏碱）</td><td>≈0 元</td><td>稳肥，中和红壤酸度，助番茄防脐腐</td></tr>
+      <tr><td><b>浮萍堆肥 / 液肥</b></td><td>高氮（C/N 5–10）</td><td>≈0 元</td><td>必须配碳料（稻壳/秸秆）拉到 C/N 25–30，薄铺防厌氧</td></tr>
+      <tr><td><b>蚯蚓粪</b></td><td>全量、温和</td><td>≈0 元</td><td>精肥之王，不烧根，直接撒畦</td></tr>
+      <tr><td><b>草木灰</b></td><td>钾 + 调酸</td><td>0 元（烧秸秆）</td><td>⚠️ 碱性，别和铵态肥/鲜粪混施（跑氮）</td></tr>
+      <tr><td><b>淘米水 / 豆渣发酵液</b></td><td>氮</td><td>0 元</td><td>密封 2 天/发酵后浇叶菜</td></tr>
+      <tr><td><b>蔗渣 / 糖厂滤泥</b></td><td>有机质极高</td><td>本地几近免费</td><td>广西糖厂多，改红壤黏重；碳高需混氮料/虫沙</td></tr>
+      <tr><td><b>花生麸 / 菜籽麸</b></td><td>缓释氮磷钾全能</td><td>极便宜</td><td>榨油厂下脚，泡水浇或埋沟</td></tr>
+      <tr><td><b>菌棒废料 / 木薯渣</b></td><td>有机质</td><td>本地便宜</td><td>种菇基地废棒、木薯产区渣，堆肥佳</td></tr>
+      <tr><td><b>蛋壳 / 骨粉</b></td><td>钙 / 磷钙</td><td>0 元（养鸡直出）</td><td>洗净粉碎补钙，防番茄脐腐</td></tr>
+      <tr><td><b>沼液 / 沼渣</b></td><td>顶级液肥</td><td>进阶</td><td>若上沼气池，厨余+禽粪同进，肥能双收</td></tr>
+    </tbody>
+  </table>
+  <p class="pill">成本排序：厨余自堆/黑水虻/蚯蚓/浮萍 ≈ 0 元 ＞ 草木灰/蛋壳/淘米水 0 元 ＞ 蔗渣/菌棒/木薯渣（本地几乎免费）＞ 花生麸/菜籽麸（极便宜）＞ 商品有机肥</p>
+  <div class="warn">⚠️ <b>红壤专用组合原则</b>：别只盯一种肥——要「有机质(蔗渣/绿肥) + 氮(虫沙/麸/浮萍) + 钾(草木灰) + 钙(壳/虫沙)」搭配；所有生鲜粪尿（鸡粪）必须腐熟或先进黑水虻，<b>生粪下地烧根又招虫</b>。石灰调酸是铁律（不算肥但必须先做），再谈施肥。</div>
+</section>
+
+<section id="c7">
+  <h2>七、水生生产带：浮萍 + 罗非鱼/泥鳅 + 栅藻（新增）</h2>
+  <p>有水面（鱼塘/大缸/泡沫箱）就加这条带——它同时为闭环贡献<b>蛋白、饲料、净水、肥料</b>四条价值，且几乎零外购饲料。</p>
+
+  <h3>① 浮萍 / 紫萍 —— 隐藏王牌</h3>
+  <ul>
+    <li><b>淡水浮水小叶片，干重蛋白 30–45%</b>，比小球藻好养十倍：丢水塘、沼气液、养殖废水上就疯长，还能净水、直接捞了喂鸡喂鱼。<strong>几乎零成本扩繁</strong>。</li>
+    <li><b>做堆肥</b>：高氮（C/N 5–10），不能直接堆——按 3 份浮萍 + 1 份干碳料（稻壳/秸秆/落叶/锯末/黑水虻废壳）把 C/N 拉到 25–30，正常翻堆腐熟。</li>
+    <li><b>泡桶液肥</b>：浮萍+水+红糖/EM 密封 2–3 周，上清液兑水浇菜。</li>
+    <li><b>先过动物再堆肥（最契合闭环）</b>：浮萍喂鸡/鱼 → 粪便进黑水虻 → 虫沙回菜地；或浮萍直接当黑水虻辅料。</li>
+    <li>⚠️ 浮萍会<b>富集水体污染物</b>，养在脏沟/养殖废水里做堆肥前务必确认水源干净；繁殖爆炸快，定期采收 1/3–1/2 防满塘缺氧。</li>
+  </ul>
+
+  <h3>② 家庭水产最高产排序</h3>
+  <table>
+    <thead><tr><th>品种</th><th>家庭亩产（粗估）</th><th>水温适配（来宾）</th><th>食性</th><th>好养度</th></tr></thead>
+    <tbody>
+      <tr><td><b>罗非鱼</b></td><td>1000–3000 斤</td><td>20–35°C 完美</td><td>杂食，吃浮萍/菜叶/虫</td><td>★★★★★</td></tr>
+      <tr><td>胡子鲶（塘鲺）</td><td>2000–5000 斤（超密）</td><td>极耐热耐低氧</td><td>杂食腐屑</td><td>★★★★</td></tr>
+      <tr><td>草鱼</td><td>500–1500 斤</td><td>好，冬停食</td><td>吃草（浮萍/柱花草）</td><td>★★★</td></tr>
+      <tr><td>鲫鱼</td><td>300–800 斤</td><td>好</td><td>杂食</td><td>★★★★★</td></tr>
+      <tr><td>泥鳅/黄鳝</td><td>500–1500 斤</td><td>好（稻田更佳）</td><td>杂食底栖</td><td>★★★★</td></tr>
+    </tbody>
+  </table>
+  <ul>
+    <li><b>有土塘/大水体 → 罗非鱼综合第一</b>：长得快、耐密养、不挑食，直接吃浮萍和黑水虻虫，和你闭环无缝对接；鱼粪肥水养浮萍和藻，塘泥挖出肥菜地。</li>
+    <li><b>只有小池/缸/泡沫箱 → 泥鳅或胡子鲶</b>：泥鳅小水体、耐低氧、不跳缸、好管；胡子鲶单产数字最吓人但土腥味重、阳台不推荐。</li>
+    <li><b>立体混养翻倍</b>：罗非鱼（中下层吃浮萍虫）+ 鲢鳙（上层滤藻控水肥）+ 草鱼（吃草）三层混养，空间拉满、水质更稳。</li>
+    <li>⚠️ <b>越冬</b>：罗非鱼低于 10°C 危险，来宾 1 月均温 10.9°C，深塘可过冬，极端低温年备深水坑；⚠️ <b>高密度必增氧</b>；⚠️ 密养易发烂鳃/肠炎，少投鲜粪、多靠浮萍虫等洁净料。</li>
+  </ul>
+
+  <h3>③ 栅藻 —— 用废养、好活、高蛋白</h3>
+  <ul>
+    <li>淡水绿藻，比小球藻更<b>耐污</b>（能直接用养殖废水/沼液养）、蛋白 45–55%，家庭开放池浅宽容器即可养。</li>
+    <li>接法：稀释沼液/鸡粪水倒入浅盆 → 引藻种 → 全日照、常搅动 → 滤出藻浆喂鸡鱼/做肥/净水。详见《栅藻养殖手册》（已推送）。</li>
+    <li>⚠️ 夜间耗氧（深水池别太浓防鱼缺氧）；开放池用纱网盖防孑孓；宁波阳台冬天停长需室内光照桶。</li>
+  </ul>
+  <div class="good">✅ 水生带一句话：<b>浮萍铺水面（遮光控藻+喂鱼+防蚊）+ 罗非鱼吃浮萍虫 + 栅藻池净化废水</b>，三样把「蛋白+净水+肥」一次补齐，和黑水虻、绿肥全咬合。</div>
+</section>
+
+<section id="c8">
+  <h2>八、阳台微闭环：鱼菜共生 + 波卡西 + 蚯蚓（新增）</h2>
+  <p>没有院子也有解法——阳台走<b>鱼菜共生 + 波卡西 + 蚯蚓箱</b>，把「边角料」变成精肥液肥，和核心闭环共用逻辑。</p>
+
+  <h3>① 阳台鱼菜共生</h3>
+  <ul>
+    <li>鱼缸养鱼（吃浮萍/黑水虻虫）→ 鱼粪水抽上菜床（陶粒滤床种菜吸肥）→ 净水回流。等于闭环里直接加一条鱼线，<b>几乎不用换水、零外购肥</b>。</li>
+    <li>阳台鱼首选 <b>泥鳅</b>（小水体、耐低氧、不跳缸、吃浮萍虫）或 <b>小罗非鱼</b>（控密度）；胡子鲶太脏气味大不推荐。</li>
+    <li>⚠️ <b>承重红线</b>：水 1 升 = 1 公斤，100 升箱满水即 100kg+，阳台活荷载约 2–2.5 kN/㎡；用 50–80 升 PP 周转箱分散摆、底下必垫接水托盘、泡沫箱别长期直接装水（易塌）。</li>
+    <li>⚠️ <b>药盐水分开</b>：鱼生病加的盐/黄粉/甲基蓝水绝不能浇菜，发病期间水单独处理；鱼粪水肥力猛，宁稀勿浓（苗期兑水 1:3~1:5）。</li>
+    <li>产物：<b>鱼粪水（速效液肥）</b>直接浇菜；<b>缸底淤泥</b>挖出腐熟后撒畦（生淤泥厚敷烧根）；<b>缸面浮萍</b>回收堆肥/喂鸡三选一。</li>
+  </ul>
+
+  <h3>② 波卡西（EM 厌氧发酵）—— 阳台厨余预处理机</h3>
+  <ul>
+    <li>用 EM 菌把厨余做<b>厌氧乳酸发酵</b>：无臭、不招虫、室内阳台可放、<b>荤素油奶柑橘全收</b>（正好补黑水虻/蚯蚓不爱吃的那块短板）。</li>
+    <li>做法：带盖桶 + 分层（厨余 2–3cm → 撒 EM 菌糠 → 压板排气）→ 满桶压紧盖严静置发酵 <b>2 周</b>。</li>
+    <li>产物：<b>发酵液</b>（桶底龙头黄水）极浓，<b>必须稀释 50–100 倍</b>浇菜，不及时放会过酸腐败；<b>发酵残渣不是直接肥</b>！要挖坑埋土再等 2 周二次腐熟，或丢进蚯蚓箱/黑水虻箱接着处理。</li>
+    <li>自制菌糠省成本：米糠/麦麸 + EM 原液 + 红糖/糖蜜 + 少量水，手捏成团不滴水，密封发酵 1–2 周成褐色香糠，晒干备用。</li>
+  </ul>
+
+  <h3>③ 阳台堆肥组合推荐</h3>
+  <table>
+    <thead><tr><th>方法</th><th>阳台适配</th><th>产物</th><th>气味/虫</th></tr></thead>
+    <tbody>
+      <tr><td><b>蚯蚓箱/蚯蚓塔</b></td><td>★★★★★</td><td>蚯蚓粪（精肥之王）</td><td>几乎无臭、不招虫</td></tr>
+      <tr><td><b>波卡西（EM）</b></td><td>★★★★★</td><td>发酵液+残渣</td><td>酸香无臭、不招虫</td></tr>
+      <tr><td><b>黑水虻箱</b></td><td>★★★★</td><td>虫沙+虫体</td><td>幼虫期可控，成虫需管</td></tr>
+      <tr><td>酵素桶（果皮）</td><td>★★★★</td><td>液肥上清</td><td>发酵味、无虫</td></tr>
+      <tr><td>小号好氧翻堆箱</td><td>★★★</td><td>腐熟堆肥</td><td>翻堆时有点味</td></tr>
+    </tbody>
+  </table>
+  <ul>
+    <li><b>最推荐组合</b>：蚯蚓箱打底（出温和精肥）+ 波卡西补刀（难堆料全收）+ 黑水虻处理湿厨余 + 浮萍回收混进箱，无臭不招虫持续出肥改红壤。</li>
+    <li>⚠️ <b>三地差异</b>：来宾/广州夏天高湿易过湿发臭，控制厨余含水量（沥干再投）、多放干料吸湿，蚯蚓箱放荫处防烫；<b>宁波冬天</b>发酵慢，箱外裹保温或移室内走廊，黑水虻冬天几乎停。</li>
+  </ul>
+</section>
+
+<section id="c9">
+  <h2>九、高光效 C4 植物：速生出产引擎（新增）</h2>
+  <p>阳台/菜园想「产出快、净化快、改土快」，优先种<b>高光效速生植物</b>。先厘清概念避免种错：</p>
+  <div class="note">📌 <b>光效常识</b>：<b>C4 植物（玉米/苋菜/高粱/甘蔗）</b>在高温强光下光效是 C3（辣椒/番茄/白三叶）的 2–3 倍；<b>空心菜、木耳菜、红薯叶是 C3（速生耐热但非 C4）</b>，光效不如真 C4；<b>仙人掌/多肉是 CAM（景天酸代谢）</b>，夜里开气孔节水，但绝对光合速率并不高——别误当 C4。</p>
+  <table>
+    <thead><tr><th>真 C4 植物</th><th>阳台可行性</th><th>对你闭环的价值</th></tr></thead>
+    <tbody>
+      <tr><td><b>苋菜（红/绿）</b></td><td>★★★★★</td><td>20–30 天可采，耐热，嫩叶人吃+喂鸡，来宾全年</td></tr>
+      <tr><td><b>籽粒苋（千穗谷）</b></td><td>★★★★★</td><td>C4 苋科，植株高大、籽实蛋白极高，<b>喂鸡神器</b>，人也可吃嫩叶/收籽</td></tr>
+      <tr><td><b>玉米（几株）</b></td><td>★★★</td><td>光效展示、收嫩穗，阳台角落实几棵</td></tr>
+      <tr><td>高粱 / 甜高粱</td><td>★★★★</td><td>几株站角，收穗或青饲，杆甜可嚼喂鸡</td></tr>
+      <tr><td>藜麦</td><td>★★★</td><td>C4 藜科超级食物，彩叶观赏+收籽人吃</td></tr>
+      <tr><td>粟/小米、御谷、龙爪稷</td><td>★★★</td><td>乡土 C4 谷，盆栽观赏+收籽</td></tr>
+    </tbody>
+  </table>
+  <div class="grid2">
+    <div class="g"><b>喂鸡为主</b>：籽粒苋 + 高粱 + 玉米，三样 C4 组鸡料，嫩叶/青杆/籽实都高蛋白，来宾全年可种，比买商品料省。</div>
+    <div class="g"><b>人吃为主</b>：苋菜（嫩叶）+ 藜麦（籽）+ 玉米（嫩穗），C4 高效转化、营养密度高。</div>
+    <div class="g"><b>速生 C3 补位</b>：空心菜（可进鱼菜共生）、木耳菜、红薯叶（蔓生遮荫降阳台温度）——虽非 C4 但速生耐热，与 C4 错开功能。</div>
+    <div class="g"><b>养地仍靠</b>：白三叶/柱花草（固氮养地，已聊过），和苋菜/空心菜「快速产出」功能错开不抢光。</div>
+  </div>
+  <div class="warn">⚠️ <b>硬条件</b>：C4 喜温喜强光（最适 25–35°C、全日照），吃肥吃光快——底肥要给足（虫沙+蚯蚓粪正好），容器叶菜 20cm+、禾本 30cm+；<b>宁波阳台冬天光弱温低，C4 会「罢工」，那几个月改种耐寒 C3（菠菜、小白菜）补位</b>。</div>
+</section>
+
+<section id="c10">
+  <h2>十、你已有的资产如何拼装（升级）</h2>
   <p>这个最优方向不是从零开始，而是把你仓库里已经写透的手册<strong>串成一条链</strong>：</p>
   <table>
     <thead><tr><th>你的手册</th><th>在闭环里的角色</th><th>对应章节/技术</th></tr></thead>
     <tbody>
-      <tr><td>绿肥与养地植物手册</td><td>菜底座：养地、固氮、覆盖</td><td>蓝花苕子（冬）、田菁（夏）、白三叶（常年）</td></tr>
+      <tr><td>绿肥与养地植物手册</td><td>菜底座：养地、固氮、覆盖</td><td>蓝花苕子（冬）、田菁（夏）、白三叶（常年）、柱花草（耐酸红壤）</td></tr>
       <tr><td>堆肥与栽培基质手册</td><td>转化中枢 + 基质</td><td>黑水虻主章（28–32°C 最适、虫沙偏碱含钙）、泥炭vs椰砖</td></tr>
+      <tr><td>栅藻养殖手册</td><td>水生蛋白 + 净水</td><td>买菌种→扩培→日常→采收→喂鸡鱼/肥，废水直养</td></tr>
+      <tr><td>来宾牧草推荐</td><td>草料闭环</td><td>桂牧一号（TOP）、柱花草/白三叶固氮组、皇竹草</td></tr>
       <tr><td>哈巴纳达/甜椒/番茄手册</td><td>主食生产 + 残次果喂虫</td><td>零辣多年生 + 微辣 + 甜椒冲产量三档</td></tr>
       <tr><td>生态农业方案</td><td>总纲</td><td>绿肥+虫肥+雨水回用+伴生防治+避雨遮阳三件套</td></tr>
       <tr><td>家庭养鸡规划（待成册）</td><td>枢纽</td><td>仙居鸡/清远麻/芦花 + 黑水虻喂鸡 + 鸡粪堆肥</td></tr>
-      <tr><td>红壤调酸铁律</td><td>贯穿所有种植</td><td>生石灰+根瘤菌+绿肥+翻压隔2–3周</td></tr>
+      <tr><td>红壤调酸铁律</td><td>贯穿所有种植</td><td>生石灰+根瘤菌+绿肥+翻压隔 2–3 周</td></tr>
     </tbody>
   </table>
-  <div class="good">✅ 你离「完整闭环」只差一步：把黑水虻虫体正式接进鸡的日粮、把鸡粪正式接进堆肥/虫槽。这两步在技术上你已经都懂，只是还没「连起来跑」。</div>
+  <div class="good">✅ 你离「完整闭环」只差一步：把黑水虻虫体正式接进鸡日粮、把鸡粪正式接进堆肥/虫槽、把浮萍/栅藻/罗非鱼接进「蛋白+净水」带。技术上你都已懂，只是还没「连起来跑」。</div>
 </section>
 
-<section id="c7">
-  <h2>七、分阶段落地路线</h2>
+<section id="c11">
+  <h2>十一、分阶段落地路线（升级）</h2>
   <h3>阶段 0 · 起步（第 1–3 月）</h3>
   <ul>
     <li>维持现有菜园（辣椒/番茄/甜椒）+ 绿肥养地，按手册铁律操作</li>
     <li>启动黑水虻小规模（60–100L 桶，日处理 0.5–1kg 厨余），练手温湿度与自收获斜坡</li>
+    <li>阳台同步开<b>蚯蚓箱 + 波卡西桶</b>（几乎零门槛），收精肥液肥</li>
     <li>暂不养鸡，先攒虫体冷冻备用、虫沙直接肥菜</li>
   </ul>
   <h3>阶段 1 · 成长（第 3–12 月）</h3>
   <ul>
     <li>引 3–5 只脱温青年鸡（仙居鸡首选，蛋多；或清远麻鸡吃肉）——等 10 月后气温降再网购活体更稳</li>
     <li>鸡日粮逐步加入黑水虻鲜虫（10–30 只/天·只，5–7 天过渡），替代 10–30% 商品料</li>
+    <li><b>加水生带</b>：有水面就放浮萍 + 几尾罗非鱼/泥鳅，浮萍定期捞喂鸡；有废水源再开栅藻盆</li>
     <li>鸡粪收集 + 秸秆堆肥腐熟 1–2 月，部分回喂黑水虻（比例≤30%）</li>
     <li>菜园分区轮牧：苗期/幼果期不放鸡，其余时段每区放 1–2 月</li>
   </ul>
   <h3>阶段 2 · 闭环（第 1–3 年）</h3>
   <ul>
     <li>鸡滚动补苗（仙居鸡每 1–2 年补青年鸡），芦花鸡留种自繁扩群</li>
+    <li>种<b>籽粒苋/高粱</b>等 C4 鸡料，进一步降外购蛋白</li>
     <li>加雨水收集池 + 太阳能（供黑水虻冬季保温/照明），进一步降外购</li>
     <li>目标：肥料 100% 自产、饲料蛋白 30%+ 自产、蛋肉基本自给</li>
   </ul>
 </section>
 
-<section id="c8">
-  <h2>八、关键数字与经济账</h2>
+<section id="c12">
+  <h2>十二、关键数字与经济账（升级）</h2>
   <div class="kpi">
     <div class="c"><b>200kg</b><span>1 吨厨余 → 黑水虻鲜虫</span></div>
     <div class="c"><b>250kg</b><span>1 吨厨余 → 虫沙有机肥</span></div>
     <div class="c"><b>40–45%</b><span>虫体粗蛋白（≈鱼粉）</span></div>
+    <div class="cb"><b>1000–3000斤</b><span>罗非鱼家庭亩产</span></div>
+  </div>
+  <div class="kpi">
+    <div class="cb"><b>30–45%</b><span>浮萍干重蛋白</span></div>
+    <div class="cb"><b>45–55%</b><span>栅藻干重蛋白</span></div>
+    <div class="cb"><b>15–25吨</b><span>桂牧一号亩产（牧草）</span></div>
     <div class="c"><b>25 元/斤</b><span>虫草鸡批发价（外部案例）</span></div>
   </div>
   <table>
@@ -261,61 +467,64 @@
   </table>
   <ul>
     <li>虫体蛋白可替代 <b>10–30% 豆粕</b>，饲料成本随之下降（泰国试验：添加 12% 黑水虻，单位增重成本降 12%）</li>
-    <li>虫沙富含有机质与钙，回田后提升作物品质（竹溪案例：茶园水浸出物+5%、果园糖度+2.5°）</li>
+    <li>水生带几乎<b>零外购饲料</b>：浮萍+黑水虻虫喂罗非鱼/鸡，鱼粪水肥菜，塘泥回田，形成「菜-虫-鸡-鱼-肥」全家桶</li>
     <li>对家庭而言，最大收益不是「卖钱」而是<strong>闭环省下的买菜买蛋买肥钱 + 食品安全的隐性价值</strong></li>
   </ul>
 </section>
 
-<section id="c9">
-  <h2>九、命门与风险</h2>
+<section id="c13">
+  <h2>十三、命门与风险（升级）</h2>
   <div class="warn">⚠️ <b>黑水虻</b>：温度低于 25°C 效率骤降（来宾冬季需轻保温）；<b>禁喂肉/奶制品</b>（招家蝇、厌氧发臭）；桶内废料深度＜7cm 防缺氧过热；必须装 40° 自收获斜坡。</div>
   <div class="warn">⚠️ <b>鸡</b>：怕湿不怕热——来宾又热又湿，鸡舍三硬指标<strong>遮雨·干燥·通风</strong>；防天敌（黄鼠狼/蛇/鼠）用 hardware cloth 埋地 40cm；活体运输避开 9 月高温，等 10 月后下单更稳。</div>
   <div class="warn">⚠️ <b>菜</b>：7–8 月 35°C+ 高温落花，所有作物必须拉遮阳网+避雨棚（你生态方案三件套复用）；红壤定植仍按调酸铁律。</div>
+  <div class="warn">⚠️ <b>水产/阳台</b>：高密度必增氧防翻白；阳台承重先算（水 1L=1kg）；鱼生病加的药/盐水分开、绝不浇菜；浮萍/栅藻定期采收防满塘缺氧死藻污染水。</div>
   <div class="note">📌 三者 risk 高度重叠在「湿+热」——来宾的应对就是同一套：遮雨、通风、遮阳、控湿。把这套做扎实，闭环就稳了。</div>
 </section>
 
-<section id="c10">
-  <h2>十、与其他方向的取舍</h2>
+<section id="c14">
+  <h2>十四、与其他方向的取舍（升级）</h2>
   <ul>
-    <li><b>鱼菜共生</b>：技术门槛高、水温难控（来宾夏季水温过高鱼易应激），且缺「蛋白转化」环节，闭环率不如菜-虫-鸡-肥。可将来宾多雨的低位地块改小鱼塘作为<strong>补充</strong>，非主线。</li>
-    <li><b>户用沼气</b>：家庭小规模产气不稳定、冬季效率低、安全隐患，投入产出比差。不如用黑水虻+堆肥处理同批有机物。</li>
+    <li><b>鱼菜共生（大系统）</b>：本版上调评价——我们已有可落地的<b>阳台鱼菜共生 + 浮萍 + 罗非鱼</b>方案，它不再是高不可攀，而是核心闭环的<strong>优质补充</strong>。建议：有院子低位地块改小鱼塘/阳台鱼菜共生作「水生带」接进闭环，而非独立大系统单干。</li>
+    <li><b>户用沼气</b>：家庭小规模产气不稳定、冬季效率低、安全隐患，投入产出比差。不如用黑水虻+堆肥处理同批有机物；若已上沼气，沼液沼渣则直接并入肥源矩阵（顶级液肥）。</li>
     <li><b>食用菌</b>：可与黑水虻<strong>并行</strong>（菇渣也可喂虫），但会与厨余/秸秆争原料，建议作为阶段 2 的增值副线，而非替代主线。</li>
     <li><b>纯种植/纯养鸡</b>：都缺「转化中枢」，闭环率低、外购高，不适合作为目标架构。</li>
   </ul>
 </section>
 
-<section id="c11">
-  <h2>十一、30 天起步行动清单</h2>
+<section id="c15">
+  <h2>十五、30 天起步行动清单（升级）</h2>
   <ol>
-    <li><b>第 1–3 天</b>：整理一个 60–100L 黑水虻桶（带 40° 自收获斜坡+透气网盖+底部接液），放在遮雨通风处</li>
-    <li><b>第 4–7 天</b>：收集果皮菜叶练手，控温湿（60–70% 湿、27–35°C），禁肉奶</li>
-    <li><b>第 8–14 天</b>：引种黑水虻（网购种虫/虫卵），观察幼虫取食与自收获</li>
-    <li><b>第 15–21 天</b>：虫沙直接施入一块试验菜畦，对比长势</li>
-    <li><b>第 22–30 天</b>：规划鸡舍位置（遮雨干燥通风、远离邻居），等 10 月后引 3–5 只脱温青年鸡；同步把鸡粪堆肥区预留好</li>
+    <li><b>第 1–3 天</b>：整理一个 60–100L 黑水虻桶（带 40° 自收获斜坡+透气网盖+底部接液），放在遮雨通风处；同时阳台摆一个蚯蚓箱 + 一个波卡西桶（零门槛启动）</li>
+    <li><b>第 4–7 天</b>：收集果皮菜叶练手，控温湿（60–70% 湿、27–35°C），禁肉奶；波卡西桶开始分层投料</li>
+    <li><b>第 8–14 天</b>：引种黑水虻（网购种虫/虫卵）+ 引一盆浮萍（水塘/鱼缸放几株，几天铺满）</li>
+    <li><b>第 15–21 天</b>：虫沙直接施入一块试验菜畦；蚯蚓粪/波卡西液肥（稀释后）对比浇另一畦</li>
+    <li><b>第 22–30 天</b>：规划鸡舍位置（遮雨干燥通风、远离邻居），等 10 月后引 3–5 只脱温青年鸡；有水面者同步放浮萍+几尾罗非鱼/泥鳅，规划栅藻盆；预留鸡粪堆肥区</li>
   </ol>
-  <div class="good">✅ 30 天后你将拥有：运转中的黑水虻 + 自产虫沙肥 + 规划好的鸡舍。闭环的「第一环」就转起来了。</div>
+  <div class="good">✅ 30 天后你将拥有：运转中的黑水虻 + 蚯蚓/波卡西精肥 + 浮萍水生线 + 规划好的鸡舍与水面。闭环的「第一环」就转起来了。</div>
 </section>
 
-<section id="c12">
-  <h2>十二、一句话结论</h2>
-  <div class="good">✅ <b>家庭循环农业最优方向 = 以黑水虻为转化中枢、以鸡为枢纽的「菜-虫-鸡-肥」四位一体闭环。</b>它把你的辣椒/番茄/甜椒、绿肥养地、黑水虻虫肥、堆肥基质、菜园三件套、养鸡规划全部串成一条自循环链，且在来宾 28–32°C 的气候下效率接近「开挂」。先转起黑水虻这一环，再接鸡，闭环自然成。</div>
+<section id="c16">
+  <h2>十六、一句话结论</h2>
+  <div class="good">✅ <b>家庭循环农业最优方向 = 以黑水虻为转化中枢、以鸡为枢纽的「菜-虫-鸡-肥」核心闭环，向「水生带（浮萍·罗非鱼·栅藻）」与「阳台微闭环（鱼菜共生·波卡西·蚯蚓）」两翼扩展。</b>它把你的辣椒/番茄/甜椒、绿肥养地、黑水虻虫肥、浮萍、栅藻、牧草、堆肥基质、菜园三件套、养鸡规划全部串成一条自循环链，且在来宾 28–32°C 的气候下效率接近「开挂」。先转起黑水虻+阳台堆肥这两环，再接鸡与水生带，闭环自然成。</div>
 </section>
 
-<section id="c13">
-  <h2>十三、与本仓库手册库的关系</h2>
+<section id="c17">
+  <h2>十七、与本仓库手册库的关系</h2>
   <p>本文是战略总纲，与下列手册互为「总-分」：</p>
   <ul>
     <li>🌱 <b>种植底座</b>：不辣微辣多年生总览、阳台多年生甜椒、各品种单册（哈巴纳达/狮子唐/Roulette…）</li>
-    <li>🌿 <b>养地</b>：养地植物与绿肥手册</li>
+    <li>🌿 <b>养地</b>：养地植物与绿肥手册（含柱花草/白三叶）、来宾牧草推荐（桂牧一号）</li>
     <li>🪱 <b>转化中枢</b>：堆肥与栽培基质手册（黑水虻主章）</li>
+    <li>🟢 <b>水生蛋白+净水</b>：栅藻养殖手册（已推送）</li>
+    <li>🐟 <b>水生带</b>：本文第七、十二章（浮萍/罗非鱼/泥鳅）+ 阳台鱼菜共生（第八、十三章）</li>
     <li>🐔 <b>枢纽</b>：家庭小规模生态养鸡（待成册，本手册已含核心章节）</li>
     <li>🔄 <b>总纲</b>：生态农业方案（闭环设计）</li>
   </ul>
-  <p class="pill">建议阅读顺序：本文（定方向）→ 生态农业方案（看全貌）→ 黑水虻/绿肥/养鸡分册（落地）</p>
+  <p class="pill">建议阅读顺序：本文（定方向）→ 生态农业方案（看全貌）→ 黑水虻/绿肥/牧草/栅藻/养鸡分册（落地）</p>
 </section>
 
-<section id="c14">
-  <h2>十四、数据来源</h2>
+<section id="c18">
+  <h2>十八、数据来源</h2>
   <div class="src">
     <p><b>外部实证案例：</b></p>
     <p>· 武汉绿果果生态家庭农场「黑水虻+水产+有机菜」循环（武汉市农业农村局，2024）</p>
@@ -326,15 +535,16 @@
     <p>· Manna Insect《Building local circular economy with BSF farming》——1 吨废弃物→200kg 虫+250kg 虫沙</p>
     <p>· AgriFarming《BSF Farming for Chicken Feed》——100L 桶日处理 1–2kg→200–400g 鲜虫；虫体 40–45% 蛋白；替代 10–30% 豆粕</p>
     <p>· Fine Naturalist《BSF Guide》——温度 27–35°C、湿度 60–70%、40° 自收获斜坡</p>
-    <p>· Insects 2025, 16(1), 12——黑水虻生物转化家禽垃圾综述（虫粉+虫沙循环经济）</p>
+    <p>· Insects 2025, 16(1), 12——黑水虻生物转化家禽垃圾综述</p>
     <p>· 泰国本地鸡黑水虻饲料试验（Khon Kaen University, MDPI animals）——降本、改善氨基酸组成</p>
+    <p>· 浮萍/栅藻/罗非鱼/波卡西/C4 植物参数来自本仓库多轮对话交叉整理（浮萍蛋白 30–45%、栅藻 45–55%、罗非鱼亩产 1000–3000 斤、C4 光效为 C3 的 2–3 倍等），已多处核对</p>
     <p><b>本地参数：</b>来宾气候常量（年均 20.7°C、无霜期 331 天、年降水 1360mm）与红壤铁律取自本仓库前期手册，已多处交叉验证。</p>
   </div>
 </section>
 
 </main>
 
-<div class="end">广西来宾 · 家庭循环农业战略总纲 · 浅底深字版 · 配套 Gitee 种植/养殖手册系列</div>
+<div class="end">广西来宾 · 家庭循环农业战略总纲（升级整合版）· 浅底深字版 · 配套 Gitee 种植/养殖手册系列</div>
 
 </body>
 </html>
