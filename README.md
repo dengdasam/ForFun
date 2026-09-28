@@ -69,6 +69,7 @@
 | 手册 | 核心提醒 |
 |---|---|
 | [Aji Habanero（Delicious）深度分析](AjiHabanero分析_广西来宾适配版.html) | **命名陷阱**：Aji Habanero（中辣 5,000–50,000 SHU）≠ Aji Dulce（甜哈瓦那，零辣）。不符合"不辣/微辣"目标，别买错 |
+| [Aji Amarillo（阿吉阿马里洛）深度分析](阿吉阿马里洛分析_广西来宾适配版.html) | **命名陷阱²**：秘鲁国民椒（中辣 30,000–50,000 SHU ≈ cayenne）≠ Aji Cachucha（甜哈瓦那，零辣）。名黄实橙、长季作物、baccatum 多年生 4–6 年；要风味中辣才引，要零辣就绕 |
 
 ---
 
