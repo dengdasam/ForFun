@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>舟山群岛海岛旅居对比卡</title>
+<style>
+  :root {
+    --primary: #14607a;
+    --primary-light: #e8f3f7;
+    --accent: #c8763c;
+    --accent-light: #fdf1e6;
+    --bg: #f7fafb;
+    --card: #ffffff;
+    --text: #22303a;
+    --muted: #6b7c87;
+    --border: #dde7ec;
+    --ok: #2d7a52;
+    --ok-bg: #eaf3ee;
+    --warn: #b5462f;
+    --warn-bg: #fbecea;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.75;
+    padding: 24px 16px 60px;
+  }
+  .wrap { max-width: 1040px; margin: 0 auto; }
+
+  header.hero {
+    background: linear-gradient(135deg, #14607a 0%, #2f92a8 55%, #c8763c 130%);
+    color: #fff;
+    border-radius: 16px;
+    padding: 36px 32px;
+    margin-bottom: 22px;
+  }
+  header.hero h1 { font-size: 30px; margin-bottom: 8px; letter-spacing: 1px; }
+  header.hero p { opacity: .93; font-size: 15px; max-width: 700px; }
+  header.hero .badges { margin-top: 14px; display: flex; gap: 8px; flex-wrap: wrap; }
+  header.hero .badge {
+    background: rgba(255,255,255,.18);
+    border: 1px solid rgba(255,255,255,.35);
+    border-radius: 999px;
+    padding: 2px 12px;
+    font-size: 13px;
+  }
+
+  .toc {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 18px 22px;
+    margin-bottom: 24px;
+  }
+  .toc h2 { font-size: 16px; color: var(--primary); margin-bottom: 10px; }
+  .toc ol { padding-left: 22px; columns: 2; }
+  .toc li { margin: 4px 0; font-size: 14.5px; }
+  .toc a { color: var(--text); text-decoration: none; border-bottom: 1px dashed var(--accent); }
+  .toc a:hover { color: var(--primary); }
+
+  section.block {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 24px 28px;
+    margin-bottom: 22px;
+  }
+  .block-head { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; margin-bottom: 6px; }
+  .block-head .num {
+    background: var(--primary);
+    color: #fff;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 2px 10px;
+  }
+  .block-head h2 { font-size: 21px; color: var(--primary); }
+  .meta { color: var(--muted); font-size: 13.5px; margin-bottom: 14px; }
+
+  h3.sub {
+    font-size: 15px;
+    color: var(--primary);
+    margin: 18px 0 8px;
+    padding-left: 10px;
+    border-left: 4px solid var(--accent);
+  }
+
+  .verdict {
+    background: var(--ok-bg);
+    border: 1px solid #bedcc9;
+    border-left: 6px solid var(--ok);
+    border-radius: 10px;
+    padding: 16px 20px;
+    margin-bottom: 16px;
+  }
+  .verdict .v-title { font-size: 17px; color: var(--ok); font-weight: 600; margin-bottom: 6px; }
+  .verdict ul { padding-left: 20px; font-size: 14.5px; }
+  .verdict li { margin: 3px 0; }
+
+  .callout {
+    background: var(--accent-light);
+    border-radius: 10px;
+    padding: 14px 18px;
+    font-size: 14px;
+    color: #7a4415;
+    margin-top: 14px;
+  }
+  .callout b { color: #8d4a12; }
+  .callout.warn { background: var(--warn-bg); color: #7e2f1d; }
+  .callout.warn b { color: var(--warn); }
+
+  table.cmp {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    font-size: 13.5px;
+    background: #fff;
+  }
+  table.cmp th, table.cmp td {
+    border: 1px solid var(--border);
+    padding: 9px 10px;
+    text-align: left;
+    vertical-align: top;
+  }
+  table.cmp th { background: var(--primary-light); color: var(--primary); font-weight: 600; }
+  table.cmp tr:nth-child(even) td { background: #fbfdfd; }
+  table.cmp td.na { color: #9aa8b0; font-style: italic; }
+  .scroll { overflow-x: auto; }
+
+  .tier { border-radius: 12px; padding: 14px 18px; margin-bottom: 12px; }
+  .tier h4 { font-size: 15px; margin-bottom: 8px; }
+  .tier ul { padding-left: 20px; font-size: 14px; }
+  .tier-1 { background: var(--ok-bg); border: 1px solid #bedcc9; }
+  .tier-1 h4 { color: var(--ok); }
+  .tier-2 { background: #fdf6e6; border: 1px solid #eddcb4; }
+  .tier-2 h4 { color: #8a6410; }
+  .tier-3 { background: var(--warn-bg); border: 1px solid #f0c9c1; }
+  .tier-3 h4 { color: var(--warn); }
+
+  ol.timeline { list-style: none; border-left: 3px solid var(--accent); padding-left: 20px; margin-left: 6px; }
+  ol.timeline li { position: relative; margin-bottom: 14px; font-size: 14.5px; }
+  ol.timeline li::before {
+    content: "";
+    position: absolute;
+    left: -27px;
+    top: 8px;
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    background: var(--accent);
+    border: 2px solid #fff;
+  }
+  ol.timeline .t-date { font-weight: 600; color: var(--primary); }
+
+  ol.steps { padding-left: 22px; }
+  ol.steps li { margin: 7px 0; font-size: 14.5px; }
+
+  ul.plain { padding-left: 20px; }
+  ul.plain li { margin: 5px 0; font-size: 14.5px; }
+
+  .src { font-size: 13px; color: var(--muted); }
+  .src li { margin: 4px 0; }
+
+  .disc {
+    background: #f2f4f6;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 14px 18px;
+    font-size: 13.5px;
+    color: #4b5962;
+    margin-top: 18px;
+  }
+
+  footer {
+    text-align: center;
+    color: var(--muted);
+    font-size: 12.5px;
+    margin-top: 30px;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <h1>🏝️ 舟山群岛海岛旅居对比卡</h1>
+    <p>旅居不是旅游。决定一个岛能不能长住的核心变量不是"美不美"，而是——<b>能不能随时下岛</b>。本卡按通达度把舟山主要住人岛分三档，给出租金、医疗、交通停航风险的可核查数据，以及一份 30 天试住方案。</p>
+    <div class="badges">
+      <span class="badge">📅 数据截至 2026-10</span>
+      <span class="badge">🚗 以「大桥 vs 轮渡」为主轴</span>
+      <span class="badge">🏥 含医疗与冬季实况</span>
+      <span class="badge">🧭 首选：岱山本岛</span>
+    </div>
+  </header>
+
+  <div class="toc">
+    <h2>📑 目录</h2>
+    <ol>
+      <li><a href="#s1">结论先行：为什么是岱山</a></li>
+      <li><a href="#s2">通达度三档分档（修正版）</a></li>
+      <li><a href="#s3">关键交通时间表</a></li>
+      <li><a href="#s4">七岛横向对比表</a></li>
+      <li><a href="#s5">明确劝退的岛</a></li>
+      <li><a href="#s6">最佳时间窗口与三个坑</a></li>
+      <li><a href="#s7">30 天试住方案</a></li>
+      <li><a href="#s8">冷门选项：数字游民型小岛</a></li>
+      <li><a href="#s9">本版更正记录</a></li>
+      <li><a href="#s10">数据来源与口径说明</a></li>
+    </ol>
+  </div>
+
+  <!-- 1 -->
+  <section class="block" id="s1">
+    <div class="block-head">
+      <span class="num">01</span>
+      <h2>结论先行：为什么是岱山本岛</h2>
+    </div>
+    <div class="meta">如果只能选一个岛长期住：岱山本岛（高亭镇）。</div>
+
+    <div class="verdict">
+      <div class="v-title">✅ 首选 · 岱山本岛（高亭镇）</div>
+      <ul>
+        <li><b>全天候陆路出岛</b>：2021-12-29 舟岱大桥通车（S6 定岱高速），告别轮渡依赖，大风大雾不影响出行</li>
+        <li><b>大城市资源可达</b>：定海不到 20 分钟、宁波 1 小时、杭州 2.5 小时</li>
+        <li><b>县城级配套</b>：高亭镇有菜场、超市、日常海鲜供应，岱山县第一人民医院（二级甲等，配备 DSA，胸痛/卒中绿色通道）</li>
+        <li><b>房租低</b>：2 室 70㎡ 约 <b>1,800 元/月</b>（房天下挂牌快照）</li>
+        <li><b>人少、节奏慢</b>：尚未深度旅游化，是生活型海岛</li>
+      </ul>
+    </div>
+    <div class="callout warn">
+      <b>⚠️ 代价要说清楚：</b>岱山的海不如嵊泗蓝；岛上年均风大；冬季湿冷且<b>无集中供暖</b>；除鹿栏晴沙一带外缺少精致海景。它是"生活型海岛"，不是"明信片海岛"。
+    </div>
+
+    <h3 class="sub">三个备选，按需求对号入座</h3>
+    <ul class="plain">
+      <li><b>要真海景 + 自驾直达 + 便宜 → 朱家尖</b>：舟山唯一可自驾直达的度假岛，1 室 38㎡ 低至 800–1,000 元/月</li>
+      <li><b>最看重医疗和日常便利 → 舟山本岛（普陀东港 / 沈家门）</b>：三甲舟山医院 + 普陀医院，但岛感最弱，本质是城区</li>
+      <li><b>想要"真正的海"且能忍坐船 → 嵊泗泗礁（菜园）</b>：海水质量最好，但需沈家湾码头坐船约 2 小时 10 分</li>
+    </ul>
+  </section>
+
+  <!-- 2 -->
+  <section class="block" id="s2">
+    <div class="block-head">
+      <span class="num">02</span>
+      <h2>通达度三档分档（修正版）</h2>
+    </div>
+    <div class="meta">第一档决定"能不能长期住"，第二、三档决定"要忍受多少不确定性"。</div>
+
+    <div class="tier tier-1">
+      <h4>第一档 · 陆路直达 · 全天候出岛 ✅ 可长期旅居</h4>
+      <ul>
+        <li><b>舟山本岛</b>（定海 / 临城 / 普陀）：甬舟高速跨海大桥连接宁波</li>
+        <li><b>金塘岛</b>：2009-12-25 金塘大桥通车，G9211 甬舟高速过境，宁波进舟山第一站 <span class="src">（本版已纠正）</span></li>
+        <li><b>朱家尖</b>：朱家尖大桥连接本岛，可自驾直达</li>
+        <li><b>岱山本岛</b>：舟岱大桥 + 甬舟高速，宁波 1 小时</li>
+      </ul>
+    </div>
+
+    <div class="tier tier-2">
+      <h4>第二档 · 车客渡上岛 · 大风即停航 ⚠️ 需权衡</h4>
+      <ul>
+        <li><b>六横岛</b>：现需车渡（峙头 45 分钟 / 小车 70 元），<b>2027 年二期通车后升入第一档</b></li>
+        <li><b>嵊泗泗礁</b>：沈家湾码头车船联运约 2 小时 10 分，约 180 元</li>
+        <li><b>桃花岛</b>：墩头码头轮渡上岛</li>
+      </ul>
+    </div>
+
+    <div class="tier tier-3">
+      <h4>第三档 · 岛际客运轮渡 · 冬季近半业态歇业 ❌ 不适合长期住</h4>
+      <ul>
+        <li><b>东极岛</b>（庙子湖 / 东福山 / 青浜）、<b>枸杞岛</b>、<b>花鸟岛</b></li>
+        <li>共同特征：物资靠船运、餐食价高、医疗弱，突发疾病遇停航只能等救援</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 3 -->
+  <section class="block" id="s3">
+    <div class="block-head">
+      <span class="num">03</span>
+      <h2>关键交通时间表</h2>
+    </div>
+    <div class="meta">舟山群岛的价值重估，本质是一条条大桥通车线。</div>
+
+    <ol class="timeline">
+      <li><span class="t-date">2009-12-25</span>　<b>金塘大桥</b>通车，全长 21.03km，双向四车道、100km/h，属 G9211 甬舟高速。宁波镇海蛟川枢纽 → 金塘岛立交，东接西堠门大桥。<span class="src">来源：百度百科 / 宁波市自然资源和规划局</span></li>
+      <li><span class="t-date">2021-12-29</span>　<b>舟岱大桥</b>通车（S6 定岱高速），全长约 26km，双向四车道、设计时速 100km/h。定海 → 岱山<b>不到 20 分钟</b>（原轮渡常需排队，节假日最长 3 小时）；宁波 → 岱山<b>1 小时</b>（原 1 小时 40 分）；杭州 → 岱山 2.5 小时。<span class="src">来源：人民日报客户端 2021-12-29 / 央广网</span></li>
+      <li><span class="t-date">2025-06-06</span>　<b>六横公路大桥一期</b>通车，全长 10.8km，双向六车道、100km/h。<b>但仅连通宁波侧接线与梅山岛，终点在梅山，未跨至六横。</b><span class="src">来源：奉化新闻网 2025-06-06</span></li>
+      <li><span class="t-date">2027（预计）</span>　<b>六横公路大桥二期</b>建成通车。含双屿门特大桥（主跨 1,768m，世界最大跨度单跨吊钢箱梁悬索桥）与青龙门特大桥（双主跨 2×756m，世界最大跨度三塔钢箱梁斜拉桥）。通车后<b>六横 → 宁波由船渡 40 分钟缩短至车行 10 分钟</b>。<span class="src">来源：中国网 2026-06-30 / 宁波市北仑区政府 2026-06-28 / 舟山市交通运输局 2026 年答复函</span></li>
+    </ol>
+
+    <h3 class="sub">六横当前摆渡实况（尚未通桥）</h3>
+    <div class="scroll">
+    <table class="cmp">
+      <tr><th>航线</th><th>运营时间</th><th>班次频率</th><th>小车票价</th><th>随车乘客</th><th>航行时间</th></tr>
+      <tr><td>宁波北仑峙头 → 六横沙岙</td><td>6:30–20:00</td><td>约 40 分钟一班</td><td>70 元（含驾驶员）</td><td>10 元/人</td><td>约 45 分钟</td></tr>
+      <tr><td>舟山新城长峙 → 六横大岙</td><td>7:30–20:00</td><td>每天 8 班</td><td>120 元（含驾驶员）</td><td>25 元/人</td><td>约 1 小时</td></tr>
+    </table>
+    </div>
+    <div class="callout"><b>🛳️ 一手来源：</b>舟山市普陀区六横镇人民政府在人民网领导留言板的答复（2025-07-29），原文写明"六横公路大桥预计 2027 年底主线通车，<b>届时</b>您可从宁波方向驾车直接开往六横岛。目前来六横岛开车主要可以从宁波北仑峙头码头或者舟山新城长峙码头过来"。</div>
+  </section>
+
+  <!-- 4 -->
+  <section class="block" id="s4">
+    <div class="block-head">
+      <span class="num">04</span>
+      <h2>七岛横向对比表</h2>
+    </div>
+    <div class="meta">租金为 2026-10 挂牌快照（房天下 / 安居客 / 58 同城），长租实际需议价；"未采集"表示该岛未取到可靠公开数据，不做推测。</div>
+
+    <div class="scroll">
+    <table class="cmp">
+      <tr>
+        <th>岛</th><th>通达方式</th><th>到宁波 / 本岛</th><th>医疗</th><th>长租参考（月）</th><th>冬季实况</th><th>适合谁</th><th>硬伤</th>
+      </tr>
+      <tr>
+        <td><b>岱山本岛</b><br>（高亭）</td>
+        <td>舟岱大桥，陆路直达</td>
+        <td>宁波 1h / 定海 20min</td>
+        <td>岱山县第一人民医院（二甲，DSA，绿色通道）</td>
+        <td>2室70㎡ <b>¥1,800</b></td>
+        <td>业态照常，全天候出岛</td>
+        <td><b>长期旅居首选</b>、预算敏感、需频繁往返宁波</td>
+        <td>海景一般、风大湿冷无供暖</td>
+      </tr>
+      <tr>
+        <td><b>朱家尖</b></td>
+        <td>朱家尖大桥，自驾直达</td>
+        <td>紧邻沈家门 / 本岛</td>
+        <td>普陀医院（沈家门，近）</td>
+        <td>1室38㎡ ¥800–1,000；2室 ¥1,800–2,300</td>
+        <td>淡季冷清但仍在营业</td>
+        <td>要真海景 + 自驾直达 + 低成本</td>
+        <td>旺季人爆多；"海景房"文字游戏多，真正无遮挡海景基本只在樟州湾且贵</td>
+      </tr>
+      <tr>
+        <td><b>舟山本岛</b><br>（普陀东港/沈家门）</td>
+        <td>甬舟高速陆路</td>
+        <td>—</td>
+        <td>舟山医院（<b>三甲</b>，临城）+ 普陀医院</td>
+        <td>1室43㎡ ¥1,500；2室68㎡ ¥1,000</td>
+        <td>正常城市运转</td>
+        <td>最看重医疗与日常便利</td>
+        <td>岛感最弱，本质是城区</td>
+      </tr>
+      <tr>
+        <td><b>金塘岛</b></td>
+        <td>金塘大桥（2009 通车），陆路直达</td>
+        <td>宁波方向首站，最近</td>
+        <td>岛内资源有限，需到本岛就医</td>
+        <td class="na">未采集</td>
+        <td>正常</td>
+        <td>要求"离宁波最近"的人</td>
+        <td>工业/物流岛气质，旅居配套数据不足</td>
+      </tr>
+      <tr>
+        <td><b>六横岛</b></td>
+        <td>车客渡（2027 起转陆路）</td>
+        <td>现车渡 45min；<b>2027 后车行 10min</b></td>
+        <td>岛内卫生院，重症需转诊</td>
+        <td class="na">未采集</td>
+        <td>岛屿体量大，配套相对完整</td>
+        <td>看好 2027 通桥预期、长住性价比</td>
+        <td>造船重镇，工业气质重、旅游配套弱</td>
+      </tr>
+      <tr>
+        <td><b>嵊泗泗礁</b><br>（菜园）</td>
+        <td>沈家湾码头车船联运</td>
+        <td>约 2h10m / 约 ¥180</td>
+        <td>嵊泗县人民医院（远程会诊）</td>
+        <td>1室45㎡ ¥1,200</td>
+        <td>大风停航频繁，部分业态歇业</td>
+        <td>想要最好的海水质量且能接受坐船</td>
+        <td>出岛受天气支配，1 月体验明显变差</td>
+      </tr>
+      <tr>
+        <td><b>桃花岛</b></td>
+        <td>墩头码头轮渡</td>
+        <td>—</td>
+        <td>岛内服务有限</td>
+        <td class="na">未采集</td>
+        <td>冬季冷清</td>
+        <td>短期放空型度假</td>
+        <td>商业配套少，不适合长住</td>
+      </tr>
+    </table>
+    </div>
+
+    <div class="callout"><b>💡 关于六横的判断：</b>它是第二档里"最好用"的——峙头 45 分钟、40 分钟一班、小车 70 元，属"车能跟着你上岛"的规格，与需抢票的东极不是一个量级。2027 年二期通车后它<b>不是岱山的替代品，而是离宁波最近的陆路直达海岛</b>（岱山 1 小时 vs 六横 10 分钟）。但大桥解决的是"进出自由"，不解决"住得舒服"。</div>
+  </section>
+
+  <!-- 5 -->
+  <section class="block" id="s5">
+    <div class="block-head">
+      <span class="num">05</span>
+      <h2>明确劝退长期旅居的岛</h2>
+    </div>
+    <div class="meta">不是不好看，是不适合住。以下均有可核查来源。</div>
+
+    <ul class="plain">
+      <li><b>官方停航数据</b>：枸杞干斜车渡码头<b>每年因风向影响停航 30–38 天</b>　<span class="src">— 嵊泗县交通运输局，2026-06-16 答复函（县十八届人大五次会议第 36 号建议）</span></li>
+      <li><b>冬季（11 月–次年 4 月）岛上近半业态歇业</b>　<span class="src">— 新浪旅游引浙江文旅 / 舟山文旅，2026-09-25（二手来源）</span></li>
+      <li><b>淡季亲历描述</b>：晚 6–7 点街上没人、店铺关门厨师返乡、新鲜海鲜需提前一天预定、民宿不供餐、暖气不足靠电热毯</li>
+      <li><b>医疗风险</b>：岛内老人突发疾病若遇上停航，只能等待救援直升机</li>
+      <li><b>东极额外问题</b>：物资全部靠船运，餐食价格明显偏高</li>
+    </ul>
+
+    <div class="callout warn"><b>🚫 适用结论：</b>东极、枸杞、花鸟适合<b>住 5–7 天的旅行</b>，不适合住一个月以上。</div>
+  </section>
+
+  <!-- 6 -->
+  <section class="block" id="s6">
+    <div class="block-head">
+      <span class="num">06</span>
+      <h2>最佳时间窗口与三个坑</h2>
+    </div>
+
+    <div class="verdict">
+      <div class="v-title">🎯 最佳窗口：9 月下旬 – 10 月</div>
+      <ul>
+        <li>9 月 16 日开渔后梭子蟹、带鱼大批上市，价格显著回落</li>
+        <li>秋高气爽、台风季基本结束、避开暑期人潮</li>
+      </ul>
+    </div>
+
+    <div class="scroll">
+    <table class="cmp">
+      <tr><th>时段</th><th>状态</th><th>建议</th></tr>
+      <tr><td>5/1 – 9/16</td><td><b>禁渔期</b>，只有冻品和养殖海鲜</td><td>别指望海鲜自由</td></tr>
+      <tr><td>7 月 – 9 月</td><td><b>台风季</b>，行程随时中断</td><td>长住需心理准备</td></tr>
+      <tr><td>9 月下旬 – 10 月</td><td><b>黄金窗口</b>，开渔 + 秋高气爽</td><td>✅ 首次试住首选</td></tr>
+      <tr><td>11 月 – 次年 4 月</td><td>湿冷无供暖 + 业态歇业</td><td>不建议，尤其外岛</td></tr>
+    </table>
+    </div>
+  </section>
+
+  <!-- 7 -->
+  <section class="block" id="s7">
+    <div class="block-head">
+      <span class="num">07</span>
+      <h2>30 天试住方案</h2>
+    </div>
+    <div class="meta">以 9 月下旬 – 10 月为窗口、宁波为出发地测算。成本为估算，非实测。</div>
+
+    <ol class="steps">
+      <li><b>第 1 周 · 落岱山高亭</b>：短租落脚，跑菜场摸清物价、熟悉公交与商业配套，实地看长租房（目标：2 室约 ¥1,800/月）。同步确认冬季供暖与除湿方案。</li>
+      <li><b>第 2 周 · 换住朱家尖</b>：住一周海景公寓（1 室 38㎡ 淡季约 ¥800–1,000），验证"是否真的需要海景"这个选项值多少钱。</li>
+      <li><b>第 3 周 · 跳岛验证</b>：去嵊泗泗礁住 2–3 天，亲身体会"出岛受天气支配"能不能接受——这一步会直接淘汰大多数人。</li>
+      <li><b>第 4 周 · 回到最优解，谈长租</b>：目标签 3 个月，谈淡季长租价（通常明显低于挂牌价）。</li>
+    </ol>
+
+    <div class="scroll">
+    <table class="cmp">
+      <tr><th>项目</th><th>估算（30 天）</th><th>说明</th></tr>
+      <tr><td>住宿</td><td>¥2,000 – 3,000</td><td>短租月租价，岱山 / 朱家尖淡季区间</td></tr>
+      <tr><td>交通</td><td>¥800 – 1,200</td><td>含宁波往返 + 一次跳岛轮渡</td></tr>
+      <tr><td>餐饮</td><td>¥2,000 – 3,000</td><td>自炊为主，开渔季海鲜性价比高</td></tr>
+      <tr><td><b>合计</b></td><td><b>约 ¥5,000 – 7,000</b></td><td>不含长租押金</td></tr>
+    </table>
+    </div>
+    <div class="callout"><b>📌 提示：</b>以上为基于挂牌房源与生活成本的<b>推算值</b>，非实测账单；实际以签约价为准。优先选择可月付、押一付一的房源。</div>
+  </section>
+
+  <!-- 8 -->
+  <section class="block" id="s8">
+    <div class="block-head">
+      <span class="num">08</span>
+      <h2>冷门选项：数字游民型小岛</h2>
+    </div>
+    <div class="meta">适合年轻远程工作者，不适合养老型旅居。</div>
+
+    <ul class="plain">
+      <li><b>嵊泗 · 黄龙岛</b>：完整保留渔文化、未过度商业开发。两年间约 <b>20 位年轻人长期驻岛</b>，旺季岛上日常人数三五十人；2025 年 8 月社区中心营业额 20 万元，共享电动车等配套改善中。<span class="src">— 潮新闻</span></li>
+      <li><b>岱山 · 柴山岛</b>：2023 年入选舟山市"小岛你好"海岛共富行动示范岛。朱家尖–白沙–柴山海底输水管道投用，解决用水难；租赁 200 余套闲置农房改造成艺术旅居空间；含《梦想改造家》参与的托老所。<span class="src">— 舟山网</span></li>
+    </ul>
+    <div class="callout"><b>🧑‍💻 适用人群：</b>能接受极简配套、看重社群感与低价、可远程办公的人。求医疗便利与成熟商业配套者勿选。</div>
+  </section>
+
+  <!-- 9 -->
+  <section class="block" id="s9">
+    <div class="block-head">
+      <span class="num">09</span>
+      <h2>本版更正记录</h2>
+    </div>
+    <ol class="steps">
+      <li><b>金塘岛归属纠正</b>：初版误将金塘岛归入"需轮渡"档。实际金塘大桥 2009-12-25 通车，属 G9211 甬舟高速，陆路直达，应属<b>第一档</b>。</li>
+      <li><b>六横岛分期澄清</b>：六横公路大桥一期虽已于 2025-06-06 通车，但仅连通宁波侧与<b>梅山岛</b>，<b>未跨至六横</b>。二期跨海段预计 2027 年通车。当前六横仍需车客渡。</li>
+      <li>以上两项均由用户"六横也有大桥了"的线索触发复核，一并更正并留档。</li>
+    </ol>
+  </section>
+
+  <!-- 10 -->
+  <section class="block" id="s10">
+    <div class="block-head">
+      <span class="num">10</span>
+      <h2>数据来源与口径说明</h2>
+    </div>
+    <ul class="src">
+      <li><b>舟岱大桥</b>通车与耗时：人民日报客户端 2021-12-29；央广网 2021-12-29</li>
+      <li><b>金塘大桥</b>：百度百科；宁波市自然资源和规划局（通车日 2009-12-25）</li>
+      <li><b>六横公路大桥一期</b>：奉化新闻网 2025-06-06</li>
+      <li><b>六横公路大桥二期</b>工期：中国网 2026-06-30；宁波市北仑区人民政府 2026-06-28；舟山市交通运输局对市八届人大六次会议第 46 号建议的复函（2026 年）</li>
+      <li><b>六横当前摆渡班次票价</b>：舟山市普陀区六横镇人民政府答复，2025-07-29（人民网领导留言板）</li>
+      <li><b>停航天数 30–38 天</b>：嵊泗县交通运输局答复函，2026-06-16</li>
+      <li><b>租金</b>：房天下 / 安居客 / 58 同城，2026-10 挂牌快照，<b>长租需议价</b></li>
+      <li><b>禁渔期与冬季业态</b>：新浪旅游引浙江文旅 / 舟山文旅，2026-09-25（<b>二手来源，需核实原文</b>）</li>
+      <li><b>医疗资源</b>：舟山市人民政府官网、卫生健康类公开整理资料（<b>部分为二次整理，需以医院官网为准</b>）</li>
+    </ul>
+    <div class="callout warn">
+      <b>⚠️ 已知分歧：</b>① 六横二期通车时间存在"<b>2027 年 10 月</b>"与"<b>2027 年底</b>"两种口径；② 普陀医院等级在不同来源有"二级甲等"与"三级乙等"两说。以上请以官方最终公告与医院官网为准。
+    </div>
+    <div class="disc">
+      <b>免责声明</b>：以上内容基于公开数据和量化分析，仅供参考，不构成投资建议。市场有风险，投资需谨慎。任何投资决策应结合个人风险承受能力、资金状况和投资目标独立判断，必要时咨询持牌专业机构。过往表现不预示未来收益。
+    </div>
+  </section>
+
+  <footer>舟山群岛海岛旅居对比卡 · 2026-10-16 整理 · 三档通达度 + 七岛对比 + 30 天试住方案（数据截至 2026-10，租金为挂牌快照）</footer>
+</div>
+</body>
+</html>
