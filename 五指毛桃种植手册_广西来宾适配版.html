@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>五指毛桃种植手册 · 广西来宾适配版</title>
+<style>
+  :root{
+    --bg:#fbf7f0; --panel:#ffffff; --ink:#3a2a16; --muted:#6b5a44;
+    --cG:#1f7a47; --cG-soft:#e3f1e8; --cG-line:#aed8c1;
+    --cO:#b5651d; --cO-soft:#fbeede; --cO-line:#e7c79a;
+    --gold:#b8791a; --gold-soft:#fbeede; --line:#e6dccb; --chip:#f0e7d6;
+    --br:#8a5a14; --br-soft:#f6ecdd; --br-line:#dcc39c;
+    --cy:#d39a00; --cy-soft:#fcf3d6; --cy-line:#ecd089;
+    --rd:#a8321e; --rd-soft:#fbe6e2; --rd-line:#e8b5ac;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;
+    line-height:1.75;font-size:16px;}
+  .cover{background:linear-gradient(135deg,#f6ecdd 0%,#f3ece0 45%,#e3f1e8 100%);
+    padding:46px 30px 38px;border-bottom:4px solid var(--br-line);}
+  .cover h1{margin:0 0 8px;font-size:31px;color:#7a4a10;letter-spacing:.5px;}
+  .cover .sub{font-size:17px;color:#6b3a1e;font-weight:600;}
+  .cover .meta{margin-top:14px;font-size:13px;color:#8a6b4a;line-height:1.6;}
+  .tagrow{margin-top:16px;display:flex;flex-wrap:wrap;gap:8px;}
+  .tag{background:var(--chip);color:#6b4a22;padding:4px 11px;border-radius:14px;font-size:12.5px;border:1px solid var(--line);}
+  .wrap{max-width:1000px;margin:0 auto;padding:26px 20px 60px;}
+  h2{margin:38px 0 12px;font-size:23px;color:#7a4a10;border-left:6px solid var(--br);padding-left:12px;}
+  h3{margin:24px 0 8px;font-size:18px;color:var(--gold);}
+  p{margin:10px 0;}
+  .lead{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px 20px;margin:18px 0;color:var(--muted);}
+  .lead b{color:var(--ink);}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin:14px 0;box-shadow:0 2px 8px rgba(120,80,30,.05);}
+  .t1-card{border-top:5px solid var(--br);}
+  .t2-card{border-top:5px solid var(--gold);}
+  .t3-card{border-top:5px solid var(--cG);}
+  .card h3{margin-top:0;}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  .grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;}
+  @media(max-width:680px){.grid2,.grid3{grid-template-columns:1fr;}}
+  table{width:100%;border-collapse:collapse;margin:14px 0;font-size:14px;background:var(--panel);}
+  th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top;}
+  thead th{background:var(--br-soft);color:#7a4a10;font-weight:700;}
+  .cG-col{background:var(--cG-soft);}
+  .cO-col{background:var(--cO-soft);}
+  .cR-col{background:var(--rd-soft);}
+  tbody tr:nth-child(even){background:#fcf8f0;}
+  .box{background:var(--cy-soft);border:1px solid var(--cy-line);border-radius:12px;padding:14px 18px;margin:16px 0;}
+  .box.o{background:var(--cO-soft);border-color:var(--cO-line);}
+  .box.o b{color:var(--cO);}
+  .box.g{background:var(--cG-soft);border-color:var(--cG-line);}
+  .box.g b{color:var(--cG);}
+  .box.r{background:var(--rd-soft);border-color:var(--rd-line);}
+  .box.r b{color:var(--rd);}
+  .box b{color:#7a4a10;}
+  .quick{background:var(--panel);border:1px dashed var(--br);border-radius:12px;padding:16px 20px;margin:18px 0;}
+  .quick h3{color:#7a4a10;}
+  ul,ol{margin:8px 0 8px 4px;padding-left:22px;}
+  li{margin:6px 0;}
+  .pill{display:inline-block;background:var(--chip);border-radius:10px;padding:2px 9px;font-size:12.5px;color:#6b4a22;margin:2px 3px 2px 0;border:1px solid var(--line);}
+  .pill.g{background:var(--cG-soft);border-color:var(--cG-line);color:#14502f;}
+  .pill.o{background:var(--cO-soft);border-color:var(--cO-line);color:#8a4a14;}
+  .pill.r{background:var(--rd-soft);border-color:var(--rd-line);color:#8a2a18;}
+  .foot{margin-top:34px;font-size:12.5px;color:#8a6b4a;border-top:1px solid var(--line);padding-top:14px;line-height:1.7;}
+  .verdict{background:linear-gradient(135deg,#f6ecdd,#e3f1e8);border:1px solid var(--br-line);border-radius:14px;padding:18px 22px;margin:20px 0;}
+  .verdict h3{color:#7a4a10;margin-top:0;}
+  code{background:var(--chip);padding:1px 6px;border-radius:5px;font-size:13px;}
+  .step{display:flex;gap:12px;align-items:flex-start;margin:10px 0;}
+  .step .n{flex:0 0 30px;height:30px;border-radius:50%;background:var(--br-soft);border:1px solid var(--br-line);
+    color:#7a4a10;font-weight:700;font-size:14px;display:flex;align-items:center;justify-content:center;}
+  .star{color:#c8912a;font-weight:700;}
+  .danger{background:var(--rd-soft);border:2px solid var(--rd-line);border-radius:14px;padding:18px 22px;margin:20px 0;}
+  .danger h3{color:var(--rd);margin-top:0;font-size:20px;}
+</style>
+</head>
+<body>
+
+<div class="cover">
+  <h1>五指毛桃种植手册 · 广西来宾适配版</h1>
+  <div class="sub">桑科榕属「南方人参」｜林下经济黄金作物 ｜ 3 年周期效益测算 ｜ 附断肠草中毒红线警示</div>
+  <div class="meta">
+    文档版本 v1.0 ｜ 编写日期 2026-10-20 ｜ 适配地：广西来宾（年均温 20.7°C / 1 月 10.9°C / 无霜期 331 天 / 年降水 1360mm / 红壤偏酸黏重）<br>
+    植物学名：<i>Ficus hirta</i> Vahl（粗叶榕 / 裂掌榕），桑科榕属，以<b>干燥根</b>入药。<br>
+    效益与价格数据取自广西农业农村厅公开报道（忻城、柳城实测案例）与 2026 年产地行情平台；栽培技术参照地方标准《橡胶林下南芪（五指毛桃）栽培技术规程》与云浮市农业技术公开资料。
+  </div>
+  <div class="tagrow">
+    <span class="tag">药食同源 · 汤料之王</span>
+    <span class="tag">耐阴耐贫瘠 · 林下套种</span>
+    <span class="tag">2.5–3 年采收</span>
+    <span class="tag">红壤微酸正对路</span>
+    <span class="tag">来宾忻城/武宣/金秀均有产业</span>
+    <span class="tag">⚠️ 断肠草中毒红线</span>
+  </div>
+</div>
+
+<div class="wrap">
+
+<h2>一、一句话定位</h2>
+<div class="verdict">
+  <h3>适合「有闲置坡地/林地、愿意等 3 年、不想精细管理」的人；不适合阳台盆栽与想赚快钱的人</h3>
+  <p>五指毛桃是<b>典型的「时间换钱」型林下经济作物</b>：管理粗放（耐阴、耐贫瘠、病虫害少），但<b>必须熬满 2.5–3 年</b>才能挖根变现。它最大的价值不在"高回报"，而在<b>不与粮争地、不抢光照</b>——可以套种在桉树、果树、松杉林下，把本来闲置的林地变成第二份收入。对来宾而言，<b>气候几乎完美命中</b>，真正要操心的是<b>销路、价格波动和采收安全</b>。</p>
+</div>
+
+<table>
+  <thead><tr><th>维度</th><th>评分</th><th>说明</th></tr></thead>
+  <tbody>
+    <tr><td><b>来宾气候适配</b></td><td class="cG-col"><span class="star">★★★★★</span></td><td>温、湿、土壤、无霜期四项全中，属全国核心适生区</td></tr>
+    <tr><td><b>管理难度</b></td><td class="cG-col"><span class="star">★★★★★</span>（越简单越好）</td><td>粗放管理，主要工作是除草与排水</td></tr>
+    <tr><td><b>资金门槛</b></td><td class="cG-col"><span class="star">★★★☆☆</span></td><td>亩投入 4000–6000 元，但要压 3 年</td></tr>
+    <tr><td><b>回报水平</b></td><td class="cO-col"><span class="star">★★★☆☆</span></td><td>亩净利 3000–10000 元，<b>年均仅 1000–3300 元</b></td></tr>
+    <tr><td><b>时间成本</b></td><td class="cO-col"><span class="star">★★☆☆☆</span></td><td>3 年零现金回流，是所有作物里最慢的一档</td></tr>
+    <tr><td><b>销售风险</b></td><td class="cR-col"><span class="star">★★☆☆☆</span></td><td>价格已从高位回落，<b>必须先找好收购商再种</b></td></tr>
+    <tr><td><b>阳台/盆栽适配</b></td><td class="cR-col"><span class="star">★☆☆☆☆</span></td><td>主根深、需 3 年、占地大，<b>不适合容器种植</b></td></tr>
+  </tbody>
+</table>
+
+<h2>二、物种档案</h2>
+<div class="grid2">
+  <div class="card t1-card">
+    <h3>基本身份</h3>
+    <ul>
+      <li><b>学名</b>：<i>Ficus hirta</i> Vahl（粗叶榕）；药材名常指裂掌榕</li>
+      <li><b>科属</b>：桑科 Moraceae · 榕属 <i>Ficus</i></li>
+      <li><b>别名</b>：五爪龙、五指牛奶、牛奶木、土黄芪、<b>南芪</b>、佛掌榕、粗叶榕</li>
+      <li><b>得名</b>：叶似五指、枝叶有细毛、果实似毛桃</li>
+      <li><b>株高</b>：1–3 米，灌木或小乔木</li>
+      <li><b>入药部位</b>：<b>根</b>（干燥根切片）</li>
+    </ul>
+  </div>
+  <div class="card t3-card">
+    <h3>价值与用途</h3>
+    <ul>
+      <li><b>功效</b>：健脾补肺、行气利湿、舒筋活络、益气固表</li>
+      <li><b>性味</b>：甘、平（微温），归脾肺肝经</li>
+      <li><b>标志性特征</b>：根有<b>独特椰奶香</b>——这是鉴别真伪的核心</li>
+      <li><b>食用</b>：岭南煲汤刚需（煲鸡、猪骨），四季皆宜</li>
+      <li><b>药用</b>：中成药原料、抗疫方剂君药之一</li>
+      <li><b>内服量</b>：煎汤 60–90 克</li>
+    </ul>
+  </div>
+</div>
+
+<div class="box g">
+  <b>为什么叫「南方人参 / 广东人参」</b>：补气但<b>不燥不腻</b>，岭南湿热气候下比人参、黄芪更耐受，适合长期食疗。这是它需求稳定的根本原因——<b>不是炒作型药材，是消耗型食材</b>。
+</div>
+
+<h2>三、来宾适生性分析（气候逐项对照）</h2>
+
+<h3>3.1 常规气候指标对照</h3>
+<table>
+  <thead><tr><th>指标</th><th>五指毛桃需求</th><th>来宾实况</th><th>判定</th></tr></thead>
+  <tbody>
+    <tr><td>年均温</td><td>18–25°C</td><td><b>20.7°C</b></td><td class="cG-col">✅ 正中靶心</td></tr>
+    <tr><td>生长适温</td><td>20–30°C（&lt;10°C 停止生长）</td><td>5–8 月旺盛生长期正好在 25–30°C</td><td class="cG-col">✅ 旺盛期吻合</td></tr>
+    <tr><td>年降水量</td><td>≥1200 mm</td><td><b>1360 mm</b></td><td class="cG-col">✅ 达标</td></tr>
+    <tr><td>空气湿度</td><td>偏高为宜（山谷溪边最佳）</td><td>亚热带湿润区</td><td class="cG-col">✅ 有利</td></tr>
+    <tr><td>最冷月均温</td><td>越冬安全线约 10°C</td><td>1 月均温 <b>10.9°C</b>，无霜期 331 天</td><td class="cO-col">⚠️ 勉强过关，<b>幼苗需防寒</b></td></tr>
+    <tr><td>土壤 pH</td><td><b>5.5–6.5 微酸性</b></td><td>红壤偏酸（pH 4.5–5.5 居多）</td><td class="cO-col">⚠️ 偏酸过头，<b>需调酸</b></td></tr>
+    <tr><td>土壤质地</td><td>疏松透气、排水良好、富含腐殖质</td><td><b>红壤黏重</b></td><td class="cR-col">❌ <b>最大短板，必须改造</b></td></tr>
+    <tr><td>光照</td><td>半阴最佳，强光直射叶黄</td><td>盛夏 35°C+ 强光</td><td class="cO-col">⚠️ 需林下或遮阴</td></tr>
+  </tbody>
+</table>
+
+<h3>3.2 MaxEnt 模型适生阈值（学术校核）</h3>
+<table>
+  <thead><tr><th>气候因子</th><th>适生阈值</th><th>来宾对照</th><th>判定</th></tr></thead>
+  <tbody>
+    <tr><td>最冷季平均温（Bio11）</td><td>9–15°C</td><td>冬季约 11–13°C</td><td class="cG-col">✅ 落入区间</td></tr>
+    <tr><td>年平均降水量（Bio12）</td><td>900–2200 mm</td><td>1360 mm</td><td class="cG-col">✅ 落入区间</td></tr>
+    <tr><td>最干月降水量（Bio14）</td><td>12–275 mm</td><td>来宾冬春偏旱，月最低可能 &lt;30 mm</td><td class="cO-col">⚠️ <b>旱季需补水</b></td></tr>
+    <tr><td>最暖季降水量（Bio18）</td><td>500–1000 mm</td><td>4–8 月集中降水，量大</td><td class="cG-col">✅ 落入区间</td></tr>
+  </tbody>
+</table>
+<p style="font-size:13.5px;color:var(--muted);">来源：《基于 MaxEnt 模型预测气候变化下五指毛桃潜在地理分布》——研究结论为降雨是主导因子、其次温度；<b>当前全国总适生面积 130.94 万 km²，主要分布在广西、广东、福建</b>。广西是头号适生区。</p>
+
+<h3>3.3 三个必须正视的来宾短板</h3>
+<div class="grid3">
+  <div class="card t2-card">
+    <h3>① 红壤黏重（头号问题）</h3>
+    <p>五指毛桃<b>最怕积水烂根</b>——这是它唯一的致命弱点。来宾红壤黏重、年降水 1360mm 且集中于 4–8 月，二者叠加就是烂根温床。<br><b>对策</b>：必须<b>起高垄（垄高 30–35cm）</b>+ 挖排水沟；坡地优先；平地务必顺坡开沟。</p>
+  </div>
+  <div class="card t2-card">
+    <h3>② 海拔偏低</h3>
+    <p>文献给出的理想海拔是 <b>500–1000 m 山坡</b>，而来宾多为 100–300 m 低丘。<br><b>实际情况</b>：来宾下辖的<b>武宣、忻城都是低海拔且已在规模化种植</b>，说明低海拔完全可行；代价是夏季高温期更长，需靠<b>林下遮阴</b>补偿。</p>
+  </div>
+  <div class="card t2-card">
+    <h3>③ 冬春旱</h3>
+    <p>最干月降水接近下限阈值，桂中又是著名<b>旱片</b>。定植第一年根系未深扎，旱死风险最高。<br><b>对策</b>：选雨季（3–9 月，尤以 3–4 月）定植；<b>铺防草布/银黑膜保墒</b>；幼苗期旱季补水。</p>
+  </div>
+</div>
+
+<h2>四、种植技术全流程</h2>
+
+<h3>阶段一：选地整地</h3>
+<div class="card t1-card">
+  <div class="step"><div class="n">①</div><div><b>地块选择</b>：优先<b>向阳或半阳坡地</b>（坡度 ≤25°），土层深厚 ≥50cm。<b>林下套种更佳</b>——可套种于桉树、松树、杉木、荔枝龙眼等果树行间，要求<b>林地遮荫度 &lt;70%</b>，五指毛桃行距林中树木 ≥2m。</div></div>
+  <div class="step"><div class="n">②</div><div><b>清山深翻</b>：清除灌木杂草，机械深翻 <b>0.6 米以上</b>，自然风化一冬（杀灭越冬虫源、增加通透性）。</div></div>
+  <div class="step"><div class="n">③</div><div><b>起垄</b>：垄宽 <b>1 米左右</b>、垄高 <b>0.2–0.35 米</b>、垄间沟宽 0.4 米。<b style="color:var(--rd)">低洼积水地必须顺坡挖排水沟</b>——来宾雨季这条是生死线。</div></div>
+  <div class="step"><div class="n">④</div><div><b>施基肥</b>：垄中线开沟埋<b>腐熟有机肥 400–600 kg/亩</b>（或土杂肥/厩肥 2–3kg/穴）。<b>禁用未腐熟粪肥</b>——烧根、招虫、带病菌。</div></div>
+  <div class="step"><div class="n">⑤</div><div><b>铺防草布</b>：1.2–1.5 米宽银黑膜/防草布，兼具<b>抑草、保湿、防虫</b>三效，大幅降低 3 年管护人工。</div></div>
+</div>
+
+<div class="box o">
+  <b>来宾红壤特调</b>：红壤 pH 常低至 4.5–5.5，<b>低于五指毛桃最适的 5.5–6.5</b>。整地时适量施<b>生石灰或白云石粉</b>调酸（结合你的闭环，<b>黑水虻虫沙偏碱含钙，是更温和的调酸材料</b>）。同时红壤黏重，可掺<b>稻壳/腐熟秸秆/生物炭</b>改善透气——你手上这些材料正好派上用场。
+</div>
+
+<h3>阶段二：繁殖与育苗</h3>
+<table>
+  <thead><tr><th>方式</th><th>操作要点</th><th>评价</th></tr></thead>
+  <tbody>
+    <tr><td><b>种子繁殖</b></td><td>选 2–3 年生健壮母株；果实由青绿转<b>紫红</b>时采收；搓烂果肉取种；<b>40°C 温水浸种 12–24h</b>；种子细小，<b>拌细河砂或草木灰</b>撒播，浅覆土盖草；随采随播或翌年 2–3 月播</td><td class="cG-col">成本低、可大规模，但实生苗变异大</td></tr>
+    <tr><td><b>扦插繁殖</b></td><td>取半木质化枝条扦插</td><td class="cG-col">能保持母本优良性状</td></tr>
+    <tr><td><b>组培快繁</b></td><td>优质种苗工厂化生产</td><td class="cO-col">性状一致、成本高，<b>家庭种植直接买苗即可</b></td></tr>
+  </tbody>
+</table>
+
+<div class="card t3-card">
+  <h3>苗期管理（关键温控）</h3>
+  <ul>
+    <li><b>低温 &lt;15°C</b> → 竹条拱棚 + 白色薄膜<b>增温</b></li>
+    <li><b>高温 &gt;25°C</b> → 搭<b>遮光率 75% 遮阳网</b>遮阴</li>
+    <li>发芽出土时<b>揭去盖草</b>，促幼苗健壮</li>
+    <li>第 2 片真叶时施<b>腐熟稀薄粪水</b>1 次，此后每月追施 1 次</li>
+    <li><b>移栽前 5 天揭覆盖物炼苗</b>；移栽前 1 天浇透苗床；<b>带土起苗、不伤根不伤皮</b></li>
+  </ul>
+</div>
+
+<h3>阶段三：定植</h3>
+<table>
+  <thead><tr><th>参数</th><th>规格</th></tr></thead>
+  <tbody>
+    <tr><td><b>定植时间</b></td><td class="cG-col"><b>3–9 月均可</b>；家庭种植首选 <b>3–4 月春雨季</b>（或选雨天移栽，利于快速定根）</td></tr>
+    <tr><td><b>苗高</b></td><td>苗高 15cm 左右带土移栽</td></tr>
+    <tr><td><b>株距 × 行距</b></td><td><b>60–80cm × 60–100cm</b>；密植可 40cm × 100cm</td></tr>
+    <tr><td><b>密度</b></td><td><b>1000–1500 株/亩</b>（橡胶林下标准约 1000 株/亩）</td></tr>
+    <tr><td><b>布植方式</b></td><td><b>「品」字形</b>分布；苗离垄边 ≥20cm</td></tr>
+    <tr><td><b>深度</b></td><td>泥土高于营养杯 <b>2cm</b> 为宜</td></tr>
+  </tbody>
+</table>
+
+<h3>阶段四：田间管理（2.5–3 年）</h3>
+<div class="card t1-card">
+  <div class="step"><div class="n">⑥</div><div><b>补植</b>：定植后 1 个月内检查，死苗及时补植（保证亩株数，直接影响产量）。</div></div>
+  <div class="step"><div class="n">⑦</div><div><b>除草</b>：行间适时除草，<b>前两年最重要</b>（苗弱时草欺苗）。铺了防草布可大幅省工。</div></div>
+  <div class="step"><div class="n">⑧</div><div><b>施肥</b>：<b>每年追肥 3 次</b>，以腐熟农家肥/有机肥为主，少量多次。偏施氮肥会徒长、根细、香味淡。</div></div>
+  <div class="step"><div class="n">⑨</div><div><b>水分</b>：<b>雨季及时排水防烂根</b>；旱季每周 1 次透水。保持湿润但<b>绝不积水</b>。</div></div>
+  <div class="step"><div class="n">⑩</div><div><b>修剪</b>：定期去除老枝弱枝，让养分集中供应<b>主茎与根系</b>。</div></div>
+</div>
+
+<h3>阶段五：病虫害防治</h3>
+<table>
+  <thead><tr><th>对象</th><th>症状 / 危害</th><th>防治</th></tr></thead>
+  <tbody>
+    <tr><td><b>根腐病</b></td><td class="cR-col">最危险，积水诱发，整株死亡</td><td class="cG-col"><b>草木灰</b>防治 + 排水控湿（预防远胜治疗）</td></tr>
+    <tr><td><b>卷叶蛾</b></td><td>卷叶啃食新梢</td><td>90% 敌百虫原药 1000 倍喷雾</td></tr>
+    <tr><td><b>粘虫</b></td><td>暴食叶片</td><td>同上；<b>人工捕杀</b>更环保</td></tr>
+    <tr><td><b>虫害通用</b></td><td>—</td><td>银黑膜 + 黄板 + 人工捉虫；家庭种植优先物理防治</td></tr>
+  </tbody>
+</table>
+<div class="box g">
+  <b>整体评价：五指毛桃病虫害极少</b>，这是它"粗放管理"说法的底气来源。<b>唯一的系统性风险就是烂根</b>——所有管理措施里，排水是第一位的。
+</div>
+
+<h3>阶段六：采收与加工（决定卖价的关键）</h3>
+<div class="card t2-card">
+  <div class="step"><div class="n">⑪</div><div><b>采收年限</b>：<b>2.5–3 年</b>起步。规律很直接——<b>种得越久，产量越高、品质越好、香味越浓</b>。3 年是行业基准，4–5 年品质更优但资金占用更长。</div></div>
+  <div class="step"><div class="n">⑫</div><div><b>采收季节</b>：<b>秋冬晴朗天气为佳</b>。此时根系养分积累最丰、有效成分最高；<b>秋季为最佳采挖期</b>。</div></div>
+  <div class="step"><div class="n">⑬</div><div><b>采挖</b>：主根深、须根多，规模化用<b>挖掘机</b>作业（比人工效率高数倍）；小面积用深齿耙，尽量<b>减少断根损耗</b>。</div></div>
+  <div class="step"><div class="n">⑭</div><div><b>清洗分级</b>：洗净泥土，<b>按粗细、完整度分级</b>——分级直接决定单价（统货与选货价差可达 2 元/斤）。</div></div>
+  <div class="step"><div class="n">⑮</div><div><b>干燥</b>：切片后晒干或烘干，<b style="color:var(--rd)">烘干温度不超过 50°C</b>——超温会挥发掉椰奶香气成分，<b>香味没了就不值钱了</b>。避免暴晒导致有效成分流失。</div></div>
+  <div class="step"><div class="n">⑯</div><div><b>贮藏</b>：置通风干燥处，<b>防霉防蛀</b>。干品易吸潮，来宾潮湿气候下务必密封。</div></div>
+</div>
+
+<div class="box o">
+  <b>干鲜折算</b>：约 <b>5 斤鲜根 → 1 斤干品</b>。这是算账的核心换算：鲜货 4.5 元/斤看起来低，但折成干品成本就是 22.5 元/斤原料成本，而干品售价 16–22 元/斤——<b>所以卖鲜还是卖干，要精算</b>（详见第六章）。
+</div>
+
+<h2>五、三种种植模式对比</h2>
+<table>
+  <thead><tr><th>模式</th><th>密度</th><th>优势</th><th>劣势</th><th>适配度</th></tr></thead>
+  <tbody>
+    <tr><td><b>林下套种</b>（桉/松/杉/果树行间）</td><td>约 1000 株/亩</td><td class="cG-col">不占耕地、不抢光、<b>一地双收</b>；树荫正好满足半阴需求；投入最低</td><td>需协调林地；采挖时可能伤及果树根系</td><td class="cG-col"><b>★★★★★ 首选</b></td></tr>
+    <tr><td><b>坡地纯种</b></td><td>1000–1500 株/亩</td><td class="cG-col">管理统一、机械化采挖方便、产量高</td><td>占耕地；需起垄排水防草，前期投入略高</td><td class="cG-col">★★★★☆</td></tr>
+    <tr><td><b>平地纯种</b></td><td>1000–1500 株/亩</td><td>土地平整好操作</td><td class="cR-col">来宾平地多为黏重红壤 + 雨季积水，<b>烂根风险最高</b></td><td class="cO-col">★★☆☆☆</td></tr>
+    <tr><td><b>阳台/容器</b></td><td>—</td><td>观赏</td><td class="cR-col">主根深、需 3 年、容器容积不足，<b>商品价值为零</b></td><td class="cR-col">✗ 不推荐</td></tr>
+  </tbody>
+</table>
+
+<div class="box g">
+  <b>对你的建议</b>：如果你家有<b>桉树林、果树林或闲置坡地</b>——这是最优解：把之前找的桉树/木业资源反过来用，林下套种五指毛桃，<b>桉树继续长、林下多一份收入</b>。而且五指毛桃耐阴，桉树林郁闭度合适时正好。若只有平地菜园，则不值得占用——<b>你的菜园用于蔬菜/辣椒的高周转收益远高于此</b>。
+</div>
+
+<h2>六、效益测算（含来宾本地真实案例）</h2>
+
+<h3>6.1 两个广西本地实测案例</h3>
+<table>
+  <thead><tr><th>案例</th><th>规模</th><th>年限</th><th>亩产</th><th>价格</th><th>亩收入</th><th>成本</th><th>净收益</th></tr></thead>
+  <tbody>
+    <tr><td><b>来宾忻城县红渡镇</b>（官方测产）</td><td>45 亩（合作种植）</td><td>3 年生</td><td>约 <b>2000 斤</b></td><td>鲜货到地直收 <b>9 元/公斤</b>（=4.5 元/斤）</td><td>约 <b>9000 元</b></td><td>—</td><td>—</td></tr>
+    <tr><td><b>柳城县寨隆镇</b>（种植大户）</td><td>30 余亩</td><td>3 年生</td><td><b>3500 斤</b></td><td>收购 <b>4.2 元/斤</b></td><td>约 14700 元</td><td>约 <b>4000 元</b></td><td class="cG-col"><b>1 万元+</b></td></tr>
+    <tr><td><b>橡胶园林下</b>（科研成果口径）</td><td>标准化</td><td>3 年</td><td>鲜根约 <b>1000 kg</b>（2000 斤）</td><td>—</td><td>约 10000 元</td><td>—</td><td class="cG-col">净收益约 <b>6000 元</b></td></tr>
+  </tbody>
+</table>
+
+<h3>6.2 成本结构（每亩）</h3>
+<table>
+  <thead><tr><th>项目</th><th>金额（元）</th><th>说明</th></tr></thead>
+  <tbody>
+    <tr><td>种苗（1000–1500 株）</td><td>1500–2500</td><td>按 1–2 元/株；<b>自育苗可省大半</b></td></tr>
+    <tr><td>基肥 + 3 年追肥</td><td>800–1500</td><td>有机肥 400–600kg 基肥 + 每年 3 次追肥</td></tr>
+    <tr><td>整地人工（深翻/起垄）</td><td>600–1000</td><td>机械深翻 0.6m，可机械替代降本</td></tr>
+    <tr><td>防草布/银黑膜</td><td>200–400</td><td>一次性投入，大幅省除草人工</td></tr>
+    <tr><td>3 年管护人工</td><td>600–1200</td><td>除草为主；铺膜后显著下降</td></tr>
+    <tr><td>采收（机械/人工）</td><td>300–600</td><td>挖掘机作业比人工省</td></tr>
+    <tr><td><b>合计</b></td><td><b>4000–6000</b></td><td>柳城实测约 4000 元/亩，与主流口径一致</td></tr>
+  </tbody>
+</table>
+
+<h3>6.3 价格体系（2026 年产地行情，务必分清「鲜」与「干」）</h3>
+<table>
+  <thead><tr><th>品类</th><th>价格</th><th>备注</th></tr></thead>
+  <tbody>
+    <tr><td>地头鲜货（收购商直收）</td><td class="cO-col"><b>4.2–4.5 元/斤</b>（8.4–9 元/kg）</td><td>忻城、柳城实际成交价，<b>这是农户真实到手价</b></td></tr>
+    <tr><td>鲜货统货 / 选货（产地平台）</td><td>统 6 元/斤、选 8 元/斤、鲜切段 8 元/斤</td><td>来宾忻城报价，分级溢价明显</td></tr>
+    <tr><td>干货切段 / 干货抓把</td><td class="cG-col"><b>16 元/斤 / 18 元/斤</b></td><td>来宾忻城报价；<b>干鲜比约 5:1</b></td></tr>
+    <tr><td>广西全区药市行情</td><td>18.9–22.6 元/斤</td><td>玉林、钦州、贺州等，<b>多为干品</b></td></tr>
+    <tr><td>零售/电商（金秀大瑶山等）</td><td>22–25 元/斤</td><td>C 端零售价，非地头价</td></tr>
+  </tbody>
+</table>
+
+<div class="box o">
+  <b>⚠️ 算账最容易犯的错</b>：把<b>干品零售价（20+ 元/斤）</b>当成自己的卖价。真实情况是——<b>农户地头卖鲜货只有 4.2–4.5 元/斤</b>。想拿高价必须自己<b>切片、烘干、分级、包装</b>做干货，但要考虑：5:1 折干率 + 烘干能耗 + 人工 + 销路。<br>
+  <b>粗算</b>：1 斤干品 = 5 斤鲜货（成本 21–22.5 元）→ 干品卖 16 元/斤<b>反而是亏的</b>；只有卖到 <b>22 元/斤以上</b>（零售端）才有利润空间。<b>结论：小规模种植卖鲜货更现实，别被干货价迷惑。</b>
+</div>
+
+<h3>6.4 三档收益情景（按亩产 2000 斤 / 地头鲜货价）</h3>
+<table>
+  <thead><tr><th>情景</th><th>单价</th><th>亩产值</th><th>成本</th><th>亩净利</th><th><b>年均净利</b></th></tr></thead>
+  <tbody>
+    <tr><td>保守（产量偏低 1500 斤 + 价跌）</td><td>4.0 元/斤</td><td>6000</td><td>5000</td><td>1000</td><td class="cR-col"><b>333 元</b></td></tr>
+    <tr><td><b>中性（柳城/忻城实际水平）</b></td><td class="cG-col"><b>4.2–4.5 元/斤</b></td><td class="cG-col">8400–9000</td><td class="cG-col">4000–5000</td><td class="cG-col"><b>3500–5000</b></td><td class="cG-col"><b>1170–1670 元</b></td></tr>
+    <tr><td>乐观（3500 斤高产 + 价稳）</td><td>4.5 元/斤</td><td>15750</td><td>5000</td><td>10750</td><td class="cG-col"><b>3580 元</b></td></tr>
+  </tbody>
+</table>
+
+<div class="box r">
+  <b>必须换算成年均</b>：五指毛桃 3 年才见一次钱，<b>年均净利 1000–3300 元/亩</b>。横向对比——广西甘蔗年收益约 500–1000 元/亩、桉树年均 320–530 元/亩，<b>五指毛桃的年均回报其实优于桉树</b>；但对比你的蔬菜/辣椒高周转种植（一年多茬、亩现金流远超万元），<b>它毫无优势</b>。<br>
+  <b>它的真正定位是：把闲置林地/坡地盘活，而不是主业。</b>
+</div>
+
+<h2>七、与你的生态闭环怎么结合</h2>
+<div class="grid2">
+  <div class="card t3-card">
+    <h3>✅ 能直接复用的资源</h3>
+    <ul>
+      <li><b>虫沙（偏碱含钙）</b> → 温和调红壤酸度，比生石灰安全</li>
+      <li><b>腐熟堆肥/蚯蚓粪</b> → 替代商品有机肥，省 800–1500 元/亩</li>
+      <li><b>生物炭</b> → 改善红壤黏重透气性，直击烂根短板</li>
+      <li><b>草木灰</b> → 补钾 + <b>防治根腐病</b>（官方推荐用法）</li>
+      <li><b>稻壳/防草布思路</b> → 垄面覆盖保墒抑草</li>
+      <li><b>EM 扩培液</b> → 基肥腐熟加速</li>
+    </ul>
+  </div>
+  <div class="card t2-card">
+    <h3>⚠️ 用不上的地方</h3>
+    <ul>
+      <li><b>不进菜园</b>：3 年生长期，占用高价值菜地不划算</li>
+      <li><b>不做容器</b>：主根深，盆/箱养不出商品根</li>
+      <li><b>不与茄科轮作逻辑混谈</b>：它是木本灌木，病虫害谱完全不同</li>
+      <li><b>不能自采自用</b>：见下一章红线</li>
+    </ul>
+  </div>
+</div>
+
+<h2>八、⚠️ 红线警示：断肠草（钩吻）中毒</h2>
+<div class="danger">
+  <h3>🚫 这是本手册最重要的一章。五指毛桃本身无毒，但它的根常年与剧毒的断肠草（钩吻）缠绕共生，误采误食可致死。</h3>
+  <p><b>钩吻</b>（<i>Gelsemium elegans</i>），又名大茶药、毒根、胡蔓藤、野葛，马钱科钩吻属，华南分布广泛，<b>是引发误食中毒事件最多的物种</b>。全株含钩吻生物碱（<b>根皮含量最高</b>），属神经毒，可致呼吸肌麻痹、心肌麻痹。<b>约 3 克根或 7 枝嫩芽煎水即可致死</b>。</p>
+  <p><b>为什么危险</b>：钩吻根系发达，<b>喜欢与其他植物缠绕共生</b>；其根与五指毛桃根高度相似，花又酷似金银花。群众采挖五指毛桃时，<b>极易连同钩吻根一起挖走</b>。真实案例：广州 10 人聚餐喝「五指毛桃炖鸡汤」集体中毒送医洗胃；佛山一家三口误食进 ICU。</p>
+</div>
+
+<table>
+  <thead><tr><th>鉴别项</th><th>五指毛桃根</th><th>断肠草（钩吻）根</th></tr></thead>
+  <tbody>
+    <tr><td><b>断面纹理</b></td><td class="cG-col">呈<b>同心性环纹</b></td><td class="cR-col">密布<b>放射状纹理</b></td></tr>
+    <tr><td><b>髓部</b></td><td class="cG-col">实心、色浅</td><td class="cR-col">髓部<b>呈褐色或中空</b></td></tr>
+    <tr><td><b>气味</b></td><td class="cG-col"><b>微香（椰奶香）</b></td><td class="cR-col"><b>微苦</b></td></tr>
+    <tr><td><b>表皮</b></td><td class="cG-col">易<b>完整剥离</b></td><td class="cR-col">不易完整剥离</td></tr>
+  </tbody>
+</table>
+
+<div class="box r">
+  <b>四条铁律</b>
+  <ol>
+    <li><b>绝不自行采挖野生五指毛桃</b>——哪怕你认得叶子。钩吻方圆 10 米内的植物都不要采挖。</li>
+    <li><b>只买正规渠道</b>——药店、正规药材商，不要买来源不明的散装"山采"根。</li>
+    <li><b>自己种的也别掉以轻心</b>——种植地周边若发现钩吻（藤本、黄色花内带淡红斑点、簇状生长），<b>必须清除并标记</b>，采收时逐根检查断面纹理与气味。</li>
+    <li><b>中毒急救</b>：立即催吐（<b>昏迷者禁催吐，防窒息</b>）→ 马上拨打 120 → <b>保留剩余汤料供检验</b> → <b>共同进食者无论是否发病，全部就医检查</b>。多在进食即刻或 30 分钟内发病。</li>
+  </ol>
+</div>
+
+<h2>九、风险清单（决定要不要种）</h2>
+<table>
+  <thead><tr><th>风险</th><th>严重度</th><th>说明与对策</th></tr></thead>
+  <tbody>
+    <tr><td><b>3 年零现金流</b></td><td class="cR-col">🔴 高</td><td>种下去 3 年才见钱，中间只有投入。资金紧张者勿入。</td></tr>
+    <tr><td><b>价格波动</b></td><td class="cR-col">🔴 高</td><td>忻城案例明确提到「<b>价格较前两年有所下降</b>」。从高位回落中，3 年后的价格无法预判。</td></tr>
+    <tr><td><b>销路</b></td><td class="cR-col">🔴 高</td><td><b>先找收购商，再种</b>。柳城大户是「收购商提前联系、刚采收就被订单锁定」，不是种完再找市场。</td></tr>
+    <tr><td><b>烂根</b></td><td class="cO-col">🟠 中</td><td>红壤黏重 + 雨季集中 = 高风险。起垄排水是唯一解。</td></tr>
+    <tr><td><b>越冬</b></td><td class="cO-col">🟠 中</td><td>来宾 1 月 10.9°C 逼近停止生长线，<b>幼苗越冬需防寒</b>（拱棚/覆膜）。</td></tr>
+    <tr><td><b>旱季</b></td><td class="cO-col">🟠 中</td><td>桂中旱片，最干月降水接近适生下限，定植首年需补水。</td></tr>
+    <tr><td><b>采收安全</b></td><td class="cR-col">🔴 高</td><td>见第八章断肠草红线。</td></tr>
+  </tbody>
+</table>
+
+<h2>十、行动清单（如果要干）</h2>
+<div class="quick">
+  <ol>
+    <li>🔴 <b>先找销路</b>——联系忻城、武宣、金秀本地收购商或合作社，问清<b>收鲜还是收干、分级标准、保底价</b>。没销路就别种。</li>
+    <li>🟠 <b>选地</b>——优先<b>坡地或林下</b>；平地必须有排水条件。查地块是否闲置林地。</li>
+    <li>🟠 <b>先小面积试种 3–5 亩</b>，验证本地产量与收购价，再决定是否扩种。<b>不要一次押上全部土地。</b></li>
+    <li>🟡 <b>调酸改土</b>——整地时石灰/白云石粉调 pH 至 5.5–6.5，掺生物炭+腐熟秸秆改善红壤黏重。</li>
+    <li>🟡 <b>起垄 30–35cm + 铺防草布</b>——一次性解决烂根与除草两大成本。</li>
+    <li>🟡 <b>3–4 月雨季定植</b>，1000–1500 株/亩，「品」字形。</li>
+    <li>🟢 <b>苗期温控</b>——&lt;15°C 拱棚增温，&gt;25°C 遮阳网遮阴。</li>
+    <li>🟢 <b>每年追肥 3 次</b>，用自产堆肥/虫沙降本；草木灰防根腐。</li>
+    <li>🟢 <b>秋冬晴天采挖</b>，分级销售，<b>烘干温度 ≤50°C</b> 保住椰奶香。</li>
+    <li>🔴 <b>全程执行断肠草红线</b>——清理周边钩吻、逐根鉴别断面与气味。</li>
+  </ol>
+</div>
+
+<div class="box g">
+  <b>最终判断</b>：五指毛桃对来宾而言是<b>「气候满分、土壤待改、周期太长、销路决定生死」</b>的作物。<br>
+  ✅ <b>值得做的情况</b>：有闲置林地/坡地、资金不紧张、已锁定收购商、把它当作 3 年期的林地增值项。<br>
+  ❌ <b>不值得做的情况</b>：想替代主业现金流、只有平地菜园、指望干货高价、没找好销路就先种。
+</div>
+
+<div class="foot">
+  资料来源：广西壮族自治区农业农村厅公开报道（忻城县红渡镇、柳城县寨隆镇实测案例）；科创中国《橡胶园林下间作五指毛桃技术》成果说明（含地方标准《橡胶林下南芪（五指毛桃）栽培技术规程》）；云浮市云城区人民政府《五指毛桃种植技术》；《基于 MaxEnt 模型预测气候变化下五指毛桃潜在地理分布》（林业与环境科学）；人民网/广州日报断肠草中毒事件报道与佛山疾控鉴别要点；一亩田等产地行情平台 2026 年报价。<br>
+  价格数据随市场波动显著，且「鲜货地头价」与「干品零售价」差异极大，实际决策请以本地收购商报价为准。本手册不构成投资建议。<br>
+  编写：WorkBuddy ｜ 适配地：广西来宾 ｜ 版本 v1.0（2026-10-20）
+</div>
+
+</div>
+</body>
+</html>
